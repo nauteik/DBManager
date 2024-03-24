@@ -89,8 +89,9 @@
             this.textBox_Username.Location = new System.Drawing.Point(455, 186);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(257, 40);
-            this.textBox_Username.TabIndex = 14;
+            this.textBox_Username.TabIndex = 1;
             this.textBox_Username.TextChanged += new System.EventHandler(this.textBox_Username_TextChanged);
+            this.textBox_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Username_KeyDown);
             // 
             // label3
             // 
@@ -120,17 +121,19 @@
             this.textBox_Password.Location = new System.Drawing.Point(455, 281);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(257, 40);
-            this.textBox_Password.TabIndex = 16;
+            this.textBox_Password.TabIndex = 2;
+            this.textBox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Password_KeyDown);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
             this.linkLabel1.Location = new System.Drawing.Point(593, 334);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(119, 19);
+            this.linkLabel1.Size = new System.Drawing.Size(149, 22);
             this.linkLabel1.TabIndex = 18;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu?";
@@ -139,12 +142,13 @@
             // 
             this.bt_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.bt_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_login.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_login.ForeColor = System.Drawing.Color.White;
             this.bt_login.Location = new System.Drawing.Point(483, 365);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(203, 37);
-            this.bt_login.TabIndex = 19;
+            this.bt_login.TabIndex = 3;
             this.bt_login.Text = "ĐĂNG NHẬP";
             this.bt_login.UseVisualStyleBackColor = false;
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);

@@ -37,31 +37,6 @@ namespace Project_DBManager
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -128,11 +103,6 @@ namespace Project_DBManager
             Login_Form_Staff newForm = new Login_Form_Staff();
             newForm.Show();
             this.Hide();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

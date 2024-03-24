@@ -75,7 +75,7 @@
             resources.ApplyResources(this.label_staff_txt, "label_staff_txt");
             this.label_staff_txt.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_staff_txt.Name = "label_staff_txt";
-            this.label_staff_txt.Click += new System.EventHandler(this.label1_Click);
+            this.label_staff_txt.Click += new System.EventHandler(this.panel_staff_Click);
             this.label_staff_txt.MouseEnter += new System.EventHandler(this.panel_staff_MouseEnter);
             this.label_staff_txt.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 
@@ -83,6 +83,7 @@
             // 
             resources.ApplyResources(this.label_staff, "label_staff");
             this.label_staff.Name = "label_staff";
+            this.label_staff.Click += new System.EventHandler(this.panel_staff_Click);
             this.label_staff.MouseEnter += new System.EventHandler(this.panel_staff_MouseEnter);
             this.label_staff.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 
@@ -92,6 +93,7 @@
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.panel_staff_Click);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.panel_staff_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 
@@ -121,7 +123,7 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.Click += new System.EventHandler(this.panel_manager_Click);
             this.label1.MouseEnter += new System.EventHandler(this.panel_manager_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.panel_manager_MouseLeave);
             // 
@@ -129,7 +131,7 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Click += new System.EventHandler(this.panel_manager_Click);
             this.label2.MouseEnter += new System.EventHandler(this.panel_manager_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.panel_manager_MouseLeave);
             // 
@@ -140,7 +142,7 @@
             this.pictureBox2.ErrorImage = global::Project_DBManager.Properties.Resources.fig_QL2;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.panel_manager_Click);
             this.pictureBox2.MouseEnter += new System.EventHandler(this.panel_manager_MouseEnter);
             this.pictureBox2.MouseLeave += new System.EventHandler(this.panel_manager_MouseLeave);
             // 
@@ -186,7 +188,7 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.panel_leader_Click);
             this.label3.MouseEnter += new System.EventHandler(this.panel_leader_MouseEnter);
             this.label3.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 
@@ -194,7 +196,7 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.Click += new System.EventHandler(this.panel_leader_Click);
             this.label4.MouseEnter += new System.EventHandler(this.panel_leader_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 
@@ -204,6 +206,7 @@
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.panel_leader_Click);
             this.pictureBox3.MouseEnter += new System.EventHandler(this.panel_leader_MouseEnter);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.panel_staff_MouseLeave);
             // 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Project_DBManager.DAO;
 
 namespace Project_DBManager
 {
@@ -48,20 +49,33 @@ namespace Project_DBManager
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            if(textBox_Username.Text == "")
+            if (textBox_Username.Text == "" || textBox_Password.Text == "")
             {
-                MessageBox.Show("Please enter your username");
-            } else if(textBox_Password.Text == "") {
-                MessageBox.Show("Please enter your password");
-            } else
+                MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống");
+                return;
+            }
+            if (AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text))
             {
-                try {
-                    SqlConnection connect = new SqlConnection();
-                    // Khúc này code giúp t cái xác minh đăng nhập, SQL t ko connect được nên k code đc 
+                MessageBox.Show("Đăng nhập thành công");
+            }
+            else
+            {
+                MessageBox.Show("Tên tài khoản hoặc mật khẩu không hợp lệ");
+            }
+        }
 
-                } catch(Exception ex) { 
-                    MessageBox.Show("" + ex);
-                }
+        private void textBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_login.PerformClick();
+            }
+        }
+        private void textBox_Username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_login.PerformClick();
             }
         }
     }

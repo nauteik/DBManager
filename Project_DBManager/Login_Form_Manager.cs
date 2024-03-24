@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_DBManager.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,26 +49,33 @@ namespace Project_DBManager
 
         private void bt_login_Click(object sender, EventArgs e)
         {
-            if (textBox_Username.Text == "")
+            if (textBox_Username.Text == "" || textBox_Password.Text == "")
             {
-                MessageBox.Show("Please enter your username");
+                MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống");
+                return;
             }
-            else if (textBox_Password.Text == "")
+            if (AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text))
             {
-                MessageBox.Show("Please enter your password");
+                MessageBox.Show("Đăng nhập thành công");
             }
             else
             {
-                try
-                {
-                    SqlConnection connect = new SqlConnection();
-                    // Khúc này code giúp t cái xác minh đăng nhập, SQL t ko connect được nên k code đc 
+                MessageBox.Show("Tên tài khoản hoặc mật khẩu không hợp lệ");
+            }
+        }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("" + ex);
-                }
+        private void textBox_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_login.PerformClick();
+            }
+        }
+        private void textBox_Username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bt_login.PerformClick();
             }
         }
     }

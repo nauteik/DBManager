@@ -197,7 +197,7 @@ nhân viên nhập liệu</value>
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 90</value>
+    <value>12, 90</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 212</value>
@@ -342,7 +342,7 @@ quản lý</value>
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 90</value>
+    <value>26, 89</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 212</value>
