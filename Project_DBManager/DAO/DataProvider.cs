@@ -22,7 +22,7 @@ namespace Project_DBManager.DAO
         }
         private DataProvider() { }
 
-        public DataTable ExecuteQuery(string query, string[] para = null)
+        public DataTable ExecuteQuery(string query, object[] para = null)
         {
             DataTable data = new DataTable();
             using (SqlConnection connect = new SqlConnection(connectString))

@@ -16,11 +16,13 @@ namespace Project_DBManager
 {
     public partial class FormLoginAuth : Form
     {
-        public FormLoginAuth(string pos, Bitmap img)
+        int type = 0;
+        public FormLoginAuth(string pos, int type, Bitmap img)
         {
             InitializeComponent();
             label6.Text = pos.ToUpper();
             pictureBox1.BackgroundImage = img;
+            this.type = type;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -38,11 +40,6 @@ namespace Project_DBManager
             
         }
 
-        private void Login_Form_Staff_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -50,12 +47,13 @@ namespace Project_DBManager
 
         private void bt_login_Click(object sender, EventArgs e)
         {
+            
             if (textBox_Username.Text == "" || textBox_Password.Text == "")
             {
                 MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống");
                 return;
             }
-            if(AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text))
+            if(AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text, type))
             {
                 MessageBox.Show("Đăng nhập thành công");
             }

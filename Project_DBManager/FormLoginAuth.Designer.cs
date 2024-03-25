@@ -207,7 +207,7 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // Login_Form_Staff
+            // FormLoginAuth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,9 +228,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
-            this.Name = "Login_Form_Staff";
+            this.Name = "FormLoginAuth";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login_Form_Staff";
-            this.Load += new System.EventHandler(this.Login_Form_Staff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
