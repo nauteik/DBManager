@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
-    public partial class Login_Form : Form
+    public partial class FormLogin : Form
     {
-        public Login_Form()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -86,23 +86,26 @@ namespace Project_DBManager
 
         private void panel_leader_Click(object sender, EventArgs e)
         {
-            Login_Form_Leader newForm = new Login_Form_Leader();
-            newForm.Show();
+            FormLoginAuth newForm = new FormLoginAuth("leader,", Properties.Resources.fig_Leader1);
             this.Hide();
+            newForm.ShowDialog();
+            this.Show();
         }
 
         private void panel_manager_Click(object sender, EventArgs e)
         {
-            Login_Form_Manager newForm = new Login_Form_Manager();
-            newForm.Show();
+            FormLoginAuth newForm = new FormLoginAuth("MANAGER,", Properties.Resources.fig_QL);
             this.Hide();
+            newForm.ShowDialog();
+            this.Show();
         }
 
         private void panel_staff_Click(object sender, EventArgs e)
         {
-            Login_Form_Staff newForm = new Login_Form_Staff();
-            newForm.Show();
+            FormLoginAuth newForm = new FormLoginAuth("EMPLOYEE,", Properties.Resources.fig_NV);
             this.Hide();
+            newForm.ShowDialog();
+            this.Show();
         }
     }
 }

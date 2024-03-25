@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class Login_Form_Manager
+    partial class FormLoginAuth
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_Password = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.bt_login = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,9 +56,9 @@
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(38, 90);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 31);
+            this.label6.Size = new System.Drawing.Size(176, 31);
             this.label6.TabIndex = 6;
-            this.label6.Text = "MANAGER, ";
+            this.label6.Text = "EMPLOYEE, ";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label1
@@ -89,7 +89,7 @@
             this.textBox_Username.Location = new System.Drawing.Point(455, 186);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(257, 40);
-            this.textBox_Username.TabIndex = 14;
+            this.textBox_Username.TabIndex = 1;
             this.textBox_Username.TextChanged += new System.EventHandler(this.textBox_Username_TextChanged);
             this.textBox_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Username_KeyDown);
             // 
@@ -121,8 +121,22 @@
             this.textBox_Password.Location = new System.Drawing.Point(455, 281);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(257, 40);
-            this.textBox_Password.TabIndex = 16;
+            this.textBox_Password.TabIndex = 2;
             this.textBox_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Password_KeyDown);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
+            this.linkLabel1.Location = new System.Drawing.Point(593, 334);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(149, 22);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Quên mật khẩu?";
             // 
             // bt_login
             // 
@@ -134,9 +148,10 @@
             this.bt_login.Location = new System.Drawing.Point(483, 365);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(203, 37);
-            this.bt_login.TabIndex = 19;
+            this.bt_login.TabIndex = 3;
             this.bt_login.Text = "ĐĂNG NHẬP";
             this.bt_login.UseVisualStyleBackColor = false;
+            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
             // 
             // pictureBox3
             // 
@@ -173,7 +188,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Project_DBManager.Properties.Resources.fig_QL2;
+            this.pictureBox1.BackgroundImage = global::Project_DBManager.Properties.Resources.fig_NV;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(44, 124);
             this.pictureBox1.Name = "pictureBox1";
@@ -192,29 +207,15 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(114)))));
-            this.linkLabel2.Location = new System.Drawing.Point(593, 334);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(149, 22);
-            this.linkLabel2.TabIndex = 22;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Quên mật khẩu?";
-            // 
-            // Login_Form_Manager
+            // Login_Form_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(784, 521);
-            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.bt_login);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.label3);
@@ -227,9 +228,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
-            this.Name = "Login_Form_Manager";
-            this.Text = "Login_Form_Manager";
-            this.Load += new System.EventHandler(this.Login_Form_Manager_Load);
+            this.Name = "Login_Form_Staff";
+            this.Text = "Login_Form_Staff";
+            this.Load += new System.EventHandler(this.Login_Form_Staff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -253,8 +254,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_Password;
+        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button bt_login;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

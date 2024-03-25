@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class Login_Form
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel_staff = new System.Windows.Forms.Panel();
             this.label_staff_txt = new System.Windows.Forms.Label();
             this.label_staff = new System.Windows.Forms.Label();
