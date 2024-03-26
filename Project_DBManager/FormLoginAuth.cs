@@ -55,7 +55,8 @@ namespace Project_DBManager
             }
             if(AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text, type))
             {
-                MessageBox.Show("Đăng nhập thành công");
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
             }
             else
             {
@@ -76,6 +77,11 @@ namespace Project_DBManager
             {
                 bt_login.PerformClick();
             }
+        }
+
+        private void FormLoginAuth_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
