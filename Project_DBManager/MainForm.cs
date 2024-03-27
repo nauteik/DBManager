@@ -34,9 +34,22 @@ namespace Project_DBManager
         {
 
         }
-
+        private void collapseMenu()
+        {
+            pnQuanLyThongTin.Size = pnQuanLyThongTin.MinimumSize;
+            btnQuanLyThongTin.Image = Properties.Resources.arrow;
+            pnTaoBaiDang.Size = pnTaoBaiDang.MinimumSize;
+            btnTaoBaiDang.Image = Properties.Resources.arrow;
+            pnQuanLyHopDong.Size = pnQuanLyHopDong.MinimumSize;
+            btnQuanLyHopDong.Image = Properties.Resources.arrow;
+            pnQuanLyNhanVien.Size = pnQuanLyNhanVien.MinimumSize;
+            btnQuanLyNhanVien.Image = Properties.Resources.arrow;
+            pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
+            btnQuanLyTaiKhoan.Image = Properties.Resources.arrow;
+        }
         private void btnQuanLyThongTin_Click(object sender, EventArgs e)
         {
+            collapseMenu();
             if (pnQuanLyThongTin.Size == pnQuanLyThongTin.MinimumSize)
             {
                 pnQuanLyThongTin.Size = pnQuanLyThongTin.MaximumSize;
@@ -52,6 +65,7 @@ namespace Project_DBManager
 
         private void btnTaoBaiDang_Click(object sender, EventArgs e)
         {
+            collapseMenu();
             if (pnTaoBaiDang.Size == pnTaoBaiDang.MinimumSize)
             {
                 pnTaoBaiDang.Size = pnTaoBaiDang.MaximumSize;
@@ -66,6 +80,7 @@ namespace Project_DBManager
 
         private void btnQuanLyHopDong_Click(object sender, EventArgs e)
         {
+            collapseMenu();
             if (pnQuanLyHopDong.Size == pnQuanLyHopDong.MinimumSize)
             {
                 pnQuanLyHopDong.Size = pnQuanLyHopDong.MaximumSize;
@@ -80,6 +95,7 @@ namespace Project_DBManager
 
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
+            collapseMenu();
             if (pnQuanLyNhanVien.Size == pnQuanLyNhanVien.MinimumSize)
             {
                 pnQuanLyNhanVien.Size = pnQuanLyNhanVien.MaximumSize;
@@ -94,6 +110,7 @@ namespace Project_DBManager
 
         private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
+            collapseMenu();
             if (pnQuanLyTaiKhoan.Size == pnQuanLyTaiKhoan.MinimumSize)
             {
                 pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
