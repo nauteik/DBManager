@@ -154,5 +154,17 @@
   <ItemGroup>
     <None Include="Resources\back-to-home1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_DBManager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box_light.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

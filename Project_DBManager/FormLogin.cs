@@ -89,7 +89,8 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("leader,", 1, Properties.Resources.fig_Leader1);
             this.Hide();
             newForm.ShowDialog();
-            this.Show();
+            if(!newForm.succeedLogin())
+                this.Show();
         }
 
         private void panel_manager_Click(object sender, EventArgs e)
@@ -97,7 +98,8 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("MANAGER,", 2, Properties.Resources.fig_QL);
             this.Hide();
             newForm.ShowDialog();
-            this.Show();
+            if (!newForm.succeedLogin())
+                this.Show();
         }
 
         private void panel_staff_Click(object sender, EventArgs e)
@@ -105,7 +107,8 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("EMPLOYEE,", 0, Properties.Resources.fig_NV);
             this.Hide();
             newForm.ShowDialog();
-            this.Show();
+            if (!newForm.succeedLogin())
+                this.Show();
         }
     }
 }

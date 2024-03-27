@@ -16,7 +16,8 @@ namespace Project_DBManager
 {
     public partial class FormLoginAuth : Form
     {
-        int type = 0;
+        private int type = 0;
+        private bool isLogged = false;
         public FormLoginAuth(string pos, int type, Bitmap img)
         {
             InitializeComponent();
@@ -25,10 +26,6 @@ namespace Project_DBManager
             this.type = type;
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -55,14 +52,19 @@ namespace Project_DBManager
             }
             if(AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text, type))
             {
-                MainForm mainForm = new MainForm();
-                mainForm.ShowDialog();
+                MainForm mainForm = new MainForm(type);
+                isLogged = true;
+                this.Hide();
+                mainForm.Show();
+                
+                
             }
             else
             {
                 MessageBox.Show("Tên tài khoản hoặc mật khẩu không hợp lệ");
             }
         }
+        public bool succeedLogin() { return isLogged; }
 
         private void textBox_Password_KeyDown(object sender, KeyEventArgs e)
         {
