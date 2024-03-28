@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_DBManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +13,13 @@ namespace Project_DBManager
 {
     public partial class MainForm : Form
     {
-        int type = 0;
-        public MainForm(int type)
+        private Account account;
+        public MainForm(Account loginAccount)
         {
             InitializeComponent();
             pnHeader.BringToFront();
-            this.type = type;
-            switch (type)
+            this.account = loginAccount;
+            switch (account.Level)
             {
                 case 1: lbPostion.Text = "Tổ trưởng"; break;
                 case 2: lbPostion.Text = "Quản lý"; break;
@@ -121,6 +122,11 @@ namespace Project_DBManager
                 pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
                 btnQuanLyTaiKhoan.Image = Properties.Resources.arrow;
             }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

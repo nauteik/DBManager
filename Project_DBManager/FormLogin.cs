@@ -91,6 +91,8 @@ namespace Project_DBManager
             newForm.ShowDialog();
             if(!newForm.succeedLogin())
                 this.Show();
+            else
+                this.Close();
         }
 
         private void panel_manager_Click(object sender, EventArgs e)
@@ -100,6 +102,8 @@ namespace Project_DBManager
             newForm.ShowDialog();
             if (!newForm.succeedLogin())
                 this.Show();
+            else
+                this.Close();
         }
 
         private void panel_staff_Click(object sender, EventArgs e)
@@ -109,6 +113,8 @@ namespace Project_DBManager
             newForm.ShowDialog();
             if (!newForm.succeedLogin())
                 this.Show();
+            else
+                this.Close();
         }
     }
 }

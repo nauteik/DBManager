@@ -1,4 +1,5 @@
 ﻿using Project_DBManager.DAO;
+using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,10 +53,12 @@ namespace Project_DBManager
             }
             if(AccountDAO.Instance.checkLogin(textBox_Username.Text, textBox_Password.Text, type))
             {
-                MainForm mainForm = new MainForm(type);
+                Account loginAccount = AccountDAO.Instance.getAccountByUsername(textBox_Username.Text);
+                MainForm mainForm = new MainForm(loginAccount);
                 isLogged = true;
                 this.Hide();
-                mainForm.Show();
+                mainForm.ShowDialog();
+                this.Close();
                 
                 
             }

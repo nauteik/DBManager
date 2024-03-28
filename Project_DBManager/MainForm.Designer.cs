@@ -76,6 +76,8 @@
             // 
             // pnSidemenu
             // 
+            this.pnSidemenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnSidemenu.AutoScroll = true;
             this.pnSidemenu.AutoScrollMinSize = new System.Drawing.Size(10, 10);
             this.pnSidemenu.AutoSize = true;
@@ -87,7 +89,6 @@
             this.pnSidemenu.Controls.Add(this.pnQuanLyThongTin);
             this.pnSidemenu.Controls.Add(this.lbPostion);
             this.pnSidemenu.Location = new System.Drawing.Point(0, 58);
-            this.pnSidemenu.MaximumSize = new System.Drawing.Size(147, 577);
             this.pnSidemenu.Name = "pnSidemenu";
             this.pnSidemenu.Size = new System.Drawing.Size(147, 577);
             this.pnSidemenu.TabIndex = 2;
@@ -570,7 +571,7 @@
             // 
             this.pnBody.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Location = new System.Drawing.Point(146, 58);
+            this.pnBody.Location = new System.Drawing.Point(148, 58);
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(499, 577);
             this.pnBody.TabIndex = 3;
@@ -585,6 +586,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBManager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnSidemenu.ResumeLayout(false);
             this.pnQuanLyTaiKhoan.ResumeLayout(false);
