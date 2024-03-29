@@ -33,7 +33,7 @@ namespace Project_DBManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            thongTinHopDong1.Hide();
         }
         private void collapseMenu()
         {
@@ -127,6 +127,27 @@ namespace Project_DBManager
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void btnThongTinHopDong_Click(object sender, EventArgs e)
+        {
+            thongTinHopDong1.Show();
+            thongTinHopDong1.BringToFront();
+        }
+
+        private void thongTinHopDong2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thongTinHopDong1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thongTinHopDong1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

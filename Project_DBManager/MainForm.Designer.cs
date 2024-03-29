@@ -63,6 +63,7 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.thongTinHopDong1 = new Project_DBManager.ThongTinHopDong();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -72,6 +73,7 @@
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).BeginInit();
+            this.pnBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnSidemenu
@@ -80,7 +82,6 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnSidemenu.AutoScroll = true;
             this.pnSidemenu.AutoScrollMinSize = new System.Drawing.Size(10, 10);
-            this.pnSidemenu.AutoSize = true;
             this.pnSidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
             this.pnSidemenu.Controls.Add(this.pnQuanLyTaiKhoan);
             this.pnSidemenu.Controls.Add(this.pnQuanLyHopDong);
@@ -237,6 +238,7 @@
             this.btnThongTinHopDong.TabIndex = 1;
             this.btnThongTinHopDong.Text = "Thông tin hợp đồng";
             this.btnThongTinHopDong.UseVisualStyleBackColor = false;
+            this.btnThongTinHopDong.Click += new System.EventHandler(this.btnThongTinHopDong_Click);
             // 
             // btnQuanLyHopDong
             // 
@@ -569,12 +571,27 @@
             // 
             // pnBody
             // 
-            this.pnBody.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Location = new System.Drawing.Point(148, 58);
+            this.pnBody.Controls.Add(this.thongTinHopDong1);
+            this.pnBody.Location = new System.Drawing.Point(146, 58);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(499, 577);
+            this.pnBody.Size = new System.Drawing.Size(798, 577);
             this.pnBody.TabIndex = 3;
+            // 
+            // thongTinHopDong1
+            // 
+            this.thongTinHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.thongTinHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.thongTinHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.thongTinHopDong1.Name = "thongTinHopDong1";
+            this.thongTinHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.thongTinHopDong1.TabIndex = 0;
+            this.thongTinHopDong1.Load += new System.EventHandler(this.thongTinHopDong1_Load_1);
             // 
             // MainForm
             // 
@@ -597,8 +614,8 @@
             this.pnHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).EndInit();
+            this.pnBody.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -639,5 +656,6 @@
         private System.Windows.Forms.Button btnChinhSuaTaiKhoan;
         private System.Windows.Forms.Button btnThongTinTaiKhoan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
+        private ThongTinHopDong thongTinHopDong1;
     }
 }

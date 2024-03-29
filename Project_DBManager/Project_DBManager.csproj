@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThongTinHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongTinHopDong.Designer.cs">
+      <DependentUpon>ThongTinHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ThongTinHopDong.resx">
+      <DependentUpon>ThongTinHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
