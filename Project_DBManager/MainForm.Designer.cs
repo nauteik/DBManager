@@ -63,7 +63,8 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
-            this.thongTinHopDong1 = new Project_DBManager.ThongTinHopDong();
+            this.thongTinHopDong1 = new Project_DBManager.DanhSachHopDong();
+            this.taoBaiDang1 = new Project_DBManager.TaoBaiDang();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -417,6 +418,7 @@
             this.btnTaoBaiDangMoi.TabIndex = 1;
             this.btnTaoBaiDangMoi.Text = "Tạo bài đăng mới";
             this.btnTaoBaiDangMoi.UseVisualStyleBackColor = false;
+            this.btnTaoBaiDangMoi.Click += new System.EventHandler(this.btnTaoBaiDangMoi_Click);
             // 
             // btnTaoBaiDang
             // 
@@ -575,6 +577,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.taoBaiDang1);
             this.pnBody.Controls.Add(this.thongTinHopDong1);
             this.pnBody.Location = new System.Drawing.Point(146, 58);
             this.pnBody.Name = "pnBody";
@@ -588,10 +591,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.thongTinHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.thongTinHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.thongTinHopDong1.Margin = new System.Windows.Forms.Padding(4);
             this.thongTinHopDong1.Name = "thongTinHopDong1";
             this.thongTinHopDong1.Size = new System.Drawing.Size(798, 577);
             this.thongTinHopDong1.TabIndex = 0;
             this.thongTinHopDong1.Load += new System.EventHandler(this.thongTinHopDong1_Load_1);
+            // 
+            // taoBaiDang1
+            // 
+            this.taoBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.taoBaiDang1.Name = "taoBaiDang1";
+            this.taoBaiDang1.Size = new System.Drawing.Size(798, 577);
+            this.taoBaiDang1.TabIndex = 1;
+            this.taoBaiDang1.Load += new System.EventHandler(this.taoBaiDang1_Load);
             // 
             // MainForm
             // 
@@ -656,6 +668,7 @@
         private System.Windows.Forms.Button btnChinhSuaTaiKhoan;
         private System.Windows.Forms.Button btnThongTinTaiKhoan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
-        private ThongTinHopDong thongTinHopDong1;
+        private DanhSachHopDong thongTinHopDong1;
+        private TaoBaiDang taoBaiDang1;
     }
 }

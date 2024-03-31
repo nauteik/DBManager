@@ -34,6 +34,7 @@ namespace Project_DBManager
         private void MainForm_Load(object sender, EventArgs e)
         {
             thongTinHopDong1.Hide();
+            taoBaiDang1.Hide();
         }
         private void collapseMenu()
         {
@@ -148,6 +149,17 @@ namespace Project_DBManager
         private void thongTinHopDong1_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void taoBaiDang1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
+        {
+            taoBaiDang1.Show();
+            taoBaiDang1.BringToFront();
         }
     }
 }

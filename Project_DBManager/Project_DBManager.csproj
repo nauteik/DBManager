@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThongTinHopDong.cs">
+    <Compile Include="TaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ThongTinHopDong.Designer.cs">
-      <DependentUpon>ThongTinHopDong.cs</DependentUpon>
+    <Compile Include="TaoBaiDang.Designer.cs">
+      <DependentUpon>TaoBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhSachHopDong.Designer.cs">
+      <DependentUpon>DanhSachHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -75,16 +81,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ThongTinHopDong.resx">
-      <DependentUpon>ThongTinHopDong.cs</DependentUpon>
+    <EmbeddedResource Include="TaoBaiDang.resx">
+      <DependentUpon>TaoBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachHopDong.resx">
+      <DependentUpon>DanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.vi-VN.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.vi.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoginAuth.resx">

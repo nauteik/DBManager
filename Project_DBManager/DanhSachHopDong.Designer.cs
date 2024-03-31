@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class ThongTinHopDong
+    partial class DanhSachHopDong
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachHopDong));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_ThongTinHopDong = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +40,16 @@
             this.lb_TaiXuong = new System.Windows.Forms.Label();
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.lb_SapXep = new System.Windows.Forms.Label();
+            this.btn_XuatDuLieu = new System.Windows.Forms.Button();
             this.dtgv = new System.Windows.Forms.DataGridView();
+            this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ContractID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SignedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_XoaDuLieu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
@@ -87,11 +94,13 @@
             // 
             // btn_TaiXuong
             // 
+            this.btn_TaiXuong.Image = ((System.Drawing.Image)(resources.GetObject("btn_TaiXuong.Image")));
             this.btn_TaiXuong.Location = new System.Drawing.Point(685, 7);
             this.btn_TaiXuong.Name = "btn_TaiXuong";
             this.btn_TaiXuong.Size = new System.Drawing.Size(35, 35);
             this.btn_TaiXuong.TabIndex = 7;
             this.btn_TaiXuong.UseVisualStyleBackColor = true;
+            this.btn_TaiXuong.Click += new System.EventHandler(this.btn_TaiXuong_Click);
             // 
             // tb_TimKiem
             // 
@@ -162,83 +171,169 @@
             this.lb_SapXep.TabIndex = 0;
             this.lb_SapXep.Text = "Sắp xếp";
             // 
+            // btn_XuatDuLieu
+            // 
+            this.btn_XuatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_XuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_XuatDuLieu.FlatAppearance.BorderSize = 0;
+            this.btn_XuatDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_XuatDuLieu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatDuLieu.Location = new System.Drawing.Point(25, 525);
+            this.btn_XuatDuLieu.Name = "btn_XuatDuLieu";
+            this.btn_XuatDuLieu.Size = new System.Drawing.Size(150, 30);
+            this.btn_XuatDuLieu.TabIndex = 3;
+            this.btn_XuatDuLieu.Text = "Xuất dữ liệu";
+            this.btn_XuatDuLieu.UseVisualStyleBackColor = false;
+            this.btn_XuatDuLieu.Click += new System.EventHandler(this.btn_XuatDuLieu_Click);
+            // 
             // dtgv
             // 
             this.dtgv.AllowUserToAddRows = false;
             this.dtgv.AllowUserToDeleteRows = false;
+            this.dtgv.AllowUserToResizeColumns = false;
             this.dtgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle61.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;
             this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.dtgv.BackgroundColor = System.Drawing.Color.White;
             this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle62.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Inter Italic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle63.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle63.NullValue = "0";
-            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle63;
-            this.dtgv.Enabled = false;
-            this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IsChecked,
+            this.ContractID,
+            this.BrandName,
+            this.SignedDate,
+            this.Duration,
+            this.Content,
+            this.Edit});
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.NullValue = null;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dtgv.EnableHeadersVisualStyles = false;
+            this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.dtgv.Location = new System.Drawing.Point(25, 125);
-            this.dtgv.MultiSelect = false;
             this.dtgv.Name = "dtgv";
-            this.dtgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Inter", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle64;
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle65.Font = new System.Drawing.Font("Inter", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle65;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtgv.ShowCellErrors = false;
-            this.dtgv.ShowCellToolTips = false;
-            this.dtgv.ShowEditingIcon = false;
-            this.dtgv.ShowRowErrors = false;
-            this.dtgv.Size = new System.Drawing.Size(750, 425);
-            this.dtgv.TabIndex = 2;
-            this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dtgv.Size = new System.Drawing.Size(750, 375);
+            this.dtgv.TabIndex = 4;
+            this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // ThongTinHopDong
+            // IsChecked
+            // 
+            this.IsChecked.DataPropertyName = "isChecked";
+            this.IsChecked.FillWeight = 80.54395F;
+            this.IsChecked.HeaderText = "";
+            this.IsChecked.MinimumWidth = 6;
+            this.IsChecked.Name = "IsChecked";
+            this.IsChecked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IsChecked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.IsChecked.Width = 50;
+            // 
+            // ContractID
+            // 
+            this.ContractID.DataPropertyName = "contractID";
+            this.ContractID.FillWeight = 76.14214F;
+            this.ContractID.HeaderText = "ID";
+            this.ContractID.MinimumWidth = 6;
+            this.ContractID.Name = "ContractID";
+            this.ContractID.ReadOnly = true;
+            this.ContractID.Width = 50;
+            // 
+            // BrandName
+            // 
+            this.BrandName.DataPropertyName = "brandName";
+            this.BrandName.FillWeight = 110.8285F;
+            this.BrandName.HeaderText = "Thương hiệu";
+            this.BrandName.MinimumWidth = 6;
+            this.BrandName.Name = "BrandName";
+            this.BrandName.ReadOnly = true;
+            this.BrandName.Width = 150;
+            // 
+            // SignedDate
+            // 
+            this.SignedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SignedDate.DataPropertyName = "signedDate";
+            this.SignedDate.FillWeight = 110.8285F;
+            this.SignedDate.HeaderText = "Ngày ký";
+            this.SignedDate.MinimumWidth = 6;
+            this.SignedDate.Name = "SignedDate";
+            this.SignedDate.ReadOnly = true;
+            this.SignedDate.Width = 89;
+            // 
+            // Duration
+            // 
+            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Duration.DataPropertyName = "duration";
+            this.Duration.FillWeight = 110.8285F;
+            this.Duration.HeaderText = "Ngày hết hạn";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
+            this.Duration.Width = 92;
+            // 
+            // Content
+            // 
+            this.Content.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Content.DataPropertyName = "content";
+            this.Content.FillWeight = 110.8285F;
+            this.Content.HeaderText = "Nội dung";
+            this.Content.MinimumWidth = 6;
+            this.Content.Name = "Content";
+            this.Content.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.Width = 50;
+            // 
+            // btn_XoaDuLieu
+            // 
+            this.btn_XoaDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_XoaDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_XoaDuLieu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_XoaDuLieu.FlatAppearance.BorderSize = 0;
+            this.btn_XoaDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_XoaDuLieu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaDuLieu.Location = new System.Drawing.Point(200, 525);
+            this.btn_XoaDuLieu.Name = "btn_XoaDuLieu";
+            this.btn_XoaDuLieu.Size = new System.Drawing.Size(150, 30);
+            this.btn_XoaDuLieu.TabIndex = 5;
+            this.btn_XoaDuLieu.Text = "Xóa dữ liệu";
+            this.btn_XoaDuLieu.UseVisualStyleBackColor = false;
+            this.btn_XoaDuLieu.Click += new System.EventHandler(this.btn_XoaDuLieu_Click);
+            // 
+            // DanhSachHopDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.Controls.Add(this.btn_XoaDuLieu);
             this.Controls.Add(this.dtgv);
+            this.Controls.Add(this.btn_XuatDuLieu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ThongTinHopDong";
+            this.Name = "DanhSachHopDong";
             this.Size = new System.Drawing.Size(798, 577);
+            this.Load += new System.EventHandler(this.DanhSachHopDong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -259,6 +354,15 @@
         private System.Windows.Forms.Label lb_TaiXuong;
         private System.Windows.Forms.Label lb_TimKiem;
         private System.Windows.Forms.Label lb_SapXep;
+        private System.Windows.Forms.Button btn_XuatDuLieu;
         private System.Windows.Forms.DataGridView dtgv;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContractID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SignedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Content;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.Button btn_XoaDuLieu;
     }
 }
