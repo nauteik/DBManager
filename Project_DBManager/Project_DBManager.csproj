@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBManagerDSThongTInUuDai.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,5 @@
 ﻿using Project_DBManager.DAO;
+using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,47 +15,24 @@ namespace Project_DBManager
     public partial class ThongTinUuDai : UserControl
     {
         private DataTable table;
-        private string query;
         private List<OfferInfo> OfferInfoList = new List<OfferInfo>();
 
         public ThongTinUuDai()
         {
             InitializeComponent();
-            loadData();
+            loadOffer();
         }
 
-        internal class OfferInfo
-        {
-            public bool isChecked { get; set; }
-            public string Brand_Name { get; set; }
-            public string Upload_Date { get; set; }
-            public string LastChange_Date { get; set; }
-            public string Content { get; set; }
-            public string Status { get; set; }
-            public string Post_ID { get; set; }
-
-            public OfferInfo(bool isChecked, string Brand_Name, string Upload_Date, string LastChange_Date, string Content, string Status)
-            {
-                this.isChecked = isChecked;
-                this.Brand_Name = Brand_Name;
-                this.Upload_Date = Upload_Date;
-                this.LastChange_Date = LastChange_Date;
-                this.Content = Content;
-                this.Status = Status;
-            }
-        }
+        
 
 
 
-        private void loadData()
+        private void loadOffer()
         {
             string query = "SELECT * FROM dbo.GET_INFORMATIVE_OFFER_LIST()";
-            DataTable table = DataProvider.Instance.ExecuteQuery(query);
-
-            foreach (DataRow row in table.Rows)
+            foreach (DataRow row in DataProvider.Instance.ExecuteQuery(query).Rows)
             {
-                OfferInfo OfferInfo = new OfferInfo(false, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
-                OfferInfoList.Add(OfferInfo);
+                OfferInfoList.Add(new OfferInfo(row));
             }
             dtgv.DataSource = OfferInfoList;
         }
@@ -65,18 +43,6 @@ namespace Project_DBManager
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.gET_INFORMATIVE_OFFER_LISTTableAdapter1.FillBy(this.dBManagerDataSet.GET_INFORMATIVE_OFFER_LIST);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -220,7 +186,7 @@ namespace Project_DBManager
                 List<string> postIDList = new List<string>();
                 List<OfferInfo> tempList = new List<OfferInfo>();
                 dtgv.DataSource = tempList;
-                query = "DELETE FROM Post WHERE Post_ID = ";
+                string query = "DELETE FROM Post WHERE Post_ID = ";
                 foreach (OfferInfo ci in OfferInfoList)
                 {
                     if (ci.isChecked)
@@ -262,6 +228,11 @@ namespace Project_DBManager
                 }
                 tbTimKiem.Text = "";
             }
+        }
+
+        private void buttonXuatDuLieu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

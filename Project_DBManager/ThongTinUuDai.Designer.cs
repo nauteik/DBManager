@@ -391,6 +391,7 @@
             this.buttonXuatDuLieu.TabIndex = 7;
             this.buttonXuatDuLieu.Text = "Xuất dữ liệu";
             this.buttonXuatDuLieu.UseVisualStyleBackColor = false;
+            this.buttonXuatDuLieu.Click += new System.EventHandler(this.buttonXuatDuLieu_Click);
             // 
             // btXoaDuLieu
             // 
