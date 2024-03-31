@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
-    public partial class TaoBaiDang : UserControl
+    public partial class ucTaoBaiDang : UserControl
     {
-        public TaoBaiDang()
+        public ucTaoBaiDang()
         {
             InitializeComponent();
         }

@@ -47,17 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\ContractInfo.cs" />
-    <Compile Include="TaoBaiDang.cs">
+    <Compile Include="ucTaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TaoBaiDang.Designer.cs">
-      <DependentUpon>TaoBaiDang.cs</DependentUpon>
+    <Compile Include="ucTaoBaiDang.Designer.cs">
+      <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanhSachHopDong.cs">
+    <Compile Include="ucDanhSachHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DanhSachHopDong.Designer.cs">
-      <DependentUpon>DanhSachHopDong.cs</DependentUpon>
+    <Compile Include="ucDanhSachHopDong.Designer.cs">
+      <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -88,6 +88,9 @@
     <Compile Include="ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucDanhSachHopDong.resx">
+      <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

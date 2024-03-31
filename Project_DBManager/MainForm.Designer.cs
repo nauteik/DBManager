@@ -64,8 +64,8 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
-            this.DanhSachHopDong1 = new Project_DBManager.DanhSachHopDong();
-            this.taoBaiDang1 = new Project_DBManager.TaoBaiDang();
+            this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
+            this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
@@ -595,8 +595,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Controls.Add(this.DanhSachHopDong1);
-            this.pnBody.Controls.Add(this.taoBaiDang1);
+            this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
+            this.pnBody.Controls.Add(this.ucTaoBaiDang1);
             this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
             this.pnBody.Location = new System.Drawing.Point(145, 58);
             this.pnBody.Name = "pnBody";
@@ -605,23 +605,23 @@
             // 
             // DanhSachHopDong1
             // 
-            this.DanhSachHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ucDanhSachHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DanhSachHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.DanhSachHopDong1.Location = new System.Drawing.Point(0, 0);
-            this.DanhSachHopDong1.Name = "DanhSachHopDong1";
-            this.DanhSachHopDong1.Size = new System.Drawing.Size(798, 577);
-            this.DanhSachHopDong1.TabIndex = 0;
+            this.ucDanhSachHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucDanhSachHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucDanhSachHopDong1.Name = "ucDanhSachHopDong1";
+            this.ucDanhSachHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.ucDanhSachHopDong1.TabIndex = 0;
             // 
-            // taoBaiDang1
+            // ucTaoBaiDang1
             // 
-            this.taoBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.taoBaiDang1.Location = new System.Drawing.Point(0, 0);
-            this.taoBaiDang1.Name = "taoBaiDang1";
-            this.taoBaiDang1.Size = new System.Drawing.Size(798, 577);
-            this.taoBaiDang1.TabIndex = 1;
-            this.taoBaiDang1.Load += new System.EventHandler(this.taoBaiDang1_Load);
+            this.ucTaoBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucTaoBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucTaoBaiDang1.Name = "ucTaoBaiDang1";
+            this.ucTaoBaiDang1.Size = new System.Drawing.Size(798, 577);
+            this.ucTaoBaiDang1.TabIndex = 1;
+            this.ucTaoBaiDang1.Load += new System.EventHandler(this.taoBaiDang1_Load);
             // 
             // ucThongTinCaNhan1
             // 
@@ -697,8 +697,8 @@
         private System.Windows.Forms.Button btnXemThongBao;
         private System.Windows.Forms.Button btnThongTinCaNhan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
-        private DanhSachHopDong DanhSachHopDong1;
-        private TaoBaiDang taoBaiDang1;
+        private ucDanhSachHopDong ucDanhSachHopDong1;
+        private ucTaoBaiDang ucTaoBaiDang1;
         private ucThongTinCaNhan ucThongTinCaNhan1;
         private System.Windows.Forms.Button btnDangXuat;
     }

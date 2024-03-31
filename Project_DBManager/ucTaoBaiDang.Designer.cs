@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class TaoBaiDang
+    partial class ucTaoBaiDang
     {
         /// <summary> 
         /// Required designer variable.

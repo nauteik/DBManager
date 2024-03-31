@@ -23,8 +23,8 @@ namespace Project_DBManager
         private void collapseUserControl()
         {
             ucThongTinCaNhan1.Hide();
-            DanhSachHopDong1.Hide();
-            taoBaiDang1.Hide();
+            ucDanhSachHopDong1.Hide();
+            ucTaoBaiDang1.Hide();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -122,8 +122,8 @@ namespace Project_DBManager
 
         private void btnThongTinHopDong_Click(object sender, EventArgs e)
         {
-            DanhSachHopDong1.Show();
-            DanhSachHopDong1.BringToFront();
+            collapseUserControl();
+            ucDanhSachHopDong1.Show();
         }
 
         private void thongTinHopDong2_Load(object sender, EventArgs e)
@@ -148,13 +148,14 @@ namespace Project_DBManager
 
         private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
         {
-            taoBaiDang1.Show();
-            taoBaiDang1.BringToFront();
+            collapseUserControl();
+            ucTaoBaiDang1.Show();
         }
 
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
             
+            collapseUserControl();
             changeColorChooseButton(this.btnThongTinCaNhan);
             ucThongTinCaNhan1.loadAccount(account.Username);
             ucThongTinCaNhan1.Show();

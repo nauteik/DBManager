@@ -14,13 +14,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_DBManager
 {
-    public partial class DanhSachHopDong : UserControl
+    public partial class ucDanhSachHopDong : UserControl
     {
         private DataTable table;
         private string query;
         private List<ContractInfo> contractInfoList = new List<ContractInfo>();
 
-        public DanhSachHopDong()
+        public ucDanhSachHopDong()
         {
             InitializeComponent();
             loadData();
