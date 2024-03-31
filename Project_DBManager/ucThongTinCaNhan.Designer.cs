@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class ucThongTinTaiKhoan
+    partial class ucThongTinCaNhan
     {
         /// <summary> 
         /// Required designer variable.

@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
-    public partial class ucThongTinTaiKhoan : UserControl
+    public partial class ucThongTinCaNhan : UserControl
     {
-        public ucThongTinTaiKhoan(string username)
+        public ucThongTinCaNhan()
         {
             InitializeComponent();
-            loadAccount(username);
         }
-        private void loadAccount(string username)
+        public void loadAccount(string username)
         {
             DataTable data = AccountDAO.Instance.getAccountInfoByUsername(username);
             DataRow row = data.Rows[0];

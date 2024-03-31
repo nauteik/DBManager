@@ -1,5 +1,6 @@
 ﻿using Project_DBManager.DTO;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -9,6 +10,10 @@ namespace Project_DBManager
         private Account account;
         public MainForm(Account loginAccount)
         {
+            if(loginAccount == null)
+            {
+                return;
+            }
             this.account = loginAccount;
             InitializeComponent();
             collapseUserControl();
@@ -21,7 +26,7 @@ namespace Project_DBManager
         }
         private void collapseUserControl()
         {
-            ucThongTinTaiKhoan1.Hide();
+            ucThongTinCaNhan1.Hide();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -47,6 +52,7 @@ namespace Project_DBManager
         }
         private void btnQuanLyThongTin_Click(object sender, EventArgs e)
         {
+
             if (pnQuanLyThongTin.Size == pnQuanLyTaiKhoan.MaximumSize)
             {
                 pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
@@ -54,6 +60,7 @@ namespace Project_DBManager
                 return;
             }
             collapseMenu();
+            
             pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
             btnQuanLyThongTin.Image = Properties.Resources.arrow_down;
         }
@@ -115,10 +122,16 @@ namespace Project_DBManager
             
         }
 
-        private void btnThongTinTaiKhoan_Click(object sender, EventArgs e)
+        private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            ucThongTinTaiKhoan1.Show();
+            
+            changeColorChooseButton(this.btnThongTinCaNhan);
+            ucThongTinCaNhan1.loadAccount(account.Username);
+            ucThongTinCaNhan1.Show();
         }
-
+        private void changeColorChooseButton(Button btn)
+        {
+            btn.BackColor = ColorTranslator.FromHtml("#868ba6");
+        }
     }
 }

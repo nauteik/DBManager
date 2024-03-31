@@ -69,11 +69,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucThongTinTaiKhoan.cs">
+    <Compile Include="ucThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThongTinTaiKhoan.Designer.cs">
-      <DependentUpon>ucThongTinTaiKhoan.cs</DependentUpon>
+    <Compile Include="ucThongTinCaNhan.Designer.cs">
+      <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -100,8 +100,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucThongTinTaiKhoan.resx">
-      <DependentUpon>ucThongTinTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="ucThongTinCaNhan.resx">
+      <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

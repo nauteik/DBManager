@@ -30,8 +30,9 @@
         {
             this.pnSidemenu = new System.Windows.Forms.Panel();
             this.pnQuanLyTaiKhoan = new System.Windows.Forms.Panel();
-            this.btnChinhSuaTaiKhoan = new System.Windows.Forms.Button();
-            this.btnThongTinTaiKhoan = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
+            this.btnXemThongBao = new System.Windows.Forms.Button();
+            this.btnThongTinCaNhan = new System.Windows.Forms.Button();
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.pnQuanLyHopDong = new System.Windows.Forms.Panel();
             this.btnLichSu = new System.Windows.Forms.Button();
@@ -41,11 +42,11 @@
             this.btnThongTinHopDong = new System.Windows.Forms.Button();
             this.btnQuanLyHopDong = new System.Windows.Forms.Button();
             this.pnQuanLyNhanVien = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnVoHieuHoaKhoiPhuc = new System.Windows.Forms.Button();
+            this.btnPhanCongCongViec = new System.Windows.Forms.Button();
+            this.btnCapLaiMatKhau = new System.Windows.Forms.Button();
+            this.btnTaiKhoanPhanQuyen = new System.Windows.Forms.Button();
+            this.btnDanhSachNhanVien = new System.Windows.Forms.Button();
             this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
             this.pnTaoBaiDang = new System.Windows.Forms.Panel();
             this.btnLocBaiDang = new System.Windows.Forms.Button();
@@ -63,7 +64,7 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
-            this.ucThongTinTaiKhoan1 = new Project_DBManager.ucThongTinTaiKhoan(account.Username);
+            this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -97,45 +98,60 @@
             // 
             // pnQuanLyTaiKhoan
             // 
-            this.pnQuanLyTaiKhoan.Controls.Add(this.btnChinhSuaTaiKhoan);
-            this.pnQuanLyTaiKhoan.Controls.Add(this.btnThongTinTaiKhoan);
+            this.pnQuanLyTaiKhoan.Controls.Add(this.btnDangXuat);
+            this.pnQuanLyTaiKhoan.Controls.Add(this.btnXemThongBao);
+            this.pnQuanLyTaiKhoan.Controls.Add(this.btnThongTinCaNhan);
             this.pnQuanLyTaiKhoan.Controls.Add(this.btnQuanLyTaiKhoan);
             this.pnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 195);
-            this.pnQuanLyTaiKhoan.MaximumSize = new System.Drawing.Size(146, 114);
+            this.pnQuanLyTaiKhoan.MaximumSize = new System.Drawing.Size(146, 152);
             this.pnQuanLyTaiKhoan.MinimumSize = new System.Drawing.Size(146, 38);
             this.pnQuanLyTaiKhoan.Name = "pnQuanLyTaiKhoan";
             this.pnQuanLyTaiKhoan.Size = new System.Drawing.Size(146, 38);
             this.pnQuanLyTaiKhoan.TabIndex = 7;
             // 
-            // btnChinhSuaTaiKhoan
+            // btnDangXuat
             // 
-            this.btnChinhSuaTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnChinhSuaTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChinhSuaTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnChinhSuaTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChinhSuaTaiKhoan.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChinhSuaTaiKhoan.Location = new System.Drawing.Point(0, 76);
-            this.btnChinhSuaTaiKhoan.Name = "btnChinhSuaTaiKhoan";
-            this.btnChinhSuaTaiKhoan.Size = new System.Drawing.Size(146, 38);
-            this.btnChinhSuaTaiKhoan.TabIndex = 2;
-            this.btnChinhSuaTaiKhoan.Text = "Chỉnh sửa tài khoản";
-            this.btnChinhSuaTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 114);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(146, 38);
+            this.btnDangXuat.TabIndex = 3;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
             // 
-            // btnThongTinTaiKhoan
+            // btnXemThongBao
             // 
-            this.btnThongTinTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnThongTinTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongTinTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnThongTinTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongTinTaiKhoan.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongTinTaiKhoan.Location = new System.Drawing.Point(0, 38);
-            this.btnThongTinTaiKhoan.Name = "btnThongTinTaiKhoan";
-            this.btnThongTinTaiKhoan.Size = new System.Drawing.Size(146, 38);
-            this.btnThongTinTaiKhoan.TabIndex = 1;
-            this.btnThongTinTaiKhoan.Text = "Thông tin tài khoản";
-            this.btnThongTinTaiKhoan.UseVisualStyleBackColor = false;
-            this.btnThongTinTaiKhoan.Click += new System.EventHandler(this.btnThongTinTaiKhoan_Click);
+            this.btnXemThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnXemThongBao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnXemThongBao.FlatAppearance.BorderSize = 0;
+            this.btnXemThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemThongBao.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemThongBao.Location = new System.Drawing.Point(0, 76);
+            this.btnXemThongBao.Name = "btnXemThongBao";
+            this.btnXemThongBao.Size = new System.Drawing.Size(146, 38);
+            this.btnXemThongBao.TabIndex = 2;
+            this.btnXemThongBao.Text = "Xem thông báo";
+            this.btnXemThongBao.UseVisualStyleBackColor = false;
+            // 
+            // btnThongTinCaNhan
+            // 
+            this.btnThongTinCaNhan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnThongTinCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThongTinCaNhan.FlatAppearance.BorderSize = 0;
+            this.btnThongTinCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongTinCaNhan.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongTinCaNhan.Location = new System.Drawing.Point(0, 38);
+            this.btnThongTinCaNhan.Name = "btnThongTinCaNhan";
+            this.btnThongTinCaNhan.Size = new System.Drawing.Size(146, 38);
+            this.btnThongTinCaNhan.TabIndex = 1;
+            this.btnThongTinCaNhan.Text = "Thông tin cá nhân";
+            this.btnThongTinCaNhan.UseVisualStyleBackColor = false;
+            this.btnThongTinCaNhan.Click += new System.EventHandler(this.btnThongTinCaNhan_Click);
             // 
             // btnQuanLyTaiKhoan
             // 
@@ -261,11 +277,11 @@
             // 
             // pnQuanLyNhanVien
             // 
-            this.pnQuanLyNhanVien.Controls.Add(this.button1);
-            this.pnQuanLyNhanVien.Controls.Add(this.button2);
-            this.pnQuanLyNhanVien.Controls.Add(this.button3);
-            this.pnQuanLyNhanVien.Controls.Add(this.button4);
-            this.pnQuanLyNhanVien.Controls.Add(this.button5);
+            this.pnQuanLyNhanVien.Controls.Add(this.btnVoHieuHoaKhoiPhuc);
+            this.pnQuanLyNhanVien.Controls.Add(this.btnPhanCongCongViec);
+            this.pnQuanLyNhanVien.Controls.Add(this.btnCapLaiMatKhau);
+            this.pnQuanLyNhanVien.Controls.Add(this.btnTaiKhoanPhanQuyen);
+            this.pnQuanLyNhanVien.Controls.Add(this.btnDanhSachNhanVien);
             this.pnQuanLyNhanVien.Controls.Add(this.btnQuanLyNhanVien);
             this.pnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnQuanLyNhanVien.Location = new System.Drawing.Point(0, 119);
@@ -275,75 +291,75 @@
             this.pnQuanLyNhanVien.Size = new System.Drawing.Size(146, 38);
             this.pnQuanLyNhanVien.TabIndex = 6;
             // 
-            // button1
+            // btnVoHieuHoaKhoiPhuc
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 38);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Lịch sử";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVoHieuHoaKhoiPhuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnVoHieuHoaKhoiPhuc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVoHieuHoaKhoiPhuc.FlatAppearance.BorderSize = 0;
+            this.btnVoHieuHoaKhoiPhuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoHieuHoaKhoiPhuc.Font = new System.Drawing.Font("Inter Medium", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoHieuHoaKhoiPhuc.Location = new System.Drawing.Point(0, 190);
+            this.btnVoHieuHoaKhoiPhuc.Name = "btnVoHieuHoaKhoiPhuc";
+            this.btnVoHieuHoaKhoiPhuc.Size = new System.Drawing.Size(146, 38);
+            this.btnVoHieuHoaKhoiPhuc.TabIndex = 5;
+            this.btnVoHieuHoaKhoiPhuc.Text = "Vô hiệu hoá và Khôi phục";
+            this.btnVoHieuHoaKhoiPhuc.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnPhanCongCongViec
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Ưu đãi";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPhanCongCongViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnPhanCongCongViec.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhanCongCongViec.FlatAppearance.BorderSize = 0;
+            this.btnPhanCongCongViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhanCongCongViec.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhanCongCongViec.Location = new System.Drawing.Point(0, 152);
+            this.btnPhanCongCongViec.Name = "btnPhanCongCongViec";
+            this.btnPhanCongCongViec.Size = new System.Drawing.Size(146, 38);
+            this.btnPhanCongCongViec.TabIndex = 4;
+            this.btnPhanCongCongViec.Text = "Phân công công việc";
+            this.btnPhanCongCongViec.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCapLaiMatKhau
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 38);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Ký kết hợp đồng";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCapLaiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnCapLaiMatKhau.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCapLaiMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnCapLaiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapLaiMatKhau.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapLaiMatKhau.Location = new System.Drawing.Point(0, 114);
+            this.btnCapLaiMatKhau.Name = "btnCapLaiMatKhau";
+            this.btnCapLaiMatKhau.Size = new System.Drawing.Size(146, 38);
+            this.btnCapLaiMatKhau.TabIndex = 3;
+            this.btnCapLaiMatKhau.Text = "Cấp lại mật khẩu";
+            this.btnCapLaiMatKhau.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnTaiKhoanPhanQuyen
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 76);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 38);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Gia hạn hợp đồng";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnTaiKhoanPhanQuyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnTaiKhoanPhanQuyen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaiKhoanPhanQuyen.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoanPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoanPhanQuyen.Font = new System.Drawing.Font("Inter Medium", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiKhoanPhanQuyen.Location = new System.Drawing.Point(0, 76);
+            this.btnTaiKhoanPhanQuyen.Name = "btnTaiKhoanPhanQuyen";
+            this.btnTaiKhoanPhanQuyen.Size = new System.Drawing.Size(146, 38);
+            this.btnTaiKhoanPhanQuyen.TabIndex = 2;
+            this.btnTaiKhoanPhanQuyen.Text = "Tài khoản và Phân quyền";
+            this.btnTaiKhoanPhanQuyen.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnDanhSachNhanVien
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 38);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(146, 38);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Thông tin hợp đồng";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnDanhSachNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnDanhSachNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDanhSachNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnDanhSachNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhSachNhanVien.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhSachNhanVien.Location = new System.Drawing.Point(0, 38);
+            this.btnDanhSachNhanVien.Name = "btnDanhSachNhanVien";
+            this.btnDanhSachNhanVien.Size = new System.Drawing.Size(146, 38);
+            this.btnDanhSachNhanVien.TabIndex = 1;
+            this.btnDanhSachNhanVien.Text = "Danh sách nhân viên";
+            this.btnDanhSachNhanVien.UseVisualStyleBackColor = false;
             // 
             // btnQuanLyNhanVien
             // 
@@ -576,19 +592,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Controls.Add(this.ucThongTinTaiKhoan1);
+            this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
             this.pnBody.Location = new System.Drawing.Point(145, 58);
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
             // 
-            // ucThongTinTaiKhoan1
+            // ucThongTinCaNhan1
             // 
-            this.ucThongTinTaiKhoan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.ucThongTinTaiKhoan1.Location = new System.Drawing.Point(0, 1);
-            this.ucThongTinTaiKhoan1.Name = "ucThongTinTaiKhoan1";
-            this.ucThongTinTaiKhoan1.Size = new System.Drawing.Size(799, 576);
-            this.ucThongTinTaiKhoan1.TabIndex = 0;
+            this.ucThongTinCaNhan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucThongTinCaNhan1.Location = new System.Drawing.Point(0, 0);
+            this.ucThongTinCaNhan1.Name = "ucThongTinCaNhan1";
+            this.ucThongTinCaNhan1.Size = new System.Drawing.Size(799, 576);
+            this.ucThongTinCaNhan1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -644,16 +660,17 @@
         private System.Windows.Forms.Button btnQuanLyHopDong;
         private System.Windows.Forms.Button btnLichSu;
         private System.Windows.Forms.Panel pnQuanLyNhanVien;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnVoHieuHoaKhoiPhuc;
+        private System.Windows.Forms.Button btnPhanCongCongViec;
+        private System.Windows.Forms.Button btnCapLaiMatKhau;
+        private System.Windows.Forms.Button btnTaiKhoanPhanQuyen;
+        private System.Windows.Forms.Button btnDanhSachNhanVien;
         private System.Windows.Forms.Button btnQuanLyNhanVien;
         private System.Windows.Forms.Panel pnQuanLyTaiKhoan;
-        private System.Windows.Forms.Button btnChinhSuaTaiKhoan;
-        private System.Windows.Forms.Button btnThongTinTaiKhoan;
+        private System.Windows.Forms.Button btnXemThongBao;
+        private System.Windows.Forms.Button btnThongTinCaNhan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
-        private ucThongTinTaiKhoan ucThongTinTaiKhoan1;
+        private ucThongTinCaNhan ucThongTinCaNhan1;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }
