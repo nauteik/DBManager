@@ -64,6 +64,8 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.DanhSachHopDong1 = new Project_DBManager.DanhSachHopDong();
+            this.taoBaiDang1 = new Project_DBManager.TaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
@@ -83,7 +85,6 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnSidemenu.AutoScroll = true;
             this.pnSidemenu.AutoScrollMinSize = new System.Drawing.Size(10, 10);
-            this.pnSidemenu.AutoSize = true;
             this.pnSidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
             this.pnSidemenu.Controls.Add(this.pnQuanLyTaiKhoan);
             this.pnSidemenu.Controls.Add(this.pnQuanLyHopDong);
@@ -256,6 +257,7 @@
             this.btnThongTinHopDong.TabIndex = 1;
             this.btnThongTinHopDong.Text = "Thông tin hợp đồng";
             this.btnThongTinHopDong.UseVisualStyleBackColor = false;
+            this.btnThongTinHopDong.Click += new System.EventHandler(this.btnThongTinHopDong_Click);
             // 
             // btnQuanLyHopDong
             // 
@@ -434,6 +436,7 @@
             this.btnTaoBaiDangMoi.TabIndex = 1;
             this.btnTaoBaiDangMoi.Text = "Tạo bài đăng mới";
             this.btnTaoBaiDangMoi.UseVisualStyleBackColor = false;
+            this.btnTaoBaiDangMoi.Click += new System.EventHandler(this.btnTaoBaiDangMoi_Click);
             // 
             // btnTaoBaiDang
             // 
@@ -592,11 +595,33 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.DanhSachHopDong1);
+            this.pnBody.Controls.Add(this.taoBaiDang1);
             this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
             this.pnBody.Location = new System.Drawing.Point(145, 58);
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
+            // 
+            // DanhSachHopDong1
+            // 
+            this.DanhSachHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DanhSachHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.DanhSachHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.DanhSachHopDong1.Name = "DanhSachHopDong1";
+            this.DanhSachHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.DanhSachHopDong1.TabIndex = 0;
+            // 
+            // taoBaiDang1
+            // 
+            this.taoBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.taoBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.taoBaiDang1.Name = "taoBaiDang1";
+            this.taoBaiDang1.Size = new System.Drawing.Size(798, 577);
+            this.taoBaiDang1.TabIndex = 1;
+            this.taoBaiDang1.Load += new System.EventHandler(this.taoBaiDang1_Load);
             // 
             // ucThongTinCaNhan1
             // 
@@ -632,7 +657,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).EndInit();
             this.pnBody.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -673,6 +697,8 @@
         private System.Windows.Forms.Button btnXemThongBao;
         private System.Windows.Forms.Button btnThongTinCaNhan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
+        private DanhSachHopDong DanhSachHopDong1;
+        private TaoBaiDang taoBaiDang1;
         private ucThongTinCaNhan ucThongTinCaNhan1;
         private System.Windows.Forms.Button btnDangXuat;
     }

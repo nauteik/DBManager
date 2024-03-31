@@ -59,8 +59,6 @@ namespace Project_DBManager
                 this.Hide();
                 mainForm.ShowDialog();
                 this.Close();
-                
-                
             }
             else
             {

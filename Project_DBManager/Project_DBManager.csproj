@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ContractInfo.cs" />
+    <Compile Include="TaoBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaoBaiDang.Designer.cs">
+      <DependentUpon>TaoBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhSachHopDong.Designer.cs">
+      <DependentUpon>DanhSachHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -76,12 +89,6 @@
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.vi-VN.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.vi.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoginAuth.resx">
