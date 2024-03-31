@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\ContractInfo.cs" />
+    <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="UserControl\ucTaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,11 +93,11 @@
     <EmbeddedResource Include="UserControl\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="ThongTinUuDai.cs">
+    <Compile Include="UserControl\ucThongTinUuDai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ThongTinUuDai.Designer.cs">
-      <DependentUpon>ThongTinUuDai.cs</DependentUpon>
+    <Compile Include="UserControl\ucThongTinUuDai.Designer.cs">
+      <DependentUpon>ucThongTinUuDai.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -120,8 +121,8 @@
     <EmbeddedResource Include="UserControl\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinUuDai.resx">
-      <DependentUpon>ThongTinUuDai.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl\ucThongTinUuDai.resx">
+      <DependentUpon>ucThongTinUuDai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Project_DBManager.DAO.DataProvider.datasource" />
     <None Include="Properties\Settings.settings">
@@ -199,9 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\downl button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

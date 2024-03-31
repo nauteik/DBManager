@@ -12,12 +12,11 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
-    public partial class ThongTinUuDai : UserControl
+    public partial class ucThongTinUuDai : UserControl
     {
-        private DataTable table;
         private List<OfferInfo> OfferInfoList = new List<OfferInfo>();
 
-        public ThongTinUuDai()
+        public ucThongTinUuDai()
         {
             InitializeComponent();
             loadOffer();

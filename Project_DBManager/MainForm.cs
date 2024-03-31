@@ -22,7 +22,7 @@ namespace Project_DBManager
         }
         private void collapseUserControl()
         {
-            thongTinUuDai1.Hide();
+            ucthongTinUuDai1.Hide();
             ucThongTinCaNhan1.Hide();
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
@@ -165,16 +165,10 @@ namespace Project_DBManager
         {
             btn.BackColor = ColorTranslator.FromHtml("#868ba6");
         }
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
         private void btnTruyCapTaiNguyen_Click(object sender, EventArgs e)
         {
             collapseUserControl();
-            this.thongTinUuDai1.Show();
+            this.ucthongTinUuDai1.Show();
         }
     }
 }

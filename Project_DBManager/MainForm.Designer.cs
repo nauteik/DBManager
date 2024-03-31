@@ -69,7 +69,7 @@ namespace Project_DBManager
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
-            this.thongTinUuDai1 = new Project_DBManager.ThongTinUuDai();
+            this.ucthongTinUuDai1 = new Project_DBManager.ucThongTinUuDai();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -602,6 +602,7 @@ namespace Project_DBManager
             this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
             this.pnBody.Controls.Add(this.ucTaoBaiDang1);
             this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
+            this.pnBody.Controls.Add(this.ucthongTinUuDai1);
             this.pnBody.Location = new System.Drawing.Point(145, 58);
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
@@ -638,13 +639,13 @@ namespace Project_DBManager
             this.ucThongTinCaNhan1.Size = new System.Drawing.Size(799, 576);
             this.ucThongTinCaNhan1.TabIndex = 0;
             // 
-            // thongTinUuDai1
+            // ucthongTinUuDai1
             // 
-            this.thongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.thongTinUuDai1.Location = new System.Drawing.Point(-1, 0);
-            this.thongTinUuDai1.Name = "thongTinUuDai1";
-            this.thongTinUuDai1.Size = new System.Drawing.Size(799, 576);
-            this.thongTinUuDai1.TabIndex = 0;
+            this.ucthongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucthongTinUuDai1.Location = new System.Drawing.Point(-1, 0);
+            this.ucthongTinUuDai1.Name = "ucthongTinUuDai1";
+            this.ucthongTinUuDai1.Size = new System.Drawing.Size(799, 576);
+            this.ucthongTinUuDai1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -656,7 +657,6 @@ namespace Project_DBManager
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBManager";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnSidemenu.ResumeLayout(false);
             this.pnQuanLyTaiKhoan.ResumeLayout(false);
@@ -718,6 +718,6 @@ namespace Project_DBManager
         private ucTaoBaiDang ucTaoBaiDang1;
         private ucThongTinCaNhan ucThongTinCaNhan1;
         private System.Windows.Forms.Button btnDangXuat;
-        private ThongTinUuDai thongTinUuDai1;
+        private ucThongTinUuDai ucthongTinUuDai1;
     }
 }
