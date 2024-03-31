@@ -49,8 +49,6 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="DBManagerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,8 +59,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBManagerDSThongTInUuDai.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DTO\Account.cs" />
->>>>>>> Stashed changes
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

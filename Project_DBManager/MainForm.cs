@@ -122,8 +122,6 @@ namespace Project_DBManager
                 btnQuanLyTaiKhoan.Image = Properties.Resources.arrow;
             }
         }
-<<<<<<< Updated upstream
-=======
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -134,6 +132,5 @@ namespace Project_DBManager
         {
             this.thongTinUuDai1.Show();
         }
->>>>>>> Stashed changes
     }
 }

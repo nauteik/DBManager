@@ -1,4 +1,6 @@
-﻿namespace Project_DBManager
+﻿using System;
+
+namespace Project_DBManager
 {
     partial class MainForm
     {
@@ -572,22 +574,18 @@
             // pnBody
             // 
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-<<<<<<< Updated upstream
-            this.pnBody.Location = new System.Drawing.Point(146, 58);
-=======
             this.pnBody.Controls.Add(this.thongTinUuDai1);
-            this.pnBody.Location = new System.Drawing.Point(148, 58);
->>>>>>> Stashed changes
+            this.pnBody.Location = new System.Drawing.Point(146, 58);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(796, 575);
+            this.pnBody.Size = new System.Drawing.Size(798, 575);
             this.pnBody.TabIndex = 3;
             // 
             // thongTinUuDai1
             // 
             this.thongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.thongTinUuDai1.Location = new System.Drawing.Point(0, 2);
+            this.thongTinUuDai1.Location = new System.Drawing.Point(-1, 0);
             this.thongTinUuDai1.Name = "thongTinUuDai1";
-            this.thongTinUuDai1.Size = new System.Drawing.Size(796, 575);
+            this.thongTinUuDai1.Size = new System.Drawing.Size(799, 576);
             this.thongTinUuDai1.TabIndex = 0;
             // 
             // MainForm
@@ -614,6 +612,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void BtnTruyCapTaiNguyen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
