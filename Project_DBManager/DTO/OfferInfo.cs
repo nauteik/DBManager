@@ -25,6 +25,7 @@ namespace Project_DBManager.DTO
             this.LastChange_Date = row[2].ToString();
             this.Content = row[3].ToString();
             this.Status = row[4].ToString();
+            this.Post_ID = row[5].ToString();
         }
     }
 }

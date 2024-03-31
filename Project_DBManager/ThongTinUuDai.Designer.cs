@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -48,20 +47,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgv = new System.Windows.Forms.DataGridView();
-            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dBManagerDSThongTInUuDai = new Project_DBManager.DBManagerDSThongTInUuDai();
             this.buttonXuatDuLieu = new System.Windows.Forms.Button();
             this.btXoaDuLieu = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.gET_INFORMATIVE_OFFER_LISTTableAdapter1 = new Project_DBManager.DBManagerDataSetTableAdapters.GET_INFORMATIVE_OFFER_LISTTableAdapter();
-            this.dBManagerDataSet = new Project_DBManager.DBManagerDataSet();
-            this.gETINFORMATIVEOFFERLISTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastChangeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uploadDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.brandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uploadDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastChangeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).BeginInit();
@@ -69,9 +64,6 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBManagerDSThongTInUuDai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBManagerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gETINFORMATIVEOFFERLISTBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDanhSachThongTinUuDai
@@ -279,31 +271,6 @@
             this.dtgv.TabIndex = 0;
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentClick);
             // 
-            // Selected
-            // 
-            this.Selected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Selected.FillWeight = 15F;
-            this.Selected.Frozen = true;
-            this.Selected.HeaderText = "";
-            this.Selected.Name = "Selected";
-            this.Selected.Width = 22;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Edit.FillWeight = 20F;
-            this.Edit.HeaderText = "";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.UseColumnTextForLinkValue = true;
-            // 
-            // dBManagerDSThongTInUuDai
-            // 
-            this.dBManagerDSThongTInUuDai.DataSetName = "DBManagerDSThongTInUuDai";
-            this.dBManagerDSThongTInUuDai.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // buttonXuatDuLieu
             // 
             this.buttonXuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
@@ -338,46 +305,23 @@
             // 
             this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2007|*.xlsx|Excel 2010|*.xlsx|Excel 2013|*.xlsx";
             // 
-            // gET_INFORMATIVE_OFFER_LISTTableAdapter1
+            // Selected
             // 
-            this.gET_INFORMATIVE_OFFER_LISTTableAdapter1.ClearBeforeFill = true;
+            this.Selected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Selected.DataPropertyName = "isChecked";
+            this.Selected.FillWeight = 15F;
+            this.Selected.Frozen = true;
+            this.Selected.HeaderText = "";
+            this.Selected.Name = "Selected";
+            this.Selected.Width = 22;
             // 
-            // dBManagerDataSet
+            // brandNameDataGridViewTextBoxColumn
             // 
-            this.dBManagerDataSet.DataSetName = "DBManagerDataSet";
-            this.dBManagerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gETINFORMATIVEOFFERLISTBindingSource1
-            // 
-            this.gETINFORMATIVEOFFERLISTBindingSource1.DataMember = "GET_INFORMATIVE_OFFER_LIST";
-            this.gETINFORMATIVEOFFERLISTBindingSource1.DataSource = this.dBManagerDataSet;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contentDataGridViewTextBoxColumn
-            // 
-            this.contentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.FillWeight = 70F;
-            this.contentDataGridViewTextBoxColumn.HeaderText = "Chủ đề";
-            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
-            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastChangeDateDataGridViewTextBoxColumn
-            // 
-            this.lastChangeDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastChangeDateDataGridViewTextBoxColumn.DataPropertyName = "LastChange_Date";
-            this.lastChangeDateDataGridViewTextBoxColumn.FillWeight = 110F;
-            this.lastChangeDateDataGridViewTextBoxColumn.HeaderText = "Thời gian cập nhật";
-            this.lastChangeDateDataGridViewTextBoxColumn.Name = "lastChangeDateDataGridViewTextBoxColumn";
-            this.lastChangeDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brandNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.brandNameDataGridViewTextBoxColumn.DataPropertyName = "Brand_Name";
+            this.brandNameDataGridViewTextBoxColumn.HeaderText = "Tên thương hiệu";
+            this.brandNameDataGridViewTextBoxColumn.Name = "brandNameDataGridViewTextBoxColumn";
+            this.brandNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uploadDateDataGridViewTextBoxColumn
             // 
@@ -388,13 +332,43 @@
             this.uploadDateDataGridViewTextBoxColumn.Name = "uploadDateDataGridViewTextBoxColumn";
             this.uploadDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // brandNameDataGridViewTextBoxColumn
+            // lastChangeDateDataGridViewTextBoxColumn
             // 
-            this.brandNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.brandNameDataGridViewTextBoxColumn.DataPropertyName = "Brand_Name";
-            this.brandNameDataGridViewTextBoxColumn.HeaderText = "Tên thương hiệu";
-            this.brandNameDataGridViewTextBoxColumn.Name = "brandNameDataGridViewTextBoxColumn";
-            this.brandNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastChangeDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastChangeDateDataGridViewTextBoxColumn.DataPropertyName = "LastChange_Date";
+            this.lastChangeDateDataGridViewTextBoxColumn.FillWeight = 110F;
+            this.lastChangeDateDataGridViewTextBoxColumn.HeaderText = "Thời gian cập nhật";
+            this.lastChangeDateDataGridViewTextBoxColumn.Name = "lastChangeDateDataGridViewTextBoxColumn";
+            this.lastChangeDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contentDataGridViewTextBoxColumn
+            // 
+            this.contentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn.FillWeight = 70F;
+            this.contentDataGridViewTextBoxColumn.HeaderText = "Chủ đề";
+            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.FillWeight = 70F;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Edit.FillWeight = 20F;
+            this.Edit.HeaderText = "";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.UseColumnTextForLinkValue = true;
             // 
             // ThongTinUuDai
             // 
@@ -420,9 +394,6 @@
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBManagerDSThongTInUuDai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dBManagerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gETINFORMATIVEOFFERLISTBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,20 +415,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dtgv;
-        private DBManagerDSThongTInUuDai dBManagerDSThongTInUuDai;
         private System.Windows.Forms.Button buttonXuatDuLieu;
         private System.Windows.Forms.Button btXoaDuLieu;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
-        private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox tbTimKiem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
         private System.Windows.Forms.DataGridViewTextBoxColumn brandNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uploadDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastChangeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private DBManagerDataSetTableAdapters.GET_INFORMATIVE_OFFER_LISTTableAdapter gET_INFORMATIVE_OFFER_LISTTableAdapter1;
-        private DBManagerDataSet dBManagerDataSet;
-        private System.Windows.Forms.BindingSource gETINFORMATIVEOFFERLISTBindingSource1;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
     }
 }

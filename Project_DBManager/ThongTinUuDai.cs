@@ -34,6 +34,7 @@ namespace Project_DBManager
             {
                 OfferInfoList.Add(new OfferInfo(row));
             }
+
             dtgv.DataSource = OfferInfoList;
         }
 
