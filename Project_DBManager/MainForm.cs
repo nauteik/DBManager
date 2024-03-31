@@ -32,7 +32,7 @@ namespace Project_DBManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.thongTinUuDai1.Hide();
         }
         private void collapseMenu()
         {
@@ -122,5 +122,18 @@ namespace Project_DBManager
                 btnQuanLyTaiKhoan.Image = Properties.Resources.arrow;
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void btnTruyCapTaiNguyen_Click(object sender, EventArgs e)
+        {
+            this.thongTinUuDai1.Show();
+        }
+>>>>>>> Stashed changes
     }
 }

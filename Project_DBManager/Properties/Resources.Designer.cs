@@ -123,6 +123,16 @@ namespace Project_DBManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap downl_button {
+            get {
+                object obj = ResourceManager.GetObject("downl button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fig_Leader {
             get {
                 object obj = ResourceManager.GetObject("fig_Leader", resourceCulture);
