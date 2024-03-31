@@ -53,15 +53,15 @@ namespace Project_DBManager
         private void btnQuanLyThongTin_Click(object sender, EventArgs e)
         {
 
-            if (pnQuanLyThongTin.Size == pnQuanLyTaiKhoan.MaximumSize)
+            if (pnQuanLyThongTin.Size == pnQuanLyThongTin.MaximumSize)
             {
-                pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
+                pnQuanLyThongTin.Size = pnQuanLyThongTin.MinimumSize;
                 btnQuanLyThongTin.Image = Properties.Resources.arrow;
                 return;
             }
             collapseMenu();
-            
-            pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
+
+            pnQuanLyThongTin.Size = pnQuanLyThongTin.MaximumSize;
             btnQuanLyThongTin.Image = Properties.Resources.arrow_down;
         }
 

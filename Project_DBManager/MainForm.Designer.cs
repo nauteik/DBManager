@@ -600,6 +600,9 @@
             // 
             // ucThongTinCaNhan1
             // 
+            this.ucThongTinCaNhan1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucThongTinCaNhan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucThongTinCaNhan1.Location = new System.Drawing.Point(0, 0);
             this.ucThongTinCaNhan1.Name = "ucThongTinCaNhan1";

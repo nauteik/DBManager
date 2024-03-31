@@ -421,7 +421,7 @@
             this.tbHoTen.Size = new System.Drawing.Size(318, 17);
             this.tbHoTen.TabIndex = 0;
             // 
-            // ucThongTinTaiKhoan
+            // ucThongTinCaNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -430,7 +430,7 @@
             this.Controls.Add(this.lbTitlePosition);
             this.Controls.Add(this.lbTitleName);
             this.Controls.Add(this.label1);
-            this.Name = "ucThongTinTaiKhoan";
+            this.Name = "ucThongTinCaNhan";
             this.Size = new System.Drawing.Size(799, 576);
             this.pnContent.ResumeLayout(false);
             this.pnContent.PerformLayout();
