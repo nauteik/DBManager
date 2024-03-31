@@ -38,7 +38,8 @@ namespace Project_DBManager.DTO
         public string Duration { get => duration; set => duration = value; }
         public string Content { get => content; set => content = value; }
 
-        public void ToString()
+
+         public void ToString()
         {
             MessageBox.Show("ID: " + contractID + "\nTên thương hiệu: " + brandName + "\nNgày ký: " + signedDate + "\nNgày hết hạn: " + duration + "\nNội dung: " + content);
         }
