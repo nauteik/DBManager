@@ -47,16 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\ContractInfo.cs" />
-    <Compile Include="ucTaoBaiDang.cs">
+    <Compile Include="UserControl\ucTaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTaoBaiDang.Designer.cs">
+    <Compile Include="UserControl\ucTaoBaiDang.Designer.cs">
       <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucDanhSachHopDong.cs">
+    <Compile Include="UserControl\ucDanhSachHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucDanhSachHopDong.Designer.cs">
+    <Compile Include="UserControl\ucDanhSachHopDong.Designer.cs">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
@@ -82,13 +82,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucThongTinCaNhan.cs">
+    <Compile Include="UserControl\ucThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucThongTinCaNhan.Designer.cs">
+    <Compile Include="UserControl\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucDanhSachHopDong.resx">
+    <EmbeddedResource Include="UserControl\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
@@ -110,7 +110,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucThongTinCaNhan.resx">
+    <EmbeddedResource Include="UserControl\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
