@@ -1,4 +1,6 @@
-﻿namespace Project_DBManager
+﻿using System;
+
+namespace Project_DBManager
 {
     partial class MainForm
     {
@@ -67,6 +69,7 @@
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
+            this.thongTinUuDai1 = new Project_DBManager.ThongTinUuDai();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -526,6 +529,7 @@
             this.btnTruyCapTaiNguyen.TabIndex = 1;
             this.btnTruyCapTaiNguyen.Text = "Truy cập tài nguyên";
             this.btnTruyCapTaiNguyen.UseVisualStyleBackColor = false;
+            this.btnTruyCapTaiNguyen.Click += new System.EventHandler(this.btnTruyCapTaiNguyen_Click);
             // 
             // btnQuanLyThongTin
             // 
@@ -634,6 +638,14 @@
             this.ucThongTinCaNhan1.Size = new System.Drawing.Size(799, 576);
             this.ucThongTinCaNhan1.TabIndex = 0;
             // 
+            // thongTinUuDai1
+            // 
+            this.thongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.thongTinUuDai1.Location = new System.Drawing.Point(-1, 0);
+            this.thongTinUuDai1.Name = "thongTinUuDai1";
+            this.thongTinUuDai1.Size = new System.Drawing.Size(799, 576);
+            this.thongTinUuDai1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -658,6 +670,11 @@
             this.pnBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void BtnTruyCapTaiNguyen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -701,5 +718,6 @@
         private ucTaoBaiDang ucTaoBaiDang1;
         private ucThongTinCaNhan ucThongTinCaNhan1;
         private System.Windows.Forms.Button btnDangXuat;
+        private ThongTinUuDai thongTinUuDai1;
     }
 }
