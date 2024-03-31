@@ -1,12 +1,5 @@
 ﻿using Project_DBManager.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -16,16 +9,20 @@ namespace Project_DBManager
         private Account account;
         public MainForm(Account loginAccount)
         {
-            InitializeComponent();
-            pnHeader.BringToFront();
             this.account = loginAccount;
+            InitializeComponent();
+            collapseUserControl();
+            pnHeader.BringToFront();
             switch (account.Level)
             {
                 case 1: lbPostion.Text = "Tổ trưởng"; break;
                 case 2: lbPostion.Text = "Quản lý"; break;
             }
         }
-
+        private void collapseUserControl()
+        {
+            ucThongTinTaiKhoan1.Hide();
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -50,83 +47,78 @@ namespace Project_DBManager
         }
         private void btnQuanLyThongTin_Click(object sender, EventArgs e)
         {
-            collapseMenu();
-            if (pnQuanLyThongTin.Size == pnQuanLyThongTin.MinimumSize)
+            if (pnQuanLyThongTin.Size == pnQuanLyTaiKhoan.MaximumSize)
             {
-                pnQuanLyThongTin.Size = pnQuanLyThongTin.MaximumSize;
-                btnQuanLyThongTin.Image = Properties.Resources.arrow_down;
-            }
-            else
-            {
-                pnQuanLyThongTin.Size = pnQuanLyThongTin.MinimumSize;
+                pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
                 btnQuanLyThongTin.Image = Properties.Resources.arrow;
+                return;
             }
-           
+            collapseMenu();
+            pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
+            btnQuanLyThongTin.Image = Properties.Resources.arrow_down;
         }
 
         private void btnTaoBaiDang_Click(object sender, EventArgs e)
         {
-            collapseMenu();
-            if (pnTaoBaiDang.Size == pnTaoBaiDang.MinimumSize)
-            {
-                pnTaoBaiDang.Size = pnTaoBaiDang.MaximumSize;
-                btnTaoBaiDang.Image = Properties.Resources.arrow_down;
-            }
-            else
+            if(pnTaoBaiDang.Size == pnTaoBaiDang.MaximumSize)
             {
                 pnTaoBaiDang.Size = pnTaoBaiDang.MinimumSize;
                 btnTaoBaiDang.Image = Properties.Resources.arrow;
+                return;
             }
+            collapseMenu();
+            pnTaoBaiDang.Size = pnTaoBaiDang.MaximumSize;
+            btnTaoBaiDang.Image = Properties.Resources.arrow_down;
         }
 
         private void btnQuanLyHopDong_Click(object sender, EventArgs e)
         {
-            collapseMenu();
-            if (pnQuanLyHopDong.Size == pnQuanLyHopDong.MinimumSize)
-            {
-                pnQuanLyHopDong.Size = pnQuanLyHopDong.MaximumSize;
-                btnQuanLyHopDong.Image = Properties.Resources.arrow_down;
-            }
-            else
+            if (pnQuanLyHopDong.Size == pnQuanLyHopDong.MaximumSize)
             {
                 pnQuanLyHopDong.Size = pnQuanLyHopDong.MinimumSize;
                 btnQuanLyHopDong.Image = Properties.Resources.arrow;
+                return;
             }
+            collapseMenu();
+            pnQuanLyHopDong.Size = pnQuanLyHopDong.MaximumSize;
+            btnQuanLyHopDong.Image = Properties.Resources.arrow_down;
         }
 
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
-            collapseMenu();
-            if (pnQuanLyNhanVien.Size == pnQuanLyNhanVien.MinimumSize)
-            {
-                pnQuanLyNhanVien.Size = pnQuanLyNhanVien.MaximumSize;
-                btnQuanLyNhanVien.Image = Properties.Resources.arrow_down;
-            }
-            else
+            if (pnQuanLyNhanVien.Size == pnQuanLyNhanVien.MaximumSize)
             {
                 pnQuanLyNhanVien.Size = pnQuanLyNhanVien.MinimumSize;
                 btnQuanLyNhanVien.Image = Properties.Resources.arrow;
+                return;
             }
+            collapseMenu();
+            pnQuanLyNhanVien.Size = pnQuanLyNhanVien.MaximumSize;
+            btnQuanLyNhanVien.Image = Properties.Resources.arrow_down;
         }
 
         private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
-            collapseMenu();
-            if (pnQuanLyTaiKhoan.Size == pnQuanLyTaiKhoan.MinimumSize)
-            {
-                pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
-                btnQuanLyTaiKhoan.Image = Properties.Resources.arrow_down;
-            }
-            else
+            if (pnQuanLyTaiKhoan.Size == pnQuanLyTaiKhoan.MaximumSize)
             {
                 pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MinimumSize;
                 btnQuanLyTaiKhoan.Image = Properties.Resources.arrow;
+                return;
             }
+            collapseMenu();
+            pnQuanLyTaiKhoan.Size = pnQuanLyTaiKhoan.MaximumSize;
+            btnQuanLyTaiKhoan.Image = Properties.Resources.arrow_down;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             
         }
+
+        private void btnThongTinTaiKhoan_Click(object sender, EventArgs e)
+        {
+            ucThongTinTaiKhoan1.Show();
+        }
+
     }
 }

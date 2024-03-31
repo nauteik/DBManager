@@ -63,6 +63,7 @@
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucThongTinTaiKhoan1 = new Project_DBManager.ucThongTinTaiKhoan(account.Username);
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -72,6 +73,7 @@
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).BeginInit();
+            this.pnBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnSidemenu
@@ -133,6 +135,7 @@
             this.btnThongTinTaiKhoan.TabIndex = 1;
             this.btnThongTinTaiKhoan.Text = "Thông tin tài khoản";
             this.btnThongTinTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnThongTinTaiKhoan.Click += new System.EventHandler(this.btnThongTinTaiKhoan_Click);
             // 
             // btnQuanLyTaiKhoan
             // 
@@ -569,12 +572,23 @@
             // 
             // pnBody
             // 
-            this.pnBody.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Location = new System.Drawing.Point(148, 58);
+            this.pnBody.Controls.Add(this.ucThongTinTaiKhoan1);
+            this.pnBody.Location = new System.Drawing.Point(145, 58);
             this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(499, 577);
+            this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
+            // 
+            // ucThongTinTaiKhoan1
+            // 
+            this.ucThongTinTaiKhoan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucThongTinTaiKhoan1.Location = new System.Drawing.Point(0, 1);
+            this.ucThongTinTaiKhoan1.Name = "ucThongTinTaiKhoan1";
+            this.ucThongTinTaiKhoan1.Size = new System.Drawing.Size(799, 576);
+            this.ucThongTinTaiKhoan1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -597,6 +611,7 @@
             this.pnHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).EndInit();
+            this.pnBody.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +654,6 @@
         private System.Windows.Forms.Button btnChinhSuaTaiKhoan;
         private System.Windows.Forms.Button btnThongTinTaiKhoan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
+        private ucThongTinTaiKhoan ucThongTinTaiKhoan1;
     }
 }
