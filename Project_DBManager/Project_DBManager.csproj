@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="TaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>

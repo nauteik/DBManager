@@ -1,4 +1,5 @@
 ﻿using Project_DBManager.DAO;
+using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,39 +26,13 @@ namespace Project_DBManager
             loadData();
         }
 
-        internal class ContractInfo
-        {
-            public bool isChecked { get; set; }
-            public string contractID { get; set; }
-            public string brandName { get; set; }
-            public string signedDate { get; set; }
-            public string duration { get; set; }
-            public string content { get; set; }
-
-            public ContractInfo(bool isChecked, string contractID, string brandName, string signedDate, string duration, string content)
-            {
-                this.isChecked = isChecked;
-                this.contractID = contractID;
-                this.brandName = brandName;
-                this.signedDate = signedDate;
-                this.duration = duration;
-                this.content = content;
-            }
-
-            public void ToString()
-            {
-                MessageBox.Show("ID: " + contractID + "\nTên thương hiệu: " + brandName + "\nNgày ký: " + signedDate + "\nNgày hết hạn: " + duration + "\nNội dung: " + content);
-            }
-        }
-
         private void loadData()
         {
             query = "SELECT Contract_ID AS ID, Brand_Name AS 'Tên thương hiệu', Signed_date AS 'Ngày ký', Duration AS 'Ngày hết hạn', Content AS 'Nội dung' FROM Contract, Brand_Info WHERE Contract.Brand_ID = Brand_Info.Brand_ID";
             table = DataProvider.Instance.ExecuteQuery(query);
-            
             foreach (DataRow row in table.Rows)
             {
-                ContractInfo contractInfo = new ContractInfo(false, row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
+                ContractInfo contractInfo = new ContractInfo(row);
                 contractInfoList.Add(contractInfo);
             }
             dtgv.DataSource = contractInfoList;
@@ -84,42 +59,42 @@ namespace Project_DBManager
             List<ContractInfo> sortedList;
             if (cb.SelectedItem.ToString() == "ID tăng dần")
             {
-                sortedList = contractInfoList.OrderBy(ci => ci.contractID).ToList();
+                sortedList = contractInfoList.OrderBy(ci => ci.ContractID).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "ID giảm dần")
             {
-                sortedList = contractInfoList.OrderByDescending(ci => ci.contractID).ToList();
+                sortedList = contractInfoList.OrderByDescending(ci => ci.ContractID).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Tên thương hiệu tăng dần")
             {
-                sortedList = contractInfoList.OrderBy(ci => ci.brandName).ToList();
+                sortedList = contractInfoList.OrderBy(ci => ci.BrandName).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Tên thương hiệu giảm dần")
             {
-                sortedList = contractInfoList.OrderByDescending(ci => ci.brandName).ToList();
+                sortedList = contractInfoList.OrderByDescending(ci => ci.BrandName).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Ngày ký tăng dần")
             {
-               sortedList = contractInfoList.OrderBy(ci => ci.signedDate).ToList();
+               sortedList = contractInfoList.OrderBy(ci => ci.SignedDate).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Ngày ký giảm dần")
             {
-                sortedList = contractInfoList.OrderByDescending(ci => ci.signedDate).ToList();
+                sortedList = contractInfoList.OrderByDescending(ci => ci.SignedDate).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Ngày hết hạn tăng dần")
             {
-                sortedList = contractInfoList.OrderBy(ci => ci.duration).ToList();
+                sortedList = contractInfoList.OrderBy(ci => ci.Duration).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Ngày hết hạn giảm dần")
             {
-                sortedList = contractInfoList.OrderByDescending(ci => ci.duration).ToList();
+                sortedList = contractInfoList.OrderByDescending(ci => ci.Duration).ToList();
                 dtgv.DataSource = sortedList;
             }
         }
@@ -137,12 +112,12 @@ namespace Project_DBManager
                 string value = tb_TimKiem.Text;
                 if (int.TryParse(value, out _))
                 {
-                    searchList = contractInfoList.Where(ci => (ci.contractID).Equals(value)).ToList();
+                    searchList = contractInfoList.Where(ci => (ci.ContractID).Equals(value)).ToList();
                     dtgv.DataSource = searchList;
                 }
                 else
                 {
-                    searchList = contractInfoList.Where(ci => (ci.brandName.ToLower()).Contains(value.ToLower())).ToList();
+                    searchList = contractInfoList.Where(ci => (ci.BrandName.ToLower()).Contains(value.ToLower())).ToList();
                     dtgv.DataSource = searchList;
                 }
                 tb_TimKiem.Text = "";
@@ -156,7 +131,7 @@ namespace Project_DBManager
 
         private void btn_XuatDuLieu_Click(object sender, EventArgs e)
         {
-            List<ContractInfo> checkedContract = ((List<ContractInfo>)dtgv.DataSource).Where(ci => ci.isChecked).ToList();
+            List<ContractInfo> checkedContract = ((List<ContractInfo>)dtgv.DataSource).Where(ci => ci.IsChecked).ToList();
             checkedContract.ForEach(ci => ci.ToString());
         }
 
@@ -176,12 +151,12 @@ namespace Project_DBManager
                 query = "DELETE FROM Contract WHERE Contract_ID = ";
                 foreach (ContractInfo ci in contractInfoList)
                 {
-                    if (ci.isChecked)
+                    if (ci.IsChecked)
                     {
-                        contractIDList.Add(ci.contractID);
+                        contractIDList.Add(ci.ContractID);
                     }
                 }
-                contractInfoList.RemoveAll(ci => ci.isChecked);
+                contractInfoList.RemoveAll(ci => ci.IsChecked);
                 foreach (string id in contractIDList)
                 {
                     DataProvider.Instance.ExecuteQuery(query + id);
