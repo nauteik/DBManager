@@ -12,7 +12,7 @@ namespace Project_DBManager.DAO
 {
     internal class DataProvider
     {
-        private readonly string connectString = "Data Source =.\\sqlexpress; Initial Catalog = DBManager; Integrated Security = True";
+        private readonly string connectString = "Server=cnpm12.cl842wcy40x2.ap-southeast-2.rds.amazonaws.com,1433;Database=DBManager;User Id=admin;Password=congnghephanmem;";
         private static DataProvider instance;
 
         public static DataProvider Instance
@@ -50,7 +50,7 @@ namespace Project_DBManager.DAO
             }
             return data;
         }
-        public int ExecuteNonQuery(string query, string[] para = null)
+        public int ExecuteNonQuery(string query, object[] para = null)
         {
             using (SqlConnection connect = new SqlConnection(connectString))
             {
@@ -59,19 +59,17 @@ namespace Project_DBManager.DAO
                 if (para != null)
                 {
                     int i = 0;
-                    foreach (string item in query.Split(' '))
+                    foreach (string temp in query.Split(' '))
                     {
 
-                        if (item.Contains("@"))
+                        if (temp.Contains("@"))
                         {
-
-                            item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
+                            string item = temp.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
                             cmd.Parameters.AddWithValue(item, para[i++]);
                         }
                     }
 
                 }
-
                 return cmd.ExecuteNonQuery();
             }
         }

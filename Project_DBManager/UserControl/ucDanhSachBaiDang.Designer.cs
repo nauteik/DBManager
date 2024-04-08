@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class ucDanhSachHopDong
+    partial class ucDanhSachBaiDang
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDanhSachHopDong));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDanhSachBaiDang));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_ThongTinHopDong = new System.Windows.Forms.TextBox();
+            this.tb_DanhSachBaiDang = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_TaiXuong = new System.Windows.Forms.Button();
             this.tb_TimKiem = new System.Windows.Forms.TextBox();
@@ -40,16 +40,16 @@
             this.lb_TaiXuong = new System.Windows.Forms.Label();
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.lb_SapXep = new System.Windows.Forms.Label();
-            this.btn_XuatDuLieu = new System.Windows.Forms.Button();
             this.dtgv = new System.Windows.Forms.DataGridView();
-            this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ContractID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SignedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_XoaDuLieu = new System.Windows.Forms.Button();
+            this.btn_XuatDuLieu = new System.Windows.Forms.Button();
+            this.isChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uploadDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_XoaDuLieu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
@@ -57,25 +57,23 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.tb_ThongTinHopDong);
+            this.panel1.Controls.Add(this.tb_DanhSachBaiDang);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(798, 50);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
-            // tb_ThongTinHopDong
+            // tb_DanhSachBaiDang
             // 
-            this.tb_ThongTinHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.tb_ThongTinHopDong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_ThongTinHopDong.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ThongTinHopDong.Location = new System.Drawing.Point(25, 10);
-            this.tb_ThongTinHopDong.Name = "tb_ThongTinHopDong";
-            this.tb_ThongTinHopDong.Size = new System.Drawing.Size(219, 26);
-            this.tb_ThongTinHopDong.TabIndex = 0;
-            this.tb_ThongTinHopDong.Text = "Danh Sách Hợp Đồng";
-            this.tb_ThongTinHopDong.TextChanged += new System.EventHandler(this.tb_ThongTinHopDong_TextChanged);
+            this.tb_DanhSachBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.tb_DanhSachBaiDang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_DanhSachBaiDang.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DanhSachBaiDang.Location = new System.Drawing.Point(25, 10);
+            this.tb_DanhSachBaiDang.Name = "tb_DanhSachBaiDang";
+            this.tb_DanhSachBaiDang.Size = new System.Drawing.Size(219, 26);
+            this.tb_DanhSachBaiDang.TabIndex = 0;
+            this.tb_DanhSachBaiDang.Text = "Danh Sách Bài Đăng";
             // 
             // panel2
             // 
@@ -91,7 +89,7 @@
             this.panel2.Location = new System.Drawing.Point(25, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(750, 50);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
             // 
             // btn_TaiXuong
             // 
@@ -101,7 +99,6 @@
             this.btn_TaiXuong.Size = new System.Drawing.Size(35, 35);
             this.btn_TaiXuong.TabIndex = 7;
             this.btn_TaiXuong.UseVisualStyleBackColor = true;
-            this.btn_TaiXuong.Click += new System.EventHandler(this.btn_TaiXuong_Click);
             // 
             // tb_TimKiem
             // 
@@ -111,8 +108,6 @@
             this.tb_TimKiem.Name = "tb_TimKiem";
             this.tb_TimKiem.Size = new System.Drawing.Size(200, 20);
             this.tb_TimKiem.TabIndex = 6;
-            this.tb_TimKiem.TextChanged += new System.EventHandler(this.tb_TimKiem_TextChanged);
-            this.tb_TimKiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_TimKiem_KeyPress);
             // 
             // cb_SapXep
             // 
@@ -138,8 +133,6 @@
             this.cb_SapXep.Name = "cb_SapXep";
             this.cb_SapXep.Size = new System.Drawing.Size(150, 23);
             this.cb_SapXep.TabIndex = 4;
-            this.cb_SapXep.SelectedIndexChanged += new System.EventHandler(this.cb_SapXep_SelectedIndexChanged);
-            this.cb_SapXep.SelectedValueChanged += new System.EventHandler(this.cb_SapXep_SelectedValueChanged);
             // 
             // lb_TaiXuong
             // 
@@ -150,7 +143,6 @@
             this.lb_TaiXuong.Size = new System.Drawing.Size(78, 19);
             this.lb_TaiXuong.TabIndex = 3;
             this.lb_TaiXuong.Text = "Tải xuống";
-            this.lb_TaiXuong.Click += new System.EventHandler(this.lb_TaiXuong_Click);
             // 
             // lb_TimKiem
             // 
@@ -172,21 +164,6 @@
             this.lb_SapXep.TabIndex = 0;
             this.lb_SapXep.Text = "Sắp xếp";
             // 
-            // btn_XuatDuLieu
-            // 
-            this.btn_XuatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_XuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.btn_XuatDuLieu.FlatAppearance.BorderSize = 0;
-            this.btn_XuatDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_XuatDuLieu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XuatDuLieu.Location = new System.Drawing.Point(25, 525);
-            this.btn_XuatDuLieu.Name = "btn_XuatDuLieu";
-            this.btn_XuatDuLieu.Size = new System.Drawing.Size(150, 30);
-            this.btn_XuatDuLieu.TabIndex = 3;
-            this.btn_XuatDuLieu.Text = "Xuất dữ liệu";
-            this.btn_XuatDuLieu.UseVisualStyleBackColor = false;
-            this.btn_XuatDuLieu.Click += new System.EventHandler(this.btn_XuatDuLieu_Click);
-            // 
             // dtgv
             // 
             this.dtgv.AllowUserToAddRows = false;
@@ -199,32 +176,32 @@
             this.dtgv.BackgroundColor = System.Drawing.Color.White;
             this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter Italic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter Italic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IsChecked,
-            this.ContractID,
-            this.BrandName,
-            this.SignedDate,
-            this.Duration,
+            this.isChecked,
+            this.ID,
+            this.uploadDate,
+            this.Type,
+            this.User_Name,
             this.Content,
             this.Edit});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.EnableHeadersVisualStyles = false;
             this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.dtgv.Location = new System.Drawing.Point(25, 125);
@@ -233,78 +210,8 @@
             this.dtgv.RowHeadersWidth = 51;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgv.Size = new System.Drawing.Size(750, 375);
-            this.dtgv.TabIndex = 4;
-            this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // IsChecked
-            // 
-            this.IsChecked.DataPropertyName = "isChecked";
-            this.IsChecked.FillWeight = 80.54395F;
-            this.IsChecked.HeaderText = "";
-            this.IsChecked.MinimumWidth = 6;
-            this.IsChecked.Name = "IsChecked";
-            this.IsChecked.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IsChecked.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IsChecked.Width = 50;
-            // 
-            // ContractID
-            // 
-            this.ContractID.DataPropertyName = "contractID";
-            this.ContractID.FillWeight = 76.14214F;
-            this.ContractID.HeaderText = "ID";
-            this.ContractID.MinimumWidth = 6;
-            this.ContractID.Name = "ContractID";
-            this.ContractID.ReadOnly = true;
-            this.ContractID.Width = 50;
-            // 
-            // BrandName
-            // 
-            this.BrandName.DataPropertyName = "brandName";
-            this.BrandName.FillWeight = 110.8285F;
-            this.BrandName.HeaderText = "Thương hiệu";
-            this.BrandName.MinimumWidth = 6;
-            this.BrandName.Name = "BrandName";
-            this.BrandName.ReadOnly = true;
-            this.BrandName.Width = 150;
-            // 
-            // SignedDate
-            // 
-            this.SignedDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SignedDate.DataPropertyName = "signedDate";
-            this.SignedDate.FillWeight = 110.8285F;
-            this.SignedDate.HeaderText = "Ngày ký";
-            this.SignedDate.MinimumWidth = 6;
-            this.SignedDate.Name = "SignedDate";
-            this.SignedDate.ReadOnly = true;
-            this.SignedDate.Width = 89;
-            // 
-            // Duration
-            // 
-            this.Duration.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Duration.DataPropertyName = "duration";
-            this.Duration.FillWeight = 110.8285F;
-            this.Duration.HeaderText = "Ngày hết hạn";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
-            this.Duration.ReadOnly = true;
-            this.Duration.Width = 92;
-            // 
-            // Content
-            // 
-            this.Content.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Content.DataPropertyName = "content";
-            this.Content.FillWeight = 110.8285F;
-            this.Content.HeaderText = "Nội dung";
-            this.Content.MinimumWidth = 6;
-            this.Content.Name = "Content";
-            this.Content.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.Width = 50;
+            this.dtgv.TabIndex = 5;
+            this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentClick);
             // 
             // btn_XoaDuLieu
             // 
@@ -317,24 +224,76 @@
             this.btn_XoaDuLieu.Location = new System.Drawing.Point(200, 525);
             this.btn_XoaDuLieu.Name = "btn_XoaDuLieu";
             this.btn_XoaDuLieu.Size = new System.Drawing.Size(150, 30);
-            this.btn_XoaDuLieu.TabIndex = 5;
+            this.btn_XoaDuLieu.TabIndex = 7;
             this.btn_XoaDuLieu.Text = "Xóa dữ liệu";
             this.btn_XoaDuLieu.UseVisualStyleBackColor = false;
-            this.btn_XoaDuLieu.Click += new System.EventHandler(this.btn_XoaDuLieu_Click);
             // 
-            // ucDanhSachHopDong
+            // btn_XuatDuLieu
+            // 
+            this.btn_XuatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_XuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_XuatDuLieu.FlatAppearance.BorderSize = 0;
+            this.btn_XuatDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_XuatDuLieu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatDuLieu.Location = new System.Drawing.Point(25, 525);
+            this.btn_XuatDuLieu.Name = "btn_XuatDuLieu";
+            this.btn_XuatDuLieu.Size = new System.Drawing.Size(150, 30);
+            this.btn_XuatDuLieu.TabIndex = 6;
+            this.btn_XuatDuLieu.Text = "Xuất dữ liệu";
+            this.btn_XuatDuLieu.UseVisualStyleBackColor = false;
+            // 
+            // isChecked
+            // 
+            this.isChecked.HeaderText = "";
+            this.isChecked.Name = "isChecked";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // uploadDate
+            // 
+            this.uploadDate.HeaderText = "Ngày tạo";
+            this.uploadDate.Name = "uploadDate";
+            this.uploadDate.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Chủ đề";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // User_Name
+            // 
+            this.User_Name.HeaderText = "Người tạo";
+            this.User_Name.Name = "User_Name";
+            this.User_Name.ReadOnly = true;
+            // 
+            // Content
+            // 
+            this.Content.HeaderText = "Nội dung";
+            this.Content.Name = "Content";
+            this.Content.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            // 
+            // ucDanhSachBaiDang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.Controls.Add(this.btn_XoaDuLieu);
-            this.Controls.Add(this.dtgv);
             this.Controls.Add(this.btn_XuatDuLieu);
+            this.Controls.Add(this.dtgv);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ucDanhSachHopDong";
+            this.Name = "ucDanhSachBaiDang";
             this.Size = new System.Drawing.Size(798, 577);
-            this.Load += new System.EventHandler(this.DanhSachHopDong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -347,7 +306,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tb_ThongTinHopDong;
+        private System.Windows.Forms.TextBox tb_DanhSachBaiDang;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_TaiXuong;
         private System.Windows.Forms.TextBox tb_TimKiem;
@@ -355,15 +314,15 @@
         private System.Windows.Forms.Label lb_TaiXuong;
         private System.Windows.Forms.Label lb_TimKiem;
         private System.Windows.Forms.Label lb_SapXep;
-        private System.Windows.Forms.Button btn_XuatDuLieu;
         private System.Windows.Forms.DataGridView dtgv;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContractID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SignedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.Button btn_XoaDuLieu;
+        private System.Windows.Forms.Button btn_XuatDuLieu;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isChecked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uploadDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Content;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.Button btn_XoaDuLieu;
     }
 }

@@ -47,8 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BrandDAO.cs" />
+    <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
+    <Compile Include="DTO\PostInfo.cs" />
+    <Compile Include="UserControl\ucDanhSachBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachBaiDang.Designer.cs">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ucTaoBaiDang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +99,9 @@
     <Compile Include="UserControl\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl\ucDanhSachBaiDang.resx">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +130,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl\ucTaoBaiDang.resx">
+      <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,7 +233,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
@@ -229,6 +244,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box_light1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
