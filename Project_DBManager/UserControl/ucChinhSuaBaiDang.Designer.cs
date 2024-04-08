@@ -1,6 +1,6 @@
 ﻿namespace Project_DBManager
 {
-    partial class ucTaoBaiDang
+    partial class ucChinhSuaBaiDang
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_TaoBaiDang = new System.Windows.Forms.TextBox();
+            this.btn_ChinhSuaBaiDang = new System.Windows.Forms.Button();
+            this.btn_Huy = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_TrangThai = new System.Windows.Forms.Label();
             this.tb_TrangThai = new System.Windows.Forms.TextBox();
-            this.cb_TenThuongHieu = new System.Windows.Forms.ComboBox();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.lb_NoiDung = new System.Windows.Forms.Label();
             this.lb_Facebook = new System.Windows.Forms.Label();
@@ -44,45 +43,49 @@
             this.tb_NoiDung = new System.Windows.Forms.TextBox();
             this.tb_DiaChi = new System.Windows.Forms.TextBox();
             this.tb_Facebook = new System.Windows.Forms.TextBox();
-            this.btn_TaoBaiDang = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_ChinhSuaBaiDang = new System.Windows.Forms.TextBox();
+            this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // btn_ChinhSuaBaiDang
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.tb_TaoBaiDang);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 50);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.btn_ChinhSuaBaiDang.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_ChinhSuaBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_ChinhSuaBaiDang.FlatAppearance.BorderSize = 0;
+            this.btn_ChinhSuaBaiDang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ChinhSuaBaiDang.Location = new System.Drawing.Point(25, 525);
+            this.btn_ChinhSuaBaiDang.Name = "btn_ChinhSuaBaiDang";
+            this.btn_ChinhSuaBaiDang.Size = new System.Drawing.Size(150, 30);
+            this.btn_ChinhSuaBaiDang.TabIndex = 4;
+            this.btn_ChinhSuaBaiDang.Text = "Chỉnh sửa bài đăng";
+            this.btn_ChinhSuaBaiDang.UseVisualStyleBackColor = false;
+            this.btn_ChinhSuaBaiDang.Click += new System.EventHandler(this.btn_ChinhSuaBaiDang_Click);
             // 
-            // tb_TaoBaiDang
+            // btn_Huy
             // 
-            this.tb_TaoBaiDang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tb_TaoBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.tb_TaoBaiDang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_TaoBaiDang.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TaoBaiDang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
-            this.tb_TaoBaiDang.Location = new System.Drawing.Point(25, 12);
-            this.tb_TaoBaiDang.Name = "tb_TaoBaiDang";
-            this.tb_TaoBaiDang.ReadOnly = true;
-            this.tb_TaoBaiDang.Size = new System.Drawing.Size(184, 33);
-            this.tb_TaoBaiDang.TabIndex = 0;
-            this.tb_TaoBaiDang.Text = "Tạo Bài Đăng";
-            this.tb_TaoBaiDang.TextChanged += new System.EventHandler(this.tb_ThongTinHopDong_TextChanged);
+            this.btn_Huy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_Huy.FlatAppearance.BorderSize = 0;
+            this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Huy.Location = new System.Drawing.Point(200, 525);
+            this.btn_Huy.Name = "btn_Huy";
+            this.btn_Huy.Size = new System.Drawing.Size(150, 30);
+            this.btn_Huy.TabIndex = 5;
+            this.btn_Huy.Text = "Hủy";
+            this.btn_Huy.UseVisualStyleBackColor = false;
+            this.btn_Huy.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.panel2.Controls.Add(this.tb_TenThuongHieu);
             this.panel2.Controls.Add(this.lb_TrangThai);
             this.panel2.Controls.Add(this.tb_TrangThai);
-            this.panel2.Controls.Add(this.cb_TenThuongHieu);
             this.panel2.Controls.Add(this.pbAvatar);
             this.panel2.Controls.Add(this.lb_NoiDung);
             this.panel2.Controls.Add(this.lb_Facebook);
@@ -97,8 +100,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(750, 450);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 6;
             // 
             // lb_TrangThai
             // 
@@ -110,7 +112,6 @@
             this.lb_TrangThai.Size = new System.Drawing.Size(106, 23);
             this.lb_TrangThai.TabIndex = 30;
             this.lb_TrangThai.Text = "Trạng thái:";
-            this.lb_TrangThai.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // tb_TrangThai
             // 
@@ -122,18 +123,6 @@
             this.tb_TrangThai.ReadOnly = true;
             this.tb_TrangThai.Size = new System.Drawing.Size(335, 23);
             this.tb_TrangThai.TabIndex = 29;
-            this.tb_TrangThai.TextChanged += new System.EventHandler(this.tb_TrangThai_TextChanged);
-            // 
-            // cb_TenThuongHieu
-            // 
-            this.cb_TenThuongHieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_TenThuongHieu.FormattingEnabled = true;
-            this.cb_TenThuongHieu.Location = new System.Drawing.Point(25, 54);
-            this.cb_TenThuongHieu.Name = "cb_TenThuongHieu";
-            this.cb_TenThuongHieu.Size = new System.Drawing.Size(335, 24);
-            this.cb_TenThuongHieu.TabIndex = 1;
-            this.cb_TenThuongHieu.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // pbAvatar
             // 
@@ -157,7 +146,6 @@
             this.lb_NoiDung.Size = new System.Drawing.Size(91, 23);
             this.lb_NoiDung.TabIndex = 10;
             this.lb_NoiDung.Text = "Nội dung";
-            this.lb_NoiDung.Click += new System.EventHandler(this.label5_Click);
             // 
             // lb_Facebook
             // 
@@ -202,7 +190,6 @@
             this.lb_TenThuongHieu.Size = new System.Drawing.Size(159, 23);
             this.lb_TenThuongHieu.TabIndex = 6;
             this.lb_TenThuongHieu.Text = "Tên thương hiệu:";
-            this.lb_TenThuongHieu.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // tb_SoDienThoai
             // 
@@ -214,7 +201,6 @@
             this.tb_SoDienThoai.ReadOnly = true;
             this.tb_SoDienThoai.Size = new System.Drawing.Size(335, 23);
             this.tb_SoDienThoai.TabIndex = 5;
-            this.tb_SoDienThoai.TextChanged += new System.EventHandler(this.tb_SoDienThoai_TextChanged);
             // 
             // tb_NoiDung
             // 
@@ -226,7 +212,6 @@
             this.tb_NoiDung.Name = "tb_NoiDung";
             this.tb_NoiDung.Size = new System.Drawing.Size(335, 175);
             this.tb_NoiDung.TabIndex = 3;
-            this.tb_NoiDung.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // tb_DiaChi
             // 
@@ -250,58 +235,80 @@
             this.tb_Facebook.Size = new System.Drawing.Size(335, 23);
             this.tb_Facebook.TabIndex = 1;
             // 
-            // btn_TaoBaiDang
+            // panel1
             // 
-            this.btn_TaoBaiDang.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_TaoBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.btn_TaoBaiDang.FlatAppearance.BorderSize = 0;
-            this.btn_TaoBaiDang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TaoBaiDang.Location = new System.Drawing.Point(25, 525);
-            this.btn_TaoBaiDang.Name = "btn_TaoBaiDang";
-            this.btn_TaoBaiDang.Size = new System.Drawing.Size(150, 30);
-            this.btn_TaoBaiDang.TabIndex = 3;
-            this.btn_TaoBaiDang.Text = "Tạo bài đăng";
-            this.btn_TaoBaiDang.UseVisualStyleBackColor = false;
-            this.btn_TaoBaiDang.Click += new System.EventHandler(this.btn_TaoBaiDang_Click);
+            this.panel1.Controls.Add(this.tb_ChinhSuaBaiDang);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(798, 50);
+            this.panel1.TabIndex = 31;
             // 
-            // ucTaoBaiDang
+            // tb_ChinhSuaBaiDang
+            // 
+            this.tb_ChinhSuaBaiDang.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tb_ChinhSuaBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.tb_ChinhSuaBaiDang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_ChinhSuaBaiDang.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_ChinhSuaBaiDang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
+            this.tb_ChinhSuaBaiDang.Location = new System.Drawing.Point(25, 12);
+            this.tb_ChinhSuaBaiDang.Name = "tb_ChinhSuaBaiDang";
+            this.tb_ChinhSuaBaiDang.ReadOnly = true;
+            this.tb_ChinhSuaBaiDang.Size = new System.Drawing.Size(273, 33);
+            this.tb_ChinhSuaBaiDang.TabIndex = 0;
+            this.tb_ChinhSuaBaiDang.Text = "Chỉnh Sửa Bài Đăng";
+            this.tb_ChinhSuaBaiDang.TextChanged += new System.EventHandler(this.tb_TaoBaiDang_TextChanged);
+            // 
+            // tb_TenThuongHieu
+            // 
+            this.tb_TenThuongHieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TenThuongHieu.Location = new System.Drawing.Point(25, 54);
+            this.tb_TenThuongHieu.Name = "tb_TenThuongHieu";
+            this.tb_TenThuongHieu.ReadOnly = true;
+            this.tb_TenThuongHieu.Size = new System.Drawing.Size(335, 23);
+            this.tb_TenThuongHieu.TabIndex = 31;
+            // 
+            // ucChinhSuaBaiDang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.Controls.Add(this.btn_TaoBaiDang);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ucTaoBaiDang";
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btn_Huy);
+            this.Controls.Add(this.btn_ChinhSuaBaiDang);
+            this.Name = "ucChinhSuaBaiDang";
             this.Size = new System.Drawing.Size(798, 577);
-            this.Load += new System.EventHandler(this.ucTaoBaiDang_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.ucChinhSuaBaiDang_Load);
+            this.VisibleChanged += new System.EventHandler(this.ucChinhSuaBaiDang_VisibleChanged);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tb_TaoBaiDang;
+        private System.Windows.Forms.Button btn_ChinhSuaBaiDang;
+        private System.Windows.Forms.Button btn_Huy;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_TaoBaiDang;
-        private System.Windows.Forms.TextBox tb_NoiDung;
-        private System.Windows.Forms.TextBox tb_DiaChi;
-        private System.Windows.Forms.TextBox tb_Facebook;
+        private System.Windows.Forms.Label lb_TrangThai;
+        private System.Windows.Forms.TextBox tb_TrangThai;
+        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Label lb_NoiDung;
         private System.Windows.Forms.Label lb_Facebook;
         private System.Windows.Forms.Label lb_DiaChi;
         private System.Windows.Forms.Label lb_SoDienThoai;
         private System.Windows.Forms.Label lb_TenThuongHieu;
         private System.Windows.Forms.TextBox tb_SoDienThoai;
-        private System.Windows.Forms.PictureBox pbAvatar;
-        private System.Windows.Forms.ComboBox cb_TenThuongHieu;
-        private System.Windows.Forms.Label lb_TrangThai;
-        private System.Windows.Forms.TextBox tb_TrangThai;
+        private System.Windows.Forms.TextBox tb_NoiDung;
+        private System.Windows.Forms.TextBox tb_DiaChi;
+        private System.Windows.Forms.TextBox tb_Facebook;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tb_ChinhSuaBaiDang;
+        private System.Windows.Forms.TextBox tb_TenThuongHieu;
     }
 }

@@ -17,6 +17,9 @@ namespace Project_DBManager.DTO
         private string facebook;
         private string status;
         private string content;
+        private string uploadDate;
+        private string type;
+        private string postId;
 
         public PostInfo (DataRow row)
         {
@@ -28,6 +31,9 @@ namespace Project_DBManager.DTO
             facebook = row[4].ToString();
             status = row[5].ToString();
             content = row[6].ToString();
+            uploadDate = row[7].ToString();
+            type = row[8].ToString();
+            postId = row[9].ToString();
         }
 
         public PostInfo (string userId, string brandName, string phoneNumber, string address, string facebook, string status, string content) 

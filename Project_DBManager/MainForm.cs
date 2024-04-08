@@ -176,6 +176,8 @@ namespace Project_DBManager
         private void btnChinhSuaBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucDanhSachBaiDang1.loadBaiDang();
+            ucDanhSachBaiDang1.Account = account;
             ucDanhSachBaiDang1.Show();
         }
     }

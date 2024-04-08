@@ -39,5 +39,12 @@ namespace Project_DBManager.DAO
                             "WHERE U.Username = @Username";
             return DataProvider.Instance.ExecuteQuery(query, new object[] {username});
         }
+
+        public int getLevelByName(string name)
+        {
+            string query = "SELECT Pos_ID FROM Users U, User_Info UI Where U.User_ID = UI.User_ID AND UI.Name = @Name";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {name});
+            return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
+        }
     }
 }

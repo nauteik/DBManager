@@ -16,8 +16,8 @@ namespace Project_DBManager
 {
     public partial class ucTaoBaiDang : UserControl
     {
-        private List<PostInfo> postInfoList;
         private Account account;
+
         public Account Account { get => account; set => account = value; }
 
         public ucTaoBaiDang()
@@ -48,19 +48,29 @@ namespace Project_DBManager
 
         private void btn_TaoBaiDang_Click(object sender, EventArgs e)
         {
-            if (tb_NoiDung.Text == "")
+            if (tb_TrangThai.Text == "Đã đóng")
+            {
+                DialogResult result1 = MessageBox.Show("Thương hiệu này đã đóng. Không thể tạo bài đăng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (tb_NoiDung.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ nội dung của bài đăng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (tb_TrangThai.Text == "Active")
+            else if (tb_TrangThai.Text == "Đã tạo bài đăng")
             {
-                DialogResult result1 = MessageBox.Show("Thương hiệu này đã có bài đăng!", "Cảnh báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+                DialogResult result1 = MessageBox.Show("Thương hiệu này đã tạo bài đăng!", "Cảnh báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
                 if (result1 == DialogResult.Retry) { return; }
             }
             DialogResult result = MessageBox.Show("Bạn có chắc tạo bài đăng này chứ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                if (tb_TrangThai.Text == "Chưa tạo bài đăng")
+                {
+                    BrandDAO.Instance.updateBrandStatus(cb_TenThuongHieu.SelectedItem.ToString());
+                    tb_TrangThai.Text = "Đã tạo bài đăng";
+                }
                 PostDAO.Instance.insertValueIntoPost(account.Id, cb_TenThuongHieu.SelectedItem.ToString(), tb_NoiDung.Text);
                 MessageBox.Show("Tạo bài đăng thành công!");
                 tb_NoiDung.Text = "";

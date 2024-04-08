@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_DBManager.DAO
 {
@@ -33,6 +34,34 @@ namespace Project_DBManager.DAO
             string query = "SELECT Phone_Number, Address, Facebook, Status FROM Brand_Info BI, Brand B WHERE BI.Brand_ID = B.Brand_ID AND Brand_Name = @Brand_Name";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
             return dt.Rows[0];
+        }
+
+        public void updateBrandStatus(string brandName)
+        {
+            string query = "UPDATE Brand SET Status = N'Đã tạo bài đăng' WHERE Brand_Name = @Brand_Name";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] {brandName});
+        }
+
+        public string getStatusByBrandName(string brandName)
+        {
+            string query = "SELECT * FROM Brand WHERE Brand_ID = @Brand_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
+            MessageBox.Show(dt.Rows[0]["Status"].ToString());
+            return dt.Rows[0]["Status"].ToString();
+        }
+
+        public int getBrandIdByBrandName(string brandName)
+        {
+            string query = "SELECT * FROM Brand WHERE Brand_Name = @Brand_Name";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
+            return Convert.ToInt32(dt.Rows[0][0].ToString());
+        }
+
+        public bool isBrandNameExist(string brandName)
+        {
+            string query = "SELECT Brand_Name FROM Brand WHERE Brand_Name = @Brand_Name";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
+            return dt.Rows.Count > 0;
         }
     }
 }
