@@ -47,10 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\InformationDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\Staff.cs" />
+    <Compile Include="UC\ucVoHieuHoaKhoiPhuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucVoHieuHoaKhoiPhuc.Designer.cs">
+      <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucThongTinNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucThongTinNhanVien.Designer.cs">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucDanhSachNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -98,6 +111,9 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
+      <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucThongTinNhanVien.resx">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinUuDai.resx">
       <DependentUpon>ucThongTinUuDai.cs</DependentUpon>

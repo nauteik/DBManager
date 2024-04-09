@@ -39,5 +39,32 @@ namespace Project_DBManager.DAO
                             "WHERE U.Username = @Username";
             return DataProvider.Instance.ExecuteQuery(query, new object[] {username});
         }
+        public DataTable getAccountInfoByUserID(int userID)
+        {
+            string query = "SELECT Username, User_Email, IsEnable, Pos_Name, Name, FORMAT(Birth, 'dd-MM-yyyy') as Birth, Gender, Address, ID_Card, Department_Name " +
+                            "FROM Users as U join Position as P ON U.Pos_ID = P.Pos_ID join User_Info as UF on U.User_ID = UF.User_ID join Department_Member as DM on U.User_ID = DM.User_ID join Department D on D.Department_ID = DM.Department_ID " +
+                            "WHERE U.User_ID = @userID";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { userID });
+        }
+        public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID)
+        {
+            string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = {1},  Gender = N'{2}', Address = N'{3}', Birth = '{4}' WHERE User_ID = {5}", hoTen, cccd, gender, address, birth, userID);
+            bool firstExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            int posID = 0;
+            switch (position)
+            {
+                case "Manager": posID = 2; break;
+                case "Leader": posID = 1; break;
+                case "Employee": posID = 0; break;
+            }
+            query = string.Format("UPDATE Users SET User_Email = '{0}', Pos_ID = {1} WHERE User_ID = {2}", email, posID, userID);
+            bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            return firstExecution && secondExecution;
+        }
+        public bool enableAccount(int userID)
+        {
+            string query = string.Format("UPDATE Users SET IsEnable = 1 WHERE User_ID = {0}", userID);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
     }
 }

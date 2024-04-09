@@ -27,6 +27,7 @@ namespace Project_DBManager
             ucThongTinCaNhan1.Hide();
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
+            ucVoHieuHoaKhoiPhuc1.Hide();
             
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -178,6 +179,13 @@ namespace Project_DBManager
             collapseUserControl();
             ucDanhSachNhanVien1.loadStaff(account);
             this.ucDanhSachNhanVien1.Show();
+        }
+
+        private void btnVoHieuHoaKhoiPhuc_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucVoHieuHoaKhoiPhuc1.loadStaff(account);
+            ucVoHieuHoaKhoiPhuc1.Show();
         }
     }
 }

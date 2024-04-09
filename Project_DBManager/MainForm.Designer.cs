@@ -71,6 +71,7 @@ namespace Project_DBManager
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.ucthongTinUuDai1 = new Project_DBManager.ucThongTinUuDai();
+            this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -310,6 +311,7 @@ namespace Project_DBManager
             this.btnVoHieuHoaKhoiPhuc.TabIndex = 5;
             this.btnVoHieuHoaKhoiPhuc.Text = "Vô hiệu hoá và Khôi phục";
             this.btnVoHieuHoaKhoiPhuc.UseVisualStyleBackColor = false;
+            this.btnVoHieuHoaKhoiPhuc.Click += new System.EventHandler(this.btnVoHieuHoaKhoiPhuc_Click);
             // 
             // btnPhanCongCongViec
             // 
@@ -601,6 +603,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucVoHieuHoaKhoiPhuc1);
             this.pnBody.Controls.Add(this.ucDanhSachNhanVien1);
             this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
             this.pnBody.Controls.Add(this.ucTaoBaiDang1);
@@ -660,6 +663,14 @@ namespace Project_DBManager
             this.ucthongTinUuDai1.Name = "ucthongTinUuDai1";
             this.ucthongTinUuDai1.Size = new System.Drawing.Size(799, 576);
             this.ucthongTinUuDai1.TabIndex = 0;
+            // 
+            // ucVoHieuHoaKhoiPhuc1
+            // 
+            this.ucVoHieuHoaKhoiPhuc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucVoHieuHoaKhoiPhuc1.Location = new System.Drawing.Point(0, 0);
+            this.ucVoHieuHoaKhoiPhuc1.Name = "ucVoHieuHoaKhoiPhuc1";
+            this.ucVoHieuHoaKhoiPhuc1.Size = new System.Drawing.Size(798, 577);
+            this.ucVoHieuHoaKhoiPhuc1.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -734,5 +745,6 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnDangXuat;
         private ucThongTinUuDai ucthongTinUuDai1;
         private ucDanhSachNhanVien ucDanhSachNhanVien1;
+        private ucVoHieuHoaKhoiPhuc ucVoHieuHoaKhoiPhuc1;
     }
 }
