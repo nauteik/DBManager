@@ -47,9 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgv = new System.Windows.Forms.DataGridView();
-            this.buttonXuatDuLieu = new System.Windows.Forms.Button();
-            this.btXoaDuLieu = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.brandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uploadDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +54,9 @@
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.buttonXuatDuLieu = new System.Windows.Forms.Button();
+            this.btXoaDuLieu = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).BeginInit();
@@ -271,40 +271,6 @@
             this.dtgv.TabIndex = 0;
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentClick);
             // 
-            // buttonXuatDuLieu
-            // 
-            this.buttonXuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.buttonXuatDuLieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonXuatDuLieu.FlatAppearance.BorderSize = 0;
-            this.buttonXuatDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonXuatDuLieu.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXuatDuLieu.Location = new System.Drawing.Point(37, 520);
-            this.buttonXuatDuLieu.Name = "buttonXuatDuLieu";
-            this.buttonXuatDuLieu.Size = new System.Drawing.Size(94, 23);
-            this.buttonXuatDuLieu.TabIndex = 7;
-            this.buttonXuatDuLieu.Text = "Xuất dữ liệu";
-            this.buttonXuatDuLieu.UseVisualStyleBackColor = false;
-            this.buttonXuatDuLieu.Click += new System.EventHandler(this.buttonXuatDuLieu_Click);
-            // 
-            // btXoaDuLieu
-            // 
-            this.btXoaDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.btXoaDuLieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btXoaDuLieu.FlatAppearance.BorderSize = 0;
-            this.btXoaDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btXoaDuLieu.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoaDuLieu.Location = new System.Drawing.Point(163, 520);
-            this.btXoaDuLieu.Name = "btXoaDuLieu";
-            this.btXoaDuLieu.Size = new System.Drawing.Size(94, 23);
-            this.btXoaDuLieu.TabIndex = 8;
-            this.btXoaDuLieu.Text = "Xóa dữ liệu";
-            this.btXoaDuLieu.UseVisualStyleBackColor = false;
-            this.btXoaDuLieu.Click += new System.EventHandler(this.btXoaDuLieu_Click);
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2007|*.xlsx|Excel 2010|*.xlsx|Excel 2013|*.xlsx";
-            // 
             // Selected
             // 
             this.Selected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -370,7 +336,41 @@
             this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Edit.UseColumnTextForLinkValue = true;
             // 
-            // ThongTinUuDai
+            // buttonXuatDuLieu
+            // 
+            this.buttonXuatDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.buttonXuatDuLieu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonXuatDuLieu.FlatAppearance.BorderSize = 0;
+            this.buttonXuatDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonXuatDuLieu.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonXuatDuLieu.Location = new System.Drawing.Point(37, 520);
+            this.buttonXuatDuLieu.Name = "buttonXuatDuLieu";
+            this.buttonXuatDuLieu.Size = new System.Drawing.Size(94, 23);
+            this.buttonXuatDuLieu.TabIndex = 7;
+            this.buttonXuatDuLieu.Text = "Xuất dữ liệu";
+            this.buttonXuatDuLieu.UseVisualStyleBackColor = false;
+            this.buttonXuatDuLieu.Click += new System.EventHandler(this.buttonXuatDuLieu_Click);
+            // 
+            // btXoaDuLieu
+            // 
+            this.btXoaDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btXoaDuLieu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoaDuLieu.FlatAppearance.BorderSize = 0;
+            this.btXoaDuLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btXoaDuLieu.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoaDuLieu.Location = new System.Drawing.Point(163, 520);
+            this.btXoaDuLieu.Name = "btXoaDuLieu";
+            this.btXoaDuLieu.Size = new System.Drawing.Size(94, 23);
+            this.btXoaDuLieu.TabIndex = 8;
+            this.btXoaDuLieu.Text = "Xóa dữ liệu";
+            this.btXoaDuLieu.UseVisualStyleBackColor = false;
+            this.btXoaDuLieu.Click += new System.EventHandler(this.btXoaDuLieu_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2007|*.xlsx|Excel 2010|*.xlsx|Excel 2013|*.xlsx";
+            // 
+            // ucThongTinUuDai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,7 +381,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelDanhSachThongTinUuDai);
-            this.Name = "ThongTinUuDai";
+            this.Name = "ucThongTinUuDai";
             this.Size = new System.Drawing.Size(796, 575);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

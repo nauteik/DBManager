@@ -28,7 +28,7 @@ namespace Project_DBManager
 
         private void loadData()
         {
-            query = "SELECT Contract_ID AS ID, Brand_Name AS 'Tên thương hiệu', Signed_date AS 'Ngày ký', Duration AS 'Ngày hết hạn', Content AS 'Nội dung' FROM Contract, Brand_Info WHERE Contract.Brand_ID = Brand_Info.Brand_ID";
+            query = "SELECT Contract_ID AS ID, Brand_Name AS 'Tên thương hiệu', Signed_date AS 'Ngày ký', Duration AS 'Ngày hết hạn', Content AS 'Nội dung' FROM Contract, Brand WHERE Contract.Brand_ID = Brand.Brand_ID";
             table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in table.Rows)
             {

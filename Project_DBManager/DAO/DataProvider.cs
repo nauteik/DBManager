@@ -12,7 +12,7 @@ namespace Project_DBManager.DAO
 {
     internal class DataProvider
     {
-        private readonly string connectString = "Data Source =.\\sqlexpress; Initial Catalog = DBManager; Integrated Security = True";
+        private readonly string connectString = "Server=cnpm12.cl842wcy40x2.ap-southeast-2.rds.amazonaws.com,1433;Database=DBManager;User Id=admin;Password=congnghephanmem;";
         private static DataProvider instance;
 
         public static DataProvider Instance
@@ -64,7 +64,7 @@ namespace Project_DBManager.DAO
 
                         if (item.Contains("@"))
                         {
-
+                            
                             item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
                             cmd.Parameters.AddWithValue(item, para[i++]);
                         }

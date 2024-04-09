@@ -22,10 +22,12 @@ namespace Project_DBManager
         }
         private void collapseUserControl()
         {
+            ucDanhSachNhanVien1.Hide();
             ucthongTinUuDai1.Hide();
             ucThongTinCaNhan1.Hide();
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
+            
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -169,6 +171,13 @@ namespace Project_DBManager
         {
             collapseUserControl();
             this.ucthongTinUuDai1.Show();
+        }
+
+        private void btnDanhSachNhanVien_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucDanhSachNhanVien1.loadStaff(account);
+            this.ucDanhSachNhanVien1.Show();
         }
     }
 }
