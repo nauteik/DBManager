@@ -9,6 +9,7 @@ namespace Project_DBManager.DTO
 {
     public class Staff
     {
+        private bool isChecked;
         private string name;
         private string position;
         private string dept;
@@ -20,13 +21,17 @@ namespace Project_DBManager.DTO
         public string Dept { get => dept; set => dept = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Email { get => email; set => email = value; }
+        public bool IsChecked { get => isChecked; set => isChecked = value; }
+
         public Staff(DataRow row) 
         {
+            isChecked = false;
             name = row["Name"].ToString();
             position = row["Pos_Name"].ToString();
             dept = row["Department_Name"].ToString();
             phone = row["phoneNum"].ToString();
             email = row["User_Email"].ToString();
+            
         }
 
     }

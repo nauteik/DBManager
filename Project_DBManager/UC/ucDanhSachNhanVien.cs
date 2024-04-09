@@ -25,14 +25,7 @@ namespace Project_DBManager
             dtgv_Staff.DataSource = listStaff;
         }
 
-        private void dtgv_Staff_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            
-            if(dtgv_Staff.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
-            {
-                e.Value =  Properties.Resources.arrow;
-            }
-        }
+       
 
         private void dtgv_Staff_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -188,6 +181,14 @@ namespace Project_DBManager
         private void pb_TaiXuong_MouseLeave(object sender, EventArgs e)
         {
             pb_TaiXuong.BackColor = Color.White;
+        }
+
+        private void dtgv_Staff_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dtgv_Staff.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                e.Value = Properties.Resources.arrow;
+            }
         }
     }
 }
