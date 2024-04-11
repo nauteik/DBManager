@@ -8,9 +8,9 @@ namespace Project_DBManager
     public partial class MainForm : Form
     {
         private Account account;
-        public MainForm(Account loginAccount)
+        public MainForm(Account account)
         {
-            this.account = loginAccount;
+            this.account = account;
             InitializeComponent();
             collapseUserControl();
             pnHeader.BringToFront();
@@ -28,7 +28,8 @@ namespace Project_DBManager
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
             ucVoHieuHoaKhoiPhuc1.Hide();
-            
+            ucDanhSachBaiDang1.Hide();
+        
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -127,6 +128,7 @@ namespace Project_DBManager
         private void btnThongTinHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucDanhSachHopDong1.Account = account;
             ucDanhSachHopDong1.Show();
         }
 
@@ -153,6 +155,7 @@ namespace Project_DBManager
         private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucTaoBaiDang1.Account = account;
             ucTaoBaiDang1.Show();
         }
 
@@ -199,6 +202,12 @@ namespace Project_DBManager
                 formLogin.Show();
                 this.Hide();
             }
+        private void btnChinhSuaBaiDang_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucDanhSachBaiDang1.loadBaiDang();
+            ucDanhSachBaiDang1.Account = account;
+            ucDanhSachBaiDang1.Show();
         }
     }
 }
