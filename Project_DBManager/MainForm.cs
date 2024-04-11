@@ -187,5 +187,18 @@ namespace Project_DBManager
             ucVoHieuHoaKhoiPhuc1.loadStaff(account);
             ucVoHieuHoaKhoiPhuc1.Show();
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+                this.Hide();
+            }
+        }
     }
 }

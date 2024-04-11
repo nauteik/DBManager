@@ -66,12 +66,12 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
             this.ucDanhSachNhanVien1 = new Project_DBManager.ucDanhSachNhanVien();
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.ucthongTinUuDai1 = new Project_DBManager.ucThongTinUuDai();
-            this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -129,6 +129,7 @@ namespace Project_DBManager
             this.btnDangXuat.TabIndex = 3;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnXemThongBao
             // 
@@ -614,6 +615,14 @@ namespace Project_DBManager
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
             // 
+            // ucVoHieuHoaKhoiPhuc1
+            // 
+            this.ucVoHieuHoaKhoiPhuc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucVoHieuHoaKhoiPhuc1.Location = new System.Drawing.Point(0, 0);
+            this.ucVoHieuHoaKhoiPhuc1.Name = "ucVoHieuHoaKhoiPhuc1";
+            this.ucVoHieuHoaKhoiPhuc1.Size = new System.Drawing.Size(798, 577);
+            this.ucVoHieuHoaKhoiPhuc1.TabIndex = 3;
+            // 
             // ucDanhSachNhanVien1
             // 
             this.ucDanhSachNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -663,14 +672,6 @@ namespace Project_DBManager
             this.ucthongTinUuDai1.Name = "ucthongTinUuDai1";
             this.ucthongTinUuDai1.Size = new System.Drawing.Size(799, 576);
             this.ucthongTinUuDai1.TabIndex = 0;
-            // 
-            // ucVoHieuHoaKhoiPhuc1
-            // 
-            this.ucVoHieuHoaKhoiPhuc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.ucVoHieuHoaKhoiPhuc1.Location = new System.Drawing.Point(0, 0);
-            this.ucVoHieuHoaKhoiPhuc1.Name = "ucVoHieuHoaKhoiPhuc1";
-            this.ucVoHieuHoaKhoiPhuc1.Size = new System.Drawing.Size(798, 577);
-            this.ucVoHieuHoaKhoiPhuc1.TabIndex = 3;
             // 
             // MainForm
             // 
