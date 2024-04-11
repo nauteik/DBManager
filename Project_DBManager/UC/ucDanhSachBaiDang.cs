@@ -137,7 +137,16 @@ namespace Project_DBManager
                 {
                     if (pi.IsChecked)
                     {
-                        postIDList.Add(pi.PostId);
+                        if (account.Level >= PostDAO.Instance.getUserLevelCreatePost(pi.PostId))
+                        {
+                            postIDList.Add(pi.PostId);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn không được phép xóa dữ liệu này!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dtgv_DanhSachBaiDang.DataSource = postInfoToShowList;
+                            return;
+                        }
                     }
                 }
                 postInfoToShowList.RemoveAll(pi => pi.IsChecked);

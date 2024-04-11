@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,8 +60,16 @@ namespace Project_DBManager.DAO
 
         public void updatePostContentById(string postId, string content)
         {
-            string query = "UPDATE Post SET Content = @Content WHERE Post_ID = @Post_ID";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { content, Convert.ToInt32(postId) });
+            DateTime dateTime = DateTime.Now;
+            string query = "UPDATE Post SET Content = @Content, LastChange_Date = @LastChange_Date WHERE Post_ID = @Post_ID";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { content, dateTime, Convert.ToInt32(postId) });
+        }
+
+        public int getUserLevelCreatePost(string postId)
+        {
+            string query = "SELECT Pos_ID FROM Post P, Users U WHERE P.User_ID = U.User_ID AND Post_ID = @Post_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
+            return Convert.ToInt32(dt.Rows[0]["Pos_ID"]);
         }
     }
 }

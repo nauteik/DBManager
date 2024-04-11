@@ -35,37 +35,37 @@ namespace Project_DBManager
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnXemThongBao = new System.Windows.Forms.Button();
             this.btnThongTinCaNhan = new System.Windows.Forms.Button();
+            this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.pnQuanLyHopDong = new System.Windows.Forms.Panel();
             this.btnLichSu = new System.Windows.Forms.Button();
             this.btnUuDai = new System.Windows.Forms.Button();
             this.btnKyKetHopDong = new System.Windows.Forms.Button();
             this.btnGiaHanHopDong = new System.Windows.Forms.Button();
             this.btnThongTinHopDong = new System.Windows.Forms.Button();
+            this.btnQuanLyHopDong = new System.Windows.Forms.Button();
             this.pnQuanLyNhanVien = new System.Windows.Forms.Panel();
             this.btnVoHieuHoaKhoiPhuc = new System.Windows.Forms.Button();
             this.btnPhanCongCongViec = new System.Windows.Forms.Button();
             this.btnCapLaiMatKhau = new System.Windows.Forms.Button();
             this.btnTaiKhoanPhanQuyen = new System.Windows.Forms.Button();
             this.btnDanhSachNhanVien = new System.Windows.Forms.Button();
+            this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
             this.pnTaoBaiDang = new System.Windows.Forms.Panel();
             this.btnLocBaiDang = new System.Windows.Forms.Button();
             this.btnChinhSuaBaiDang = new System.Windows.Forms.Button();
             this.btnTaoBaiDangMoi = new System.Windows.Forms.Button();
+            this.btnTaoBaiDang = new System.Windows.Forms.Button();
             this.pnQuanLyThongTin = new System.Windows.Forms.Panel();
             this.btnCapNhatThongTin = new System.Windows.Forms.Button();
             this.btnThuThapThongTin = new System.Windows.Forms.Button();
             this.btnChinhSuaTaiNguyen = new System.Windows.Forms.Button();
             this.btnTruyCapTaiNguyen = new System.Windows.Forms.Button();
+            this.btnQuanLyThongTin = new System.Windows.Forms.Button();
             this.lbPostion = new System.Windows.Forms.Label();
             this.pnHeader = new System.Windows.Forms.Panel();
-            this.pnBody = new System.Windows.Forms.Panel();
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
-            this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
-            this.btnQuanLyHopDong = new System.Windows.Forms.Button();
-            this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
-            this.btnTaoBaiDang = new System.Windows.Forms.Button();
-            this.btnQuanLyThongTin = new System.Windows.Forms.Button();
+            this.pnBody = new System.Windows.Forms.Panel();
             this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
@@ -78,9 +78,9 @@ namespace Project_DBManager
             this.pnTaoBaiDang.SuspendLayout();
             this.pnQuanLyThongTin.SuspendLayout();
             this.pnHeader.SuspendLayout();
-            this.pnBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).BeginInit();
+            this.pnBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnSidemenu
@@ -157,6 +157,24 @@ namespace Project_DBManager
             this.btnThongTinCaNhan.Text = "Thông tin cá nhân";
             this.btnThongTinCaNhan.UseVisualStyleBackColor = false;
             this.btnThongTinCaNhan.Click += new System.EventHandler(this.btnThongTinCaNhan_Click);
+            // 
+            // btnQuanLyTaiKhoan
+            // 
+            this.btnQuanLyTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
+            this.btnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyTaiKhoan.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyTaiKhoan.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.btnQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(146, 38);
+            this.btnQuanLyTaiKhoan.TabIndex = 0;
+            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // pnQuanLyHopDong
             // 
@@ -245,6 +263,24 @@ namespace Project_DBManager
             this.btnThongTinHopDong.UseVisualStyleBackColor = false;
             this.btnThongTinHopDong.Click += new System.EventHandler(this.btnThongTinHopDong_Click);
             // 
+            // btnQuanLyHopDong
+            // 
+            this.btnQuanLyHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
+            this.btnQuanLyHopDong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyHopDong.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyHopDong.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyHopDong.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.btnQuanLyHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuanLyHopDong.Location = new System.Drawing.Point(0, 0);
+            this.btnQuanLyHopDong.Name = "btnQuanLyHopDong";
+            this.btnQuanLyHopDong.Size = new System.Drawing.Size(146, 38);
+            this.btnQuanLyHopDong.TabIndex = 0;
+            this.btnQuanLyHopDong.Text = "Quản lý hợp đồng";
+            this.btnQuanLyHopDong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnQuanLyHopDong.UseVisualStyleBackColor = false;
+            this.btnQuanLyHopDong.Click += new System.EventHandler(this.btnQuanLyHopDong_Click);
+            // 
             // pnQuanLyNhanVien
             // 
             this.pnQuanLyNhanVien.Controls.Add(this.btnVoHieuHoaKhoiPhuc);
@@ -331,6 +367,24 @@ namespace Project_DBManager
             this.btnDanhSachNhanVien.Text = "Danh sách nhân viên";
             this.btnDanhSachNhanVien.UseVisualStyleBackColor = false;
             // 
+            // btnQuanLyNhanVien
+            // 
+            this.btnQuanLyNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
+            this.btnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyNhanVien.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyNhanVien.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(146, 38);
+            this.btnQuanLyNhanVien.TabIndex = 0;
+            this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
+            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
+            // 
             // pnTaoBaiDang
             // 
             this.pnTaoBaiDang.Controls.Add(this.btnLocBaiDang);
@@ -388,6 +442,24 @@ namespace Project_DBManager
             this.btnTaoBaiDangMoi.Text = "Tạo bài đăng mới";
             this.btnTaoBaiDangMoi.UseVisualStyleBackColor = false;
             this.btnTaoBaiDangMoi.Click += new System.EventHandler(this.btnTaoBaiDangMoi_Click);
+            // 
+            // btnTaoBaiDang
+            // 
+            this.btnTaoBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
+            this.btnTaoBaiDang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaoBaiDang.FlatAppearance.BorderSize = 0;
+            this.btnTaoBaiDang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoBaiDang.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoBaiDang.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.btnTaoBaiDang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTaoBaiDang.Location = new System.Drawing.Point(0, 0);
+            this.btnTaoBaiDang.Name = "btnTaoBaiDang";
+            this.btnTaoBaiDang.Size = new System.Drawing.Size(146, 38);
+            this.btnTaoBaiDang.TabIndex = 0;
+            this.btnTaoBaiDang.Text = "Tạo bài đăng";
+            this.btnTaoBaiDang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTaoBaiDang.UseVisualStyleBackColor = false;
+            this.btnTaoBaiDang.Click += new System.EventHandler(this.btnTaoBaiDang_Click);
             // 
             // pnQuanLyThongTin
             // 
@@ -461,6 +533,24 @@ namespace Project_DBManager
             this.btnTruyCapTaiNguyen.UseVisualStyleBackColor = false;
             this.btnTruyCapTaiNguyen.Click += new System.EventHandler(this.btnTruyCapTaiNguyen_Click);
             // 
+            // btnQuanLyThongTin
+            // 
+            this.btnQuanLyThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
+            this.btnQuanLyThongTin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnQuanLyThongTin.FlatAppearance.BorderSize = 0;
+            this.btnQuanLyThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanLyThongTin.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyThongTin.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.btnQuanLyThongTin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuanLyThongTin.Location = new System.Drawing.Point(0, 0);
+            this.btnQuanLyThongTin.Name = "btnQuanLyThongTin";
+            this.btnQuanLyThongTin.Size = new System.Drawing.Size(146, 38);
+            this.btnQuanLyThongTin.TabIndex = 0;
+            this.btnQuanLyThongTin.Text = "Quản lý thông tin";
+            this.btnQuanLyThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnQuanLyThongTin.UseVisualStyleBackColor = false;
+            this.btnQuanLyThongTin.Click += new System.EventHandler(this.btnQuanLyThongTin_Click);
+            // 
             // lbPostion
             // 
             this.lbPostion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
@@ -485,22 +575,6 @@ namespace Project_DBManager
             this.pnHeader.Size = new System.Drawing.Size(944, 58);
             this.pnHeader.TabIndex = 1;
             // 
-            // pnBody
-            // 
-            this.pnBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
-            this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
-            this.pnBody.Controls.Add(this.ucTaoBaiDang1);
-            this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
-            this.pnBody.Controls.Add(this.ucthongTinUuDai1);
-            this.pnBody.Location = new System.Drawing.Point(145, 58);
-            this.pnBody.Name = "pnBody";
-            this.pnBody.Size = new System.Drawing.Size(799, 576);
-            this.pnBody.TabIndex = 3;
-            // 
             // pbTextDBManager
             // 
             this.pbTextDBManager.Image = global::Project_DBManager.Properties.Resources.text_DBManager;
@@ -521,98 +595,25 @@ namespace Project_DBManager
             this.pbHanCity.TabIndex = 0;
             this.pbHanCity.TabStop = false;
             // 
-            // btnQuanLyTaiKhoan
+            // pnBody
             // 
-            this.btnQuanLyTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
-            this.btnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyTaiKhoan.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyTaiKhoan.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.btnQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
-            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(146, 38);
-            this.btnQuanLyTaiKhoan.TabIndex = 0;
-            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = false;
-            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
-            // 
-            // btnQuanLyHopDong
-            // 
-            this.btnQuanLyHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
-            this.btnQuanLyHopDong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyHopDong.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyHopDong.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyHopDong.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.btnQuanLyHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuanLyHopDong.Location = new System.Drawing.Point(0, 0);
-            this.btnQuanLyHopDong.Name = "btnQuanLyHopDong";
-            this.btnQuanLyHopDong.Size = new System.Drawing.Size(146, 38);
-            this.btnQuanLyHopDong.TabIndex = 0;
-            this.btnQuanLyHopDong.Text = "Quản lý hợp đồng";
-            this.btnQuanLyHopDong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQuanLyHopDong.UseVisualStyleBackColor = false;
-            this.btnQuanLyHopDong.Click += new System.EventHandler(this.btnQuanLyHopDong_Click);
-            // 
-            // btnQuanLyNhanVien
-            // 
-            this.btnQuanLyNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
-            this.btnQuanLyNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyNhanVien.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyNhanVien.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(146, 38);
-            this.btnQuanLyNhanVien.TabIndex = 0;
-            this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
-            this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
-            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
-            // 
-            // btnTaoBaiDang
-            // 
-            this.btnTaoBaiDang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
-            this.btnTaoBaiDang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaoBaiDang.FlatAppearance.BorderSize = 0;
-            this.btnTaoBaiDang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaoBaiDang.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoBaiDang.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.btnTaoBaiDang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTaoBaiDang.Location = new System.Drawing.Point(0, 0);
-            this.btnTaoBaiDang.Name = "btnTaoBaiDang";
-            this.btnTaoBaiDang.Size = new System.Drawing.Size(146, 38);
-            this.btnTaoBaiDang.TabIndex = 0;
-            this.btnTaoBaiDang.Text = "Tạo bài đăng";
-            this.btnTaoBaiDang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTaoBaiDang.UseVisualStyleBackColor = false;
-            this.btnTaoBaiDang.Click += new System.EventHandler(this.btnTaoBaiDang_Click);
-            // 
-            // btnQuanLyThongTin
-            // 
-            this.btnQuanLyThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(185)))), ((int)(((byte)(201)))));
-            this.btnQuanLyThongTin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanLyThongTin.FlatAppearance.BorderSize = 0;
-            this.btnQuanLyThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanLyThongTin.Font = new System.Drawing.Font("Inter SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyThongTin.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.btnQuanLyThongTin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuanLyThongTin.Location = new System.Drawing.Point(0, 0);
-            this.btnQuanLyThongTin.Name = "btnQuanLyThongTin";
-            this.btnQuanLyThongTin.Size = new System.Drawing.Size(146, 38);
-            this.btnQuanLyThongTin.TabIndex = 0;
-            this.btnQuanLyThongTin.Text = "Quản lý thông tin";
-            this.btnQuanLyThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnQuanLyThongTin.UseVisualStyleBackColor = false;
-            this.btnQuanLyThongTin.Click += new System.EventHandler(this.btnQuanLyThongTin_Click);
+            this.pnBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
+            this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
+            this.pnBody.Controls.Add(this.ucTaoBaiDang1);
+            this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
+            this.pnBody.Controls.Add(this.ucthongTinUuDai1);
+            this.pnBody.Location = new System.Drawing.Point(145, 58);
+            this.pnBody.Name = "pnBody";
+            this.pnBody.Size = new System.Drawing.Size(799, 576);
+            this.pnBody.TabIndex = 3;
             // 
             // ucDanhSachBaiDang1
             // 
+            this.ucDanhSachBaiDang1.Account = null;
             this.ucDanhSachBaiDang1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -689,9 +690,9 @@ namespace Project_DBManager
             this.pnTaoBaiDang.ResumeLayout(false);
             this.pnQuanLyThongTin.ResumeLayout(false);
             this.pnHeader.ResumeLayout(false);
-            this.pnBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbTextDBManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHanCity)).EndInit();
+            this.pnBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

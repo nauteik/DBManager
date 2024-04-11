@@ -21,6 +21,8 @@ namespace Project_DBManager
         private DataTable table;
         private string query;
         private List<ContractInfo> contractInfoList = new List<ContractInfo>();
+        private Account account;
+        public Account Account { get =>  account; set => account = value; }
 
         public ucDanhSachHopDong()
         {
@@ -216,7 +218,16 @@ namespace Project_DBManager
                 {
                     if (ci.IsChecked)
                     {
-                        contractIDList.Add(ci.ContractID);
+                        if (account.Level >= ContractDAO.Instance.getUserLevelCreateContract(ci.ContractID))
+                        {
+                            contractIDList.Add(ci.ContractID);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn không được phép xóa dữ liệu này!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            dtgv.DataSource = contractInfoList;
+                            return;
+                        }
                     }
                 }
                 contractInfoList.RemoveAll(ci => ci.IsChecked);
@@ -225,7 +236,6 @@ namespace Project_DBManager
                     DataProvider.Instance.ExecuteQuery(query + id);
                 }
                 dtgv.DataSource = contractInfoList;
-
                 MessageBox.Show("Dữ liệu đã được xóa.");
             }
         }

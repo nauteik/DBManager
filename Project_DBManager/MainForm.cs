@@ -125,6 +125,7 @@ namespace Project_DBManager
         private void btnThongTinHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucDanhSachHopDong1.Account = account;
             ucDanhSachHopDong1.Show();
         }
 
