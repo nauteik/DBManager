@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
-    public partial class ucTaoBaiDang : UserControl
+    public partial class ucChinhSuaHopDong : UserControl
     {
-        public ucTaoBaiDang()
+        public ucChinhSuaHopDong()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_ThongTinHopDong_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

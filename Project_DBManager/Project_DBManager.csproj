@@ -47,18 +47,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BrandDAO.cs" />
+    <Compile Include="DAO\ContractDAO.cs" />
+    <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
-    <Compile Include="UserControl\ucTaoBaiDang.cs">
+    <Compile Include="DTO\PostInfo.cs" />
+    <Compile Include="DTO\PostInfoToShow.cs" />
+    <Compile Include="ucChinhSuaHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucTaoBaiDang.Designer.cs">
+    <Compile Include="ucChinhSuaHopDong.Designer.cs">
+      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaBaiDang.Designer.cs">
+      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucDanhSachBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucDanhSachBaiDang.Designer.cs">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucTaoBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucTaoBaiDang.Designer.cs">
       <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ucDanhSachHopDong.cs">
+    <Compile Include="UC\ucDanhSachHopDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucDanhSachHopDong.Designer.cs">
+    <Compile Include="UC\ucDanhSachHopDong.Designer.cs">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
@@ -84,19 +107,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl\ucThongTinCaNhan.cs">
+    <Compile Include="UC\ucThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucThongTinCaNhan.Designer.cs">
+    <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl\ucDanhSachHopDong.resx">
+    <EmbeddedResource Include="ucChinhSuaHopDong.resx">
+      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChinhSuaBaiDang.resx">
+      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="UserControl\ucThongTinUuDai.cs">
+    <Compile Include="UC\ucThongTinUuDai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucThongTinUuDai.Designer.cs">
+    <Compile Include="UC\ucThongTinUuDai.Designer.cs">
       <DependentUpon>ucThongTinUuDai.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
@@ -118,10 +150,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl\ucThongTinCaNhan.resx">
+    <EmbeddedResource Include="UC\ucTaoBaiDang.resx">
+      <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ucThongTinUuDai.resx">
+    <EmbeddedResource Include="UC\ucThongTinUuDai.resx">
       <DependentUpon>ucThongTinUuDai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Project_DBManager.DAO.DataProvider.datasource" />
@@ -218,7 +253,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
@@ -229,6 +264,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box_light1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
