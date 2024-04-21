@@ -63,5 +63,7 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
             return dt.Rows.Count > 0;
         }
+
+
     }
 }

@@ -50,14 +50,27 @@
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
+    <Compile Include="DTO\BrandInfo.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\PostInfo.cs" />
     <Compile Include="DTO\PostInfoToShow.cs" />
-    <Compile Include="ucChinhSuaHopDong.cs">
+    <Compile Include="ucChiTietThongTinUuDai.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucChinhSuaHopDong.Designer.cs">
+    <Compile Include="ucChiTietThongTinUuDai.Designer.cs">
+      <DependentUpon>ucChiTietThongTinUuDai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaThongTinUuDai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaThongTinUuDai.Designer.cs">
+      <DependentUpon>ucChinhSuaThongTinUuDai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaHopDong.Designer.cs">
       <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\ucChinhSuaBaiDang.cs">
@@ -113,11 +126,17 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucChinhSuaHopDong.resx">
+    <EmbeddedResource Include="ucChiTietThongTinUuDai.resx">
+      <DependentUpon>ucChiTietThongTinUuDai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChinhSuaHopDong.resx">
       <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucChinhSuaBaiDang.resx">
       <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChinhSuaThongTinUuDai.resx">
+      <DependentUpon>ucChinhSuaThongTinUuDai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
       <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
@@ -273,6 +292,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
