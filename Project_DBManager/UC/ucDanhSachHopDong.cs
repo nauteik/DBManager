@@ -4,14 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_DBManager
@@ -21,8 +19,6 @@ namespace Project_DBManager
         private DataTable table;
         private string query;
         private List<ContractInfo> contractInfoList = new List<ContractInfo>();
-        private Account account;
-        public Account Account { get =>  account; set => account = value; }
 
         public ucDanhSachHopDong()
         {
@@ -49,7 +45,7 @@ namespace Project_DBManager
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
         private void cb_SapXep_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +79,7 @@ namespace Project_DBManager
             }
             else if (cb.SelectedItem.ToString() == "Ngày ký tăng dần")
             {
-                sortedList = contractInfoList.OrderBy(ci => ci.SignedDate).ToList();
+               sortedList = contractInfoList.OrderBy(ci => ci.SignedDate).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Ngày ký giảm dần")
@@ -133,71 +129,10 @@ namespace Project_DBManager
 
         }
 
-        private void exportToExcell(bool isSelectAll)
-        {
-            string text;
-            if (isSelectAll)
-            {
-                text = "Bạn có muốn tải xuống tất cả dữ liệu?";
-            }
-            else
-            {
-                text = "Bạn có muốn tải xuống dữ liệu đã được chọn?";
-            }
-            DialogResult result = MessageBox.Show(text, "Tải xuống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                if (dtgv.Rows.Count > 0)
-                {
-                    if (!isSelectAll)
-                    {
-                        List<ContractInfo> list = new List<ContractInfo>();
-                        foreach (ContractInfo ci in contractInfoList)
-                        {
-                            if (ci.IsChecked)
-                            {
-                                list.Add(ci);
-                            }
-                        }
-                        dtgv.DataSource = list;
-                    }
-                    Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
-                    MExcel.Application.Workbooks.Add(Type.Missing);
-                    for (int i = 2; i < dtgv.Columns.Count; i++)
-                    {
-                        MExcel.Cells[1, i - 1] = dtgv.Columns[i].HeaderText;
-                    }
-                    for (int i = 0; i < dtgv.Rows.Count; i++)
-                    {
-                        for (int j = 2; j < dtgv.Columns.Count; j++)
-                        {
-                            if (j == 4 || j == 5)
-                            {
-                                DateTime dt = Convert.ToDateTime(dtgv.Rows[i].Cells[j].Value);
-                                MExcel.Cells[i + 2, j - 1] = dt.ToString("dd-MM-yyyy");
-                            }
-                            else
-                            {
-                                MExcel.Cells[i + 2, j - 1] = dtgv.Rows[i].Cells[j].Value.ToString();
-                            }
-                        }
-                    }
-                    dtgv.DataSource = contractInfoList;
-                    MExcel.Columns.Font.Size = 12;
-                    MExcel.Columns.AutoFit();
-                    MExcel.Rows.AutoFit();
-                    MExcel.Visible = true;
-                }
-                else
-                {
-                    MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btn_XuatDuLieu_Click(object sender, EventArgs e)
         {
-            exportToExcell(false);
+            List<ContractInfo> checkedContract = ((List<ContractInfo>)dtgv.DataSource).Where(ci => ci.IsChecked).ToList();
+            checkedContract.ForEach(ci => ci.ToString());
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -218,16 +153,7 @@ namespace Project_DBManager
                 {
                     if (ci.IsChecked)
                     {
-                        if (account.Level >= ContractDAO.Instance.getUserLevelCreateContract(ci.ContractID))
-                        {
-                            contractIDList.Add(ci.ContractID);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Bạn không được phép xóa dữ liệu này!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            dtgv.DataSource = contractInfoList;
-                            return;
-                        }
+                        contractIDList.Add(ci.ContractID);
                     }
                 }
                 contractInfoList.RemoveAll(ci => ci.IsChecked);
@@ -236,18 +162,19 @@ namespace Project_DBManager
                     DataProvider.Instance.ExecuteQuery(query + id);
                 }
                 dtgv.DataSource = contractInfoList;
+
                 MessageBox.Show("Dữ liệu đã được xóa.");
             }
         }
 
         private void btn_TaiXuong_Click(object sender, EventArgs e)
         {
-            exportToExcell(true);
-        }
-
-        private void tb_ThongTinHopDong_TextChanged(object sender, EventArgs e)
-        {
-
+            DialogResult result = MessageBox.Show("Bạn muốn tải xuống tất cả dữ liệu?", "Tải xuống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                List<ContractInfo> downLoadList = ((List<ContractInfo>)dtgv.DataSource).ToList();
+                downLoadList.ForEach(ci => ci.ToString());
+            }
         }
     }
 }

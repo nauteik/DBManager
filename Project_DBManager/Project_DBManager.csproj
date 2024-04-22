@@ -69,30 +69,6 @@
     </Compile>
     <Compile Include="UC\ucDanhSachNhanVien.Designer.cs">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
-    <Compile Include="DAO\BrandDAO.cs" />
-    <Compile Include="DAO\ContractDAO.cs" />
-    <Compile Include="DAO\PostDAO.cs" />
-    <Compile Include="DTO\ContractInfo.cs" />
-    <Compile Include="DTO\OfferInfo.cs" />
-    <Compile Include="DTO\PostInfo.cs" />
-    <Compile Include="DTO\PostInfoToShow.cs" />
-    <Compile Include="ucChinhSuaHopDong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucChinhSuaHopDong.Designer.cs">
-      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\ucChinhSuaBaiDang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\ucChinhSuaBaiDang.Designer.cs">
-      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\ucDanhSachBaiDang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\ucDanhSachBaiDang.Designer.cs">
-      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\ucTaoBaiDang.cs">
       <SubType>UserControl</SubType>
@@ -137,14 +113,6 @@
     </Compile>
     <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
-    <EmbeddedResource Include="ucChinhSuaHopDong.resx">
-      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucChinhSuaBaiDang.resx">
-      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
-      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
@@ -176,8 +144,6 @@
     </Compile>
     <EmbeddedResource Include="UC\ucDanhSachNhanVien.resx">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
-    <EmbeddedResource Include="UC\ucTaoBaiDang.resx">
-      <DependentUpon>ucTaoBaiDang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
@@ -282,7 +248,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
@@ -296,13 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Import_light.png" />
-    <None Include="Resources\Img_box_light.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Img_box_light1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Edit_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

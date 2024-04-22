@@ -35,7 +35,6 @@ namespace Project_DBManager
             }
 
             dtgv.DataSource = OfferInfoList;
-            dtgv.Columns["Post_ID"].Visible = false;
         }
 
 

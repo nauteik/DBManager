@@ -50,7 +50,7 @@ namespace Project_DBManager.DAO
             }
             return data;
         }
-        public int ExecuteNonQuery(string query, object[] para = null)
+        public int ExecuteNonQuery(string query, string[] para = null)
         {
             using (SqlConnection connect = new SqlConnection(connectString))
             {
@@ -59,18 +59,19 @@ namespace Project_DBManager.DAO
                 if (para != null)
                 {
                     int i = 0;
-                    foreach (string temp in query.Split(' '))
+                    foreach (string item in query.Split(' '))
                     {
 
-                        if (temp.Contains("@"))
+                        if (item.Contains("@"))
                         {
                             
-                            string item = temp.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
+                            item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
                             cmd.Parameters.AddWithValue(item, para[i++]);
                         }
                     }
 
                 }
+
                 return cmd.ExecuteNonQuery();
             }
         }
