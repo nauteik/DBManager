@@ -92,23 +92,5 @@ namespace Project_DBManager.DAO
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
         }
 
-        public List<string> getNameList()
-        {
-            List<string> nameList = new List<string>();
-            string query = "SELECT Name FROM User_Info";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow row in dt.Rows)
-            {
-                nameList.Add(row["Name"].ToString());
-            }
-            return nameList;
-        }
-
-        public int getLevelByContractId(int id)
-        {
-            string query = "SELECT Pos_ID FROM Users U, Contract C WHERE U.User_ID = C.User_ID AND Contract_ID = @Contract_ID";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
-            return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
-        }
     }
 }
