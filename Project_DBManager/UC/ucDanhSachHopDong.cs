@@ -202,7 +202,20 @@ namespace Project_DBManager
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                if (account.Level >= AccountDAO.Instance.getLevelByContractId(Convert.ToInt32(dtgv.Rows[e.RowIndex].Cells[2].Value.ToString())))
+                {
+                    string tempContractId = dtgv.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    ContractInfo contractInfo = contractInfoList.Find(ci => ci.ContractID == tempContractId);
+                    ucChinhSuaHopDong1.ContractInfo = contractInfo;
+                    ucChinhSuaHopDong1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần quyền truy cập để chỉnh sửa hợp đồng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void btn_XoaDuLieu_Click(object sender, EventArgs e)
@@ -248,6 +261,32 @@ namespace Project_DBManager
         private void tb_ThongTinHopDong_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgv_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                dtgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightGray;
+            }
+        }
+
+        private void dtgv_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                dtgv.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+            }
+        }
+
+        private void ucChinhSuaHopDong1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucChinhSuaHopDong1_Load_1(object sender, EventArgs e)
+        {
+            ucChinhSuaHopDong1.Hide();
         }
     }
 }
