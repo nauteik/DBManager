@@ -75,5 +75,32 @@ namespace Project_DBManager.DAO
             }
             return typeList;
         }
+
+        public int getBrandIdDoNotHaveContract()
+        {
+            List<int> brandIdList = new List<int>();
+            string query = "SELECT Brand_ID FROM Contract";
+            DataTable dtBrand = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dtBrand.Rows)
+            {
+                brandIdList.Add(Convert.ToInt32(row["Brand_ID"].ToString()));
+            }
+            query = "SELECT Brand_ID FROM Brand";
+            DataTable dtContract = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dtContract.Rows)
+            {
+                if (!brandIdList.Contains(Convert.ToInt32(row["Brand_ID"].ToString())))
+                {
+                    return Convert.ToInt32(row["Brand_ID"].ToString());
+                }
+            }
+            return -1;
+        }
+
+        public void createNewBrand(string brandName, string type, string representPhoneNumber)
+        {
+            string query = "INSERT INTO Brand (Brand_Name, Type, Brand_Represent, Status) VALUES ( @Brand_Name, @Type, @Brand_Represent, N'Chưa tạo bài đăng' )";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] {brandName, type, representPhoneNumber});
+        }
     }
 }

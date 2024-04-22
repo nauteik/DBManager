@@ -84,5 +84,11 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { name, signedDate });
             return Convert.ToInt32(dt.Rows[0]["Sum_Contract"].ToString());
         }
+
+        public void createNewContract(string signedDate, string duration, string content, string userId, string brandId)
+        {
+            string query = "INSERT INTO Contract (Signed_date, Duration, Content, User_ID, Brand_ID) VALUES ( @Signed_date, @Duration, @Content, @User_ID, @Brand_ID )";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { signedDate, duration, content, userId, brandId });
+        }
     }
 }

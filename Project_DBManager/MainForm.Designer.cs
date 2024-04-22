@@ -66,6 +66,7 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucTaoHopDong1 = new Project_DBManager.UC.ucTaoHopDong();
             this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
             this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
             this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
@@ -236,6 +237,7 @@ namespace Project_DBManager
             this.btnKyKetHopDong.TabIndex = 3;
             this.btnKyKetHopDong.Text = "Ký kết hợp đồng";
             this.btnKyKetHopDong.UseVisualStyleBackColor = false;
+            this.btnKyKetHopDong.Click += new System.EventHandler(this.btnKyKetHopDong_Click);
             // 
             // btnGiaHanHopDong
             // 
@@ -605,6 +607,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucTaoHopDong1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeHopDong1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeBaiDang1);
             this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
@@ -616,6 +619,15 @@ namespace Project_DBManager
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
+            // 
+            // ucTaoHopDong1
+            // 
+            this.ucTaoHopDong1.Account = null;
+            this.ucTaoHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucTaoHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucTaoHopDong1.Name = "ucTaoHopDong1";
+            this.ucTaoHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.ucTaoHopDong1.TabIndex = 5;
             // 
             // ucBaoCaoThongKeHopDong1
             // 
@@ -778,5 +790,6 @@ namespace Project_DBManager
         private ucDanhSachBaiDang ucDanhSachBaiDang1;
         private UC.ucBaoCaoThongKeBaiDang ucBaoCaoThongKeBaiDang1;
         private UC.ucBaoCaoThongKeHopDong ucBaoCaoThongKeHopDong1;
+        private UC.ucTaoHopDong ucTaoHopDong1;
     }
 }
