@@ -147,6 +147,9 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\ucChinhSuaHopDong.resx">
+      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
     </EmbeddedResource>

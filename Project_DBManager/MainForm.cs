@@ -30,6 +30,7 @@ namespace Project_DBManager
             ucVoHieuHoaKhoiPhuc1.Hide();
             ucBaoCaoThongKeBaiDang1.Hide();
             ucBaoCaoThongKeHopDong1.Hide();
+            ucDanhSachBaiDang1.Hide();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -201,7 +202,7 @@ namespace Project_DBManager
                 this.Hide();
             }
         }
-        private void btnChinhSuaBaiDang_Click(object sender, EventArgs e)
+        private void btnDanhSachBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucDanhSachBaiDang1.loadBaiDang();
@@ -209,7 +210,7 @@ namespace Project_DBManager
             ucDanhSachBaiDang1.Show();
         }
        
-        private void btnLocBaiDang_Click(object sender, EventArgs e)
+        private void btnBaoCaoThongKeBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucBaoCaoThongKeBaiDang1.Show();
