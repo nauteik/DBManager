@@ -284,7 +284,7 @@
             this.Upload_Date.HeaderText = "Ngày tạo";
             this.Upload_Date.Name = "Upload_Date";
             this.Upload_Date.ReadOnly = true;
-            this.Upload_Date.Width = 95;
+            this.Upload_Date.Width = 87;
             // 
             // _Type
             // 
@@ -293,7 +293,7 @@
             this._Type.HeaderText = "Chủ đề";
             this._Type.Name = "_Type";
             this._Type.ReadOnly = true;
-            this._Type.Width = 84;
+            this._Type.Width = 78;
             // 
             // _Name
             // 
@@ -302,7 +302,7 @@
             this._Name.HeaderText = "Người tạo";
             this._Name.Name = "_Name";
             this._Name.ReadOnly = true;
-            this._Name.Width = 101;
+            this._Name.Width = 93;
             // 
             // Content
             // 
@@ -330,6 +330,7 @@
             // 
             // ucChinhSuaBaiDang1
             // 
+            this.ucChinhSuaBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucChinhSuaBaiDang1.Location = new System.Drawing.Point(0, 0);
             this.ucChinhSuaBaiDang1.Name = "ucChinhSuaBaiDang1";
             this.ucChinhSuaBaiDang1.PostInfoToShow = null;

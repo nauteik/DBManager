@@ -71,5 +71,81 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"]);
         }
+
+        public List<string> getBrandNameList()
+        {
+            List<string> brandNameList = new List<string>();
+            string query = "SELECT Brand_Name from Brand";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                brandNameList.Add(row["Brand_Name"].ToString());
+            }
+            return brandNameList;
+        }
+
+        public List<DateTime> getUploadDateByBrandName(string brandName, string startDate, string endDate)
+        {
+            List<DateTime> uploadDateList = new List<DateTime>();
+            string query = "SELECT CONVERT(date, Upload_Date) AS Upload_Date FROM Post P, Brand B WHERE P.Brand_ID = B.Brand_ID AND B.Brand_Name = @Brand_Name AND Upload_Date BETWEEN @Start_Date AND @End_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName, startDate, endDate });
+            foreach (DataRow row in dt.Rows)
+            {
+                if (!uploadDateList.Contains(Convert.ToDateTime(row["Upload_Date"].ToString())))
+                {
+                    uploadDateList.Add(Convert.ToDateTime(row["Upload_Date"].ToString()));
+                }
+            }
+            return uploadDateList;
+        }
+
+        public List<DateTime> getUploadDateByName(string name, string startDate, string endDate)
+        {
+            List<DateTime> uploadDateList = new List<DateTime>();
+            string query = "SELECT CONVERT(date, Upload_Date) AS Upload_Date FROM Post P, User_Info UI WHERE P.User_ID = UI.User_ID AND UI.Name = @Name AND Upload_Date BETWEEN @Start_Date AND @End_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { name, startDate, endDate });
+            foreach (DataRow row in dt.Rows)
+            {
+                if (!uploadDateList.Contains(Convert.ToDateTime(row["Upload_Date"].ToString())))
+                {
+                    uploadDateList.Add(Convert.ToDateTime(row["Upload_Date"].ToString()));
+                }
+            }
+            return uploadDateList;
+        }
+
+        public List<DateTime> getUploadDateByType(string type, string startDate, string endDate)
+        {
+            List<DateTime> uploadDateList = new List<DateTime>();
+            string query = "SELECT CONVERT(date, Upload_Date) AS Upload_Date FROM Post P, Brand B WHERE P.Brand_ID = B.Brand_ID AND B.Type = @Type AND Upload_Date BETWEEN @Start_Date AND @End_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { type, startDate, endDate });
+            foreach (DataRow row in dt.Rows)
+            {
+                if (!uploadDateList.Contains(Convert.ToDateTime(row["Upload_Date"].ToString())))
+                {
+                    uploadDateList.Add(Convert.ToDateTime(row["Upload_Date"].ToString()));
+                }
+            }
+            return uploadDateList;
+        }
+
+        public int postPerDayByBrandName(string brandName, string uploadDate)
+        {
+            string query = "SELECT COUNT(*) AS Sum_Post FROM Post P, Brand B WHERE P.Brand_ID = B.Brand_ID and B.Brand_Name = @Brand_Name AND CONVERT(date, P.Upload_Date) = @Upload_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName, uploadDate });
+            return Convert.ToInt32(dt.Rows[0]["Sum_Post"].ToString());
+        }
+        public int postPerDayByName(string name, string uploadDate)
+        {
+            string query = "SELECT COUNT(*) AS Sum_Post FROM Post P, User_Info UI WHERE P.User_ID = UI.User_ID AND UI.Name = @Name AND CONVERT(date, P.Upload_Date) = @Upload_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { name, uploadDate });
+            return Convert.ToInt32(dt.Rows[0]["Sum_Post"].ToString());
+        }
+        public int postPerDayByType(string type, string uploadDate)
+        {
+            string query = "SELECT COUNT(*) AS Sum_Post FROM Post P, Brand B WHERE P.Brand_ID = B.Brand_ID AND B.Type = @Type AND CONVERT(date, P.Upload_Date) = @Upload_Date";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { type, uploadDate });
+            return Convert.ToInt32(dt.Rows[0]["Sum_Post"].ToString());
+        }
     }
 }

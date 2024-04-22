@@ -66,6 +66,8 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
+            this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
             this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
@@ -205,6 +207,7 @@ namespace Project_DBManager
             this.btnLichSu.TabIndex = 5;
             this.btnLichSu.Text = "Lịch sử";
             this.btnLichSu.UseVisualStyleBackColor = false;
+            this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
             // 
             // btnUuDai
             // 
@@ -412,6 +415,7 @@ namespace Project_DBManager
             this.btnLocBaiDang.TabIndex = 3;
             this.btnLocBaiDang.Text = "Lọc bài đăng";
             this.btnLocBaiDang.UseVisualStyleBackColor = false;
+            this.btnLocBaiDang.Click += new System.EventHandler(this.btnLocBaiDang_Click);
             // 
             // btnChinhSuaBaiDang
             // 
@@ -601,6 +605,8 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucBaoCaoThongKeHopDong1);
+            this.pnBody.Controls.Add(this.ucBaoCaoThongKeBaiDang1);
             this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
             this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
             this.pnBody.Controls.Add(this.ucTaoBaiDang1);
@@ -611,6 +617,29 @@ namespace Project_DBManager
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
             // 
+            // ucBaoCaoThongKeHopDong1
+            // 
+            this.ucBaoCaoThongKeHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucBaoCaoThongKeHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucBaoCaoThongKeHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucBaoCaoThongKeHopDong1.Name = "ucBaoCaoThongKeHopDong1";
+            this.ucBaoCaoThongKeHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.ucBaoCaoThongKeHopDong1.TabIndex = 4;
+            // 
+            // ucBaoCaoThongKeBaiDang1
+            // 
+            this.ucBaoCaoThongKeBaiDang1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucBaoCaoThongKeBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucBaoCaoThongKeBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucBaoCaoThongKeBaiDang1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucBaoCaoThongKeBaiDang1.Name = "ucBaoCaoThongKeBaiDang1";
+            this.ucBaoCaoThongKeBaiDang1.Size = new System.Drawing.Size(798, 577);
+            this.ucBaoCaoThongKeBaiDang1.TabIndex = 3;
+            // 
             // ucDanhSachBaiDang1
             // 
             this.ucDanhSachBaiDang1.Account = null;
@@ -618,12 +647,14 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ucDanhSachBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucDanhSachBaiDang1.Margin = new System.Windows.Forms.Padding(4);
             this.ucDanhSachBaiDang1.Name = "ucDanhSachBaiDang1";
             this.ucDanhSachBaiDang1.Size = new System.Drawing.Size(798, 577);
             this.ucDanhSachBaiDang1.TabIndex = 2;
             // 
             // ucDanhSachHopDong1
             // 
+            this.ucDanhSachHopDong1.Account = null;
             this.ucDanhSachHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -745,5 +776,7 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnDangXuat;
         private ucThongTinUuDai ucthongTinUuDai1;
         private ucDanhSachBaiDang ucDanhSachBaiDang1;
+        private UC.ucBaoCaoThongKeBaiDang ucBaoCaoThongKeBaiDang1;
+        private UC.ucBaoCaoThongKeHopDong ucBaoCaoThongKeHopDong1;
     }
 }

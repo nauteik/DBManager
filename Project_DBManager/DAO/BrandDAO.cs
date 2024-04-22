@@ -63,5 +63,17 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
             return dt.Rows.Count > 0;
         }
+
+        public List<string> getTypeList()
+        {
+            List<string> typeList = new List<string>();
+            string query = "SELECT Type FROM Brand";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                typeList.Add(row["Type"].ToString());
+            }
+            return typeList;
+        }
     }
 }

@@ -46,5 +46,17 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {name});
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
         }
+
+        public List<string> getNameList()
+        {
+            List<string> nameList = new List<string>();
+            string query = "SELECT Name FROM User_Info";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                nameList.Add(row["Name"].ToString());
+            }
+            return nameList;
+        }
     }
 }

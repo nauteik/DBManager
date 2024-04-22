@@ -61,7 +61,6 @@ namespace Project_DBManager.DAO
                     int i = 0;
                     foreach (string temp in query.Split(' '))
                     {
-
                         if (temp.Contains("@"))
                         {
                             string item = temp.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,

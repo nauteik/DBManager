@@ -31,6 +31,7 @@
             this.btn_ChinhSuaBaiDang = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.lb_TrangThai = new System.Windows.Forms.Label();
             this.tb_TrangThai = new System.Windows.Forms.TextBox();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,6 @@
             this.tb_Facebook = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_ChinhSuaBaiDang = new System.Windows.Forms.TextBox();
-            this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -101,6 +101,17 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(750, 450);
             this.panel2.TabIndex = 6;
+            // 
+            // tb_TenThuongHieu
+            // 
+            this.tb_TenThuongHieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TenThuongHieu.Location = new System.Drawing.Point(25, 54);
+            this.tb_TenThuongHieu.Name = "tb_TenThuongHieu";
+            this.tb_TenThuongHieu.ReadOnly = true;
+            this.tb_TenThuongHieu.Size = new System.Drawing.Size(335, 23);
+            this.tb_TenThuongHieu.TabIndex = 31;
             // 
             // lb_TrangThai
             // 
@@ -259,21 +270,11 @@
             this.tb_ChinhSuaBaiDang.Text = "Chỉnh Sửa Bài Đăng";
             this.tb_ChinhSuaBaiDang.TextChanged += new System.EventHandler(this.tb_TaoBaiDang_TextChanged);
             // 
-            // tb_TenThuongHieu
-            // 
-            this.tb_TenThuongHieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TenThuongHieu.Location = new System.Drawing.Point(25, 54);
-            this.tb_TenThuongHieu.Name = "tb_TenThuongHieu";
-            this.tb_TenThuongHieu.ReadOnly = true;
-            this.tb_TenThuongHieu.Size = new System.Drawing.Size(335, 23);
-            this.tb_TenThuongHieu.TabIndex = 31;
-            // 
             // ucChinhSuaBaiDang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_Huy);
