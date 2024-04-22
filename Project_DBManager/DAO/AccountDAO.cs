@@ -66,5 +66,22 @@ namespace Project_DBManager.DAO
             string query = string.Format("UPDATE Users SET IsEnable = 1 WHERE User_ID = {0}", userID);
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+        public int getLevelByName(string name)
+        {
+            string query = "SELECT Pos_ID FROM Users U, User_Info UI Where U.User_ID = UI.User_ID AND UI.Name = @Name";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+            return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
+        }
+        public List<string> getNameList()
+        {
+            List<string> nameList = new List<string>();
+            string query = "SELECT Name FROM User_Info";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                nameList.Add(row["Name"].ToString());
+            }
+            return nameList;
+        }
     }
 }

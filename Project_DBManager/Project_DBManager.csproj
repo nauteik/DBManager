@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +48,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BrandDAO.cs" />
+    <Compile Include="DAO\ContractDAO.cs" />
     <Compile Include="DAO\InformationDAO.cs" />
+    <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
+    <Compile Include="DTO\PostInfo.cs" />
+    <Compile Include="DTO\PostInfoToShow.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="UC\ucVoHieuHoaKhoiPhuc.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\ucVoHieuHoaKhoiPhuc.Designer.cs">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucBaoCaoThongKeBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucBaoCaoThongKeBaiDang.Designer.cs">
+      <DependentUpon>ucBaoCaoThongKeBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucBaoCaoThongKeHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucBaoCaoThongKeHopDong.Designer.cs">
+      <DependentUpon>ucBaoCaoThongKeHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaHopDong.Designer.cs">
+      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaBaiDang.Designer.cs">
+      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucDanhSachBaiDang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucDanhSachBaiDang.Designer.cs">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\ucThongTinNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -113,6 +149,18 @@
     </Compile>
     <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucBaoCaoThongKeBaiDang.resx">
+      <DependentUpon>ucBaoCaoThongKeBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucBaoCaoThongKeHopDong.resx">
+      <DependentUpon>ucBaoCaoThongKeHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChinhSuaBaiDang.resx">
+      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
@@ -262,6 +310,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Import_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Img_box_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
