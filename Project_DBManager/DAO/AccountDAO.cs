@@ -58,5 +58,12 @@ namespace Project_DBManager.DAO
             }
             return nameList;
         }
+
+        public int getLevelByContractId(int id)
+        {
+            string query = "SELECT Pos_ID FROM Users U, Contract C WHERE U.User_ID = C.User_ID AND Contract_ID = @Contract_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
+            return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
+        }
     }
 }

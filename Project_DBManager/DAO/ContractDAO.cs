@@ -90,5 +90,11 @@ namespace Project_DBManager.DAO
             string query = "INSERT INTO Contract (Signed_date, Duration, Content, User_ID, Brand_ID) VALUES ( @Signed_date, @Duration, @Content, @User_ID, @Brand_ID )";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { signedDate, duration, content, userId, brandId });
         }
+
+        public void updateContract(string duration, string content, string contractId)
+        {
+            string query = "UPDATE Contract SET Duration = @Duration, Content = @Content WHERE Contract_ID = @Contract_ID";
+            DataProvider.Instance.ExecuteNonQuery (query, new object[] { duration, content, contractId });
+        }
     }
 }

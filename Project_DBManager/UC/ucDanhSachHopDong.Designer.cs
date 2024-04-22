@@ -48,8 +48,9 @@
             this.SignedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_XoaDuLieu = new System.Windows.Forms.Button();
+            this.ucChinhSuaHopDong1 = new Project_DBManager.ucChinhSuaHopDong();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
@@ -235,6 +236,8 @@
             this.dtgv.Size = new System.Drawing.Size(750, 375);
             this.dtgv.TabIndex = 4;
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dtgv.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellMouseEnter);
+            this.dtgv.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellMouseLeave);
             // 
             // IsChecked
             // 
@@ -302,8 +305,10 @@
             // Edit
             // 
             this.Edit.HeaderText = "";
+            this.Edit.Image = global::Project_DBManager.Properties.Resources.Edit_light;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.Width = 50;
             // 
             // btn_XoaDuLieu
@@ -322,11 +327,22 @@
             this.btn_XoaDuLieu.UseVisualStyleBackColor = false;
             this.btn_XoaDuLieu.Click += new System.EventHandler(this.btn_XoaDuLieu_Click);
             // 
+            // ucChinhSuaHopDong1
+            // 
+            this.ucChinhSuaHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucChinhSuaHopDong1.ContractInfo = null;
+            this.ucChinhSuaHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucChinhSuaHopDong1.Name = "ucChinhSuaHopDong1";
+            this.ucChinhSuaHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.ucChinhSuaHopDong1.TabIndex = 6;
+            this.ucChinhSuaHopDong1.Load += new System.EventHandler(this.ucChinhSuaHopDong1_Load_1);
+            // 
             // ucDanhSachHopDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.Controls.Add(this.ucChinhSuaHopDong1);
             this.Controls.Add(this.btn_XoaDuLieu);
             this.Controls.Add(this.dtgv);
             this.Controls.Add(this.btn_XuatDuLieu);
@@ -334,7 +350,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "ucDanhSachHopDong";
             this.Size = new System.Drawing.Size(798, 577);
-            this.Load += new System.EventHandler(this.DanhSachHopDong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -364,6 +379,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SignedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Content;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private ucChinhSuaHopDong ucChinhSuaHopDong1;
     }
 }
