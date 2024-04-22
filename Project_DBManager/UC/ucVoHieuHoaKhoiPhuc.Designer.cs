@@ -332,7 +332,7 @@
             // ucThongTinNhanVien1
             // 
             this.ucThongTinNhanVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.ucThongTinNhanVien1.Location = new System.Drawing.Point(278, 98);
+            this.ucThongTinNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.ucThongTinNhanVien1.Name = "ucThongTinNhanVien1";
             this.ucThongTinNhanVien1.Size = new System.Drawing.Size(798, 577);
             this.ucThongTinNhanVien1.TabIndex = 14;

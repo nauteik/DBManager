@@ -28,7 +28,9 @@ namespace Project_DBManager
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
             ucVoHieuHoaKhoiPhuc1.Hide();
-            
+            ucBaoCaoThongKeBaiDang1.Hide();
+            ucBaoCaoThongKeHopDong1.Hide();
+            ucDanhSachBaiDang1.Hide();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -199,6 +201,25 @@ namespace Project_DBManager
                 formLogin.Show();
                 this.Hide();
             }
+        }
+        private void btnDanhSachBaiDang_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucDanhSachBaiDang1.loadBaiDang();
+            ucDanhSachBaiDang1.Account = account;
+            ucDanhSachBaiDang1.Show();
+        }
+       
+        private void btnBaoCaoThongKeBaiDang_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucBaoCaoThongKeBaiDang1.Show();
+        }
+
+        private void btnLichSu_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucBaoCaoThongKeHopDong1.Show();
         }
     }
 }
