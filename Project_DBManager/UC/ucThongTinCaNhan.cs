@@ -30,12 +30,7 @@ namespace Project_DBManager
             tbAddress.Text = row["Address"].ToString();
             tbDepartment.Text = row["Department_Name"].ToString();
             tbNgaySinh.Text = row["Birth"].ToString();
-            string gen = row["Gender"].ToString();
-            switch (gen)
-            {
-                case "M": tbGioiTinh.Text = "Nam"; break;
-                case "F": tbGioiTinh.Text = "Nữ"; break;
-            }
+            tbGioiTinh.Text = row["Gender"].ToString();
             int status = int.Parse(row["IsEnable"].ToString());
             switch (status)
             {

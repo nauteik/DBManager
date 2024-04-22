@@ -305,7 +305,7 @@
             // Edit
             // 
             this.Edit.HeaderText = "";
-            this.Edit.Image = global::Project_DBManager.Properties.Resources.Edit_light;
+            this.Edit.Image = global::Project_DBManager.Properties.Resources.arrow;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;

@@ -1,4 +1,4 @@
-﻿using Project_DBManager.DAO;
+using Project_DBManager.DAO;
 using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;

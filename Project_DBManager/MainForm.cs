@@ -8,9 +8,9 @@ namespace Project_DBManager
     public partial class MainForm : Form
     {
         private Account account;
-        public MainForm(Account account)
+        public MainForm(Account loginAccount)
         {
-            this.account = account;
+            this.account = loginAccount;
             InitializeComponent();
             collapseUserControl();
             pnHeader.BringToFront();
@@ -22,18 +22,16 @@ namespace Project_DBManager
         }
         private void collapseUserControl()
         {
+            ucDanhSachNhanVien1.Hide();
             ucthongTinUuDai1.Hide();
             ucThongTinCaNhan1.Hide();
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
+            ucVoHieuHoaKhoiPhuc1.Hide();
             ucDanhSachBaiDang1.Hide();
             ucBaoCaoThongKeBaiDang1.Hide();
             ucBaoCaoThongKeHopDong1.Hide();
             ucTaoHopDong1.Hide();
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -125,10 +123,9 @@ namespace Project_DBManager
             
         }
 
-        private void btnThongTinHopDong_Click(object sender, EventArgs e)
+        private void btnDanhSachHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
-            ucDanhSachHopDong1.Account = account;
             ucDanhSachHopDong1.Show();
         }
 
@@ -155,7 +152,6 @@ namespace Project_DBManager
         private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
         {
             collapseUserControl();
-            ucTaoBaiDang1.Account = account;
             ucTaoBaiDang1.Show();
         }
 
@@ -177,7 +173,33 @@ namespace Project_DBManager
             this.ucthongTinUuDai1.Show();
         }
 
-        private void btnChinhSuaBaiDang_Click(object sender, EventArgs e)
+        private void btnDanhSachNhanVien_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucDanhSachNhanVien1.loadStaff(account);
+            this.ucDanhSachNhanVien1.Show();
+        }
+
+        private void btnVoHieuHoaKhoiPhuc_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucVoHieuHoaKhoiPhuc1.loadStaff(account);
+            ucVoHieuHoaKhoiPhuc1.Show();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+                this.Hide();
+            }
+        }
+        private void btnDanhSachBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucDanhSachBaiDang1.loadBaiDang();
@@ -185,19 +207,19 @@ namespace Project_DBManager
             ucDanhSachBaiDang1.Show();
         }
 
-        private void btnLocBaiDang_Click(object sender, EventArgs e)
+        private void btnBaoCaoThongKeBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucBaoCaoThongKeBaiDang1.Show();
         }
 
-        private void btnLichSu_Click(object sender, EventArgs e)
+        private void btnBaoCaoThongKeHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucBaoCaoThongKeHopDong1.Show();
         }
 
-        private void btnKyKetHopDong_Click(object sender, EventArgs e)
+        private void btnTaoHopDongMoi_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucTaoHopDong1.Account = account;

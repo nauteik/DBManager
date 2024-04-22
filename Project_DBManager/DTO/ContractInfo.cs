@@ -26,8 +26,8 @@ namespace Project_DBManager.DTO
             isChecked = false;
             contractID = row[0].ToString();
             brandName = row[1].ToString();
-            signedDate = Convert.ToDateTime(row[2]).ToString("dd-MM-yyyy");
-            duration = Convert.ToDateTime(row[3]).ToString("dd-MM-yyyy");
+            signedDate = row[2].ToString();
+            duration = row[3].ToString();
             content = row[4].ToString();
         }
 
@@ -39,10 +39,9 @@ namespace Project_DBManager.DTO
         public string Content { get => content; set => content = value; }
 
 
-        public string ToString()
+         public void ToString()
         {
-            return "ID: " + contractID + "\nTên thương hiệu: " + brandName + "\nNgày ký: " + signedDate + "\nNgày hết hạn: " + duration + "\nNội dung: " + content;
-            
+            MessageBox.Show("ID: " + contractID + "\nTên thương hiệu: " + brandName + "\nNgày ký: " + signedDate + "\nNgày hết hạn: " + duration + "\nNội dung: " + content);
         }
     }
 }

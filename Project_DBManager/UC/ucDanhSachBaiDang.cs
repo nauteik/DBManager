@@ -58,7 +58,7 @@ namespace Project_DBManager
                         }
                         dtgv_DanhSachBaiDang.DataSource = list;
                     }
-                    Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                    Microsoft.Office.Interop.Excel.Application MExcel = new Microsoft.Office.Interop.Excel.Application();
                     MExcel.Application.Workbooks.Add(Type.Missing);
                     for (int i = 2; i < dtgv_DanhSachBaiDang.Columns.Count; i++)
                     {

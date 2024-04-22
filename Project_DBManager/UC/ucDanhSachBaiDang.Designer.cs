@@ -315,7 +315,7 @@
             // Edit
             // 
             this.Edit.HeaderText = "";
-            this.Edit.Image = global::Project_DBManager.Properties.Resources.Edit_light;
+            this.Edit.Image = global::Project_DBManager.Properties.Resources.arrow;
             this.Edit.Name = "Edit";
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.Width = 50;
@@ -323,7 +323,7 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.Edit_light;
+            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.Width = 50;

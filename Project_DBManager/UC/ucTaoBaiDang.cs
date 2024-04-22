@@ -71,7 +71,7 @@ namespace Project_DBManager
                     BrandDAO.Instance.updateBrandStatus(cb_TenThuongHieu.SelectedItem.ToString());
                     tb_TrangThai.Text = "Đã tạo bài đăng";
                 }
-                PostDAO.Instance.insertValueIntoPost(account.Id, cb_TenThuongHieu.SelectedItem.ToString(), tb_NoiDung.Text);
+                PostDAO.Instance.insertValueIntoPost(account.UserID, cb_TenThuongHieu.SelectedItem.ToString(), tb_NoiDung.Text);
                 MessageBox.Show("Tạo bài đăng thành công!");
                 tb_NoiDung.Text = "";
             }
