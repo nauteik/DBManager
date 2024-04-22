@@ -37,11 +37,9 @@ namespace Project_DBManager
             this.btnThongTinCaNhan = new System.Windows.Forms.Button();
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.pnQuanLyHopDong = new System.Windows.Forms.Panel();
-            this.btnLichSu = new System.Windows.Forms.Button();
-            this.btnUuDai = new System.Windows.Forms.Button();
-            this.btnKyKetHopDong = new System.Windows.Forms.Button();
-            this.btnGiaHanHopDong = new System.Windows.Forms.Button();
-            this.btnThongTinHopDong = new System.Windows.Forms.Button();
+            this.btnBaoCaoThongKeHopDong = new System.Windows.Forms.Button();
+            this.btnTaoHopDongMoi = new System.Windows.Forms.Button();
+            this.btnDanhSachHopDong = new System.Windows.Forms.Button();
             this.btnQuanLyHopDong = new System.Windows.Forms.Button();
             this.pnQuanLyNhanVien = new System.Windows.Forms.Panel();
             this.btnVoHieuHoaKhoiPhuc = new System.Windows.Forms.Button();
@@ -66,6 +64,7 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucTaoHopDong1 = new Project_DBManager.UC.ucTaoHopDong();
             this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
             this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
@@ -183,91 +182,62 @@ namespace Project_DBManager
             // 
             // pnQuanLyHopDong
             // 
-            this.pnQuanLyHopDong.Controls.Add(this.btnLichSu);
-            this.pnQuanLyHopDong.Controls.Add(this.btnUuDai);
-            this.pnQuanLyHopDong.Controls.Add(this.btnKyKetHopDong);
-            this.pnQuanLyHopDong.Controls.Add(this.btnGiaHanHopDong);
-            this.pnQuanLyHopDong.Controls.Add(this.btnThongTinHopDong);
+            this.pnQuanLyHopDong.Controls.Add(this.btnBaoCaoThongKeHopDong);
+            this.pnQuanLyHopDong.Controls.Add(this.btnTaoHopDongMoi);
+            this.pnQuanLyHopDong.Controls.Add(this.btnDanhSachHopDong);
             this.pnQuanLyHopDong.Controls.Add(this.btnQuanLyHopDong);
             this.pnQuanLyHopDong.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnQuanLyHopDong.Location = new System.Drawing.Point(0, 157);
-            this.pnQuanLyHopDong.MaximumSize = new System.Drawing.Size(146, 228);
+            this.pnQuanLyHopDong.MaximumSize = new System.Drawing.Size(146, 152);
             this.pnQuanLyHopDong.MinimumSize = new System.Drawing.Size(146, 38);
             this.pnQuanLyHopDong.Name = "pnQuanLyHopDong";
             this.pnQuanLyHopDong.Size = new System.Drawing.Size(146, 38);
             this.pnQuanLyHopDong.TabIndex = 5;
             // 
-            // btnLichSu
+            // btnBaoCaoThongKeHopDong
             // 
-            this.btnLichSu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnLichSu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLichSu.FlatAppearance.BorderSize = 0;
-            this.btnLichSu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichSu.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSu.Location = new System.Drawing.Point(0, 190);
-            this.btnLichSu.Name = "btnLichSu";
-            this.btnLichSu.Size = new System.Drawing.Size(146, 38);
-            this.btnLichSu.TabIndex = 5;
-            this.btnLichSu.Text = "Lịch sử";
-            this.btnLichSu.UseVisualStyleBackColor = false;
-            this.btnLichSu.Click += new System.EventHandler(this.btnLichSu_Click);
+            this.btnBaoCaoThongKeHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnBaoCaoThongKeHopDong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCaoThongKeHopDong.FlatAppearance.BorderSize = 0;
+            this.btnBaoCaoThongKeHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCaoThongKeHopDong.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoThongKeHopDong.Location = new System.Drawing.Point(0, 114);
+            this.btnBaoCaoThongKeHopDong.Name = "btnBaoCaoThongKeHopDong";
+            this.btnBaoCaoThongKeHopDong.Size = new System.Drawing.Size(146, 38);
+            this.btnBaoCaoThongKeHopDong.TabIndex = 5;
+            this.btnBaoCaoThongKeHopDong.Text = "Báo cáo thống kê";
+            this.btnBaoCaoThongKeHopDong.UseVisualStyleBackColor = false;
+            this.btnBaoCaoThongKeHopDong.Click += new System.EventHandler(this.btnBaoCaoThongKeHopDong_Click);
             // 
-            // btnUuDai
+            // btnTaoHopDongMoi
             // 
-            this.btnUuDai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnUuDai.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUuDai.FlatAppearance.BorderSize = 0;
-            this.btnUuDai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUuDai.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUuDai.Location = new System.Drawing.Point(0, 152);
-            this.btnUuDai.Name = "btnUuDai";
-            this.btnUuDai.Size = new System.Drawing.Size(146, 38);
-            this.btnUuDai.TabIndex = 4;
-            this.btnUuDai.Text = "Ưu đãi";
-            this.btnUuDai.UseVisualStyleBackColor = false;
+            this.btnTaoHopDongMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnTaoHopDongMoi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaoHopDongMoi.FlatAppearance.BorderSize = 0;
+            this.btnTaoHopDongMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoHopDongMoi.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoHopDongMoi.Location = new System.Drawing.Point(0, 76);
+            this.btnTaoHopDongMoi.Name = "btnTaoHopDongMoi";
+            this.btnTaoHopDongMoi.Size = new System.Drawing.Size(146, 38);
+            this.btnTaoHopDongMoi.TabIndex = 3;
+            this.btnTaoHopDongMoi.Text = "Tạo hợp đồng mới";
+            this.btnTaoHopDongMoi.UseVisualStyleBackColor = false;
+            this.btnTaoHopDongMoi.Click += new System.EventHandler(this.btnTaoHopDongMoi_Click);
             // 
-            // btnKyKetHopDong
+            // btnDanhSachHopDong
             // 
-            this.btnKyKetHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnKyKetHopDong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKyKetHopDong.FlatAppearance.BorderSize = 0;
-            this.btnKyKetHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKyKetHopDong.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKyKetHopDong.Location = new System.Drawing.Point(0, 114);
-            this.btnKyKetHopDong.Name = "btnKyKetHopDong";
-            this.btnKyKetHopDong.Size = new System.Drawing.Size(146, 38);
-            this.btnKyKetHopDong.TabIndex = 3;
-            this.btnKyKetHopDong.Text = "Ký kết hợp đồng";
-            this.btnKyKetHopDong.UseVisualStyleBackColor = false;
-            // 
-            // btnGiaHanHopDong
-            // 
-            this.btnGiaHanHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnGiaHanHopDong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGiaHanHopDong.FlatAppearance.BorderSize = 0;
-            this.btnGiaHanHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGiaHanHopDong.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaHanHopDong.Location = new System.Drawing.Point(0, 76);
-            this.btnGiaHanHopDong.Name = "btnGiaHanHopDong";
-            this.btnGiaHanHopDong.Size = new System.Drawing.Size(146, 38);
-            this.btnGiaHanHopDong.TabIndex = 2;
-            this.btnGiaHanHopDong.Text = "Gia hạn hợp đồng";
-            this.btnGiaHanHopDong.UseVisualStyleBackColor = false;
-            // 
-            // btnThongTinHopDong
-            // 
-            this.btnThongTinHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnThongTinHopDong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThongTinHopDong.FlatAppearance.BorderSize = 0;
-            this.btnThongTinHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongTinHopDong.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongTinHopDong.Location = new System.Drawing.Point(0, 38);
-            this.btnThongTinHopDong.Name = "btnThongTinHopDong";
-            this.btnThongTinHopDong.Size = new System.Drawing.Size(146, 38);
-            this.btnThongTinHopDong.TabIndex = 1;
-            this.btnThongTinHopDong.Text = "Thông tin hợp đồng";
-            this.btnThongTinHopDong.UseVisualStyleBackColor = false;
-            this.btnThongTinHopDong.Click += new System.EventHandler(this.btnThongTinHopDong_Click);
+            this.btnDanhSachHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnDanhSachHopDong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDanhSachHopDong.FlatAppearance.BorderSize = 0;
+            this.btnDanhSachHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDanhSachHopDong.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDanhSachHopDong.Location = new System.Drawing.Point(0, 38);
+            this.btnDanhSachHopDong.Name = "btnDanhSachHopDong";
+            this.btnDanhSachHopDong.Size = new System.Drawing.Size(146, 38);
+            this.btnDanhSachHopDong.TabIndex = 1;
+            this.btnDanhSachHopDong.Text = "Danh sách hợp đồng";
+            this.btnDanhSachHopDong.UseVisualStyleBackColor = false;
+            this.btnDanhSachHopDong.Click += new System.EventHandler(this.btnDanhSachHopDong_Click);
             // 
             // btnQuanLyHopDong
             // 
@@ -610,6 +580,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucTaoHopDong1);
             this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeHopDong1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeBaiDang1);
@@ -624,10 +595,20 @@ namespace Project_DBManager
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
             // 
+            // ucTaoHopDong1
+            // 
+            this.ucTaoHopDong1.Account = null;
+            this.ucTaoHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucTaoHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucTaoHopDong1.Name = "ucTaoHopDong1";
+            this.ucTaoHopDong1.Size = new System.Drawing.Size(798, 577);
+            this.ucTaoHopDong1.TabIndex = 5;
+            // 
             // ucDanhSachBaiDang1
             // 
             this.ucDanhSachBaiDang1.Account = null;
             this.ucDanhSachBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucDanhSachBaiDang1.Margin = new System.Windows.Forms.Padding(4);
             this.ucDanhSachBaiDang1.Name = "ucDanhSachBaiDang1";
             this.ucDanhSachBaiDang1.Size = new System.Drawing.Size(798, 577);
             this.ucDanhSachBaiDang1.TabIndex = 5;
@@ -740,11 +721,6 @@ namespace Project_DBManager
 
         }
 
-        private void BtnTruyCapTaiNguyen_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private System.Windows.Forms.Panel pnSidemenu;
@@ -765,12 +741,9 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnTaoBaiDangMoi;
         private System.Windows.Forms.Button btnTaoBaiDang;
         private System.Windows.Forms.Panel pnQuanLyHopDong;
-        private System.Windows.Forms.Button btnUuDai;
-        private System.Windows.Forms.Button btnKyKetHopDong;
-        private System.Windows.Forms.Button btnGiaHanHopDong;
-        private System.Windows.Forms.Button btnThongTinHopDong;
+        private System.Windows.Forms.Button btnTaoHopDongMoi;
+        private System.Windows.Forms.Button btnDanhSachHopDong;
         private System.Windows.Forms.Button btnQuanLyHopDong;
-        private System.Windows.Forms.Button btnLichSu;
         private System.Windows.Forms.Panel pnQuanLyNhanVien;
         private System.Windows.Forms.Button btnVoHieuHoaKhoiPhuc;
         private System.Windows.Forms.Button btnPhanCongCongViec;
@@ -792,5 +765,7 @@ namespace Project_DBManager
         private UC.ucBaoCaoThongKeBaiDang ucBaoCaoThongKeBaiDang1;
         private UC.ucBaoCaoThongKeHopDong ucBaoCaoThongKeHopDong1;
         private ucDanhSachBaiDang ucDanhSachBaiDang1;
+        private UC.ucTaoHopDong ucTaoHopDong1;
+        private System.Windows.Forms.Button btnBaoCaoThongKeHopDong;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,13 +58,6 @@ namespace Project_DBManager.DAO
             return Convert.ToInt32(dt.Rows[0][0].ToString());
         }
 
-        public bool isBrandNameExist(string brandName)
-        {
-            string query = "SELECT Brand_Name FROM Brand WHERE Brand_Name = @Brand_Name";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
-            return dt.Rows.Count > 0;
-        }
-
         public List<string> getTypeList()
         {
             List<string> typeList = new List<string>();
@@ -74,6 +68,53 @@ namespace Project_DBManager.DAO
                 typeList.Add(row["Type"].ToString());
             }
             return typeList;
+        }
+
+        public int getBrandIdDoNotHaveContract()
+        {
+            List<int> brandIdList = new List<int>();
+            string query = "SELECT Brand_ID FROM Contract";
+            DataTable dtBrand = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dtBrand.Rows)
+            {
+                brandIdList.Add(Convert.ToInt32(row["Brand_ID"].ToString()));
+            }
+            query = "SELECT Brand_ID FROM Brand";
+            DataTable dtContract = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dtContract.Rows)
+            {
+                if (!brandIdList.Contains(Convert.ToInt32(row["Brand_ID"].ToString())))
+                {
+                    return Convert.ToInt32(row["Brand_ID"].ToString());
+                }
+            }
+            return -1;
+        }
+
+        public void createNewBrand(string brandName, string type, string representPhoneNumber)
+        {
+            string query = "INSERT INTO Brand (Brand_Name, Type, Brand_Represent, Status) VALUES ( @Brand_Name, @Type, @Brand_Represent, N'Chưa tạo bài đăng' )";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] {brandName, type, representPhoneNumber});
+        }
+
+        public DataRow getTypeAndPhoneOfBrandByContractId(string contractId)
+        {
+            string query = "SELECT Type, Brand_Represent FROM Contract C, Brand B WHERE C.Brand_ID = B.Brand_ID AND C.Contract_ID = @Contract_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {contractId});
+            return dt.Rows[0];
+        }
+
+        public int getBrandIdByContractId(string contractId)
+        {
+            string query = "SELECT Brand_ID FROM Contract WHERE Contract_ID = @Contract_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { contractId });
+            return Convert.ToInt32(dt.Rows[0]["Brand_ID"].ToString());
+        }
+
+        public void updateTypeAndBrandRepresentAndBrandName(string brandName, string type, string representPhoneNumber, int brandId)
+        {
+            string query = "UPDATE Brand SET Brand_Name = @Brand_Name, Type = @Type, Brand_Represent = @Brand_Represent WHERE Brand_ID = @Brand_ID";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName, type, representPhoneNumber, brandId });
         }
     }
 }
