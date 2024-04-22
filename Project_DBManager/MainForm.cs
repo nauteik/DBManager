@@ -28,16 +28,10 @@ namespace Project_DBManager
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
             ucVoHieuHoaKhoiPhuc1.Hide();
-            ucBaoCaoThongKeBaiDang1.Hide();
-            ucBaoCaoThongKeHopDong1.Hide();
             ucDanhSachBaiDang1.Hide();
             ucBaoCaoThongKeBaiDang1.Hide();
             ucBaoCaoThongKeHopDong1.Hide();
             ucTaoHopDong1.Hide();
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -129,7 +123,7 @@ namespace Project_DBManager
             
         }
 
-        private void btnThongTinHopDong_Click(object sender, EventArgs e)
+        private void btnDanhSachHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucDanhSachHopDong1.Show();
@@ -213,19 +207,19 @@ namespace Project_DBManager
             ucDanhSachBaiDang1.Show();
         }
 
-        private void btnLocBaiDang_Click(object sender, EventArgs e)
+        private void btnBaoCaoThongKeBaiDang_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucBaoCaoThongKeBaiDang1.Show();
         }
 
-        private void btnLichSu_Click(object sender, EventArgs e)
+        private void btnBaoCaoThongKeHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucBaoCaoThongKeHopDong1.Show();
         }
 
-        private void btnKyKetHopDong_Click(object sender, EventArgs e)
+        private void btnTaoHopDongMoi_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucTaoHopDong1.Account = account;

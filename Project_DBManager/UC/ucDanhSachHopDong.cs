@@ -22,7 +22,7 @@ namespace Project_DBManager
         private string query;
         private List<ContractInfo> contractInfoList = new List<ContractInfo>();
         private Account account;
-        public Account Account { get => account; set => account = value; }
+        public Account Account { get =>  account; set => account = value; }
 
         public ucDanhSachHopDong()
         {
@@ -290,3 +290,4 @@ namespace Project_DBManager
         }
     }
 }
+

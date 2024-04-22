@@ -56,7 +56,7 @@ namespace Project_DBManager.UC
                 }
                 else
                 {
-                    ContractDAO.Instance.createNewContract(dtpk_NgayKy.Value.ToString("yyyy-MM-dd"), dtpk_NgayKetThuc.Value.ToString("yyyy-MM-dd"), tb_NoiDungHopDong.Text, account.Id.ToString(), newBrandId.ToString());
+                    ContractDAO.Instance.createNewContract(dtpk_NgayKy.Value.ToString("yyyy-MM-dd"), dtpk_NgayKetThuc.Value.ToString("yyyy-MM-dd"), tb_NoiDungHopDong.Text, account.UserID.ToString(), newBrandId.ToString());
                     MessageBox.Show("Tạo hợp đồng mới thành công!");
                 }
             }

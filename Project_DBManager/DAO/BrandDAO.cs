@@ -116,17 +116,5 @@ namespace Project_DBManager.DAO
             string query = "UPDATE Brand SET Brand_Name = @Brand_Name, Type = @Type, Brand_Represent = @Brand_Represent WHERE Brand_ID = @Brand_ID";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName, type, representPhoneNumber, brandId });
         }
-
-        public List<string> getTypeList()
-        {
-            List<string> typeList = new List<string>();
-            string query = "SELECT Type FROM Brand";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow row in dt.Rows)
-            {
-                typeList.Add(row["Type"].ToString());
-            }
-            return typeList;
-        }
     }
 }
