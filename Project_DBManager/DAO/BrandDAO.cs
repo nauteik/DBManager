@@ -82,5 +82,12 @@ namespace Project_DBManager.DAO
             DataProvider.Instance.ExecuteNonQuery(query_2, new object[] { status, brandID });
             return true;
         }
+
+        public string getBrandIdByPostId(string postId)
+        {
+            string query = "SELECT Brand_ID FROM Post WHERE Post_ID = @Post_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
+            return dt.Rows[0]["Brand_ID"].ToString();
+        }
     }
 }

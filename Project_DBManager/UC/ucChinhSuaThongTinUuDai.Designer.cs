@@ -30,6 +30,8 @@ namespace Project_DBManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tb_ChinhSuaThongTinUuDai = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cb_TrangThai = new System.Windows.Forms.ComboBox();
@@ -47,7 +49,12 @@ namespace Project_DBManager
             this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.tb_ThoiGianCapNhat = new System.Windows.Forms.TextBox();
             this.btn_Luu = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtgv = new System.Windows.Forms.DataGridView();
+            this.History_Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_ChinhSuaThongTinUuDai
@@ -261,11 +268,74 @@ namespace Project_DBManager
             this.btn_Luu.UseVisualStyleBackColor = false;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.panel1.Controls.Add(this.dtgv);
+            this.panel1.Location = new System.Drawing.Point(582, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(3);
+            this.panel1.Size = new System.Drawing.Size(214, 468);
+            this.panel1.TabIndex = 20;
+            // 
+            // dtgv
+            // 
+            this.dtgv.AllowUserToAddRows = false;
+            this.dtgv.AllowUserToDeleteRows = false;
+            this.dtgv.AllowUserToResizeColumns = false;
+            this.dtgv.AllowUserToResizeRows = false;
+            this.dtgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter SemiBold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.History_Edit});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter Medium Italic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgv.EnableHeadersVisualStyles = false;
+            this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.dtgv.Location = new System.Drawing.Point(0, 0);
+            this.dtgv.Name = "dtgv";
+            this.dtgv.ReadOnly = true;
+            this.dtgv.RowHeadersVisible = false;
+            this.dtgv.RowHeadersWidth = 51;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv.Size = new System.Drawing.Size(214, 468);
+            this.dtgv.TabIndex = 5;
+            // 
+            // History_Edit
+            // 
+            this.History_Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.History_Edit.HeaderText = "Lịch sử chỉnh sửa";
+            this.History_Edit.MinimumWidth = 6;
+            this.History_Edit.Name = "History_Edit";
+            this.History_Edit.ReadOnly = true;
+            // 
             // ucChinhSuaThongTinUuDai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.tb_ThoiGianCapNhat);
             this.Controls.Add(this.tb_TenThuongHieu);
@@ -275,6 +345,8 @@ namespace Project_DBManager
             this.Size = new System.Drawing.Size(796, 575);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +371,8 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.TextBox tb_SoDienThoai1;
         private System.Windows.Forms.ComboBox cb_TrangThai;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dtgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn History_Edit;
     }
 }

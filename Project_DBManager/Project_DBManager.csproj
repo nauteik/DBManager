@@ -49,9 +49,12 @@
   <ItemGroup>
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
+    <Compile Include="DAO\HistoryDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
+    <Compile Include="DAO\UserInfoDAO.cs" />
     <Compile Include="DTO\BrandInfo.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
+    <Compile Include="DTO\HistoryEditBrandInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\PostInfo.cs" />
     <Compile Include="DTO\PostInfoToShow.cs" />

@@ -12,6 +12,8 @@ namespace Project_DBManager.DAO
     public class AccountDAO
     {
         private static AccountDAO instance;
+        private string username;
+        private string userID;
         public static AccountDAO Instance
         {
             get { if(instance == null) instance = new AccountDAO(); return instance; }
@@ -22,6 +24,7 @@ namespace Project_DBManager.DAO
          
             string query = "SELECT * FROM Users as U join Position as P on U.Pos_ID = P.Pos_ID WHERE U.Username = @Username AND U.Password = @Password AND U.IsEnable = 1 AND P.Level = @Level";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password, level });
+            this.username = username;
             return result.Rows.Count > 0;
         }
         public Account getAccountByUsername(string username)
@@ -45,6 +48,11 @@ namespace Project_DBManager.DAO
             string query = "SELECT Pos_ID FROM Users U, User_Info UI Where U.User_ID = UI.User_ID AND UI.Name = @Name";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {name});
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
+        }
+
+        public string getUserNameOfAccountLogin()
+        {
+            return this.username;
         }
     }
 }

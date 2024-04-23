@@ -85,5 +85,7 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
             return Convert.ToDateTime(dt.Rows[0]["LastChange_Date"]);
         }
+
+
     }
 }
