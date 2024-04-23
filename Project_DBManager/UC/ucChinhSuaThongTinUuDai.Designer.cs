@@ -1,4 +1,6 @@
-﻿namespace Project_DBManager
+﻿using System.Drawing;
+
+namespace Project_DBManager
 {
     partial class ucChinhSuaThongTinUuDai
     {
@@ -30,11 +32,11 @@
         {
             this.tb_ChinhSuaThongTinUuDai = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cb_TrangThai = new System.Windows.Forms.ComboBox();
             this.tb_MoTaNgan = new System.Windows.Forms.TextBox();
             this.lbMoTaNgan = new System.Windows.Forms.Label();
             this.tb_SoDienThoai1 = new System.Windows.Forms.TextBox();
             this.lb_TrangThai = new System.Windows.Forms.Label();
-            this.tb_TrangThai = new System.Windows.Forms.TextBox();
             this.lb_Facebook = new System.Windows.Forms.Label();
             this.lb_DiaChi = new System.Windows.Forms.Label();
             this.lb_SoDienThoai2 = new System.Windows.Forms.Label();
@@ -66,11 +68,11 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.panel2.Controls.Add(this.cb_TrangThai);
             this.panel2.Controls.Add(this.tb_MoTaNgan);
             this.panel2.Controls.Add(this.lbMoTaNgan);
             this.panel2.Controls.Add(this.tb_SoDienThoai1);
             this.panel2.Controls.Add(this.lb_TrangThai);
-            this.panel2.Controls.Add(this.tb_TrangThai);
             this.panel2.Controls.Add(this.lb_Facebook);
             this.panel2.Controls.Add(this.lb_DiaChi);
             this.panel2.Controls.Add(this.lb_SoDienThoai2);
@@ -84,15 +86,27 @@
             this.panel2.Size = new System.Drawing.Size(534, 409);
             this.panel2.TabIndex = 7;
             // 
+            // cb_TrangThai
+            // 
+            this.cb_TrangThai.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_TrangThai.FormattingEnabled = true;
+            this.cb_TrangThai.Items.AddRange(new object[] {
+            "Chưa tạo bài đăng",
+            "Đã tạo bài đăng",
+            "Đã đóng"});
+            this.cb_TrangThai.Location = new System.Drawing.Point(153, 345);
+            this.cb_TrangThai.Name = "cb_TrangThai";
+            this.cb_TrangThai.Size = new System.Drawing.Size(335, 27);
+            this.cb_TrangThai.TabIndex = 34;
+            // 
             // tb_MoTaNgan
             // 
             this.tb_MoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_MoTaNgan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_MoTaNgan.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_MoTaNgan.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MoTaNgan.Location = new System.Drawing.Point(153, 250);
             this.tb_MoTaNgan.Multiline = true;
             this.tb_MoTaNgan.Name = "tb_MoTaNgan";
-            this.tb_MoTaNgan.ReadOnly = true;
             this.tb_MoTaNgan.Size = new System.Drawing.Size(335, 69);
             this.tb_MoTaNgan.TabIndex = 33;
             // 
@@ -109,13 +123,12 @@
             // 
             // tb_SoDienThoai1
             // 
-            this.tb_SoDienThoai1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_SoDienThoai1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_SoDienThoai1.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoDienThoai1.Location = new System.Drawing.Point(153, 22);
+            this.tb_SoDienThoai1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SoDienThoai1.Location = new System.Drawing.Point(153, 12);
+            this.tb_SoDienThoai1.Multiline = true;
             this.tb_SoDienThoai1.Name = "tb_SoDienThoai1";
-            this.tb_SoDienThoai1.ReadOnly = true;
-            this.tb_SoDienThoai1.Size = new System.Drawing.Size(335, 23);
+            this.tb_SoDienThoai1.Size = new System.Drawing.Size(335, 30);
             this.tb_SoDienThoai1.TabIndex = 31;
             // 
             // lb_TrangThai
@@ -128,17 +141,6 @@
             this.lb_TrangThai.Size = new System.Drawing.Size(106, 23);
             this.lb_TrangThai.TabIndex = 30;
             this.lb_TrangThai.Text = "Trạng thái:";
-            // 
-            // tb_TrangThai
-            // 
-            this.tb_TrangThai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tb_TrangThai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_TrangThai.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TrangThai.Location = new System.Drawing.Point(155, 349);
-            this.tb_TrangThai.Name = "tb_TrangThai";
-            this.tb_TrangThai.ReadOnly = true;
-            this.tb_TrangThai.Size = new System.Drawing.Size(335, 23);
-            this.tb_TrangThai.TabIndex = 29;
             // 
             // lb_Facebook
             // 
@@ -188,33 +190,33 @@
             // 
             this.tb_SoDienThoai2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_SoDienThoai2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_SoDienThoai2.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoDienThoai2.Location = new System.Drawing.Point(153, 77);
+            this.tb_SoDienThoai2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SoDienThoai2.Location = new System.Drawing.Point(153, 67);
+            this.tb_SoDienThoai2.Multiline = true;
             this.tb_SoDienThoai2.Name = "tb_SoDienThoai2";
-            this.tb_SoDienThoai2.ReadOnly = true;
-            this.tb_SoDienThoai2.Size = new System.Drawing.Size(335, 23);
+            this.tb_SoDienThoai2.Size = new System.Drawing.Size(335, 30);
             this.tb_SoDienThoai2.TabIndex = 5;
             // 
             // tb_DiaChi
             // 
             this.tb_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_DiaChi.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DiaChi.Location = new System.Drawing.Point(153, 134);
+            this.tb_DiaChi.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DiaChi.Location = new System.Drawing.Point(153, 124);
+            this.tb_DiaChi.Multiline = true;
             this.tb_DiaChi.Name = "tb_DiaChi";
-            this.tb_DiaChi.ReadOnly = true;
-            this.tb_DiaChi.Size = new System.Drawing.Size(335, 23);
+            this.tb_DiaChi.Size = new System.Drawing.Size(335, 30);
             this.tb_DiaChi.TabIndex = 2;
             // 
             // tb_Facebook
             // 
             this.tb_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_Facebook.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_Facebook.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Facebook.Location = new System.Drawing.Point(153, 195);
+            this.tb_Facebook.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Facebook.Location = new System.Drawing.Point(153, 185);
+            this.tb_Facebook.Multiline = true;
             this.tb_Facebook.Name = "tb_Facebook";
-            this.tb_Facebook.ReadOnly = true;
-            this.tb_Facebook.Size = new System.Drawing.Size(335, 23);
+            this.tb_Facebook.Size = new System.Drawing.Size(335, 30);
             this.tb_Facebook.TabIndex = 1;
             // 
             // tb_TenThuongHieu
@@ -257,6 +259,7 @@
             this.btn_Luu.TabIndex = 19;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = false;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // ucChinhSuaThongTinUuDai
             // 
@@ -281,9 +284,7 @@
 
         private System.Windows.Forms.TextBox tb_ChinhSuaThongTinUuDai;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tb_SoDienThoai1;
         private System.Windows.Forms.Label lb_TrangThai;
-        private System.Windows.Forms.TextBox tb_TrangThai;
         private System.Windows.Forms.Label lb_Facebook;
         private System.Windows.Forms.Label lb_DiaChi;
         private System.Windows.Forms.Label lb_SoDienThoai2;
@@ -296,5 +297,7 @@
         private System.Windows.Forms.TextBox tb_TenThuongHieu;
         private System.Windows.Forms.TextBox tb_ThoiGianCapNhat;
         private System.Windows.Forms.Button btn_Luu;
+        private System.Windows.Forms.TextBox tb_SoDienThoai1;
+        private System.Windows.Forms.ComboBox cb_TrangThai;
     }
 }

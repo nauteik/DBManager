@@ -71,5 +71,19 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"]);
         }
+
+        public DateTime getUploadDate(string postId)
+        {
+            string query = "SELECT Upload_Date FROM Post WHERE Post_ID = @Post_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
+            return Convert.ToDateTime(dt.Rows[0]["Upload_Date"]);
+        }
+
+        public DateTime getLastChangedDate(string postId)
+        {
+            string query = "SELECT LastChange_Date FROM Post WHERE Post_ID = @Post_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
+            return Convert.ToDateTime(dt.Rows[0]["LastChange_Date"]);
+        }
     }
 }

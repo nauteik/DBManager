@@ -64,6 +64,23 @@ namespace Project_DBManager.DAO
             return dt.Rows.Count > 0;
         }
 
+        public DataTable getBrandDetails(string postID)
+        {
+            string query = "SELECT BI.Brand_ID, B.Brand_Name, BI.Phone_Number, BI.Facebook, BI.Introduction, BI.Address, B.Status " +
+                "FROM Post P, Brand_Info BI, Brand B WHERE P.Post_ID = @Post_ID AND B.Brand_ID = P.Brand_ID AND BI.Brand_ID = P.Brand_ID";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postID });
+            return dt;
+        }
 
+        public bool updateBrandDetails(string brandID, string phoneNumber, string facebook, string introduction, string address, string status)
+        {
+            string query_1 = "UPDATE Brand_Info SET Phone_Number = @Phone_Number, Facebook = @Facebook, Introduction = @Introduction, " +
+                "Address = @Address WHERE Brand_ID = @Brand_ID";
+            DataProvider.Instance.ExecuteNonQuery(query_1, new object[] {phoneNumber, facebook, introduction, address, brandID });
+
+            string query_2 = "UPDATE Brand SET Status = @Status WHERE Brand_ID = @Brand_ID";
+            DataProvider.Instance.ExecuteNonQuery(query_2, new object[] { status, brandID });
+            return true;
+        }
     }
 }

@@ -18,9 +18,9 @@ namespace Project_DBManager
 
         public ucThongTinUuDai()
         {
-            ucChinhSuaThongTinUuDai1.Hide();
             InitializeComponent();
             loadOffer();
+            ucChinhSuaThongTinUuDai1.Hide();
         }
 
         
@@ -48,7 +48,11 @@ namespace Project_DBManager
 
         private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+            {
+                ucChinhSuaThongTinUuDai1.loadInfo(OfferInfoList[e.RowIndex]);
+                ucChinhSuaThongTinUuDai1.Show();
+            }
         }
 
         private void cbSapXep_SelectedIndexChanged(object sender, EventArgs e)

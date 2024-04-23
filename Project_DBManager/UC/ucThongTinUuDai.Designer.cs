@@ -37,7 +37,6 @@
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBoxTaiXuong = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbLoc = new System.Windows.Forms.ComboBox();
@@ -53,19 +52,20 @@
             this.lastChangeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonXuatDuLieu = new System.Windows.Forms.Button();
             this.btXoaDuLieu = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBoxTaiXuong = new System.Windows.Forms.PictureBox();
             this.ucChinhSuaThongTinUuDai1 = new Project_DBManager.ucChinhSuaThongTinUuDai();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDanhSachThongTinUuDai
@@ -122,17 +122,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(152, 49);
             this.panel4.TabIndex = 5;
-            // 
-            // pictureBoxTaiXuong
-            // 
-            this.pictureBoxTaiXuong.BackgroundImage = global::Project_DBManager.Properties.Resources.downl_button;
-            this.pictureBoxTaiXuong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxTaiXuong.Location = new System.Drawing.Point(101, 10);
-            this.pictureBoxTaiXuong.Name = "pictureBoxTaiXuong";
-            this.pictureBoxTaiXuong.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxTaiXuong.TabIndex = 8;
-            this.pictureBoxTaiXuong.TabStop = false;
-            this.pictureBoxTaiXuong.Click += new System.EventHandler(this.pictureBoxTaiXuong_Click);
             // 
             // label4
             // 
@@ -345,18 +334,6 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Edit.FillWeight = 20F;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // buttonXuatDuLieu
             // 
             this.buttonXuatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -405,12 +382,36 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Edit.FillWeight = 20F;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // pictureBoxTaiXuong
+            // 
+            this.pictureBoxTaiXuong.BackgroundImage = global::Project_DBManager.Properties.Resources.downl_button;
+            this.pictureBoxTaiXuong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTaiXuong.Location = new System.Drawing.Point(101, 10);
+            this.pictureBoxTaiXuong.Name = "pictureBoxTaiXuong";
+            this.pictureBoxTaiXuong.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxTaiXuong.TabIndex = 8;
+            this.pictureBoxTaiXuong.TabStop = false;
+            this.pictureBoxTaiXuong.Click += new System.EventHandler(this.pictureBoxTaiXuong_Click);
+            // 
             // ucChinhSuaThongTinUuDai1
             // 
+            this.ucChinhSuaThongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ucChinhSuaThongTinUuDai1.Location = new System.Drawing.Point(0, 0);
             this.ucChinhSuaThongTinUuDai1.Name = "ucChinhSuaThongTinUuDai1";
             this.ucChinhSuaThongTinUuDai1.Size = new System.Drawing.Size(796, 575);
-            this.ucChinhSuaThongTinUuDai1.TabIndex = 1;
+            this.ucChinhSuaThongTinUuDai1.TabIndex = 9;
             // 
             // ucThongTinUuDai
             // 
@@ -430,13 +431,13 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTaiXuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -55,12 +55,6 @@
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\PostInfo.cs" />
     <Compile Include="DTO\PostInfoToShow.cs" />
-    <Compile Include="ucChiTietThongTinUuDai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucChiTietThongTinUuDai.Designer.cs">
-      <DependentUpon>ucChiTietThongTinUuDai.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\ucChinhSuaThongTinUuDai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ucChiTietThongTinUuDai.resx">
-      <DependentUpon>ucChiTietThongTinUuDai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucChinhSuaHopDong.resx">
       <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
