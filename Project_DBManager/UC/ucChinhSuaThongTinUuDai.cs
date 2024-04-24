@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_DBManager
 {
@@ -23,11 +24,25 @@ namespace Project_DBManager
             
         }
 
+        private bool found(string ele)
+        {
+            foreach (DataGridViewRow row in dtgv.Rows)
+            {
+                string cellValue = row.Cells[0].Value.ToString();
+                if (cellValue.Equals(ele))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void Load_LichSuChinhSua(string brandID, List<string> lst)
         {
             foreach (string ele in lst)
             {
-                dtgv.Rows.Add(ele);
+                if(found(ele)) { continue; }
+                else { dtgv.Rows.Add(ele); }
             }
         }
 
