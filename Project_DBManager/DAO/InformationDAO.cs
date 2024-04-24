@@ -36,5 +36,18 @@ namespace Project_DBManager.DAO
             }
             return false;
         }
+        public int getDepartmentIDByName(string name)
+        {
+            switch (name)
+            {
+                case "Ăn uống": return 1;
+                case "Du lịch": return 2;
+                case "Mua sắm": return 3;
+                case "Giải trí": return 4;
+                case "Quà tặng": return 5;
+                case "Làm đẹp": return 6;
+            }
+            return 1;
+        }
     }
 }

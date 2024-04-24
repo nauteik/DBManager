@@ -52,6 +52,7 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucThongTinNhanVien1 = new Project_DBManager.ucThongTinNhanVien();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pn_ToolMenu.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TaiXuong)).BeginInit();
@@ -341,6 +342,9 @@
             // 
             // ucThongTinNhanVien1
             // 
+            this.ucThongTinNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucThongTinNhanVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucThongTinNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.ucThongTinNhanVien1.Name = "ucThongTinNhanVien1";
@@ -348,6 +352,14 @@
             this.ucThongTinNhanVien1.TabIndex = 10;
             this.ucThongTinNhanVien1.UserID = 0;
             this.ucThongTinNhanVien1.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 40;
             // 
             // ucDanhSachNhanVien
             // 
@@ -396,5 +408,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
         private ucThongTinNhanVien ucThongTinNhanVien1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

@@ -359,11 +359,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.Controls.Add(this.btn_KhoiPhuc);
             this.Controls.Add(this.ucThongTinNhanVien1);
             this.Controls.Add(this.dtgv_Staff);
             this.Controls.Add(this.pn_ToolMenu);
             this.Controls.Add(this.lb_DanhSachNhanVien);
+            this.Controls.Add(this.btn_KhoiPhuc);
             this.Name = "ucVoHieuHoaKhoiPhuc";
             this.Size = new System.Drawing.Size(798, 577);
             this.pn_TimKiem.ResumeLayout(false);

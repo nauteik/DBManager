@@ -64,6 +64,9 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucPhanCongCongViec1 = new Project_DBManager.ucPhanCongCongViec();
+            this.ucCapLaiMatKhau1 = new Project_DBManager.ucCapLaiMatKhau();
+            this.ucTaoTaiKhoan1 = new Project_DBManager.ucTaoTaiKhoan();
             this.ucTaoHopDong1 = new Project_DBManager.UC.ucTaoHopDong();
             this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
@@ -74,6 +77,7 @@ namespace Project_DBManager
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
             this.ucthongTinUuDai1 = new Project_DBManager.ucThongTinUuDai();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -301,6 +305,7 @@ namespace Project_DBManager
             this.btnPhanCongCongViec.TabIndex = 4;
             this.btnPhanCongCongViec.Text = "Phân công công việc";
             this.btnPhanCongCongViec.UseVisualStyleBackColor = false;
+            this.btnPhanCongCongViec.Click += new System.EventHandler(this.btnPhanCongCongViec_Click);
             // 
             // btnCapLaiMatKhau
             // 
@@ -315,6 +320,7 @@ namespace Project_DBManager
             this.btnCapLaiMatKhau.TabIndex = 3;
             this.btnCapLaiMatKhau.Text = "Cấp lại mật khẩu";
             this.btnCapLaiMatKhau.UseVisualStyleBackColor = false;
+            this.btnCapLaiMatKhau.Click += new System.EventHandler(this.btnCapLaiMatKhau_Click);
             // 
             // btnTaiKhoanPhanQuyen
             // 
@@ -329,6 +335,7 @@ namespace Project_DBManager
             this.btnTaiKhoanPhanQuyen.TabIndex = 2;
             this.btnTaiKhoanPhanQuyen.Text = "Tài khoản và Phân quyền";
             this.btnTaiKhoanPhanQuyen.UseVisualStyleBackColor = false;
+            this.btnTaiKhoanPhanQuyen.Click += new System.EventHandler(this.btnTaiKhoanPhanQuyen_Click);
             // 
             // btnDanhSachNhanVien
             // 
@@ -580,6 +587,9 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucPhanCongCongViec1);
+            this.pnBody.Controls.Add(this.ucCapLaiMatKhau1);
+            this.pnBody.Controls.Add(this.ucTaoTaiKhoan1);
             this.pnBody.Controls.Add(this.ucTaoHopDong1);
             this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeHopDong1);
@@ -594,6 +604,31 @@ namespace Project_DBManager
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
+            // 
+            // ucPhanCongCongViec1
+            // 
+            this.ucPhanCongCongViec1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucPhanCongCongViec1.Location = new System.Drawing.Point(0, 0);
+            this.ucPhanCongCongViec1.Name = "ucPhanCongCongViec1";
+            this.ucPhanCongCongViec1.Size = new System.Drawing.Size(798, 577);
+            this.ucPhanCongCongViec1.TabIndex = 8;
+            this.ucPhanCongCongViec1.Load += new System.EventHandler(this.ucPhanCongCongViec1_Load);
+            // 
+            // ucCapLaiMatKhau1
+            // 
+            this.ucCapLaiMatKhau1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucCapLaiMatKhau1.Location = new System.Drawing.Point(0, 0);
+            this.ucCapLaiMatKhau1.Name = "ucCapLaiMatKhau1";
+            this.ucCapLaiMatKhau1.Size = new System.Drawing.Size(798, 577);
+            this.ucCapLaiMatKhau1.TabIndex = 7;
+            // 
+            // ucTaoTaiKhoan1
+            // 
+            this.ucTaoTaiKhoan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucTaoTaiKhoan1.Location = new System.Drawing.Point(0, 0);
+            this.ucTaoTaiKhoan1.Name = "ucTaoTaiKhoan1";
+            this.ucTaoTaiKhoan1.Size = new System.Drawing.Size(798, 577);
+            this.ucTaoTaiKhoan1.TabIndex = 6;
             // 
             // ucTaoHopDong1
             // 
@@ -767,5 +802,9 @@ namespace Project_DBManager
         private ucDanhSachBaiDang ucDanhSachBaiDang1;
         private UC.ucTaoHopDong ucTaoHopDong1;
         private System.Windows.Forms.Button btnBaoCaoThongKeHopDong;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ucTaoTaiKhoan ucTaoTaiKhoan1;
+        private ucCapLaiMatKhau ucCapLaiMatKhau1;
+        private ucPhanCongCongViec ucPhanCongCongViec1;
     }
 }

@@ -29,12 +29,24 @@ namespace Project_DBManager
             lbTitleName.Text = tbHoTen.Text;
             tbIDC.Text = row["ID_Card"].ToString();
             tbEmail.Text = row["User_Email"].ToString();
-            tbPosition.Text = row["Pos_Name"].ToString();
-            lbTitlePosition.Text = tbPosition.Text;
+            cb_ChucVu.Items.Remove("Quản lý");
+            switch (row["Pos_Name"].ToString())
+            {
+                case "Employee": cb_ChucVu.SelectedIndex = 0; lbTitlePosition.Text = "Employee"; break;
+                case "Leader": cb_ChucVu.SelectedIndex = 1; lbTitlePosition.Text = "Leader"; break;
+                case "Manager": cb_ChucVu.Items.Add("Quản lý"); cb_ChucVu.SelectedIndex = 2; lbTitlePosition.Text = "Manager"; break;
+            }
+            
             tbAddress.Text = row["Address"].ToString();
-            tbDepartment.Text = row["Department_Name"].ToString();
+            cb_ViTri.SelectedIndex = cb_ViTri.FindStringExact(row["Department_Name"].ToString());
             dtpk_Birth.Value = DateTime.ParseExact(row["Birth"].ToString(), "dd-MM-yyyy", null);
-            tbGioiTinh.Text = row["Gender"].ToString();
+            cb_GioiTinh.SelectedIndex = cb_GioiTinh.FindStringExact(row["Gender"].ToString());
+            int isEnable = Convert.ToInt32(row["IsEnable"]);
+            switch (isEnable)
+            {
+                case 0: cb_TrangThai.SelectedIndex = 1; break;
+                case 1:  cb_TrangThai.SelectedIndex = 0; break;
+            }
             this.userID = userID;
         }
 
@@ -48,16 +60,14 @@ namespace Project_DBManager
             string hoTen = tbHoTen.Text;
             string cccd = tbIDC.Text;
             string email = tbEmail.Text;
-            string position = tbPosition.Text;
+            string position = cb_ChucVu.Text;
             string address = tbAddress.Text;
-            string dept = tbDepartment.Text;
-            string gender = tbGioiTinh.Text;
+            string dept = cb_ViTri.Text;
+            string gender = cb_GioiTinh.Text;
             string birth = dtpk_Birth.Value.ToString("MM-dd-yyyy");
             int userID = this.userID;
-            if(InformationDAO.Instance.validateGender(gender) == false) { MessageBox.Show("Giới tính không hợp lệ (Nam/Nữ)"); return; }
-            if (InformationDAO.Instance.validateDept(dept) == false) { MessageBox.Show("Phòng ban không tồn tại"); return;  }
-            if(InformationDAO.Instance.validatePos(position) == false) { MessageBox.Show("Chức vụ không hợp lệ"); return; }
-            bool isSucceed = AccountDAO.Instance.updateAccountInfoByUserID(hoTen, cccd, email, position, address, dept, birth, gender, userID);
+            int isEnable = cb_TrangThai.SelectedIndex == 1 ? 0 : 1;
+            bool isSucceed = AccountDAO.Instance.updateAccountInfoByUserID(hoTen, cccd, email, position, address, dept, birth, gender, userID, isEnable);
             if (isSucceed)
             {
                 MessageBox.Show("Cập nhật thành công");

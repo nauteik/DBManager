@@ -32,6 +32,9 @@ namespace Project_DBManager
             ucBaoCaoThongKeBaiDang1.Hide();
             ucBaoCaoThongKeHopDong1.Hide();
             ucTaoHopDong1.Hide();
+            ucTaoTaiKhoan1.Hide();
+            ucCapLaiMatKhau1.Hide();
+            ucPhanCongCongViec1.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -129,21 +132,6 @@ namespace Project_DBManager
             ucDanhSachHopDong1.Show();
         }
 
-        private void thongTinHopDong2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void thongTinHopDong1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void thongTinHopDong1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void taoBaiDang1_Load(object sender, EventArgs e)
         {
             
@@ -159,13 +147,8 @@ namespace Project_DBManager
         {
             
             collapseUserControl();
-            changeColorChooseButton(this.btnThongTinCaNhan);
             ucThongTinCaNhan1.loadAccount(account.Username);
             ucThongTinCaNhan1.Show();
-        }
-        private void changeColorChooseButton(Button btn)
-        {
-            btn.BackColor = ColorTranslator.FromHtml("#868ba6");
         }
         private void btnTruyCapTaiNguyen_Click(object sender, EventArgs e)
         {
@@ -177,7 +160,7 @@ namespace Project_DBManager
         {
             collapseUserControl();
             ucDanhSachNhanVien1.loadStaff(account);
-            this.ucDanhSachNhanVien1.Show();
+            ucDanhSachNhanVien1.Show();
         }
 
         private void btnVoHieuHoaKhoiPhuc_Click(object sender, EventArgs e)
@@ -224,6 +207,30 @@ namespace Project_DBManager
             collapseUserControl();
             ucTaoHopDong1.Account = account;
             ucTaoHopDong1.Show();
+        }
+
+        private void btnTaiKhoanPhanQuyen_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucTaoTaiKhoan1.Show();
+        }
+
+        private void btnCapLaiMatKhau_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucCapLaiMatKhau1.loadAccount();
+            ucCapLaiMatKhau1.Show();
+        }
+
+        private void btnPhanCongCongViec_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucPhanCongCongViec1.Show();
+        }
+
+        private void ucPhanCongCongViec1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

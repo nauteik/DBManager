@@ -53,11 +53,32 @@
     <Compile Include="DAO\InformationDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\TaskDAO.cs" />
+    <Compile Include="DTO\AccountWithPhone.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\PostInfo.cs" />
     <Compile Include="DTO\PostInfoToShow.cs" />
     <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Task.cs" />
+    <Compile Include="UC\ucPhanCongCongViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucPhanCongCongViec.Designer.cs">
+      <DependentUpon>ucPhanCongCongViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucCapLaiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucCapLaiMatKhau.Designer.cs">
+      <DependentUpon>ucCapLaiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucTaoTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucTaoTaiKhoan.Designer.cs">
+      <DependentUpon>ucTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucVoHieuHoaKhoiPhuc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,8 +174,17 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\ucCapLaiMatKhau.resx">
+      <DependentUpon>ucCapLaiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucChinhSuaHopDong.resx">
       <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucPhanCongCongViec.resx">
+      <DependentUpon>ucPhanCongCongViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucTaoTaiKhoan.resx">
+      <DependentUpon>ucTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
