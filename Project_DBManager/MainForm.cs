@@ -129,6 +129,7 @@ namespace Project_DBManager
         private void btnDanhSachHopDong_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucDanhSachHopDong1.Account = this.account;
             ucDanhSachHopDong1.Show();
         }
 
