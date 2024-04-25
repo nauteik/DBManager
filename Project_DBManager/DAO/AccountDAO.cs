@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_DBManager.DAO
 {
@@ -46,20 +48,23 @@ namespace Project_DBManager.DAO
                             "WHERE U.User_ID = @userID";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { userID });
         }
-        public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID)
+        public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID, int isEnable)
         {
             string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = {1},  Gender = N'{2}', Address = N'{3}', Birth = '{4}' WHERE User_ID = {5}", hoTen, cccd, gender, address, birth, userID);
             bool firstExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             int posID = 0;
             switch (position)
             {
-                case "Manager": posID = 2; break;
-                case "Leader": posID = 1; break;
-                case "Employee": posID = 0; break;
+                case "Quản lý": posID = 2; break;
+                case "Tổ trưởng": posID = 1; break;
+                case "Nhân viên": posID = 0; break;
             }
-            query = string.Format("UPDATE Users SET User_Email = '{0}', Pos_ID = {1} WHERE User_ID = {2}", email, posID, userID);
+            query = string.Format("UPDATE Users SET User_Email = '{0}', Pos_ID = {1}, IsEnable = {2} WHERE User_ID = {3}", email, posID, isEnable, userID);
             bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
-            return firstExecution && secondExecution;
+            int departmentID = InformationDAO.Instance.getDepartmentIDByName(dept);
+            query = string.Format("UPDATE Department_Member SET Department_ID = {0} WHERE User_ID = {1}", departmentID, userID);
+            bool thirdExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            return firstExecution && secondExecution && thirdExecution;
         }
         public bool enableAccount(int userID)
         {
@@ -84,12 +89,62 @@ namespace Project_DBManager.DAO
             }
             return nameList;
         }
-
+        
         public int getLevelByContractId(int id)
         {
             string query = "SELECT Pos_ID FROM Users U, Contract C WHERE U.User_ID = C.User_ID AND Contract_ID = @Contract_ID";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
         }
+        public bool createAccount(string username, string password, string email, int pos_ID, string hoten, string ngaySinh, string gioiTinh, string diaChi, string CCCD, string sdt)
+        {
+            
+            string query = string.Format("INSERT INTO Users(Username, Password, User_Email, IsEnable, Pos_ID) VALUES ('{0}', '{1}', '{2}', 1, {3})",username, password, email, pos_ID);
+            bool firstExecetuion = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            if(firstExecetuion == false)
+            {
+                return false;
+            }
+            int user_ID = Convert.ToInt32(DataProvider.Instance.ExecuteQuery(string.Format("SELECT User_ID From Users WHERE Username = '{0}'", username)).Rows[0]["User_ID"]);
+            query = string.Format("INSERT INTO User_Info (User_ID, Name, Birth, Gender, Address, ID_Card, PhoneNum) VALUES " +
+                                    "({0}, N'{1}', '{2}', N'{3}', '{4}', '{5}', '{6}')", user_ID, hoten, ngaySinh, gioiTinh, diaChi, CCCD, sdt);
+            bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            if(secondExecution == false)
+            {
+                DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM Users WHERE Username = '{0}'", username));
+                return false;
+            }
+            return firstExecetuion && secondExecution;
+        }
+        public bool validateUsername(string username)
+        {
+            string query = string.Format("SELECT * FROM Users WHERE Username ={0}", username);
+            if(DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool validateEmail(string email)
+        {
+            string query = string.Format("SELECT * FROM Users WHERE User_Enmail ={0}", email);
+            if (DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        public List<AccountWithPhone> getListAccountWithPhone()
+        {
+            string query = "Select Username,Password, phoneNum, User_Email, U.User_ID From Users U, User_Info UF Where U.User_ID = UF.User_ID";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            List<AccountWithPhone> listAccount= new List<AccountWithPhone>();
+            foreach (DataRow row in table.Rows)
+            {
+                listAccount.Add(new AccountWithPhone(row));
+            }
+            return listAccount;
+        }
+       
     }
 }
