@@ -73,6 +73,7 @@ namespace Project_DBManager
             this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
             this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
             this.ucDanhSachNhanVien1 = new Project_DBManager.ucDanhSachNhanVien();
+            this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
             this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
             this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
@@ -595,6 +596,7 @@ namespace Project_DBManager
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeBaiDang1);
             this.pnBody.Controls.Add(this.ucVoHieuHoaKhoiPhuc1);
             this.pnBody.Controls.Add(this.ucDanhSachNhanVien1);
+            this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
             this.pnBody.Controls.Add(this.ucDanhSachHopDong1);
             this.pnBody.Controls.Add(this.ucTaoBaiDang1);
             this.pnBody.Controls.Add(this.ucThongTinCaNhan1);
@@ -697,6 +699,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ucDanhSachHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucDanhSachHopDong1.Location = new System.Drawing.Point(0, 0);
+            this.ucDanhSachHopDong1.Margin = new System.Windows.Forms.Padding(4);
             this.ucDanhSachHopDong1.Name = "ucDanhSachHopDong1";
             this.ucDanhSachHopDong1.Size = new System.Drawing.Size(798, 577);
             this.ucDanhSachHopDong1.TabIndex = 0;
@@ -706,6 +709,7 @@ namespace Project_DBManager
             this.ucTaoBaiDang1.Account = null;
             this.ucTaoBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucTaoBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucTaoBaiDang1.Margin = new System.Windows.Forms.Padding(4);
             this.ucTaoBaiDang1.Name = "ucTaoBaiDang1";
             this.ucTaoBaiDang1.Size = new System.Drawing.Size(798, 577);
             this.ucTaoBaiDang1.TabIndex = 1;
@@ -718,14 +722,19 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ucThongTinCaNhan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucThongTinCaNhan1.Location = new System.Drawing.Point(0, 0);
+            this.ucThongTinCaNhan1.Margin = new System.Windows.Forms.Padding(4);
             this.ucThongTinCaNhan1.Name = "ucThongTinCaNhan1";
             this.ucThongTinCaNhan1.Size = new System.Drawing.Size(799, 576);
             this.ucThongTinCaNhan1.TabIndex = 0;
             // 
             // ucthongTinUuDai1
             // 
+            this.ucthongTinUuDai1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucthongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucthongTinUuDai1.Location = new System.Drawing.Point(-1, 0);
+            this.ucthongTinUuDai1.Location = new System.Drawing.Point(0, 0);
+            this.ucthongTinUuDai1.Margin = new System.Windows.Forms.Padding(4);
             this.ucthongTinUuDai1.Name = "ucthongTinUuDai1";
             this.ucthongTinUuDai1.Size = new System.Drawing.Size(799, 576);
             this.ucthongTinUuDai1.TabIndex = 0;
@@ -798,11 +807,11 @@ namespace Project_DBManager
         private ucVoHieuHoaKhoiPhuc ucVoHieuHoaKhoiPhuc1;
         private UC.ucBaoCaoThongKeBaiDang ucBaoCaoThongKeBaiDang1;
         private UC.ucBaoCaoThongKeHopDong ucBaoCaoThongKeHopDong1;
-        private ucDanhSachBaiDang ucDanhSachBaiDang1;
         private UC.ucTaoHopDong ucTaoHopDong1;
         private System.Windows.Forms.Button btnBaoCaoThongKeHopDong;
         private ucTaoTaiKhoan ucTaoTaiKhoan1;
         private ucCapLaiMatKhau ucCapLaiMatKhau1;
         private ucPhanCongCongViec ucPhanCongCongViec1;
+        private ucDanhSachBaiDang ucDanhSachBaiDang1;
     }
 }

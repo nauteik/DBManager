@@ -51,16 +51,29 @@
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
     <Compile Include="DAO\InformationDAO.cs" />
+    
+    <Compile Include="DAO\HistoryDAO.cs" />
+    
+    <Compile Include="DAO\UserInfoDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
+    
+    <Compile Include="DTO\BrandInfo.cs" />
     <Compile Include="DTO\AccountWithPhone.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
+    <Compile Include="DTO\HistoryEditBrandInfo.cs" />
     <Compile Include="DTO\OfferInfo.cs" />
     <Compile Include="DTO\PostInfo.cs" />
     <Compile Include="DTO\PostInfoToShow.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Task.cs" />
+    <Compile Include="UC\ucChinhSuaThongTinUuDai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChinhSuaThongTinUuDai.Designer.cs">
+      <DependentUpon>ucChinhSuaThongTinUuDai.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucPhanCongCongViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -174,33 +187,6 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC\ucCapLaiMatKhau.resx">
-      <DependentUpon>ucCapLaiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucChinhSuaHopDong.resx">
-      <DependentUpon>ucChinhSuaHopDong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucPhanCongCongViec.resx">
-      <DependentUpon>ucPhanCongCongViec.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucTaoTaiKhoan.resx">
-      <DependentUpon>ucTaoTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
-      <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucBaoCaoThongKeBaiDang.resx">
-      <DependentUpon>ucBaoCaoThongKeBaiDang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucBaoCaoThongKeHopDong.resx">
-      <DependentUpon>ucBaoCaoThongKeHopDong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucChinhSuaBaiDang.resx">
-      <DependentUpon>ucChinhSuaBaiDang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
-      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,7 +327,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>

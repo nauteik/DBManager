@@ -20,6 +20,7 @@ namespace Project_DBManager
         {
             InitializeComponent();
             loadOffer();
+            ucChinhSuaThongTinUuDai1.Hide();
         }
 
         
@@ -35,6 +36,7 @@ namespace Project_DBManager
             }
 
             dtgv.DataSource = OfferInfoList;
+            dtgv.Columns["Post_ID"].Visible = false;
         }
 
 
@@ -46,7 +48,11 @@ namespace Project_DBManager
 
         private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+            {
+                ucChinhSuaThongTinUuDai1.loadInfo(OfferInfoList[e.RowIndex]);
+                ucChinhSuaThongTinUuDai1.Show();
+            }
         }
 
         private void cbSapXep_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,110 +61,107 @@ namespace Project_DBManager
             List<OfferInfo> sortedList;
             if (cb.SelectedItem.ToString() == "Chủ đề tăng dần")
             {
-                sortedList = OfferInfoList.OrderBy(ci => ci.Content).ToList();
+                sortedList = OfferInfoList.OrderBy(oi => oi.Content).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Chủ đề tăng dần")
             {
-                sortedList = OfferInfoList.OrderByDescending(ci => ci.Content).ToList();
+                sortedList = OfferInfoList.OrderByDescending(oi => oi.Content).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Tên thương hiệu tăng dần")
             {
-                sortedList = OfferInfoList.OrderBy(ci => ci.Brand_Name).ToList();
+                sortedList = OfferInfoList.OrderBy(oi => oi.Brand_Name).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Tên thương hiệu giảm dần")
             {
-                sortedList = OfferInfoList.OrderByDescending(ci => ci.Brand_Name).ToList();
+                sortedList = OfferInfoList.OrderByDescending(oi => oi.Brand_Name).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Thời gian thu thập tăng dần")
             {
-                sortedList = OfferInfoList.OrderBy(ci => ci.Upload_Date).ToList();
+                sortedList = OfferInfoList.OrderBy(oi => oi.Upload_Date).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Thời gian thu thập giảm dần")
             {
-                sortedList = OfferInfoList.OrderByDescending(ci => ci.Upload_Date).ToList();
+                sortedList = OfferInfoList.OrderByDescending(oi => oi.Upload_Date).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Thời gian cập nhật tăng dần")
             {
-                sortedList = OfferInfoList.OrderBy(ci => ci.LastChange_Date).ToList();
+                sortedList = OfferInfoList.OrderBy(oi => oi.LastChange_Date).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Thời gian cập nhật giảm dần")
             {
-                sortedList = OfferInfoList.OrderByDescending(ci => ci.LastChange_Date).ToList();
+                sortedList = OfferInfoList.OrderByDescending(oi => oi.LastChange_Date).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Trạng thái tăng dần")
             {
-                sortedList = OfferInfoList.OrderBy(ci => ci.Status).ToList();
+                sortedList = OfferInfoList.OrderBy(oi => oi.Status).ToList();
                 dtgv.DataSource = sortedList;
             }
             else if (cb.SelectedItem.ToString() == "Trạng thái giảm dần")
             {
-                sortedList = OfferInfoList.OrderByDescending(ci => ci.Status).ToList();
+                sortedList = OfferInfoList.OrderByDescending(oi => oi.Status).ToList();
                 dtgv.DataSource = sortedList;
             }
         }
 
-        private void ToExcel(DataGridView dataGridView1, string fileName)
+        private void ToExcel(DataGridView dtgv, string fileName, bool isSelectAll)
         {
-            Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
-
-            try
+            string text;
+            if (isSelectAll)
             {
-                excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = false;
-                excel.DisplayAlerts = false;
-
-                workbook = excel.Workbooks.Add(Type.Missing);
-
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "Danh sách ưu đãi";
-
-                // export header
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                text = "Bạn có muốn tải xuống tất cả dữ liệu?";
+            }
+            else
+            {
+                text = "Bạn có muốn tải xuống dữ liệu đã được chọn?";
+            }
+            DialogResult result = MessageBox.Show(text, "Tải xuống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (dtgv.Rows.Count > 0)
                 {
-                    worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
-                }
-
-                // export content
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (!isSelectAll)
                     {
-                        object cellValue = dataGridView1.Rows[i].Cells[j].Value;
-                        if (cellValue != null)
+                        List<OfferInfo> list = new List<OfferInfo>();
+                        foreach (OfferInfo oi in OfferInfoList)
                         {
-                            worksheet.Cells[i + 2, j + 1] = cellValue.ToString();
+                            if (oi.isChecked)
+                            {
+                                list.Add(oi);
+                            }
                         }
-                        else
+                        dtgv.DataSource = list;
+                    }
+                    Microsoft.Office.Interop.Excel.ApplicationClass MExcel = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                    MExcel.Application.Workbooks.Add(Type.Missing);
+                    for (int i = 2; i < dtgv.Columns.Count; i++)
+                    {
+                        MExcel.Cells[1, i - 1] = dtgv.Columns[i].HeaderText;
+                    }
+                    for (int i = 0; i < dtgv.Rows.Count; i++)
+                    {
+                        for (int j = 2; j < dtgv.Columns.Count; j++)
                         {
-                            worksheet.Cells[i + 2, j + 1] = ""; // hoặc giá trị mặc định khác tuỳ ý
+                            MExcel.Cells[i + 2, j - 1] = dtgv.Rows[i].Cells[j].Value.ToString();
                         }
                     }
+                    dtgv.DataSource = OfferInfoList;
+                    MExcel.Columns.Font.Size = 12;
+                    MExcel.Columns.AutoFit();
+                    MExcel.Rows.AutoFit();
+                    MExcel.Visible = true;
                 }
-
-                // save workbook
-                workbook.SaveAs(fileName);
-                workbook.Close();
-                excel.Quit();
-                MessageBox.Show("Export successful.!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                workbook = null;
-                worksheet = null;
+                else
+                {
+                    MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -168,7 +171,7 @@ namespace Project_DBManager
             {
                 if (dtgv != null)
                 {
-                    ToExcel(dtgv, saveFileDialog1.FileName);
+                    ToExcel(dtgv, saveFileDialog1.FileName, true);
                 }
                 else
                 {
@@ -187,14 +190,14 @@ namespace Project_DBManager
                 List<OfferInfo> tempList = new List<OfferInfo>();
                 dtgv.DataSource = tempList;
                 string query = "DELETE FROM Post WHERE Post_ID = ";
-                foreach (OfferInfo ci in OfferInfoList)
+                foreach (OfferInfo oi in OfferInfoList)
                 {
-                    if (ci.isChecked)
+                    if (oi.isChecked)
                     {
-                        postIDList.Add(ci.Post_ID);
+                        postIDList.Add(oi.Post_ID);
                     }
                 }
-                OfferInfoList.RemoveAll(ci => ci.isChecked);
+                OfferInfoList.RemoveAll(oi => oi.isChecked);
                 foreach (string id in postIDList)
                 {
                     DataProvider.Instance.ExecuteQuery(query + id);
@@ -218,12 +221,12 @@ namespace Project_DBManager
                 string value = tbTimKiem.Text;
                 if (int.TryParse(value, out _))
                 {
-                    searchList = OfferInfoList.Where(ci => (ci.Brand_Name).Equals(value)).ToList();
+                    searchList = OfferInfoList.Where(oi => (oi.Brand_Name).Equals(value)).ToList();
                     dtgv.DataSource = searchList;
                 }
                 else
                 {
-                    searchList = OfferInfoList.Where(ci => (ci.Brand_Name.ToLower()).Contains(value.ToLower())).ToList();
+                    searchList = OfferInfoList.Where(oi => (oi.Brand_Name.ToLower()).Contains(value.ToLower())).ToList();
                     dtgv.DataSource = searchList;
                 }
                 tbTimKiem.Text = "";
@@ -232,7 +235,43 @@ namespace Project_DBManager
 
         private void buttonXuatDuLieu_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if (dtgv != null)
+                {
+                    ToExcel(dtgv, saveFileDialog1.FileName, false);
+                }
+                else
+                {
+                    MessageBox.Show("dtgv is null!!");
+                }
+            }
+        }
 
+        private void cbLoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            List<OfferInfo> fillterList;
+            if (cb.SelectedItem.ToString() == "Trạng thái \"Chưa tạo bài đăng\"")
+            {
+                fillterList = OfferInfoList.Where(oi => (oi.Status).Equals("Chưa tạo bài đăng")).ToList();
+                dtgv.DataSource = fillterList;
+            }
+            else if (cb.SelectedItem.ToString() == "Trạng thái \"Đã tạo bài đăng\"")
+            {
+                fillterList = OfferInfoList.Where(oi => (oi.Status).Equals("Đã tạo bài đăng")).ToList();
+                dtgv.DataSource = fillterList;
+            }
+            else if (cb.SelectedItem.ToString() == "Trạng thái \"Đã đóng\"")
+            {
+                fillterList = OfferInfoList.Where(oi => (oi.Status).Equals("Đã đóng")).ToList();
+                dtgv.DataSource = fillterList;
+            }
+            else if (cb.SelectedItem.ToString() == "Trạng thái \"Chưa tạo\"")
+            {
+                fillterList = OfferInfoList;
+                dtgv.DataSource = fillterList;
+            }
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Project_DBManager
     public partial class MainForm : Form
     {
         private Account account;
-        public MainForm(Account loginAccount)
+        public MainForm(Account account)
         {
-            this.account = loginAccount;
+            this.account = account;
             InitializeComponent();
             collapseUserControl();
             pnHeader.BringToFront();
@@ -27,6 +27,7 @@ namespace Project_DBManager
             ucThongTinCaNhan1.Hide();
             ucDanhSachHopDong1.Hide();
             ucTaoBaiDang1.Hide();
+            ucDanhSachBaiDang1.Hide();
             ucVoHieuHoaKhoiPhuc1.Hide();
             ucDanhSachBaiDang1.Hide();
             ucBaoCaoThongKeBaiDang1.Hide();
@@ -135,7 +136,11 @@ namespace Project_DBManager
 
         private void taoBaiDang1_Load(object sender, EventArgs e)
         {
-            
+
+        private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucTaoBaiDang1.Show();
         }
 
         private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
@@ -233,5 +238,15 @@ namespace Project_DBManager
         {
 
         }
+
+        private void btnChinhSuaBaiDang_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucDanhSachBaiDang1.loadBaiDang();
+            ucDanhSachBaiDang1.Account = account;
+            ucDanhSachBaiDang1.Show();
+        }
+
+      
     }
 }
