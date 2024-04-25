@@ -133,16 +133,6 @@ namespace Project_DBManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Edit_light {
-            get {
-                object obj = ResourceManager.GetObject("Edit_light", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fig_Leader {
             get {
                 object obj = ResourceManager.GetObject("fig_Leader", resourceCulture);
@@ -196,16 +186,6 @@ namespace Project_DBManager.Properties {
         internal static System.Drawing.Bitmap fig_QL2 {
             get {
                 object obj = ResourceManager.GetObject("fig_QL2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Img_box_light {
-            get {
-                object obj = ResourceManager.GetObject("Img_box_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

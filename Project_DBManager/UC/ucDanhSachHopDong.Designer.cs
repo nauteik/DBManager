@@ -290,7 +290,7 @@
             this.Duration.MinimumWidth = 6;
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
-            this.Duration.Width = 92;
+            this.Duration.Width = 126;
             // 
             // Content
             // 

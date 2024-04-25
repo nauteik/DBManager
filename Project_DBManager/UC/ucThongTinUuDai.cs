@@ -12,9 +12,13 @@ using System.Windows.Forms;
 
 namespace Project_DBManager
 {
+    
     public partial class ucThongTinUuDai : UserControl
     {
         private List<OfferInfo> OfferInfoList = new List<OfferInfo>();
+        private Account acc;
+
+        public Account Acc { get => acc; set => acc = value; }
 
         public ucThongTinUuDai()
         {
@@ -50,6 +54,8 @@ namespace Project_DBManager
         {
             if (dtgv.Columns[e.ColumnIndex] is DataGridViewImageColumn)
             {
+
+                ucChinhSuaThongTinUuDai1.setAccount(acc);
                 ucChinhSuaThongTinUuDai1.loadInfo(OfferInfoList[e.RowIndex]);
                 ucChinhSuaThongTinUuDai1.Show();
             }
@@ -218,7 +224,7 @@ namespace Project_DBManager
             if (e.KeyChar == (char)Keys.Enter)
             {
                 List<OfferInfo> searchList;
-                string value = tbTimKiem.Text;
+                string value = tbTimKiem.Text.ToLower();
                 if (int.TryParse(value, out _))
                 {
                     searchList = OfferInfoList.Where(oi => (oi.Brand_Name).Equals(value)).ToList();
@@ -226,7 +232,7 @@ namespace Project_DBManager
                 }
                 else
                 {
-                    searchList = OfferInfoList.Where(oi => (oi.Brand_Name.ToLower()).Contains(value.ToLower())).ToList();
+                    searchList = OfferInfoList.Where(oi => (oi.Brand_Name.ToLower()).Contains(value) || oi.Content.ToLower().Contains(value) || oi.LastChange_Date.Contains(value) || oi.Upload_Date.Contains(value)).ToList();
                     dtgv.DataSource = searchList;
                 }
                 tbTimKiem.Text = "";

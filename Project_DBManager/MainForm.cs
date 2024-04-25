@@ -131,24 +131,17 @@ namespace Project_DBManager
         {
             collapseUserControl();
             ucDanhSachHopDong1.Account = this.account;
+            ucDanhSachHopDong1.loadData();
             ucDanhSachHopDong1.Show();
         }
 
-        private void taoBaiDang1_Load(object sender, EventArgs e)
-        {
-
         private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucTaoBaiDang1.Account = this.account;
             ucTaoBaiDang1.Show();
         }
-
-        private void btnTaoBaiDangMoi_Click(object sender, EventArgs e)
-        {
-            collapseUserControl();
-            ucTaoBaiDang1.Show();
-        }
-
+            
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
             
@@ -159,6 +152,7 @@ namespace Project_DBManager
         private void btnTruyCapTaiNguyen_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucthongTinUuDai1.Acc = this.account;
             this.ucthongTinUuDai1.Show();
         }
 

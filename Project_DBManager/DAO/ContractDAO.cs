@@ -1,5 +1,6 @@
 ﻿using Project_DBManager.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -95,6 +96,18 @@ namespace Project_DBManager.DAO
         {
             string query = "UPDATE Contract SET Duration = @Duration, Content = @Content WHERE Contract_ID = @Contract_ID";
             DataProvider.Instance.ExecuteNonQuery (query, new object[] { duration, content, contractId });
+        }
+        public List<ContractInfo> getListContract()
+        {
+            string query = "SELECT Contract_ID AS ID, Brand_Name AS 'Tên thương hiệu', Signed_date AS 'Ngày ký', Duration AS 'Ngày hết hạn', Content AS 'Nội dung' FROM Contract, Brand WHERE Contract.Brand_ID = Brand.Brand_ID";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            List<ContractInfo> listContract = new List<ContractInfo>();
+            foreach (DataRow row in table.Rows)
+            {
+                ContractInfo contractInfo = new ContractInfo(row);
+                listContract.Add(contractInfo);
+            }
+            return listContract;
         }
     }
 }

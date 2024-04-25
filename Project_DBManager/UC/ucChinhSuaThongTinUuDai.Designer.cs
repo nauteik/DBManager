@@ -49,17 +49,15 @@ namespace Project_DBManager
             this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.tb_ThoiGianCapNhat = new System.Windows.Forms.TextBox();
             this.btn_Luu = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.History_Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Huy = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_ChinhSuaThongTinUuDai
             // 
-            this.tb_ChinhSuaThongTinUuDai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tb_ChinhSuaThongTinUuDai.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tb_ChinhSuaThongTinUuDai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_ChinhSuaThongTinUuDai.Font = new System.Drawing.Font("Inter", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +71,8 @@ namespace Project_DBManager
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.panel2.Controls.Add(this.cb_TrangThai);
             this.panel2.Controls.Add(this.tb_MoTaNgan);
@@ -90,11 +89,13 @@ namespace Project_DBManager
             this.panel2.Location = new System.Drawing.Point(23, 103);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(534, 409);
+            this.panel2.Size = new System.Drawing.Size(496, 409);
             this.panel2.TabIndex = 7;
             // 
             // cb_TrangThai
             // 
+            this.cb_TrangThai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_TrangThai.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_TrangThai.FormattingEnabled = true;
             this.cb_TrangThai.Items.AddRange(new object[] {
@@ -103,23 +104,25 @@ namespace Project_DBManager
             "Đã đóng"});
             this.cb_TrangThai.Location = new System.Drawing.Point(153, 345);
             this.cb_TrangThai.Name = "cb_TrangThai";
-            this.cb_TrangThai.Size = new System.Drawing.Size(335, 27);
+            this.cb_TrangThai.Size = new System.Drawing.Size(297, 27);
             this.cb_TrangThai.TabIndex = 34;
             // 
             // tb_MoTaNgan
             // 
-            this.tb_MoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_MoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_MoTaNgan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_MoTaNgan.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MoTaNgan.Location = new System.Drawing.Point(153, 250);
+            this.tb_MoTaNgan.Location = new System.Drawing.Point(153, 251);
             this.tb_MoTaNgan.Multiline = true;
             this.tb_MoTaNgan.Name = "tb_MoTaNgan";
-            this.tb_MoTaNgan.Size = new System.Drawing.Size(335, 69);
+            this.tb_MoTaNgan.Size = new System.Drawing.Size(297, 69);
             this.tb_MoTaNgan.TabIndex = 33;
             // 
             // lbMoTaNgan
             // 
-            this.lbMoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lbMoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMoTaNgan.AutoSize = true;
             this.lbMoTaNgan.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMoTaNgan.Location = new System.Drawing.Point(2, 250);
@@ -130,20 +133,23 @@ namespace Project_DBManager
             // 
             // tb_SoDienThoai1
             // 
+            this.tb_SoDienThoai1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_SoDienThoai1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_SoDienThoai1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoDienThoai1.Location = new System.Drawing.Point(153, 12);
+            this.tb_SoDienThoai1.Location = new System.Drawing.Point(153, 13);
             this.tb_SoDienThoai1.Multiline = true;
             this.tb_SoDienThoai1.Name = "tb_SoDienThoai1";
-            this.tb_SoDienThoai1.Size = new System.Drawing.Size(335, 30);
+            this.tb_SoDienThoai1.Size = new System.Drawing.Size(297, 30);
             this.tb_SoDienThoai1.TabIndex = 31;
             // 
             // lb_TrangThai
             // 
-            this.lb_TrangThai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_TrangThai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_TrangThai.AutoSize = true;
             this.lb_TrangThai.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TrangThai.Location = new System.Drawing.Point(6, 349);
+            this.lb_TrangThai.Location = new System.Drawing.Point(2, 345);
             this.lb_TrangThai.Name = "lb_TrangThai";
             this.lb_TrangThai.Size = new System.Drawing.Size(106, 23);
             this.lb_TrangThai.TabIndex = 30;
@@ -151,7 +157,8 @@ namespace Project_DBManager
             // 
             // lb_Facebook
             // 
-            this.lb_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_Facebook.AutoSize = true;
             this.lb_Facebook.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Facebook.Location = new System.Drawing.Point(2, 195);
@@ -162,7 +169,8 @@ namespace Project_DBManager
             // 
             // lb_DiaChi
             // 
-            this.lb_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_DiaChi.AutoSize = true;
             this.lb_DiaChi.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_DiaChi.Location = new System.Drawing.Point(2, 134);
@@ -173,7 +181,8 @@ namespace Project_DBManager
             // 
             // lb_SoDienThoai2
             // 
-            this.lb_SoDienThoai2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_SoDienThoai2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_SoDienThoai2.AutoSize = true;
             this.lb_SoDienThoai2.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SoDienThoai2.Location = new System.Drawing.Point(2, 77);
@@ -184,7 +193,8 @@ namespace Project_DBManager
             // 
             // lb_SoDienThoai1
             // 
-            this.lb_SoDienThoai1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lb_SoDienThoai1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_SoDienThoai1.AutoSize = true;
             this.lb_SoDienThoai1.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SoDienThoai1.Location = new System.Drawing.Point(2, 22);
@@ -195,40 +205,42 @@ namespace Project_DBManager
             // 
             // tb_SoDienThoai2
             // 
-            this.tb_SoDienThoai2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_SoDienThoai2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_SoDienThoai2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_SoDienThoai2.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoDienThoai2.Location = new System.Drawing.Point(153, 67);
+            this.tb_SoDienThoai2.Location = new System.Drawing.Point(153, 68);
             this.tb_SoDienThoai2.Multiline = true;
             this.tb_SoDienThoai2.Name = "tb_SoDienThoai2";
-            this.tb_SoDienThoai2.Size = new System.Drawing.Size(335, 30);
+            this.tb_SoDienThoai2.Size = new System.Drawing.Size(297, 30);
             this.tb_SoDienThoai2.TabIndex = 5;
             // 
             // tb_DiaChi
             // 
-            this.tb_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DiaChi.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DiaChi.Location = new System.Drawing.Point(153, 124);
+            this.tb_DiaChi.Location = new System.Drawing.Point(153, 125);
             this.tb_DiaChi.Multiline = true;
             this.tb_DiaChi.Name = "tb_DiaChi";
-            this.tb_DiaChi.Size = new System.Drawing.Size(335, 30);
+            this.tb_DiaChi.Size = new System.Drawing.Size(297, 30);
             this.tb_DiaChi.TabIndex = 2;
             // 
             // tb_Facebook
             // 
-            this.tb_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tb_Facebook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_Facebook.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_Facebook.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Facebook.Location = new System.Drawing.Point(153, 185);
+            this.tb_Facebook.Location = new System.Drawing.Point(153, 186);
             this.tb_Facebook.Multiline = true;
             this.tb_Facebook.Name = "tb_Facebook";
-            this.tb_Facebook.Size = new System.Drawing.Size(335, 30);
+            this.tb_Facebook.Size = new System.Drawing.Size(297, 30);
             this.tb_Facebook.TabIndex = 1;
             // 
             // tb_TenThuongHieu
             // 
-            this.tb_TenThuongHieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tb_TenThuongHieu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,7 +254,6 @@ namespace Project_DBManager
             // 
             // tb_ThoiGianCapNhat
             // 
-            this.tb_ThoiGianCapNhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tb_ThoiGianCapNhat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tb_ThoiGianCapNhat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_ThoiGianCapNhat.Font = new System.Drawing.Font("Inter Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,28 +267,17 @@ namespace Project_DBManager
             // 
             // btn_Luu
             // 
-            this.btn_Luu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_Luu.FlatAppearance.BorderSize = 0;
             this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Luu.Location = new System.Drawing.Point(63, 528);
+            this.btn_Luu.Location = new System.Drawing.Point(157, 528);
             this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(150, 30);
+            this.btn_Luu.Size = new System.Drawing.Size(112, 30);
             this.btn_Luu.TabIndex = 19;
             this.btn_Luu.Text = "Lưu";
             this.btn_Luu.UseVisualStyleBackColor = false;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.panel1.Controls.Add(this.dtgv);
-            this.panel1.Location = new System.Drawing.Point(582, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3);
-            this.panel1.Size = new System.Drawing.Size(214, 468);
-            this.panel1.TabIndex = 20;
             // 
             // dtgv
             // 
@@ -313,13 +313,13 @@ namespace Project_DBManager
             this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.EnableHeadersVisualStyles = false;
             this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.dtgv.Location = new System.Drawing.Point(0, 0);
+            this.dtgv.Location = new System.Drawing.Point(538, 103);
             this.dtgv.Name = "dtgv";
             this.dtgv.ReadOnly = true;
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtgv.Size = new System.Drawing.Size(214, 468);
+            this.dtgv.Size = new System.Drawing.Size(258, 409);
             this.dtgv.TabIndex = 5;
             // 
             // History_Edit
@@ -330,12 +330,28 @@ namespace Project_DBManager
             this.History_Edit.Name = "History_Edit";
             this.History_Edit.ReadOnly = true;
             // 
+            // btn_Huy
+            // 
+            this.btn_Huy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_Huy.FlatAppearance.BorderSize = 0;
+            this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Huy.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Huy.Location = new System.Drawing.Point(33, 528);
+            this.btn_Huy.Name = "btn_Huy";
+            this.btn_Huy.Size = new System.Drawing.Size(112, 30);
+            this.btn_Huy.TabIndex = 21;
+            this.btn_Huy.Text = "Huỷ";
+            this.btn_Huy.UseVisualStyleBackColor = false;
+            this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
+            // 
             // ucChinhSuaThongTinUuDai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dtgv);
+            this.Controls.Add(this.btn_Huy);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.tb_ThoiGianCapNhat);
             this.Controls.Add(this.tb_TenThuongHieu);
@@ -345,7 +361,6 @@ namespace Project_DBManager
             this.Size = new System.Drawing.Size(796, 575);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,8 +386,8 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.TextBox tb_SoDienThoai1;
         private System.Windows.Forms.ComboBox cb_TrangThai;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn History_Edit;
+        private System.Windows.Forms.Button btn_Huy;
     }
 }

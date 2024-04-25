@@ -40,7 +40,7 @@ namespace Project_DBManager
             if (address== "") { MessageBox.Show("Địa chỉ không được để trống"); return; }
             if (AccountDAO.Instance.validateEmail(email) == false) { MessageBox.Show("Địa chỉ email đã tồn tại"); return; }
             if (AccountDAO.Instance.validateUsername(username) == false) { MessageBox.Show("Tên tài khoản đã tồn tại"); return; }
-            bool isSucceed = AccountDAO.Instance.createAccount(username, matKhau, email, pos_ID, hoTen, ngaySinh, gender, address, cccd, sdt);
+            bool isSucceed = AccountDAO.Instance.createAccount(username, matKhau, email, pos_ID, hoTen, ngaySinh, gender, address, cccd, sdt, dept);
             if (isSucceed)
             {
                 MessageBox.Show("Tạo tài khoản thành công");

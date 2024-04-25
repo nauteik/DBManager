@@ -27,18 +27,11 @@ namespace Project_DBManager
         public ucDanhSachHopDong()
         {
             InitializeComponent();
-            loadData();
         }
 
-        private void loadData()
+        public void loadData()
         {
-            query = "SELECT Contract_ID AS ID, Brand_Name AS 'Tên thương hiệu', Signed_date AS 'Ngày ký', Duration AS 'Ngày hết hạn', Content AS 'Nội dung' FROM Contract, Brand WHERE Contract.Brand_ID = Brand.Brand_ID";
-            table = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow row in table.Rows)
-            {
-                ContractInfo contractInfo = new ContractInfo(row);
-                contractInfoList.Add(contractInfo);
-            }
+            contractInfoList = ContractDAO.Instance.getListContract();
             dtgv.DataSource = contractInfoList;
         }
 
@@ -171,15 +164,15 @@ namespace Project_DBManager
                     {
                         for (int j = 2; j < dtgv.Columns.Count; j++)
                         {
-                            if (j == 4 || j == 5)
-                            {
-                                DateTime dt = Convert.ToDateTime(dtgv.Rows[i].Cells[j].Value);
-                                MExcel.Cells[i + 2, j - 1] = dt.ToString("dd-MM-yyyy");
-                            }
-                            else
-                            {
+                            //if (j == 4 || j == 5)
+                            //{
+                            //    DateTime dt = Convert.ToDateTime(dtgv.Rows[i].Cells[j].Value);
+                            //    MExcel.Cells[i + 2, j - 1] = dt.ToString("dd-MM-yyyy");
+                            //}
+                            //else
+                            //{
                                 MExcel.Cells[i + 2, j - 1] = dtgv.Rows[i].Cells[j].Value.ToString();
-                            }
+                            //}
                         }
                     }
                     dtgv.DataSource = contractInfoList;

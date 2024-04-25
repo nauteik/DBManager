@@ -56,7 +56,6 @@ namespace Project_DBManager
             this.pnQuanLyThongTin = new System.Windows.Forms.Panel();
             this.btnCapNhatThongTin = new System.Windows.Forms.Button();
             this.btnThuThapThongTin = new System.Windows.Forms.Button();
-            this.btnChinhSuaTaiNguyen = new System.Windows.Forms.Button();
             this.btnTruyCapTaiNguyen = new System.Windows.Forms.Button();
             this.btnQuanLyThongTin = new System.Windows.Forms.Button();
             this.lbPostion = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@ namespace Project_DBManager
             this.ucCapLaiMatKhau1 = new Project_DBManager.ucCapLaiMatKhau();
             this.ucTaoTaiKhoan1 = new Project_DBManager.ucTaoTaiKhoan();
             this.ucTaoHopDong1 = new Project_DBManager.UC.ucTaoHopDong();
-            this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
             this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
             this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
             this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
@@ -451,12 +449,11 @@ namespace Project_DBManager
             // 
             this.pnQuanLyThongTin.Controls.Add(this.btnCapNhatThongTin);
             this.pnQuanLyThongTin.Controls.Add(this.btnThuThapThongTin);
-            this.pnQuanLyThongTin.Controls.Add(this.btnChinhSuaTaiNguyen);
             this.pnQuanLyThongTin.Controls.Add(this.btnTruyCapTaiNguyen);
             this.pnQuanLyThongTin.Controls.Add(this.btnQuanLyThongTin);
             this.pnQuanLyThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnQuanLyThongTin.Location = new System.Drawing.Point(0, 43);
-            this.pnQuanLyThongTin.MaximumSize = new System.Drawing.Size(146, 190);
+            this.pnQuanLyThongTin.MaximumSize = new System.Drawing.Size(146, 152);
             this.pnQuanLyThongTin.MinimumSize = new System.Drawing.Size(146, 38);
             this.pnQuanLyThongTin.Name = "pnQuanLyThongTin";
             this.pnQuanLyThongTin.Size = new System.Drawing.Size(146, 38);
@@ -469,7 +466,7 @@ namespace Project_DBManager
             this.btnCapNhatThongTin.FlatAppearance.BorderSize = 0;
             this.btnCapNhatThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhatThongTin.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhatThongTin.Location = new System.Drawing.Point(0, 152);
+            this.btnCapNhatThongTin.Location = new System.Drawing.Point(0, 114);
             this.btnCapNhatThongTin.Name = "btnCapNhatThongTin";
             this.btnCapNhatThongTin.Size = new System.Drawing.Size(146, 38);
             this.btnCapNhatThongTin.TabIndex = 4;
@@ -483,26 +480,12 @@ namespace Project_DBManager
             this.btnThuThapThongTin.FlatAppearance.BorderSize = 0;
             this.btnThuThapThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThuThapThongTin.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThuThapThongTin.Location = new System.Drawing.Point(0, 114);
+            this.btnThuThapThongTin.Location = new System.Drawing.Point(0, 76);
             this.btnThuThapThongTin.Name = "btnThuThapThongTin";
             this.btnThuThapThongTin.Size = new System.Drawing.Size(146, 38);
             this.btnThuThapThongTin.TabIndex = 3;
             this.btnThuThapThongTin.Text = "Thu thập thông tin";
             this.btnThuThapThongTin.UseVisualStyleBackColor = false;
-            // 
-            // btnChinhSuaTaiNguyen
-            // 
-            this.btnChinhSuaTaiNguyen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnChinhSuaTaiNguyen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChinhSuaTaiNguyen.FlatAppearance.BorderSize = 0;
-            this.btnChinhSuaTaiNguyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChinhSuaTaiNguyen.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChinhSuaTaiNguyen.Location = new System.Drawing.Point(0, 76);
-            this.btnChinhSuaTaiNguyen.Name = "btnChinhSuaTaiNguyen";
-            this.btnChinhSuaTaiNguyen.Size = new System.Drawing.Size(146, 38);
-            this.btnChinhSuaTaiNguyen.TabIndex = 2;
-            this.btnChinhSuaTaiNguyen.Text = "Chỉnh sửa tài nguyên";
-            this.btnChinhSuaTaiNguyen.UseVisualStyleBackColor = false;
             // 
             // btnTruyCapTaiNguyen
             // 
@@ -591,7 +574,6 @@ namespace Project_DBManager
             this.pnBody.Controls.Add(this.ucCapLaiMatKhau1);
             this.pnBody.Controls.Add(this.ucTaoTaiKhoan1);
             this.pnBody.Controls.Add(this.ucTaoHopDong1);
-            this.pnBody.Controls.Add(this.ucDanhSachBaiDang1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeHopDong1);
             this.pnBody.Controls.Add(this.ucBaoCaoThongKeBaiDang1);
             this.pnBody.Controls.Add(this.ucVoHieuHoaKhoiPhuc1);
@@ -640,15 +622,6 @@ namespace Project_DBManager
             this.ucTaoHopDong1.Size = new System.Drawing.Size(798, 577);
             this.ucTaoHopDong1.TabIndex = 5;
             // 
-            // ucDanhSachBaiDang1
-            // 
-            this.ucDanhSachBaiDang1.Account = null;
-            this.ucDanhSachBaiDang1.Location = new System.Drawing.Point(0, 0);
-            this.ucDanhSachBaiDang1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDanhSachBaiDang1.Name = "ucDanhSachBaiDang1";
-            this.ucDanhSachBaiDang1.Size = new System.Drawing.Size(798, 577);
-            this.ucDanhSachBaiDang1.TabIndex = 5;
-            // 
             // ucBaoCaoThongKeHopDong1
             // 
             this.ucBaoCaoThongKeHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -691,6 +664,15 @@ namespace Project_DBManager
             this.ucDanhSachNhanVien1.Size = new System.Drawing.Size(798, 577);
             this.ucDanhSachNhanVien1.TabIndex = 2;
             // 
+            // ucDanhSachBaiDang1
+            // 
+            this.ucDanhSachBaiDang1.Account = null;
+            this.ucDanhSachBaiDang1.Location = new System.Drawing.Point(0, 0);
+            this.ucDanhSachBaiDang1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDanhSachBaiDang1.Name = "ucDanhSachBaiDang1";
+            this.ucDanhSachBaiDang1.Size = new System.Drawing.Size(798, 577);
+            this.ucDanhSachBaiDang1.TabIndex = 5;
+            // 
             // ucDanhSachHopDong1
             // 
             this.ucDanhSachHopDong1.Account = null;
@@ -713,7 +695,6 @@ namespace Project_DBManager
             this.ucTaoBaiDang1.Name = "ucTaoBaiDang1";
             this.ucTaoBaiDang1.Size = new System.Drawing.Size(798, 577);
             this.ucTaoBaiDang1.TabIndex = 1;
-            this.ucTaoBaiDang1.Load += new System.EventHandler(this.taoBaiDang1_Load);
             // 
             // ucThongTinCaNhan1
             // 
@@ -729,6 +710,7 @@ namespace Project_DBManager
             // 
             // ucthongTinUuDai1
             // 
+            this.ucthongTinUuDai1.Acc = null;
             this.ucthongTinUuDai1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -776,7 +758,6 @@ namespace Project_DBManager
         private System.Windows.Forms.Panel pnQuanLyThongTin;
         private System.Windows.Forms.Button btnCapNhatThongTin;
         private System.Windows.Forms.Button btnThuThapThongTin;
-        private System.Windows.Forms.Button btnChinhSuaTaiNguyen;
         private System.Windows.Forms.Button btnTruyCapTaiNguyen;
         private System.Windows.Forms.Panel pnTaoBaiDang;
         private System.Windows.Forms.Button btnBaoCaoThongKeBaiDang;

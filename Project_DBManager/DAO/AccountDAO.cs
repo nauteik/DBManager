@@ -14,8 +14,6 @@ namespace Project_DBManager.DAO
     public class AccountDAO
     {
         private static AccountDAO instance;
-        private string username;
-        private string userID;
         public static AccountDAO Instance
         {
             get { if(instance == null) instance = new AccountDAO(); return instance; }
@@ -26,7 +24,6 @@ namespace Project_DBManager.DAO
          
             string query = "SELECT * FROM Users as U join Position as P on U.Pos_ID = P.Pos_ID WHERE U.Username = @Username AND U.Password = @Password AND U.IsEnable = 1 AND P.Level = @Level";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password, level });
-            this.username = username;
             return result.Rows.Count > 0;
         }
         public Account getAccountByUsername(string username)
@@ -53,7 +50,7 @@ namespace Project_DBManager.DAO
         }
         public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID, int isEnable)
         {
-            string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = {1},  Gender = N'{2}', Address = N'{3}', Birth = '{4}' WHERE User_ID = {5}", hoTen, cccd, gender, address, birth, userID);
+            string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = '{1}',  Gender = N'{2}', Address = N'{3}', Birth = '{4}' WHERE User_ID = {5}", hoTen, cccd, gender, address, birth, userID);
             bool firstExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             int posID = 0;
             switch (position)
@@ -99,7 +96,7 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
             return Convert.ToInt32(dt.Rows[0]["Pos_ID"].ToString());
         }
-        public bool createAccount(string username, string password, string email, int pos_ID, string hoten, string ngaySinh, string gioiTinh, string diaChi, string CCCD, string sdt)
+        public bool createAccount(string username, string password, string email, int pos_ID, string hoten, string ngaySinh, string gioiTinh, string diaChi, string CCCD, string sdt, string dept)
         {
             
             string query = string.Format("INSERT INTO Users(Username, Password, User_Email, IsEnable, Pos_ID) VALUES ('{0}', '{1}', '{2}', 1, {3})",username, password, email, pos_ID);
@@ -117,11 +114,14 @@ namespace Project_DBManager.DAO
                 DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE FROM Users WHERE Username = '{0}'", username));
                 return false;
             }
-            return firstExecetuion && secondExecution;
+            int departmentID = InformationDAO.Instance.getDepartmentIDByName(dept);
+            query = string.Format("INSERT INTO Department_Member VALUES ({0}, {1}, {2})", user_ID, departmentID, pos_ID == 1 ? 1 : 0);
+            bool thirdExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            return firstExecetuion && secondExecution && thirdExecution;
         }
         public bool validateUsername(string username)
         {
-            string query = string.Format("SELECT * FROM Users WHERE Username ={0}", username);
+            string query = string.Format("SELECT * FROM Users WHERE Username = '{0}'", username);
             if(DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
             {
                 return false;
@@ -130,7 +130,7 @@ namespace Project_DBManager.DAO
         }
         public bool validateEmail(string email)
         {
-            string query = string.Format("SELECT * FROM Users WHERE User_Enmail ={0}", email);
+            string query = string.Format("SELECT * FROM Users WHERE User_Email = '{0}'", email);
             if (DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
             {
                 return false;
@@ -149,9 +149,6 @@ namespace Project_DBManager.DAO
             return listAccount;
         }
        
-         public string getUserNameOfAccountLogin()
-        {
-            return this.username;
-        }
+  
     }
 }

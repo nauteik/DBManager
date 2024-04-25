@@ -139,7 +139,7 @@
             // 
             this.pbAvatar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbAvatar.BackColor = System.Drawing.Color.LightGray;
-            this.pbAvatar.BackgroundImage = global::Project_DBManager.Properties.Resources.Img_box_light;
+            this.pbAvatar.BackgroundImage = global::Project_DBManager.Properties.Resources.Import_light;
             this.pbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbAvatar.Location = new System.Drawing.Point(390, 248);
             this.pbAvatar.Name = "pbAvatar";

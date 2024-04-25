@@ -40,7 +40,7 @@ namespace Project_DBManager.DAO
         public void updateBrandStatus(string brandName)
         {
             string query = "UPDATE Brand SET Status = N'Đã tạo bài đăng' WHERE Brand_Name = @Brand_Name";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] {brandName});
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName });
         }
 
         public string getStatusByBrandName(string brandName)
@@ -100,13 +100,13 @@ namespace Project_DBManager.DAO
         public void createNewBrand(string brandName, string type, string representPhoneNumber)
         {
             string query = "INSERT INTO Brand (Brand_Name, Type, Brand_Represent, Status) VALUES ( @Brand_Name, @Type, @Brand_Represent, N'Chưa tạo bài đăng' )";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] {brandName, type, representPhoneNumber});
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName, type, representPhoneNumber });
         }
 
         public DataRow getTypeAndPhoneOfBrandByContractId(string contractId)
         {
             string query = "SELECT Type, Brand_Represent FROM Contract C, Brand B WHERE C.Brand_ID = B.Brand_ID AND C.Contract_ID = @Contract_ID";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {contractId});
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { contractId });
             return dt.Rows[0];
         }
 
@@ -122,8 +122,8 @@ namespace Project_DBManager.DAO
             string query = "UPDATE Brand SET Brand_Name = @Brand_Name, Type = @Type, Brand_Represent = @Brand_Represent WHERE Brand_ID = @Brand_ID";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName, type, representPhoneNumber, brandId });
         }
-    }
-     public DataTable getBrandDetails(string postID)
+
+        public DataTable getBrandDetails(string postID)
         {
             string query = "SELECT BI.Brand_ID, B.Brand_Name, BI.Phone_Number, BI.Facebook, BI.Introduction, BI.Address, B.Status " +
                 "FROM Post P, Brand_Info BI, Brand B WHERE P.Post_ID = @Post_ID AND B.Brand_ID = P.Brand_ID AND BI.Brand_ID = P.Brand_ID";
@@ -135,7 +135,7 @@ namespace Project_DBManager.DAO
         {
             string query_1 = "UPDATE Brand_Info SET Phone_Number = @Phone_Number, Facebook = @Facebook, Introduction = @Introduction, " +
                 "Address = @Address WHERE Brand_ID = @Brand_ID";
-            DataProvider.Instance.ExecuteNonQuery(query_1, new object[] {phoneNumber, facebook, introduction, address, brandID });
+            DataProvider.Instance.ExecuteNonQuery(query_1, new object[] { phoneNumber, facebook, introduction, address, brandID });
 
             string query_2 = "UPDATE Brand SET Status = @Status WHERE Brand_ID = @Brand_ID";
             DataProvider.Instance.ExecuteNonQuery(query_2, new object[] { status, brandID });
@@ -148,4 +148,5 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
             return dt.Rows[0]["Brand_ID"].ToString();
         }
+     }
 }

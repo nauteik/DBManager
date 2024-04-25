@@ -59,7 +59,7 @@ namespace Project_DBManager
             Workbook workbook = excel.Workbooks.Add(Type.Missing);
 
             // Create a new Excel worksheet
-            Worksheet worksheet = workbook.Sheets[1];
+            Worksheet worksheet = workbook.Sheets[1] as Worksheet;
             worksheet.Name = "Danh sách nhân viên";
             // export header
             for (int column = 2; column < dgv.ColumnCount-1; column++)

@@ -51,14 +51,11 @@
     <Compile Include="DAO\BrandDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
     <Compile Include="DAO\InformationDAO.cs" />
-    
     <Compile Include="DAO\HistoryDAO.cs" />
-    
     <Compile Include="DAO\UserInfoDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
-    
     <Compile Include="DTO\BrandInfo.cs" />
     <Compile Include="DTO\AccountWithPhone.cs" />
     <Compile Include="DTO\ContractInfo.cs" />
@@ -190,6 +187,9 @@
     <EmbeddedResource Include="UC\ucDanhSachHopDong.resx">
       <DependentUpon>ucDanhSachHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucDanhSachBaiDang.resx">
+      <DependentUpon>ucDanhSachBaiDang.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="UC\ucThongTinUuDai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinCaNhan.resx">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChinhSuaThongTinUuDai.resx">
+      <DependentUpon>ucChinhSuaThongTinUuDai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinNhanVien.resx">
       <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
@@ -340,10 +343,10 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Import_light.png" />
+    <None Include="Resources\Img_box_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Img_box_light.png" />
+    <None Include="Resources\Import_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
