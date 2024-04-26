@@ -19,6 +19,7 @@ namespace Project_DBManager
         private DataTable dt;
         private string postID;
         private Account acc;
+        private OfferInfo offerInfo;
 
         public Account Acc { get => acc; set => acc = value; }
 
@@ -52,6 +53,7 @@ namespace Project_DBManager
 
         public void loadInfo(OfferInfo oi)
         {
+            this.offerInfo = oi;
             this.postID = oi.Post_ID;
             tb_TenThuongHieu.Text = oi.Brand_Name;
             tb_ThoiGianCapNhat.Text = DAO.PostDAO.Instance.getUploadDate(oi.Post_ID).ToString() + " - " +
@@ -99,7 +101,8 @@ namespace Project_DBManager
                 }
                 MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Load_LichSuChinhSua(brandID, DAO.HistoryDAO.Instance.loadHistory(brandID));
+            loadInfo(this.offerInfo);
+            //Load_LichSuChinhSua(brandID, DAO.HistoryDAO.Instance.loadHistory(brandID));
             
         }
 

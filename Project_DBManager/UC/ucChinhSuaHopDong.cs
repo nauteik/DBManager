@@ -35,8 +35,8 @@ namespace Project_DBManager
                 tb_TenThuongHieu.Text = contractInfo.BrandName;
                 cb_LoaiHinh.Text = dr["Type"].ToString();
                 tb_SoDienThoaiDaiDien.Text = dr["Brand_Represent"].ToString();
-                dtpk_NgayKy.Value = Convert.ToDateTime(contractInfo.SignedDate);
-                dtpk_NgayKetThuc.Value = Convert.ToDateTime(contractInfo.Duration);
+                dtpk_NgayKy.Value = DateTime.ParseExact(contractInfo.SignedDate, "dd-MM-yyyy", null);
+                dtpk_NgayKetThuc.Value = DateTime.ParseExact(contractInfo.Duration, "dd-MM-yyyy", null);
                 tb_NoiDungHopDong.Text = contractInfo.Content;
             }
         }

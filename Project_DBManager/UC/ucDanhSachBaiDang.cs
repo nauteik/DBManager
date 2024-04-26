@@ -68,15 +68,15 @@ namespace Project_DBManager
                     {
                         for (int j = 2; j < dtgv_DanhSachBaiDang.Columns.Count; j++)
                         {
-                            if (j == 4)
-                            {
-                                DateTime dt = Convert.ToDateTime(dtgv_DanhSachBaiDang.Rows[i].Cells[j].Value);
-                                MExcel.Cells[i + 2, j - 1] = dt.ToString("dd-MM-yyyy");
-                            }
-                            else
-                            {
+                            //if (j == 4)
+                            //{
+                            //    DateTime dt = dtgv_DanhSachBaiDang.Rows[i].Cells[j].Value;
+                            //    MExcel.Cells[i + 2, j - 1] = dt.ToString("dd-MM-yyyy");
+                            //}
+                            //else
+                            //{
                                 MExcel.Cells[i + 2, j - 1] = dtgv_DanhSachBaiDang.Rows[i].Cells[j].Value.ToString();
-                            }
+                            //}
                         }
                     }
                     dtgv_DanhSachBaiDang.DataSource = postInfoToShowList;
