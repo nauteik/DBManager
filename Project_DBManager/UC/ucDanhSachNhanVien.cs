@@ -52,6 +52,17 @@ namespace Project_DBManager
         }
         private void ExportToExcel(DataGridView dgv, bool exportAll)
         {
+            string text;
+            if (exportAll)
+            {
+                text = "Bạn có muốn tải xuống tất cả dữ liệu?";
+            }
+            else
+            {
+                text = "Bạn có muốn tải xuống dữ liệu đã được chọn?";
+            }
+            DialogResult result = MessageBox.Show(text, "Tải xuống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result == DialogResult.No) { return; }
             // Create a new Excel application
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
 
@@ -96,26 +107,12 @@ namespace Project_DBManager
             }
             
             worksheet.Columns.AutoFit();
-            // Save the Excel file
-            // Save the workbook with desired file name
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-            saveFileDialog.FileName = "exportExcel.xlsx";
-
-            // Allow user to choose the path where the file will be saved
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Save the workbook to the selected path
-                workbook.SaveAs(saveFileDialog.FileName);
-            }
             excel.Visible = true;
 
             // Release Excel objects from memory
             System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
-
-            MessageBox.Show("DataGridView data exported to Excel successfully.");
         }
        
         private void pb_TaiXuong_Click(object sender, EventArgs e)
