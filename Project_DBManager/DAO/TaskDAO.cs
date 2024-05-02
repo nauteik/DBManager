@@ -20,5 +20,9 @@ namespace Project_DBManager.DAO
 
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+        public List<Task> getListTask(string dept)
+        {
+
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace Project_DBManager
 {
     public partial class ucPhanCongCongViec : UserControl
     {
+        private AccountDAO account;
+
         public ucPhanCongCongViec()
         {
             InitializeComponent();

@@ -9,19 +9,24 @@ namespace Project_DBManager.DTO
 {
     public class Task
     {
-        private string taskName;
-        private string dept;
+        private string taskTitle;
+        private int taskID;
+        private string assignDate;
         private string deadline;
-        private string content;
+        private string description;
+        private bool iscompleted;
 
-        public string TaskName { get => taskName; set => taskName = value; }
-        public string Dept { get => dept; set => dept = value; }
+        public string TaskTitle { get => taskTitle; set => taskTitle = value; }
+        public int TaskID { get => taskID; set => taskID = value; }
+        public string AssignDate { get => assignDate; set => assignDate = value; }
         public string Deadline { get => deadline; set => deadline = value; }
-        public string Content { get => content; set => content = value; }
-
+        public string Description { get => description; set => description = value; }
+        public bool Iscompleted { get => iscompleted; set => iscompleted = value; }
         public Task(DataRow row)
         {
-
+            
         }
+
+      
     }
 }
