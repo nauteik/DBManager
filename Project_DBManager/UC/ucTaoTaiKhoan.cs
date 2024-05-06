@@ -1,15 +1,8 @@
 ﻿using Project_DBManager.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_DBManager
+namespace Project_DBManager.UC
 {
     public partial class ucTaoTaiKhoan : UserControl
     {
@@ -37,7 +30,7 @@ namespace Project_DBManager
             if (hoTen == "") { MessageBox.Show("Họ tên không được để trống"); return; }
             if (cccd == "") { MessageBox.Show("CCCD không được để trống"); return; }
             if (email == "") { MessageBox.Show("Email không được để trống"); return; }
-            if (address== "") { MessageBox.Show("Địa chỉ không được để trống"); return; }
+            if (address == "") { MessageBox.Show("Địa chỉ không được để trống"); return; }
             if (AccountDAO.Instance.validateEmail(email) == false) { MessageBox.Show("Địa chỉ email đã tồn tại"); return; }
             if (AccountDAO.Instance.validateUsername(username) == false) { MessageBox.Show("Tên tài khoản đã tồn tại"); return; }
             bool isSucceed = AccountDAO.Instance.createAccount(username, matKhau, email, pos_ID, hoTen, ngaySinh, gender, address, cccd, sdt, dept);

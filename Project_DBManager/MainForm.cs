@@ -1,6 +1,5 @@
 ﻿using Project_DBManager.DTO;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -40,7 +39,7 @@ namespace Project_DBManager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void collapseMenu()
         {
@@ -72,7 +71,7 @@ namespace Project_DBManager
 
         private void btnTaoBaiDang_Click(object sender, EventArgs e)
         {
-            if(pnTaoBaiDang.Size == pnTaoBaiDang.MaximumSize)
+            if (pnTaoBaiDang.Size == pnTaoBaiDang.MaximumSize)
             {
                 pnTaoBaiDang.Size = pnTaoBaiDang.MinimumSize;
                 btnTaoBaiDang.Image = Properties.Resources.arrow;
@@ -124,7 +123,7 @@ namespace Project_DBManager
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void btnDanhSachHopDong_Click(object sender, EventArgs e)
@@ -141,10 +140,10 @@ namespace Project_DBManager
             ucTaoBaiDang1.Account = this.account;
             ucTaoBaiDang1.Show();
         }
-            
+
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            
+
             collapseUserControl();
             ucThongTinCaNhan1.loadAccount(account.Username);
             ucThongTinCaNhan1.Show();
@@ -241,6 +240,6 @@ namespace Project_DBManager
             ucDanhSachBaiDang1.Show();
         }
 
-      
+
     }
 }

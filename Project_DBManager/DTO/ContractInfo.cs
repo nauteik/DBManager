@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_DBManager.DTO
 {
@@ -42,7 +33,7 @@ namespace Project_DBManager.DTO
         public string ToString()
         {
             return "ID: " + contractID + "\nTên thương hiệu: " + brandName + "\nNgày ký: " + signedDate + "\nNgày hết hạn: " + duration + "\nNội dung: " + content;
-            
+
         }
     }
 }

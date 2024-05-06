@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_DBManager.DTO
 {
@@ -26,7 +22,7 @@ namespace Project_DBManager.DTO
         public string Email { get => email; set => email = value; }
         public int UserID { get => userID; set => userID = value; }
 
-        public Staff(DataRow row) 
+        public Staff(DataRow row)
         {
             isChecked = false;
             name = row["Name"].ToString();
@@ -35,7 +31,7 @@ namespace Project_DBManager.DTO
             phone = row["phoneNum"].ToString();
             email = row["User_Email"].ToString();
             userID = Convert.ToInt32(row["User_ID"].ToString());
-            
+
         }
 
     }

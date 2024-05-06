@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace Project_DBManager.DTO
 {
@@ -24,9 +19,9 @@ namespace Project_DBManager.DTO
         public bool Iscompleted { get => iscompleted; set => iscompleted = value; }
         public Task(DataRow row)
         {
-            
+
         }
 
-      
+
     }
 }

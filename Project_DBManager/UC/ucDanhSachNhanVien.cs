@@ -4,14 +4,11 @@ using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using DataTable = System.Data.DataTable;
 
-namespace Project_DBManager
+namespace Project_DBManager.UC
 {
     public partial class ucDanhSachNhanVien : UserControl
     {
@@ -28,9 +25,9 @@ namespace Project_DBManager
             dtgv_Staff.DataSource = listStaff;
         }
 
-       
 
-        
+
+
 
         public class StaffComparer : IComparer<Staff>
         {
@@ -62,7 +59,7 @@ namespace Project_DBManager
                 text = "Bạn có muốn tải xuống dữ liệu đã được chọn?";
             }
             DialogResult result = MessageBox.Show(text, "Tải xuống", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.No) { return; }
+            if (result == DialogResult.No) { return; }
             // Create a new Excel application
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
 
@@ -73,13 +70,13 @@ namespace Project_DBManager
             Worksheet worksheet = workbook.Sheets[1] as Worksheet;
             worksheet.Name = "Danh sách nhân viên";
             // export header
-            for (int column = 2; column < dgv.ColumnCount-1; column++)
+            for (int column = 2; column < dgv.ColumnCount - 1; column++)
             {
-                worksheet.Cells[1, column-1] = dgv.Columns[column].HeaderText;
+                worksheet.Cells[1, column - 1] = dgv.Columns[column].HeaderText;
             }
             int skippedRow = 0;
             // export content
-            for (int row= 2; row < dgv.RowCount+2; row++) // Sau khi export header, dòng trống tiếp theo trong excel có row index là 2
+            for (int row = 2; row < dgv.RowCount + 2; row++) // Sau khi export header, dòng trống tiếp theo trong excel có row index là 2
             {
                 DataGridViewCheckBoxCell checkBoxCell = dgv.Rows[row - 2].Cells[1] as DataGridViewCheckBoxCell; // ColumnCheckbox co index la 2,
                 if ((checkBoxCell == null || Convert.ToBoolean(checkBoxCell.Value) == false) && exportAll == false)
@@ -87,25 +84,25 @@ namespace Project_DBManager
                     skippedRow++;
                     continue;
                 }
-                for (int column = 2; column < dgv.ColumnCount-1; column++)
+                for (int column = 2; column < dgv.ColumnCount - 1; column++)
                 {
-                    object cellValue = dgv.Rows[row-2].Cells[column].Value;
+                    object cellValue = dgv.Rows[row - 2].Cells[column].Value;
                     if (cellValue != null)
                     {
                         if (dgv.Columns[column].HeaderText == "Số điện thoại")
                         {
-                            worksheet.Cells[row - skippedRow, column-1] = "'" + cellValue.ToString();
+                            worksheet.Cells[row - skippedRow, column - 1] = "'" + cellValue.ToString();
                             continue;
                         }
-                        worksheet.Cells[row - skippedRow , column-1] = cellValue.ToString();
+                        worksheet.Cells[row - skippedRow, column - 1] = cellValue.ToString();
                     }
                     else
                     {
-                        worksheet.Cells[row - skippedRow, column-1] = ""; // hoặc giá trị mặc định khác tuỳ ý
+                        worksheet.Cells[row - skippedRow, column - 1] = ""; // hoặc giá trị mặc định khác tuỳ ý
                     }
                 }
             }
-            
+
             worksheet.Columns.AutoFit();
             excel.Visible = true;
 
@@ -114,7 +111,7 @@ namespace Project_DBManager
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
         }
-       
+
         private void pb_TaiXuong_Click(object sender, EventArgs e)
         {
             ExportToExcel(dtgv_Staff, true);
@@ -132,7 +129,7 @@ namespace Project_DBManager
 
         private void tb_TimKiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 dtgv_Staff.DataSource = getFilteredDataSource();
                 tb_TimKiem.Text = "";

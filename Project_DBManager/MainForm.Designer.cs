@@ -63,19 +63,19 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
-            this.ucPhanCongCongViec1 = new Project_DBManager.ucPhanCongCongViec();
-            this.ucCapLaiMatKhau1 = new Project_DBManager.ucCapLaiMatKhau();
-            this.ucTaoTaiKhoan1 = new Project_DBManager.ucTaoTaiKhoan();
+            this.ucPhanCongCongViec1 = new Project_DBManager.UC.ucPhanCongCongViec();
+            this.ucCapLaiMatKhau1 = new Project_DBManager.UC.ucCapLaiMatKhau();
+            this.ucTaoTaiKhoan1 = new Project_DBManager.UC.ucTaoTaiKhoan();
             this.ucTaoHopDong1 = new Project_DBManager.UC.ucTaoHopDong();
             this.ucBaoCaoThongKeHopDong1 = new Project_DBManager.UC.ucBaoCaoThongKeHopDong();
             this.ucBaoCaoThongKeBaiDang1 = new Project_DBManager.UC.ucBaoCaoThongKeBaiDang();
-            this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.ucVoHieuHoaKhoiPhuc();
-            this.ucDanhSachNhanVien1 = new Project_DBManager.ucDanhSachNhanVien();
-            this.ucDanhSachBaiDang1 = new Project_DBManager.ucDanhSachBaiDang();
-            this.ucDanhSachHopDong1 = new Project_DBManager.ucDanhSachHopDong();
-            this.ucTaoBaiDang1 = new Project_DBManager.ucTaoBaiDang();
-            this.ucThongTinCaNhan1 = new Project_DBManager.ucThongTinCaNhan();
-            this.ucthongTinUuDai1 = new Project_DBManager.ucThongTinUuDai();
+            this.ucVoHieuHoaKhoiPhuc1 = new Project_DBManager.UC.ucVoHieuHoaKhoiPhuc();
+            this.ucDanhSachNhanVien1 = new Project_DBManager.UC.ucDanhSachNhanVien();
+            this.ucDanhSachBaiDang1 = new Project_DBManager.UC.ucDanhSachBaiDang();
+            this.ucDanhSachHopDong1 = new Project_DBManager.UC.ucDanhSachHopDong();
+            this.ucTaoBaiDang1 = new Project_DBManager.UC.ucTaoBaiDang();
+            this.ucThongTinCaNhan1 = new Project_DBManager.UC.ucThongTinCaNhan();
+            this.ucthongTinUuDai1 = new Project_DBManager.UC.ucThongTinUuDai();
             this.pnSidemenu.SuspendLayout();
             this.pnQuanLyTaiKhoan.SuspendLayout();
             this.pnQuanLyHopDong.SuspendLayout();
@@ -599,6 +599,9 @@ namespace Project_DBManager
             // 
             // ucCapLaiMatKhau1
             // 
+            this.ucCapLaiMatKhau1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucCapLaiMatKhau1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucCapLaiMatKhau1.Location = new System.Drawing.Point(0, 0);
             this.ucCapLaiMatKhau1.Name = "ucCapLaiMatKhau1";
@@ -647,6 +650,9 @@ namespace Project_DBManager
             // 
             // ucVoHieuHoaKhoiPhuc1
             // 
+            this.ucVoHieuHoaKhoiPhuc1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucVoHieuHoaKhoiPhuc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucVoHieuHoaKhoiPhuc1.Location = new System.Drawing.Point(0, 0);
             this.ucVoHieuHoaKhoiPhuc1.Name = "ucVoHieuHoaKhoiPhuc1";
@@ -779,20 +785,20 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnXemThongBao;
         private System.Windows.Forms.Button btnThongTinCaNhan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
-        private ucDanhSachHopDong ucDanhSachHopDong1;
-        private ucTaoBaiDang ucTaoBaiDang1;
-        private ucThongTinCaNhan ucThongTinCaNhan1;
+        private UC.ucDanhSachHopDong ucDanhSachHopDong1;
+        private UC.ucTaoBaiDang ucTaoBaiDang1;
+        private UC.ucThongTinCaNhan ucThongTinCaNhan1;
         private System.Windows.Forms.Button btnDangXuat;
-        private ucThongTinUuDai ucthongTinUuDai1;
-        private ucDanhSachNhanVien ucDanhSachNhanVien1;
-        private ucVoHieuHoaKhoiPhuc ucVoHieuHoaKhoiPhuc1;
+        private UC.ucThongTinUuDai ucthongTinUuDai1;
+        private UC.ucDanhSachNhanVien ucDanhSachNhanVien1;
+        private UC.ucVoHieuHoaKhoiPhuc ucVoHieuHoaKhoiPhuc1;
         private UC.ucBaoCaoThongKeBaiDang ucBaoCaoThongKeBaiDang1;
         private UC.ucBaoCaoThongKeHopDong ucBaoCaoThongKeHopDong1;
         private UC.ucTaoHopDong ucTaoHopDong1;
         private System.Windows.Forms.Button btnBaoCaoThongKeHopDong;
-        private ucTaoTaiKhoan ucTaoTaiKhoan1;
-        private ucCapLaiMatKhau ucCapLaiMatKhau1;
-        private ucPhanCongCongViec ucPhanCongCongViec1;
-        private ucDanhSachBaiDang ucDanhSachBaiDang1;
+        private UC.ucTaoTaiKhoan ucTaoTaiKhoan1;
+        private UC.ucCapLaiMatKhau ucCapLaiMatKhau1;
+        private UC.ucPhanCongCongViec ucPhanCongCongViec1;
+        private UC.ucDanhSachBaiDang ucDanhSachBaiDang1;
     }
 }

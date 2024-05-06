@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -89,7 +83,7 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("leader,", 1, Properties.Resources.fig_Leader1);
             this.Hide();
             newForm.ShowDialog();
-            if(!newForm.succeedLogin())
+            if (!newForm.succeedLogin())
                 this.Show();
             else
                 this.Close();

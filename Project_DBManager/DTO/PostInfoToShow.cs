@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_DBManager.DTO
 {
@@ -17,7 +13,7 @@ namespace Project_DBManager.DTO
         private string name;
         private string content;
 
-        public PostInfoToShow(DataRow row) 
+        public PostInfoToShow(DataRow row)
         {
             this.isChecked = false;
             this.postID = row[0].ToString();

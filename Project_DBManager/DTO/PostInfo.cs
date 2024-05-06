@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace Project_DBManager.DTO
 {
@@ -21,7 +16,7 @@ namespace Project_DBManager.DTO
         private string type;
         private string postId;
 
-        public PostInfo (DataRow row)
+        public PostInfo(DataRow row)
         {
             isChecked = false;
             userId = row[0].ToString();
@@ -36,7 +31,7 @@ namespace Project_DBManager.DTO
             postId = row[9].ToString();
         }
 
-        public PostInfo (string userId, string brandName, string phoneNumber, string address, string facebook, string status, string content) 
+        public PostInfo(string userId, string brandName, string phoneNumber, string address, string facebook, string status, string content)
         {
             this.isChecked = false;
             this.userId = userId;
@@ -48,8 +43,8 @@ namespace Project_DBManager.DTO
             this.content = content;
         }
 
-        public bool IsChecked {  get => isChecked; set => isChecked = value; }
-        public string UserId { get =>  userId; set => userId = value; }
+        public bool IsChecked { get => isChecked; set => isChecked = value; }
+        public string UserId { get => userId; set => userId = value; }
         public string BrandName { get => brandName; set => brandName = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }

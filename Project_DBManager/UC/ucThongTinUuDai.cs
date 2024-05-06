@@ -2,17 +2,13 @@
 using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_DBManager
+namespace Project_DBManager.UC
 {
-    
+
     public partial class ucThongTinUuDai : UserControl
     {
         private List<OfferInfo> OfferInfoList = new List<OfferInfo>();
@@ -27,7 +23,7 @@ namespace Project_DBManager
             ucChinhSuaThongTinUuDai1.Hide();
         }
 
-        
+
 
 
 

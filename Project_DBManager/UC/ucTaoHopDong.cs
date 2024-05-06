@@ -1,13 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using Project_DBManager.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager.UC
@@ -50,7 +43,7 @@ namespace Project_DBManager.UC
                 BrandDAO.Instance.createNewBrand(tb_TenThuongHieu.Text, cb_LoaiHinh.SelectedItem.ToString(), tb_SoDienThoaiDaiDien.Text);
                 int newBrandId = -1;
                 newBrandId = BrandDAO.Instance.getBrandIdDoNotHaveContract();
-                if (newBrandId == -1) 
+                if (newBrandId == -1)
                 {
                     MessageBox.Show("Lỗi!");
                 }

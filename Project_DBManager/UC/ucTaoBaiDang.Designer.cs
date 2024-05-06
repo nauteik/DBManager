@@ -1,4 +1,4 @@
-﻿namespace Project_DBManager
+﻿namespace Project_DBManager.UC
 {
     partial class ucTaoBaiDang
     {

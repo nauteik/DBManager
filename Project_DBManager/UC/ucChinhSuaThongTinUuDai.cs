@@ -1,16 +1,8 @@
-﻿using Project_DBManager.DAO;
-using Project_DBManager.DTO;
+﻿using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project_DBManager
 {
@@ -26,7 +18,7 @@ namespace Project_DBManager
         public ucChinhSuaThongTinUuDai()
         {
             InitializeComponent();
-            
+
         }
 
         private bool found(string ele)
@@ -46,7 +38,7 @@ namespace Project_DBManager
         {
             foreach (string ele in lst)
             {
-                if(found(ele)) { continue; }
+                if (found(ele)) { continue; }
                 else { dtgv.Rows.Add(ele); }
             }
         }
@@ -82,12 +74,12 @@ namespace Project_DBManager
             if (tb_DiaChi.Text != dt.Rows[0]["Address"].ToString()) { contentsChanged += " địa chỉ,"; check = true; }
             if (cb_TrangThai.Text != dt.Rows[0]["Status"].ToString()) { contentsChanged += " trạng thái,"; check = true; }
 
-            if (check) { contentsChanged = contentsChanged.Substring(0, contentsChanged.Length-1); }
+            if (check) { contentsChanged = contentsChanged.Substring(0, contentsChanged.Length - 1); }
 
             string username = acc.Username;
             string userID = Convert.ToString(acc.UserID);
             string brandID = DAO.BrandDAO.Instance.getBrandIdByPostId(this.postID);
-            
+
             HistoryEditBrandInfo his = new HistoryEditBrandInfo(userID, brandID, username, contentsChanged);
 
             DialogResult result = MessageBox.Show("Bạn có muốn lưu các thay đổi? ", "Lưu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -95,7 +87,7 @@ namespace Project_DBManager
             {
                 DAO.BrandDAO.Instance.updateBrandDetails(dt.Rows[0]["Brand_ID"].ToString(), tb_SoDienThoai1.Text.ToString(),
                     tb_Facebook.Text.ToString(), tb_MoTaNgan.Text.ToString(), tb_DiaChi.Text.ToString(), cb_TrangThai.Text.ToString());
-                if(check)
+                if (check)
                 {
                     DAO.HistoryDAO.Instance.insertIntoHistory(his);
                 }
@@ -103,7 +95,7 @@ namespace Project_DBManager
             }
             loadInfo(this.offerInfo);
             //Load_LichSuChinhSua(brandID, DAO.HistoryDAO.Instance.loadHistory(brandID));
-            
+
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)

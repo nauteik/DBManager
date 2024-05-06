@@ -1,12 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -36,7 +30,7 @@ namespace Project_DBManager
                 case "Leader": cb_ChucVu.SelectedIndex = 1; lbTitlePosition.Text = "Leader"; break;
                 case "Manager": cb_ChucVu.Items.Add("Quản lý"); cb_ChucVu.SelectedIndex = 2; lbTitlePosition.Text = "Manager"; break;
             }
-            
+
             tbAddress.Text = row["Address"].ToString();
             cb_ViTri.SelectedIndex = cb_ViTri.FindStringExact(row["Department_Name"].ToString());
             dtpk_Birth.Value = DateTime.ParseExact(row["Birth"].ToString(), "dd-MM-yyyy", null);
@@ -45,7 +39,7 @@ namespace Project_DBManager
             switch (isEnable)
             {
                 case 0: cb_TrangThai.SelectedIndex = 1; break;
-                case 1:  cb_TrangThai.SelectedIndex = 0; break;
+                case 1: cb_TrangThai.SelectedIndex = 0; break;
             }
             this.userID = userID;
         }

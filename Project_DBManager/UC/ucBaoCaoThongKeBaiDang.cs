@@ -1,12 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager.UC
@@ -116,7 +110,7 @@ namespace Project_DBManager.UC
             {
                 cb_Chon.Items.Clear();
                 lb_Chon.Text = "Chọn người tạo";
-                List<string> nameList =AccountDAO.Instance.getNameList();
+                List<string> nameList = AccountDAO.Instance.getNameList();
                 foreach (string name in nameList)
                 {
                     cb_Chon.Items.Add(name);
@@ -136,7 +130,7 @@ namespace Project_DBManager.UC
 
         private void c_BaiDang_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

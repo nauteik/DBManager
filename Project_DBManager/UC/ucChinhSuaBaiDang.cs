@@ -1,13 +1,7 @@
 ﻿using Project_DBManager.DAO;
 using Project_DBManager.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -34,7 +28,7 @@ namespace Project_DBManager
 
         private void ucChinhSuaBaiDang_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_ChinhSuaBaiDang_Click(object sender, EventArgs e)
@@ -61,7 +55,7 @@ namespace Project_DBManager
                 tb_Facebook.Text = dr["Facebook"].ToString();
                 tb_TrangThai.Text = dr["Status"].ToString();
                 tb_NoiDung.Text = postInfoToShow.Content;
-            }  
+            }
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using Project_DBManager.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project_DBManager.DAO
 {
@@ -29,7 +24,7 @@ namespace Project_DBManager.DAO
             List<string> lst = new List<string>();
             string query = "SELECT History_Time, Name, Contents_Changed FROM History_Brand WHERE Brand_ID = @Brand_ID";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandID });
-            foreach(DataRow row in dt.Rows)
+            foreach (DataRow row in dt.Rows)
             {
                 lst.Add(row["History_Time"].ToString() + " - " + row["Name"].ToString() + " - " + row["Contents_Changed"].ToString());
             }

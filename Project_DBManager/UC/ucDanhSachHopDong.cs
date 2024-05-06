@@ -2,19 +2,12 @@
 using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace Project_DBManager
+namespace Project_DBManager.UC
 {
     public partial class ucDanhSachHopDong : UserControl
     {
@@ -22,7 +15,7 @@ namespace Project_DBManager
         private string query;
         private List<ContractInfo> contractInfoList = new List<ContractInfo>();
         private Account account;
-        public Account Account { get =>  account; set => account = value; }
+        public Account Account { get => account; set => account = value; }
 
         public ucDanhSachHopDong()
         {
@@ -171,7 +164,7 @@ namespace Project_DBManager
                             //}
                             //else
                             //{
-                                MExcel.Cells[i + 2, j - 1] = dtgv.Rows[i].Cells[j].Value.ToString();
+                            MExcel.Cells[i + 2, j - 1] = dtgv.Rows[i].Cells[j].Value.ToString();
                             //}
                         }
                     }

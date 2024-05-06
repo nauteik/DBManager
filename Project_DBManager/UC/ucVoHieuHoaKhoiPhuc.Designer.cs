@@ -1,4 +1,4 @@
-﻿namespace Project_DBManager
+﻿namespace Project_DBManager.UC
 {
     partial class ucVoHieuHoaKhoiPhuc
     {
@@ -172,6 +172,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv_Staff.BackgroundColor = System.Drawing.Color.White;
             this.dtgv_Staff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv_Staff.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgv_Staff.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));

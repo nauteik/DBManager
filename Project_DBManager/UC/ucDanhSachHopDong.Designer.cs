@@ -1,4 +1,4 @@
-﻿namespace Project_DBManager
+﻿namespace Project_DBManager.UC
 {
     partial class ucDanhSachHopDong
     {
@@ -50,7 +50,7 @@
             this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_XoaDuLieu = new System.Windows.Forms.Button();
-            this.ucChinhSuaHopDong1 = new Project_DBManager.ucChinhSuaHopDong();
+            this.ucChinhSuaHopDong1 = new Project_DBManager.UC.ucChinhSuaHopDong();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();

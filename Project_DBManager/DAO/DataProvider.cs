@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
-using System.Windows.Forms;
-using System.Drawing.Text;
 namespace Project_DBManager.DAO
 {
     internal class DataProvider
@@ -29,20 +21,20 @@ namespace Project_DBManager.DAO
             {
                 connect.Open();
                 SqlCommand cmd = new SqlCommand(query, connect);
-                if(para != null)
+                if (para != null)
                 {
                     int i = 0;
                     foreach (string item in query.Split(' '))
                     {
-                        
+
                         if (item.Contains("@"))
                         {
-                            
+
                             item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
                             cmd.Parameters.AddWithValue(item, para[i++]);
                         }
                     }
-                    
+
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(data);

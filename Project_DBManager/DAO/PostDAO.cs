@@ -2,11 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project_DBManager.DAO
 {
@@ -19,7 +14,7 @@ namespace Project_DBManager.DAO
             set { PostDAO.instance = value; }
         }
 
-        public void insertValueIntoPost(int userId, string brandName, string content) 
+        public void insertValueIntoPost(int userId, string brandName, string content)
         {
             int brandId = BrandDAO.Instance.getBrandIdByBrandName(brandName);
             DateTime uploadDate = DateTime.Now;

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_DBManager.DTO
 {
@@ -14,7 +10,7 @@ namespace Project_DBManager.DTO
         private string password;
         private string email;
         private int level;
-        public Account(DataRow row) 
+        public Account(DataRow row)
         {
             UserID = int.Parse(row["User_ID"].ToString());
             username = row["Username"].ToString();

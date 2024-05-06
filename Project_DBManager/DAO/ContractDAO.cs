@@ -1,12 +1,7 @@
 ﻿using Project_DBManager.DTO;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project_DBManager.DAO
 {
@@ -18,7 +13,7 @@ namespace Project_DBManager.DAO
             get { if (instance == null) instance = new ContractDAO(); return instance; }
             set { ContractDAO.instance = value; }
         }
-        
+
         public int getUserLevelCreateContract(string contractId)
         {
             string query = "SELECT Pos_ID FROM Contract C, Users U WHERE C.User_ID = U.User_ID AND Contract_ID = @Contract_ID";
@@ -95,7 +90,7 @@ namespace Project_DBManager.DAO
         public void updateContract(string duration, string content, string contractId)
         {
             string query = "UPDATE Contract SET Duration = @Duration, Content = @Content WHERE Contract_ID = @Contract_ID";
-            DataProvider.Instance.ExecuteNonQuery (query, new object[] { duration, content, contractId });
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { duration, content, contractId });
         }
         public List<ContractInfo> getListContract()
         {
