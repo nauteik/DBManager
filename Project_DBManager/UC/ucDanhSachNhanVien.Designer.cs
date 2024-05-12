@@ -51,8 +51,8 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ucThongTinNhanVien1 = new Project_DBManager.ucThongTinNhanVien();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pn_ToolMenu.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TaiXuong)).BeginInit();
@@ -123,14 +123,15 @@
             // 
             // cbLoc
             // 
+            this.cbLoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLoc.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoc.FormattingEnabled = true;
             this.cbLoc.Items.AddRange(new object[] {
             "Không",
-            "Manager",
-            "Leader",
-            "Employee"});
+            "Quản lý",
+            "Tổ trưởng",
+            "Nhân viên"});
             this.cbLoc.Location = new System.Drawing.Point(262, 15);
             this.cbLoc.Name = "cbLoc";
             this.cbLoc.Size = new System.Drawing.Size(98, 23);
@@ -256,7 +257,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgv_Staff.DefaultCellStyle = dataGridViewCellStyle2;
@@ -266,10 +267,11 @@
             this.dtgv_Staff.Name = "dtgv_Staff";
             this.dtgv_Staff.RowHeadersVisible = false;
             this.dtgv_Staff.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dtgv_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_Staff.Size = new System.Drawing.Size(750, 375);
             this.dtgv_Staff.TabIndex = 9;
             this.dtgv_Staff.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgv_Staff_CellMouseClick);
+            this.dtgv_Staff.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgv_Staff_CellMouseDoubleClick);
             this.dtgv_Staff.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseEnter);
             this.dtgv_Staff.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseLeave);
             // 
@@ -341,16 +343,9 @@
             this.UserID.Name = "UserID";
             this.UserID.Visible = false;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 40;
-            // 
             // ucThongTinNhanVien1
             // 
+            this.ucThongTinNhanVien1.Account = null;
             this.ucThongTinNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -361,6 +356,14 @@
             this.ucThongTinNhanVien1.TabIndex = 10;
             this.ucThongTinNhanVien1.UserID = 0;
             this.ucThongTinNhanVien1.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 40;
             // 
             // ucDanhSachNhanVien
             // 

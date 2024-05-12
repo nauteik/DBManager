@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +41,21 @@
     </Reference>
     <Reference Include="Azure.Identity">
       <HintPath>packages\Azure.Identity.1.11.2\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Core.2.1.7\lib\net472\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinForms.2.1.7\lib\net472\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WinPresentation.2.1.7\lib\net472\GMap.NET.WindowsPresentation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -66,16 +84,30 @@
     <Reference Include="Microsoft.IdentityModel.Tokens">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.7.5.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ClientModel">
       <HintPath>packages\System.ClientModel.1.0.0\lib\netstandard2.0\System.ClientModel.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager">
       <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Diagnostics.DiagnosticSource">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -129,6 +161,7 @@
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DAO\HistoryDAO.cs" />
+    <Compile Include="DTO\AssignTask.cs" />
     <Compile Include="DTO\BrandInfo.cs" />
     <Compile Include="DTO\HistoryEditBrandInfo.cs" />
     <Compile Include="DAO\UserInfoDAO.cs" />
@@ -139,6 +172,14 @@
     <Compile Include="DTO\PostInfoToShow.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Task.cs" />
+    <Compile Include="DTO\TaskDetail.cs" />
+    <Compile Include="DTO\TempBrand.cs" />
+    <Compile Include="UC\formThuThap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\formThuThap.Designer.cs">
+      <DependentUpon>formThuThap.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucPhanCongCongViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +197,12 @@
     </Compile>
     <Compile Include="UC\ucTaoTaiKhoan.Designer.cs">
       <DependentUpon>ucTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucThuThapThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucThuThapThongTin.Designer.cs">
+      <DependentUpon>ucThuThapThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\ucVoHieuHoaKhoiPhuc.cs">
       <SubType>UserControl</SubType>
@@ -258,6 +305,15 @@
     <Compile Include="UC\ucThongTinCaNhan.Designer.cs">
       <DependentUpon>ucThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ucXemCongViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucXemCongViec.Designer.cs">
+      <DependentUpon>ucXemCongViec.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UC\formThuThap.resx">
+      <DependentUpon>formThuThap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucCapLaiMatKhau.resx">
       <DependentUpon>ucCapLaiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucChinhSuaThongTinUuDai.resx">
       <DependentUpon>ucChinhSuaThongTinUuDai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucThuThapThongTin.resx">
+      <DependentUpon>ucThuThapThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucVoHieuHoaKhoiPhuc.resx">
       <DependentUpon>ucVoHieuHoaKhoiPhuc.cs</DependentUpon>
@@ -333,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucThongTinUuDai.resx">
       <DependentUpon>ucThongTinUuDai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucXemCongViec.resx">
+      <DependentUpon>ucXemCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Project_DBManager.DAO.DataProvider.datasource" />
@@ -448,4 +510,14 @@
     <None Include="Resources\Img_box_light.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
 </Project>

@@ -224,7 +224,7 @@ nhân viên nhập liệu</value>
     <value>0, 0</value>
   </data>
   <data name="panel_staff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 518</value>
+    <value>262, 529</value>
   </data>
   <data name="panel_staff.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -243,75 +243,6 @@ nhân viên nhập liệu</value>
   </data>
   <data name="panel_manager.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
-    <value>pictureBox4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
-    <value>panel_manager</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel_manager</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel_manager</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>panel_manager</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel_manager.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 0</value>
-  </data>
-  <data name="panel_manager.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 518</value>
-  </data>
-  <data name="panel_manager.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel_manager.Name" xml:space="preserve">
-    <value>panel_manager</value>
-  </data>
-  <data name="&gt;&gt;panel_manager.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_manager.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_manager.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="pictureBox4.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -436,6 +367,27 @@ quản lý</value>
   </data>
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="panel_manager.Location" type="System.Drawing.Point, System.Drawing">
+    <value>522, 0</value>
+  </data>
+  <data name="panel_manager.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 529</value>
+  </data>
+  <data name="panel_manager.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_manager.Name" xml:space="preserve">
+    <value>panel_manager</value>
+  </data>
+  <data name="&gt;&gt;panel_manager.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_manager.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_manager.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="panel_leader.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -631,7 +583,7 @@ tổ trưởng</value>
     <value>261, -1</value>
   </data>
   <data name="panel_leader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 518</value>
+    <value>262, 530</value>
   </data>
   <data name="panel_leader.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

@@ -276,7 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "FormLoginAuth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login_Form_Staff";
+            this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.FormLoginAuth_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

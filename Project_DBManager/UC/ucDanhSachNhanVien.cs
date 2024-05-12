@@ -13,6 +13,7 @@ namespace Project_DBManager.UC
     public partial class ucDanhSachNhanVien : UserControl
     {
         private List<Staff> listStaff;
+        private Account account;
         public ucDanhSachNhanVien()
         {
             InitializeComponent();
@@ -21,7 +22,9 @@ namespace Project_DBManager.UC
         }
         public void loadStaff(Account account)
         {
+            this.account = account;
             listStaff = StaffDAO.Instance.getListStaff(account);
+            listStaff = listStaff.Where(staff => InformationDAO.Instance.getLevelByPosition(staff.Position) <= account.Level).ToList();
             dtgv_Staff.DataSource = listStaff;
         }
 
@@ -35,9 +38,13 @@ namespace Project_DBManager.UC
             {
                 if (x.Position.Equals(y.Position))
                     return 0;
-                if (x.Position == "Manager")
+                if (x.Position == "CEO")
                     return 1;
-                if (x.Position == "Leader" && y.Position != "Manager")
+                if (y.Position == "CEO")
+                    return -1;
+                if (x.Position == "Quản lý")
+                    return 1;
+                if (x.Position == "Tổ trưởng" && y.Position != "Quản lý")
                     return 1;
                 return -1;
             }
@@ -129,12 +136,7 @@ namespace Project_DBManager.UC
 
         private void tb_TimKiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                dtgv_Staff.DataSource = getFilteredDataSource();
-                tb_TimKiem.Text = "";
-            }
-
+            dtgv_Staff.DataSource = getFilteredDataSource();
         }
 
         private void cb_SapXep_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,9 +173,9 @@ namespace Project_DBManager.UC
             }
             switch (cbLoc.SelectedItem.ToString())
             {
-                case "Manager": tempListStaff = tempListStaff.Where(staff => staff.Position == "Manager").ToList(); break;
-                case "Leader": tempListStaff = tempListStaff.Where(staff => staff.Position == "Leader").ToList(); break;
-                case "Employee": tempListStaff = tempListStaff.Where(staff => staff.Position == "Employee").ToList(); break;
+                case "Quản lý": tempListStaff = tempListStaff.Where(staff => staff.Position == "Quản lý").ToList(); break;
+                case "Tổ trưởng": tempListStaff = tempListStaff.Where(staff => staff.Position == "Tổ trưởng").ToList(); break;
+                case "Nhân viên": tempListStaff = tempListStaff.Where(staff => staff.Position == "Nhân viên").ToList(); break;
             }
             string value = tb_TimKiem.Text;
             tempListStaff = tempListStaff.Where(staff => staff.Name.ToLower().Contains(value.ToLower()) || staff.Dept.ToLower().Contains(value.ToLower()) || staff.Position.ToLower().Contains(value.ToLower()) || staff.Email.ToLower().Contains(value.ToLower()) || staff.Phone.ToLower().Contains(value)).ToList();
@@ -195,22 +197,37 @@ namespace Project_DBManager.UC
             }
         }
 
-        private void dtgv_Staff_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtgv_Staff.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
-            {
-                ucThongTinNhanVien1.loadInfo(Convert.ToInt32(dtgv_Staff.Rows[e.RowIndex].Cells[7].Value.ToString()));
-                ucThongTinNhanVien1.Visible = true;
-            }
-        }
-
         private void dtgv_Staff_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dtgv_Staff.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
             {
-                ucThongTinNhanVien1.loadInfo(Convert.ToInt32(dtgv_Staff.Rows[e.RowIndex].Cells[7].Value.ToString()));
-                ucThongTinNhanVien1.Visible = true;
+                if(this.account.Level <= 1)
+                {
+                    MessageBox.Show("Bạn không có quyền truy cập");
+                    return;
+                }
+                loadThongTinNhanVien(Convert.ToInt32(dtgv_Staff.Rows[e.RowIndex].Cells[7].Value.ToString()));
             }
+        }
+
+        private void dtgv_Staff_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (this.account.Level <= 1)
+                {
+                    MessageBox.Show("Bạn không có quyền truy cập");
+                    return;
+                }
+                loadThongTinNhanVien(Convert.ToInt32(dtgv_Staff.Rows[e.RowIndex].Cells[7].Value.ToString()));
+                
+            }
+        }
+        private void loadThongTinNhanVien(int userID)
+        {
+            ucThongTinNhanVien1.Account = this.account;
+            ucThongTinNhanVien1.loadInfo(userID);
+            ucThongTinNhanVien1.Visible = true;
         }
     }
 }

@@ -148,6 +148,8 @@ namespace Project_DBManager.UC
                 postInfoToShowList.RemoveAll(pi => pi.IsChecked);
                 foreach (string id in postIDList)
                 {
+                    string brandID = BrandDAO.Instance.getBrandIdByPostId(id);
+                    BrandDAO.Instance.setChuaTaoBaiDang(brandID);
                     PostDAO.Instance.deletePostById(Convert.ToInt32(id));
                 }
                 dtgv_DanhSachBaiDang.DataSource = postInfoToShowList;

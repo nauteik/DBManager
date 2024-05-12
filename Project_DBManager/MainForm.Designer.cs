@@ -33,7 +33,7 @@ namespace Project_DBManager
             this.pnSidemenu = new System.Windows.Forms.Panel();
             this.pnQuanLyTaiKhoan = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.btnXemThongBao = new System.Windows.Forms.Button();
+            this.btnXemCongViec = new System.Windows.Forms.Button();
             this.btnThongTinCaNhan = new System.Windows.Forms.Button();
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
             this.pnQuanLyHopDong = new System.Windows.Forms.Panel();
@@ -54,7 +54,6 @@ namespace Project_DBManager
             this.btnTaoBaiDangMoi = new System.Windows.Forms.Button();
             this.btnTaoBaiDang = new System.Windows.Forms.Button();
             this.pnQuanLyThongTin = new System.Windows.Forms.Panel();
-            this.btnCapNhatThongTin = new System.Windows.Forms.Button();
             this.btnThuThapThongTin = new System.Windows.Forms.Button();
             this.btnTruyCapTaiNguyen = new System.Windows.Forms.Button();
             this.btnQuanLyThongTin = new System.Windows.Forms.Button();
@@ -63,6 +62,8 @@ namespace Project_DBManager
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucXemCongViec1 = new Project_DBManager.UC.ucXemCongViec();
+            this.ucThuThapThongTin1 = new Project_DBManager.UC.ucThuThapThongTin();
             this.ucPhanCongCongViec1 = new Project_DBManager.UC.ucPhanCongCongViec();
             this.ucCapLaiMatKhau1 = new Project_DBManager.UC.ucCapLaiMatKhau();
             this.ucTaoTaiKhoan1 = new Project_DBManager.UC.ucTaoTaiKhoan();
@@ -109,7 +110,7 @@ namespace Project_DBManager
             // pnQuanLyTaiKhoan
             // 
             this.pnQuanLyTaiKhoan.Controls.Add(this.btnDangXuat);
-            this.pnQuanLyTaiKhoan.Controls.Add(this.btnXemThongBao);
+            this.pnQuanLyTaiKhoan.Controls.Add(this.btnXemCongViec);
             this.pnQuanLyTaiKhoan.Controls.Add(this.btnThongTinCaNhan);
             this.pnQuanLyTaiKhoan.Controls.Add(this.btnQuanLyTaiKhoan);
             this.pnQuanLyTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
@@ -135,19 +136,20 @@ namespace Project_DBManager
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
-            // btnXemThongBao
+            // btnXemCongViec
             // 
-            this.btnXemThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnXemThongBao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXemThongBao.FlatAppearance.BorderSize = 0;
-            this.btnXemThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemThongBao.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemThongBao.Location = new System.Drawing.Point(0, 76);
-            this.btnXemThongBao.Name = "btnXemThongBao";
-            this.btnXemThongBao.Size = new System.Drawing.Size(146, 38);
-            this.btnXemThongBao.TabIndex = 2;
-            this.btnXemThongBao.Text = "Xem thông báo";
-            this.btnXemThongBao.UseVisualStyleBackColor = false;
+            this.btnXemCongViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
+            this.btnXemCongViec.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnXemCongViec.FlatAppearance.BorderSize = 0;
+            this.btnXemCongViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemCongViec.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemCongViec.Location = new System.Drawing.Point(0, 76);
+            this.btnXemCongViec.Name = "btnXemCongViec";
+            this.btnXemCongViec.Size = new System.Drawing.Size(146, 38);
+            this.btnXemCongViec.TabIndex = 2;
+            this.btnXemCongViec.Text = "Xem công việc";
+            this.btnXemCongViec.UseVisualStyleBackColor = false;
+            this.btnXemCongViec.Click += new System.EventHandler(this.btnXemCongViec_Click);
             // 
             // btnThongTinCaNhan
             // 
@@ -447,31 +449,16 @@ namespace Project_DBManager
             // 
             // pnQuanLyThongTin
             // 
-            this.pnQuanLyThongTin.Controls.Add(this.btnCapNhatThongTin);
             this.pnQuanLyThongTin.Controls.Add(this.btnThuThapThongTin);
             this.pnQuanLyThongTin.Controls.Add(this.btnTruyCapTaiNguyen);
             this.pnQuanLyThongTin.Controls.Add(this.btnQuanLyThongTin);
             this.pnQuanLyThongTin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnQuanLyThongTin.Location = new System.Drawing.Point(0, 43);
-            this.pnQuanLyThongTin.MaximumSize = new System.Drawing.Size(146, 152);
+            this.pnQuanLyThongTin.MaximumSize = new System.Drawing.Size(146, 114);
             this.pnQuanLyThongTin.MinimumSize = new System.Drawing.Size(146, 38);
             this.pnQuanLyThongTin.Name = "pnQuanLyThongTin";
             this.pnQuanLyThongTin.Size = new System.Drawing.Size(146, 38);
             this.pnQuanLyThongTin.TabIndex = 2;
-            // 
-            // btnCapNhatThongTin
-            // 
-            this.btnCapNhatThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(208)))), ((int)(((byte)(219)))));
-            this.btnCapNhatThongTin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCapNhatThongTin.FlatAppearance.BorderSize = 0;
-            this.btnCapNhatThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatThongTin.Font = new System.Drawing.Font("Inter Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhatThongTin.Location = new System.Drawing.Point(0, 114);
-            this.btnCapNhatThongTin.Name = "btnCapNhatThongTin";
-            this.btnCapNhatThongTin.Size = new System.Drawing.Size(146, 38);
-            this.btnCapNhatThongTin.TabIndex = 4;
-            this.btnCapNhatThongTin.Text = "Cập nhật thông tin";
-            this.btnCapNhatThongTin.UseVisualStyleBackColor = false;
             // 
             // btnThuThapThongTin
             // 
@@ -486,6 +473,7 @@ namespace Project_DBManager
             this.btnThuThapThongTin.TabIndex = 3;
             this.btnThuThapThongTin.Text = "Thu thập thông tin";
             this.btnThuThapThongTin.UseVisualStyleBackColor = false;
+            this.btnThuThapThongTin.Click += new System.EventHandler(this.btnThuThapThongTin_Click);
             // 
             // btnTruyCapTaiNguyen
             // 
@@ -570,6 +558,8 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucXemCongViec1);
+            this.pnBody.Controls.Add(this.ucThuThapThongTin1);
             this.pnBody.Controls.Add(this.ucPhanCongCongViec1);
             this.pnBody.Controls.Add(this.ucCapLaiMatKhau1);
             this.pnBody.Controls.Add(this.ucTaoTaiKhoan1);
@@ -588,8 +578,30 @@ namespace Project_DBManager
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
             // 
+            // ucXemCongViec1
+            // 
+            this.ucXemCongViec1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucXemCongViec1.Location = new System.Drawing.Point(0, 0);
+            this.ucXemCongViec1.Name = "ucXemCongViec1";
+            this.ucXemCongViec1.Size = new System.Drawing.Size(798, 577);
+            this.ucXemCongViec1.TabIndex = 8;
+            // 
+            // ucThuThapThongTin1
+            // 
+            this.ucThuThapThongTin1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucThuThapThongTin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucThuThapThongTin1.Location = new System.Drawing.Point(0, 0);
+            this.ucThuThapThongTin1.Name = "ucThuThapThongTin1";
+            this.ucThuThapThongTin1.Size = new System.Drawing.Size(798, 577);
+            this.ucThuThapThongTin1.TabIndex = 9;
+            // 
             // ucPhanCongCongViec1
             // 
+            this.ucPhanCongCongViec1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucPhanCongCongViec1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucPhanCongCongViec1.Location = new System.Drawing.Point(0, 0);
             this.ucPhanCongCongViec1.Name = "ucPhanCongCongViec1";
@@ -650,6 +662,7 @@ namespace Project_DBManager
             // 
             // ucVoHieuHoaKhoiPhuc1
             // 
+            this.ucVoHieuHoaKhoiPhuc1.Account = null;
             this.ucVoHieuHoaKhoiPhuc1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -673,6 +686,10 @@ namespace Project_DBManager
             // ucDanhSachBaiDang1
             // 
             this.ucDanhSachBaiDang1.Account = null;
+            this.ucDanhSachBaiDang1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucDanhSachBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucDanhSachBaiDang1.Location = new System.Drawing.Point(0, 0);
             this.ucDanhSachBaiDang1.Margin = new System.Windows.Forms.Padding(4);
             this.ucDanhSachBaiDang1.Name = "ucDanhSachBaiDang1";
@@ -720,7 +737,7 @@ namespace Project_DBManager
             this.ucthongTinUuDai1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucthongTinUuDai1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucthongTinUuDai1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucthongTinUuDai1.Location = new System.Drawing.Point(0, 0);
             this.ucthongTinUuDai1.Margin = new System.Windows.Forms.Padding(4);
             this.ucthongTinUuDai1.Name = "ucthongTinUuDai1";
@@ -762,7 +779,6 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnQuanLyThongTin;
         private System.Windows.Forms.Label lbPostion;
         private System.Windows.Forms.Panel pnQuanLyThongTin;
-        private System.Windows.Forms.Button btnCapNhatThongTin;
         private System.Windows.Forms.Button btnThuThapThongTin;
         private System.Windows.Forms.Button btnTruyCapTaiNguyen;
         private System.Windows.Forms.Panel pnTaoBaiDang;
@@ -782,7 +798,7 @@ namespace Project_DBManager
         private System.Windows.Forms.Button btnDanhSachNhanVien;
         private System.Windows.Forms.Button btnQuanLyNhanVien;
         private System.Windows.Forms.Panel pnQuanLyTaiKhoan;
-        private System.Windows.Forms.Button btnXemThongBao;
+        private System.Windows.Forms.Button btnXemCongViec;
         private System.Windows.Forms.Button btnThongTinCaNhan;
         private System.Windows.Forms.Button btnQuanLyTaiKhoan;
         private UC.ucDanhSachHopDong ucDanhSachHopDong1;
@@ -800,5 +816,7 @@ namespace Project_DBManager
         private UC.ucCapLaiMatKhau ucCapLaiMatKhau1;
         private UC.ucPhanCongCongViec ucPhanCongCongViec1;
         private UC.ucDanhSachBaiDang ucDanhSachBaiDang1;
+        private UC.ucThuThapThongTin ucThuThapThongTin1;
+        private UC.ucXemCongViec ucXemCongViec1;
     }
 }

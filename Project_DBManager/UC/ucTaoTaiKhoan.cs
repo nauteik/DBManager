@@ -1,5 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Project_DBManager.UC
@@ -13,7 +14,10 @@ namespace Project_DBManager.UC
             cb_GioiTinh.SelectedIndex = 0;
             cb_ViTri.SelectedIndex = 0;
         }
-
+        public bool validate(string text)
+        {
+            return Regex.IsMatch(text, @"^[A-Za-z][A-Za-z0-9@#%&\'\-\s\.\,*]*$");
+        }
         private void btn_TaoTaiKhoan_Click(object sender, EventArgs e)
         {
             string username = tbTaiKhoan.Text;
@@ -27,6 +31,10 @@ namespace Project_DBManager.UC
             string gender = cb_GioiTinh.Text;
             string ngaySinh = dtpk_Birth.Value.ToString("MM-dd-yyyy");
             string sdt = tb_SDT.Text;
+            if (username == "") { MessageBox.Show("Tài khoản không được để trống"); return; }
+            if (!validate(username)) { MessageBox.Show("Tài khoản không được có dấu"); return; }
+            if (matKhau == "") { MessageBox.Show("Mật khẩu không được để trống"); return; }
+            if (!validate(matKhau)) { MessageBox.Show("Mật khẩu không được có dấu"); return; }
             if (hoTen == "") { MessageBox.Show("Họ tên không được để trống"); return; }
             if (cccd == "") { MessageBox.Show("CCCD không được để trống"); return; }
             if (email == "") { MessageBox.Show("Email không được để trống"); return; }

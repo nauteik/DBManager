@@ -83,6 +83,11 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("leader,", 1, Properties.Resources.fig_Leader1);
             this.Hide();
             newForm.ShowDialog();
+            if (newForm.isLogOut == true)
+            {
+                this.Show();
+                return;
+            }
             if (!newForm.succeedLogin())
                 this.Show();
             else
@@ -94,6 +99,11 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("MANAGER,", 2, Properties.Resources.fig_QL);
             this.Hide();
             newForm.ShowDialog();
+            if (newForm.isLogOut == true)
+            {
+                this.Show();
+                return;
+            }
             if (!newForm.succeedLogin())
                 this.Show();
             else
@@ -105,6 +115,11 @@ namespace Project_DBManager
             FormLoginAuth newForm = new FormLoginAuth("EMPLOYEE,", 0, Properties.Resources.fig_NV);
             this.Hide();
             newForm.ShowDialog();
+            if(newForm.isLogOut == true)
+            {
+                this.Show();
+                return;
+            }
             if (!newForm.succeedLogin())
                 this.Show();
             else

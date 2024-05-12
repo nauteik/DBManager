@@ -1,5 +1,7 @@
 ﻿using Project_DBManager.DTO;
 using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -7,6 +9,10 @@ namespace Project_DBManager
     public partial class MainForm : Form
     {
         private Account account;
+        private bool isLogOut;
+
+        public bool IsLogOut { get => isLogOut; set => isLogOut = value; }
+
         public MainForm(Account account)
         {
             this.account = account;
@@ -15,8 +21,21 @@ namespace Project_DBManager
             pnHeader.BringToFront();
             switch (account.Level)
             {
+                case 0: break;
                 case 1: lbPostion.Text = "Tổ trưởng"; break;
                 case 2: lbPostion.Text = "Quản lý"; break;
+                case 3: lbPostion.Text = "CEO"; break;
+            }
+            authorize();
+        }
+        public void authorize()
+        {
+            switch(account.Level)
+            {
+                case 0: btnTaoHopDongMoi.Visible = false; pnQuanLyHopDong.MaximumSize = new Size(146, 114); pnQuanLyNhanVien.Visible = false; break;
+                case 1: btnTaiKhoanPhanQuyen.Visible = false; btnCapLaiMatKhau.Visible = false; btnVoHieuHoaKhoiPhuc.Visible = false; pnQuanLyNhanVien.MaximumSize = new Size(146, 114); btnTaoHopDongMoi.Visible = false; pnQuanLyHopDong.MaximumSize = new Size(146, 114); break;
+                case 2:
+                case 3: btnXemCongViec.Visible = false; pnQuanLyTaiKhoan.MaximumSize = new Size(146, 114); break;
             }
         }
         private void collapseUserControl()
@@ -35,6 +54,8 @@ namespace Project_DBManager
             ucTaoTaiKhoan1.Hide();
             ucCapLaiMatKhau1.Hide();
             ucPhanCongCongViec1.Hide();
+            ucThuThapThongTin1.Hide();
+            ucXemCongViec1.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -138,6 +159,7 @@ namespace Project_DBManager
         {
             collapseUserControl();
             ucTaoBaiDang1.Account = this.account;
+            ucTaoBaiDang1.loadTenThuongHieu();
             ucTaoBaiDang1.Show();
         }
 
@@ -152,7 +174,9 @@ namespace Project_DBManager
         {
             collapseUserControl();
             ucthongTinUuDai1.Acc = this.account;
+            ucthongTinUuDai1.loadOffer();
             this.ucthongTinUuDai1.Show();
+            ucthongTinUuDai1.adjustOrder();
         }
 
         private void btnDanhSachNhanVien_Click(object sender, EventArgs e)
@@ -176,8 +200,7 @@ namespace Project_DBManager
             if (result == DialogResult.Yes)
             {
 
-                FormLogin formLogin = new FormLogin();
-                formLogin.Show();
+                IsLogOut = true;
                 this.Hide();
             }
         }
@@ -205,6 +228,7 @@ namespace Project_DBManager
         {
             collapseUserControl();
             ucTaoHopDong1.Account = account;
+            ucTaoHopDong1.loadTenThuongHieu();
             ucTaoHopDong1.Show();
         }
 
@@ -224,6 +248,7 @@ namespace Project_DBManager
         private void btnPhanCongCongViec_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucPhanCongCongViec1.loadTask(account);
             ucPhanCongCongViec1.Show();
         }
 
@@ -240,6 +265,18 @@ namespace Project_DBManager
             ucDanhSachBaiDang1.Show();
         }
 
+        private async void btnThuThapThongTin_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucThuThapThongTin1.Show();
+            
+        }
 
+        private void btnXemCongViec_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucXemCongViec1.loadTask(account);
+            ucXemCongViec1.Show();
+        }
     }
 }

@@ -34,7 +34,6 @@
             this.tb_TenThuongHieu = new System.Windows.Forms.TextBox();
             this.lb_TrangThai = new System.Windows.Forms.Label();
             this.tb_TrangThai = new System.Windows.Forms.TextBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.lb_NoiDung = new System.Windows.Forms.Label();
             this.lb_Facebook = new System.Windows.Forms.Label();
             this.lb_DiaChi = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_ChinhSuaBaiDang = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +84,6 @@
             this.panel2.Controls.Add(this.tb_TenThuongHieu);
             this.panel2.Controls.Add(this.lb_TrangThai);
             this.panel2.Controls.Add(this.tb_TrangThai);
-            this.panel2.Controls.Add(this.pbAvatar);
             this.panel2.Controls.Add(this.lb_NoiDung);
             this.panel2.Controls.Add(this.lb_Facebook);
             this.panel2.Controls.Add(this.lb_DiaChi);
@@ -135,18 +132,6 @@
             this.tb_TrangThai.Size = new System.Drawing.Size(335, 23);
             this.tb_TrangThai.TabIndex = 29;
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbAvatar.BackColor = System.Drawing.Color.LightGray;
-            this.pbAvatar.BackgroundImage = Project_DBManager.Properties.Resources.Box_light;
-            this.pbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbAvatar.Location = new System.Drawing.Point(390, 248);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(335, 175);
-            this.pbAvatar.TabIndex = 28;
-            this.pbAvatar.TabStop = false;
-            // 
             // lb_NoiDung
             // 
             this.lb_NoiDung.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -165,9 +150,9 @@
             this.lb_Facebook.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Facebook.Location = new System.Drawing.Point(25, 288);
             this.lb_Facebook.Name = "lb_Facebook";
-            this.lb_Facebook.Size = new System.Drawing.Size(103, 23);
+            this.lb_Facebook.Size = new System.Drawing.Size(83, 23);
             this.lb_Facebook.TabIndex = 9;
-            this.lb_Facebook.Text = "Facebook:";
+            this.lb_Facebook.Text = "Website";
             // 
             // lb_DiaChi
             // 
@@ -285,7 +270,6 @@
             this.VisibleChanged += new System.EventHandler(this.ucChinhSuaBaiDang_VisibleChanged);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -298,7 +282,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lb_TrangThai;
         private System.Windows.Forms.TextBox tb_TrangThai;
-        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Label lb_NoiDung;
         private System.Windows.Forms.Label lb_Facebook;
         private System.Windows.Forms.Label lb_DiaChi;

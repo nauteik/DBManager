@@ -20,8 +20,9 @@ namespace Project_DBManager.UC
             loadTenThuongHieu();
         }
 
-        private void loadTenThuongHieu()
+        public void loadTenThuongHieu()
         {
+            cb_TenThuongHieu.Items.Clear();
             List<string> brandNameList = BrandDAO.Instance.getBrandNameList();
             List<string> sortedBrandNameList = brandNameList.OrderBy(x => x).ToList();
             foreach (string brandName in sortedBrandNameList)
@@ -54,8 +55,8 @@ namespace Project_DBManager.UC
             }
             else if (tb_TrangThai.Text == "Đã tạo bài đăng")
             {
-                DialogResult result1 = MessageBox.Show("Thương hiệu này đã tạo bài đăng!", "Cảnh báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
-                if (result1 == DialogResult.Retry) { return; }
+                DialogResult result1 = MessageBox.Show("Thương hiệu này đã tạo bài đăng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             DialogResult result = MessageBox.Show("Bạn có chắc tạo bài đăng này chứ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -119,6 +120,7 @@ namespace Project_DBManager.UC
             tb_DiaChi.Text = dr["Address"].ToString();
             tb_Facebook.Text = dr["Facebook"].ToString();
             tb_TrangThai.Text = dr["Status"].ToString();
+            tb_Google.Text = dr["Google"].ToString();
             tb_NoiDung.Text = "";
         }
 

@@ -59,7 +59,6 @@
             this.lbHoTen = new System.Windows.Forms.Label();
             this.pnHoTen = new System.Windows.Forms.Panel();
             this.tbHoTen = new System.Windows.Forms.TextBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.pnContent.SuspendLayout();
             this.pnTrangThai.SuspendLayout();
             this.pnGioiTinh.SuspendLayout();
@@ -70,7 +69,6 @@
             this.pnEmail.SuspendLayout();
             this.pnIDC.SuspendLayout();
             this.pnHoTen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +107,6 @@
             // pnContent
             // 
             this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.pnContent.Controls.Add(this.pbAvatar);
             this.pnContent.Controls.Add(this.lbTrangThai);
             this.pnContent.Controls.Add(this.pnTrangThai);
             this.pnContent.Controls.Add(this.label4);
@@ -412,15 +409,6 @@
             this.tbHoTen.Size = new System.Drawing.Size(318, 17);
             this.tbHoTen.TabIndex = 0;
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BackColor = System.Drawing.Color.LightGray;
-            this.pbAvatar.Location = new System.Drawing.Point(619, 47);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(121, 161);
-            this.pbAvatar.TabIndex = 27;
-            this.pbAvatar.TabStop = false;
-            // 
             // ucThongTinCaNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,7 +440,6 @@
             this.pnIDC.PerformLayout();
             this.pnHoTen.ResumeLayout(false);
             this.pnHoTen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,6 +478,5 @@
         private System.Windows.Forms.Label lbNgaySinh;
         private System.Windows.Forms.Panel pnNgaySinh;
         private System.Windows.Forms.TextBox tbNgaySinh;
-        private System.Windows.Forms.PictureBox pbAvatar;
     }
 }

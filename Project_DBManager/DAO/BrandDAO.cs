@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Project_DBManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
+using static GMap.NET.Entity.OpenStreetMapGraphHopperRouteEntity;
 
 namespace Project_DBManager.DAO
 {
@@ -25,10 +28,30 @@ namespace Project_DBManager.DAO
             }
             return brandNameList;
         }
-
+        public bool deleteBrand(int brandID)
+        {
+            string query = "DELETE FROM History_Brand WHERE Brand_ID = " + brandID;
+            bool first = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            query = "DELETE FROM Brand_Info WHERE Brand_ID = " + brandID;
+            bool second = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            query = "DELETE From Brand WHERE Brand_ID = " + brandID;
+            bool third = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            return first && second && third;
+        }
+        public List<BrandInfo> getListBrandInfo()
+        {
+            string query = "SELECT Brand.Brand_ID, Brand.Brand_Name, Brand.Type, Brand.Status, BF.Phone_Number, BF.Facebook, BF.Address, BF.Google, BF.Introduction FROM Brand,Brand_Info BF WHERE Brand.Brand_ID = BF.Brand_ID";
+            List<BrandInfo> list = new List<BrandInfo>();
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in table.Rows)
+            {
+                list.Add(new BrandInfo(row));
+            }
+            return list;
+        }
         public DataRow getBrandInfoByBrandName(string brandName)
         {
-            string query = "SELECT Phone_Number, Address, Facebook, Status FROM Brand_Info BI, Brand B WHERE BI.Brand_ID = B.Brand_ID AND Brand_Name = @Brand_Name";
+            string query = "SELECT Phone_Number, Address, Facebook, Status, Google FROM Brand_Info BI, Brand B WHERE BI.Brand_ID = B.Brand_ID AND Brand_Name = @Brand_Name";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
             return dt.Rows[0];
         }
@@ -37,6 +60,12 @@ namespace Project_DBManager.DAO
         {
             string query = "UPDATE Brand SET Status = N'Đã tạo bài đăng' WHERE Brand_Name = @Brand_Name";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandName });
+        }
+        
+        public void setChuaTaoBaiDang(string brandID)
+        {
+            string query = "UPDATE Brand SET Status = N'Chưa tạo bài đăng' WHERE Brand_ID = " + brandID;
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public string getStatusByBrandName(string brandName)
@@ -127,7 +156,7 @@ namespace Project_DBManager.DAO
             return dt;
         }
 
-        public bool updateBrandDetails(string brandID, string phoneNumber, string facebook, string introduction, string address, string status)
+        public bool updateBrandDetails(int brandID, string phoneNumber, string facebook, string introduction, string address, string status)
         {
             string query_1 = "UPDATE Brand_Info SET Phone_Number = @Phone_Number, Facebook = @Facebook, Introduction = @Introduction, " +
                 "Address = @Address WHERE Brand_ID = @Brand_ID";
@@ -143,6 +172,26 @@ namespace Project_DBManager.DAO
             string query = "SELECT Brand_ID FROM Post WHERE Post_ID = @Post_ID";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { postId });
             return dt.Rows[0]["Brand_ID"].ToString();
+        }
+        public bool isBrandInfoExist(int brandID)
+        {
+            string query = string.Format("SELECT * From Brand_Info WHERE Brand_ID = {0}", brandID);
+            return DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0;
+        }
+        public bool insertBrand(TempBrand brand)
+        {
+            if(isBrandNameExist(brand.BrandName)) { return false; }
+            brand.BrandName = brand.BrandName.Replace("'", "''");
+            string query = string.Format("INSERT INTO Brand VALUES ( N'{0}', N'{1}', NULL, N'Chưa tạo bài đăng')", brand.BrandName, brand.Category);
+            bool first = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            int brandID = getBrandIdByBrandName(brand.BrandName);
+            query = string.Format("INSERT INTO Brand_Info VALUES({0}, '{1}', '{2}', '', N'{3}', '{4}')", brandID, brand.Phone, brand.Website, brand.Address, brand.GoogleURL);
+            bool second = DataProvider.Instance.ExecuteNonQuery(query) > 0;
+            if(second == false && first == true)
+            {
+                DataProvider.Instance.ExecuteNonQuery(string.Format("DELETE From Brand WHERE Brand_ID = {0}", brandID));
+            }
+            return first && second;
         }
     }
 }

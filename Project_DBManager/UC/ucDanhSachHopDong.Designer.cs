@@ -199,11 +199,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv.BackgroundColor = System.Drawing.Color.White;
             this.dtgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter Italic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 11.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(13, 5, 5, 5);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -222,7 +224,7 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
@@ -232,7 +234,7 @@
             this.dtgv.Name = "dtgv";
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
-            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv.Size = new System.Drawing.Size(750, 375);
             this.dtgv.TabIndex = 4;
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -258,6 +260,7 @@
             this.ContractID.MinimumWidth = 6;
             this.ContractID.Name = "ContractID";
             this.ContractID.ReadOnly = true;
+            this.ContractID.Visible = false;
             this.ContractID.Width = 50;
             // 
             // BrandName
@@ -279,7 +282,7 @@
             this.SignedDate.MinimumWidth = 6;
             this.SignedDate.Name = "SignedDate";
             this.SignedDate.ReadOnly = true;
-            this.SignedDate.Width = 89;
+            this.SignedDate.Width = 107;
             // 
             // Duration
             // 
@@ -290,7 +293,7 @@
             this.Duration.MinimumWidth = 6;
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
-            this.Duration.Width = 126;
+            this.Duration.Width = 144;
             // 
             // Content
             // 
@@ -373,6 +376,7 @@
         private System.Windows.Forms.Button btn_XuatDuLieu;
         private System.Windows.Forms.DataGridView dtgv;
         private System.Windows.Forms.Button btn_XoaDuLieu;
+        private ucChinhSuaHopDong ucChinhSuaHopDong1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContractID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
@@ -380,6 +384,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Content;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private ucChinhSuaHopDong ucChinhSuaHopDong1;
     }
 }

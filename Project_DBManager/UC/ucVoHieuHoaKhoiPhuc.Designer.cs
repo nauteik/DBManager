@@ -80,14 +80,15 @@
             // 
             // cbLoc
             // 
+            this.cbLoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLoc.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoc.FormattingEnabled = true;
             this.cbLoc.Items.AddRange(new object[] {
             "Không",
-            "Manager",
-            "Leader",
-            "Employee"});
+            "Quản lý",
+            "Tổ trưởng",
+            "Nhân viên"});
             this.cbLoc.Location = new System.Drawing.Point(262, 15);
             this.cbLoc.Name = "cbLoc";
             this.cbLoc.Size = new System.Drawing.Size(98, 23);
@@ -197,7 +198,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgv_Staff.DefaultCellStyle = dataGridViewCellStyle2;
@@ -207,10 +208,11 @@
             this.dtgv_Staff.Name = "dtgv_Staff";
             this.dtgv_Staff.RowHeadersVisible = false;
             this.dtgv_Staff.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dtgv_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_Staff.Size = new System.Drawing.Size(750, 375);
             this.dtgv_Staff.TabIndex = 13;
             this.dtgv_Staff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellClick);
+            this.dtgv_Staff.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgv_Staff_CellMouseDoubleClick);
             this.dtgv_Staff.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseEnter);
             this.dtgv_Staff.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseLeave);
             // 
@@ -332,6 +334,7 @@
             // 
             // ucThongTinNhanVien1
             // 
+            this.ucThongTinNhanVien1.Account = null;
             this.ucThongTinNhanVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucThongTinNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.ucThongTinNhanVien1.Name = "ucThongTinNhanVien1";

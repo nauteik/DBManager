@@ -53,7 +53,6 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.pnMatKhau = new System.Windows.Forms.Panel();
             this.tbMatKhau = new System.Windows.Forms.TextBox();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.lbAddress = new System.Windows.Forms.Label();
             this.pnAddress = new System.Windows.Forms.Panel();
             this.tbAddress = new System.Windows.Forms.TextBox();
@@ -72,7 +71,6 @@
             this.pnGioiTinh.SuspendLayout();
             this.pnHoTen.SuspendLayout();
             this.pnMatKhau.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.pnAddress.SuspendLayout();
             this.pnEmail.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
@@ -108,7 +106,6 @@
             this.pnContent.Controls.Add(this.pnHoTen);
             this.pnContent.Controls.Add(this.lbMatKhau);
             this.pnContent.Controls.Add(this.pnMatKhau);
-            this.pnContent.Controls.Add(this.pbAvatar);
             this.pnContent.Controls.Add(this.lbAddress);
             this.pnContent.Controls.Add(this.pnAddress);
             this.pnContent.Controls.Add(this.lbEmail);
@@ -364,15 +361,6 @@
             this.tbMatKhau.Size = new System.Drawing.Size(350, 17);
             this.tbMatKhau.TabIndex = 2;
             // 
-            // pbAvatar
-            // 
-            this.pbAvatar.BackColor = System.Drawing.Color.LightGray;
-            this.pbAvatar.Location = new System.Drawing.Point(506, 317);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(109, 146);
-            this.pbAvatar.TabIndex = 27;
-            this.pbAvatar.TabStop = false;
-            // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
@@ -501,7 +489,6 @@
             this.pnHoTen.PerformLayout();
             this.pnMatKhau.ResumeLayout(false);
             this.pnMatKhau.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.pnAddress.ResumeLayout(false);
             this.pnAddress.PerformLayout();
             this.pnEmail.ResumeLayout(false);
@@ -517,7 +504,6 @@
 
         private System.Windows.Forms.Label lb_TaoTaiKhoan;
         private System.Windows.Forms.Panel pnContent;
-        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Panel pnAddress;
         private System.Windows.Forms.TextBox tbAddress;

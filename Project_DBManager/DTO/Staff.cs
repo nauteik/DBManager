@@ -26,7 +26,14 @@ namespace Project_DBManager.DTO
         {
             isChecked = false;
             name = row["Name"].ToString();
-            position = row["Pos_Name"].ToString();
+            switch (row["Pos_Name"].ToString())
+            {
+                case "Employee": position = "Nhân viên"; break;
+                case "Leader": position = "Tổ trưởng"; break;
+                case "Manager": position = "Quản lý"; break;
+                case "CEO": position = "CEO"; break;
+            }
+           
             dept = row["Department_Name"].ToString();
             phone = row["phoneNum"].ToString();
             email = row["User_Email"].ToString();

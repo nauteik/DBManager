@@ -14,6 +14,11 @@ namespace Project_DBManager.DAO
             set { ContractDAO.instance = value; }
         }
 
+        public bool isContractExistByBrandID(int brandID)
+        {
+            string query = "SELECT * FROM Contract WHERE Brand_ID = " + brandID;
+            return DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0;
+        }
         public int getUserLevelCreateContract(string contractId)
         {
             string query = "SELECT Pos_ID FROM Contract C, Users U WHERE C.User_ID = U.User_ID AND Contract_ID = @Contract_ID";
@@ -81,10 +86,11 @@ namespace Project_DBManager.DAO
             return Convert.ToInt32(dt.Rows[0]["Sum_Contract"].ToString());
         }
 
-        public void createNewContract(string signedDate, string duration, string content, string userId, string brandId)
+        public bool createNewContract(string signedDate, string duration, string content, string userId, int brandId)
         {
             string query = "INSERT INTO Contract (Signed_date, Duration, Content, User_ID, Brand_ID) VALUES ( @Signed_date, @Duration, @Content, @User_ID, @Brand_ID )";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { signedDate, duration, content, userId, brandId });
+            bool succeed = DataProvider.Instance.ExecuteNonQuery(query, new object[] { signedDate, duration, content, userId, brandId }) > 0;
+            return succeed;
         }
 
         public void updateContract(string duration, string content, string contractId)

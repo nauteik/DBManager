@@ -10,6 +10,7 @@ namespace Project_DBManager
     {
         private int type = 0;
         private bool isLogged = false;
+        public bool isLogOut = false;
         public FormLoginAuth(string pos, int type, Bitmap img)
         {
             InitializeComponent();
@@ -49,7 +50,11 @@ namespace Project_DBManager
                 isLogged = true;
                 this.Hide();
                 mainForm.ShowDialog();
-                this.Close();
+                if (mainForm.IsLogOut)
+                {
+                    this.isLogOut = true;
+                }
+                this.Hide();
             }
             else
             {

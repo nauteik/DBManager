@@ -13,13 +13,18 @@ namespace Project_DBManager.DAO
             get { if (instance == null) instance = new PostDAO(); return instance; }
             set { PostDAO.instance = value; }
         }
-
+        public bool isPostExistByBrandID(int brandID)
+        {
+            string query = "SELECT * FROM Post WHERE Brand_ID = " + brandID;
+            return DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0;
+        }
         public void insertValueIntoPost(int userId, string brandName, string content)
         {
             int brandId = BrandDAO.Instance.getBrandIdByBrandName(brandName);
             DateTime uploadDate = DateTime.Now;
             DateTime lastChangeDate = DateTime.Now;
             string query = "INSERT INTO Post(Brand_ID, User_ID, Content, Upload_Date, LastChange_Date) VALUES ( @Brand_ID, @User_ID, @Content, @Upload_Date, @LastChange_Date )";
+            
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { brandId, userId, content, uploadDate, lastChangeDate });
         }
 

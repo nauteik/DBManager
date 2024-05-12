@@ -1,6 +1,8 @@
 ﻿using Project_DBManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Project_DBManager.DAO
 {
@@ -31,6 +33,23 @@ namespace Project_DBManager.DAO
             }
             return listStaff;
         }
-
+        public string getStaffNameByUserID(int userID)
+        {
+            string query = "SELECT * From User_Info WHERE User_ID = " + userID;
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            return table.Rows[0]["Name"].ToString();
+        }
+        public int getUserIDByName(string name)
+        {
+            string query = string.Format("SELECT * From User_Info WHERE Name = N'{0}' ", name);
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            return Convert.ToInt32(table.Rows[0]["User_ID"].ToString());
+        }
+        public int getDeptIDByUserID(int userID)
+        {
+            string query = "SELECT * From Department_Member WHERE User_ID = " + userID;
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            return Convert.ToInt32(table.Rows[0]["Department_ID"].ToString());
+        }
     }
 }

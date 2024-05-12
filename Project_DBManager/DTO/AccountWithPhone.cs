@@ -6,6 +6,7 @@ namespace Project_DBManager.DTO
     {
         private int userID;
         private bool isChecked;
+        private string name;
         private string username;
         private string password;
         private string email;
@@ -17,6 +18,7 @@ namespace Project_DBManager.DTO
             password = row["Password"].ToString();
             email = row["User_Email"].ToString();
             Sdt = row["PhoneNum"].ToString();
+            name = row["Name"].ToString();
             isChecked = false;
         }
 
@@ -26,5 +28,6 @@ namespace Project_DBManager.DTO
         public int UserID { get => userID; set => userID = value; }
         public string Sdt { get => sdt; set => sdt = value; }
         public bool IsChecked { get => isChecked; set => isChecked = value; }
+        public string Name { get => name; set => name = value; }
     }
 }

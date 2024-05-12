@@ -18,7 +18,16 @@ namespace Project_DBManager.DAO
 
             string query = "SELECT * FROM Users as U join Position as P on U.Pos_ID = P.Pos_ID WHERE U.Username = @Username AND U.Password = @Password AND U.IsEnable = 1 AND P.Level = @Level";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password, level });
-            return result.Rows.Count > 0;
+            if(result.Rows.Count > 0)
+                    return true;
+            if(level == 2)
+            {
+                query = "SELECT * FROM Users as U join Position as P on U.Pos_ID = P.Pos_ID WHERE U.Username = @Username AND U.Password = @Password AND U.IsEnable = 1 AND P.Level = 3";
+                result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password});
+                if (result.Rows.Count > 0)
+                    return true;
+            }
+            return false;
         }
         public Account getAccountByUsername(string username)
         {
@@ -37,14 +46,14 @@ namespace Project_DBManager.DAO
         }
         public DataTable getAccountInfoByUserID(int userID)
         {
-            string query = "SELECT Username, User_Email, IsEnable, Pos_Name, Name, FORMAT(Birth, 'dd-MM-yyyy') as Birth, Gender, Address, ID_Card, Department_Name " +
+            string query = "SELECT Username, User_Email, IsEnable, Pos_Name, Name, FORMAT(Birth, 'dd-MM-yyyy') as Birth, Gender, Address, ID_Card, Department_Name, PhoneNum " +
                             "FROM Users as U join Position as P ON U.Pos_ID = P.Pos_ID join User_Info as UF on U.User_ID = UF.User_ID join Department_Member as DM on U.User_ID = DM.User_ID join Department D on D.Department_ID = DM.Department_ID " +
                             "WHERE U.User_ID = @userID";
             return DataProvider.Instance.ExecuteQuery(query, new object[] { userID });
         }
-        public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID, int isEnable)
+        public bool updateAccountInfoByUserID(string hoTen, string cccd, string email, string position, string address, string dept, string birth, string gender, int userID, string sdt, int isEnable)
         {
-            string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = '{1}',  Gender = N'{2}', Address = N'{3}', Birth = '{4}' WHERE User_ID = {5}", hoTen, cccd, gender, address, birth, userID);
+            string query = string.Format("UPDATE User_Info SET Name = N'{0}', ID_Card = '{1}',  Gender = N'{2}', Address = N'{3}', Birth = '{4}', PhoneNum = '{5}' WHERE User_ID = {6}", hoTen, cccd, gender, address, birth, sdt, userID);
             bool firstExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             int posID = 0;
             switch (position)
@@ -56,7 +65,9 @@ namespace Project_DBManager.DAO
             query = string.Format("UPDATE Users SET User_Email = '{0}', Pos_ID = {1}, IsEnable = {2} WHERE User_ID = {3}", email, posID, isEnable, userID);
             bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             int departmentID = InformationDAO.Instance.getDepartmentIDByName(dept);
-            query = string.Format("UPDATE Department_Member SET Department_ID = {0} WHERE User_ID = {1}", departmentID, userID);
+            int isLeader = 0;
+            if (posID != 0) isLeader = 1;
+            query = string.Format("UPDATE Department_Member SET Department_ID = {0}, IsLeader = {1} WHERE User_ID = {2}", departmentID, isLeader, userID);
             bool thirdExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             return firstExecution && secondExecution && thirdExecution;
         }
@@ -101,7 +112,7 @@ namespace Project_DBManager.DAO
             }
             int user_ID = Convert.ToInt32(DataProvider.Instance.ExecuteQuery(string.Format("SELECT User_ID From Users WHERE Username = '{0}'", username)).Rows[0]["User_ID"]);
             query = string.Format("INSERT INTO User_Info (User_ID, Name, Birth, Gender, Address, ID_Card, PhoneNum) VALUES " +
-                                    "({0}, N'{1}', '{2}', N'{3}', '{4}', '{5}', '{6}')", user_ID, hoten, ngaySinh, gioiTinh, diaChi, CCCD, sdt);
+                                    "({0}, N'{1}', '{2}', N'{3}', N'{4}', '{5}', '{6}')", user_ID, hoten, ngaySinh, gioiTinh, diaChi, CCCD, sdt);
             bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             if (secondExecution == false)
             {
@@ -109,7 +120,7 @@ namespace Project_DBManager.DAO
                 return false;
             }
             int departmentID = InformationDAO.Instance.getDepartmentIDByName(dept);
-            query = string.Format("INSERT INTO Department_Member VALUES ({0}, {1}, {2})", user_ID, departmentID, pos_ID == 1 ? 1 : 0);
+            query = string.Format("INSERT INTO Department_Member VALUES ({0}, {1}, {2})", user_ID, departmentID, pos_ID == 0 ? 0 : 1);
             bool thirdExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
             return firstExecetuion && secondExecution && thirdExecution;
         }
@@ -133,7 +144,7 @@ namespace Project_DBManager.DAO
         }
         public List<AccountWithPhone> getListAccountWithPhone()
         {
-            string query = "Select Username,Password, phoneNum, User_Email, U.User_ID From Users U, User_Info UF Where U.User_ID = UF.User_ID";
+            string query = "Select Username,Password, phoneNum, User_Email, U.User_ID, UF.Name From Users U, User_Info UF Where U.User_ID = UF.User_ID";
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             List<AccountWithPhone> listAccount = new List<AccountWithPhone>();
             foreach (DataRow row in table.Rows)

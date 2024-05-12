@@ -31,12 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgv_Account = new System.Windows.Forms.DataGridView();
-            this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CapMatKhau = new System.Windows.Forms.Button();
             this.pn_ToolMenu = new System.Windows.Forms.Panel();
             this.pn_TimKiem = new System.Windows.Forms.Panel();
@@ -44,6 +38,13 @@
             this.lb_TimKiem = new System.Windows.Forms.Label();
             this.lb_CapLaiMatKhau = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).BeginInit();
             this.pn_ToolMenu.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
@@ -74,6 +75,7 @@
             this.dtgv_Account.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsChecked,
             this.Username,
+            this.fullName,
             this.Password,
             this.Phone,
             this.Email,
@@ -82,7 +84,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgv_Account.DefaultCellStyle = dataGridViewCellStyle2;
@@ -92,60 +94,9 @@
             this.dtgv_Account.Name = "dtgv_Account";
             this.dtgv_Account.RowHeadersVisible = false;
             this.dtgv_Account.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dtgv_Account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgv_Account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_Account.Size = new System.Drawing.Size(750, 375);
             this.dtgv_Account.TabIndex = 13;
-            // 
-            // IsChecked
-            // 
-            this.IsChecked.DataPropertyName = "isChecked";
-            this.IsChecked.HeaderText = "";
-            this.IsChecked.Name = "IsChecked";
-            this.IsChecked.Width = 30;
-            // 
-            // Username
-            // 
-            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Username.DataPropertyName = "username";
-            this.Username.FillWeight = 5.5F;
-            this.Username.HeaderText = "Tên tài khoản";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // Password
-            // 
-            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Password.DataPropertyName = "password";
-            this.Password.FillWeight = 3F;
-            this.Password.HeaderText = "Mật khẩu";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // Phone
-            // 
-            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Phone.DataPropertyName = "sdt";
-            this.Phone.FillWeight = 4.365112F;
-            this.Phone.HeaderText = "Số điện thoại";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "email";
-            this.Email.FillWeight = 5.012475F;
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // UserID
-            // 
-            this.UserID.DataPropertyName = "userID";
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
-            this.UserID.Visible = false;
             // 
             // btn_CapMatKhau
             // 
@@ -221,6 +172,66 @@
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn1.Width = 40;
             // 
+            // IsChecked
+            // 
+            this.IsChecked.DataPropertyName = "isChecked";
+            this.IsChecked.HeaderText = "";
+            this.IsChecked.Name = "IsChecked";
+            this.IsChecked.Width = 30;
+            // 
+            // Username
+            // 
+            this.Username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Username.DataPropertyName = "username";
+            this.Username.FillWeight = 5.5F;
+            this.Username.HeaderText = "Tên tài khoản";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // fullName
+            // 
+            this.fullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fullName.DataPropertyName = "name";
+            this.fullName.FillWeight = 5.5F;
+            this.fullName.HeaderText = "Họ tên";
+            this.fullName.Name = "fullName";
+            // 
+            // Password
+            // 
+            this.Password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Password.DataPropertyName = "password";
+            this.Password.FillWeight = 3F;
+            this.Password.HeaderText = "Mật khẩu";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Visible = false;
+            // 
+            // Phone
+            // 
+            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Phone.DataPropertyName = "sdt";
+            this.Phone.FillWeight = 4.365112F;
+            this.Phone.HeaderText = "Số điện thoại";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "email";
+            this.Email.FillWeight = 5.012475F;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "userID";
+            this.UserID.HeaderText = "UserID";
+            this.UserID.Name = "UserID";
+            this.UserID.Visible = false;
+            // 
             // ucCapLaiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +265,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

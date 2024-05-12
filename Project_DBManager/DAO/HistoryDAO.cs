@@ -19,7 +19,7 @@ namespace Project_DBManager.DAO
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { his.UserID, his.BrandID, his.Username, his.ContentsChanged });
         }
 
-        public List<string> loadHistory(string brandID)
+        public List<string> loadHistory(int brandID)
         {
             List<string> lst = new List<string>();
             string query = "SELECT History_Time, Name, Contents_Changed FROM History_Brand WHERE Brand_ID = @Brand_ID";

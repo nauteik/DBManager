@@ -6,29 +6,15 @@
 
         public static InformationDAO Instance { get => instance == null ? new InformationDAO() : instance; set => instance = value; }
 
-        public bool validateGender(string gender)
+        public int getLevelByPosition(string position)
         {
-            if (gender == "Nam" || gender == "Nữ")
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool validateDept(string dept)
-        {
-            if (dept == "Ăn uống" || dept == "Làm đẹp" || dept == "Mua sắm" || dept == "Quà tặng" || dept == "Du lịch" || dept == "Giải trí")
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool validatePos(string pos)
-        {
-            if (pos == "Manager" || pos == "Leader" || pos == "Employee")
-            {
-                return true;
-            }
-            return false;
+            if (position.Equals("Tổ trưởng"))
+                return 1;
+            if (position.Equals("Quản lý"))
+                return 2;
+            if (position.Equals("CEO"))
+                return 3;
+            return 0;
         }
         public int getDepartmentIDByName(string name)
         {
@@ -42,6 +28,19 @@
                 case "Làm đẹp": return 6;
             }
             return 1;
+        }
+        public string getDepartmenNameByID(int deptID)
+        {
+            switch (deptID)
+            {
+                case 1: return "Ăn uống";
+                case 2: return "Du lịch";
+                case 3: return "Mua sắm";
+                case 4: return "Giải trí";
+                case 5: return "Quà tặng";
+                case 6: return "Làm đẹp";
+            }
+            return "Ăn uống";
         }
     }
 }

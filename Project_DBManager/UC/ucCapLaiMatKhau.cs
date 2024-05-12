@@ -22,13 +22,10 @@ namespace Project_DBManager.UC
 
         private void tb_TimKiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
                 List<AccountWithPhone> tempListAccount = listAccount;
                 string value = tb_TimKiem.Text;
-                tempListAccount = tempListAccount.Where(acc => acc.Username.ToLower().Contains(value.ToLower()) || acc.Password.ToLower().Contains(value.ToLower()) || acc.Email.ToLower().Contains(value.ToLower()) || acc.Sdt.ToLower().Contains(value.ToLower())).ToList();
+                tempListAccount = tempListAccount.Where(acc => acc.Username.ToLower().Contains(value.ToLower()) || acc.Password.ToLower().Contains(value.ToLower()) || acc.Email.ToLower().Contains(value.ToLower()) || acc.Sdt.ToLower().Contains(value.ToLower()) || acc.Name.ToLower().Contains(value.ToLower())).ToList();
                 dtgv_Account.DataSource = tempListAccount;
-            }
         }
     }
 }
