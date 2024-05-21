@@ -30,10 +30,16 @@ namespace Project_DBManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucChinhSuaThongTinUuDai));
             this.tb_ChinhSuaThongTinUuDai = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.cb_TrangThai = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.tb_MoTaNgan = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tb_Google = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -43,8 +49,6 @@ namespace Project_DBManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_SoDienThoai1 = new System.Windows.Forms.TextBox();
             this.lb_Google = new System.Windows.Forms.Label();
-            this.cb_TrangThai = new System.Windows.Forms.ComboBox();
-            this.tb_MoTaNgan = new System.Windows.Forms.TextBox();
             this.lbMoTaNgan = new System.Windows.Forms.Label();
             this.lb_TrangThai = new System.Windows.Forms.Label();
             this.lb_Facebook = new System.Windows.Forms.Label();
@@ -55,12 +59,16 @@ namespace Project_DBManager
             this.dtgv = new System.Windows.Forms.DataGridView();
             this.History_Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Huy = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_ChinhSuaThongTinUuDai
@@ -81,13 +89,13 @@ namespace Project_DBManager
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.lb_Google);
-            this.panel2.Controls.Add(this.cb_TrangThai);
-            this.panel2.Controls.Add(this.tb_MoTaNgan);
             this.panel2.Controls.Add(this.lbMoTaNgan);
             this.panel2.Controls.Add(this.lb_TrangThai);
             this.panel2.Controls.Add(this.lb_Facebook);
@@ -99,20 +107,68 @@ namespace Project_DBManager
             this.panel2.Size = new System.Drawing.Size(435, 434);
             this.panel2.TabIndex = 7;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.cb_TrangThai);
+            this.panel7.Location = new System.Drawing.Point(190, 41);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(228, 31);
+            this.panel7.TabIndex = 38;
+            // 
+            // cb_TrangThai
+            // 
+            this.cb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_TrangThai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_TrangThai.Font = new System.Drawing.Font("Inter", 10F);
+            this.cb_TrangThai.FormattingEnabled = true;
+            this.cb_TrangThai.Items.AddRange(new object[] {
+            "Chưa tạo bài đăng",
+            "Đã tạo bài đăng",
+            "Đã đóng"});
+            this.cb_TrangThai.Location = new System.Drawing.Point(0, 4);
+            this.cb_TrangThai.Name = "cb_TrangThai";
+            this.cb_TrangThai.Size = new System.Drawing.Size(228, 24);
+            this.cb_TrangThai.TabIndex = 34;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.tb_MoTaNgan);
+            this.panel6.Location = new System.Drawing.Point(10, 345);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(409, 69);
+            this.panel6.TabIndex = 41;
+            // 
+            // tb_MoTaNgan
+            // 
+            this.tb_MoTaNgan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_MoTaNgan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_MoTaNgan.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_MoTaNgan.Location = new System.Drawing.Point(5, 5);
+            this.tb_MoTaNgan.Multiline = true;
+            this.tb_MoTaNgan.Name = "tb_MoTaNgan";
+            this.tb_MoTaNgan.Size = new System.Drawing.Size(398, 60);
+            this.tb_MoTaNgan.TabIndex = 33;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.tb_Google);
-            this.panel5.Location = new System.Drawing.Point(10, 291);
+            this.panel5.Location = new System.Drawing.Point(10, 265);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(409, 32);
+            this.panel5.Size = new System.Drawing.Size(408, 37);
             this.panel5.TabIndex = 40;
             // 
             // tb_Google
             // 
             this.tb_Google.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_Google.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Google.Location = new System.Drawing.Point(7, 7);
+            this.tb_Google.Location = new System.Drawing.Point(7, 9);
             this.tb_Google.Name = "tb_Google";
             this.tb_Google.Size = new System.Drawing.Size(393, 20);
             this.tb_Google.TabIndex = 35;
@@ -121,9 +177,9 @@ namespace Project_DBManager
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.tb_Facebook);
-            this.panel4.Location = new System.Drawing.Point(10, 194);
+            this.panel4.Location = new System.Drawing.Point(10, 185);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(408, 65);
+            this.panel4.Size = new System.Drawing.Size(408, 37);
             this.panel4.TabIndex = 39;
             // 
             // tb_Facebook
@@ -131,9 +187,8 @@ namespace Project_DBManager
             this.tb_Facebook.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_Facebook.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Facebook.Location = new System.Drawing.Point(8, 9);
-            this.tb_Facebook.Multiline = true;
             this.tb_Facebook.Name = "tb_Facebook";
-            this.tb_Facebook.Size = new System.Drawing.Size(390, 46);
+            this.tb_Facebook.Size = new System.Drawing.Size(390, 20);
             this.tb_Facebook.TabIndex = 1;
             // 
             // panel3
@@ -142,17 +197,16 @@ namespace Project_DBManager
             this.panel3.Controls.Add(this.tb_DiaChi);
             this.panel3.Location = new System.Drawing.Point(10, 108);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(412, 58);
+            this.panel3.Size = new System.Drawing.Size(408, 37);
             this.panel3.TabIndex = 38;
             // 
             // tb_DiaChi
             // 
             this.tb_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_DiaChi.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DiaChi.Location = new System.Drawing.Point(7, 3);
-            this.tb_DiaChi.Multiline = true;
+            this.tb_DiaChi.Location = new System.Drawing.Point(5, 9);
             this.tb_DiaChi.Name = "tb_DiaChi";
-            this.tb_DiaChi.Size = new System.Drawing.Size(398, 47);
+            this.tb_DiaChi.Size = new System.Drawing.Size(398, 20);
             this.tb_DiaChi.TabIndex = 2;
             // 
             // panel1
@@ -161,17 +215,18 @@ namespace Project_DBManager
             this.panel1.Controls.Add(this.tb_SoDienThoai1);
             this.panel1.Location = new System.Drawing.Point(10, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 38);
+            this.panel1.Size = new System.Drawing.Size(174, 31);
             this.panel1.TabIndex = 37;
             // 
             // tb_SoDienThoai1
             // 
             this.tb_SoDienThoai1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_SoDienThoai1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SoDienThoai1.Location = new System.Drawing.Point(7, 9);
+            this.tb_SoDienThoai1.Location = new System.Drawing.Point(7, 6);
             this.tb_SoDienThoai1.Name = "tb_SoDienThoai1";
-            this.tb_SoDienThoai1.Size = new System.Drawing.Size(160, 20);
+            this.tb_SoDienThoai1.Size = new System.Drawing.Size(141, 20);
             this.tb_SoDienThoai1.TabIndex = 31;
+            this.tb_SoDienThoai1.TextChanged += new System.EventHandler(this.tb_SoDienThoai1_TextChanged);
             // 
             // lb_Google
             // 
@@ -179,34 +234,11 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_Google.AutoSize = true;
             this.lb_Google.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Google.Location = new System.Drawing.Point(6, 268);
+            this.lb_Google.Location = new System.Drawing.Point(6, 242);
             this.lb_Google.Name = "lb_Google";
             this.lb_Google.Size = new System.Drawing.Size(66, 20);
             this.lb_Google.TabIndex = 36;
             this.lb_Google.Text = "Google";
-            // 
-            // cb_TrangThai
-            // 
-            this.cb_TrangThai.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_TrangThai.FormattingEnabled = true;
-            this.cb_TrangThai.Items.AddRange(new object[] {
-            "Chưa tạo bài đăng",
-            "Đã tạo bài đăng",
-            "Đã đóng"});
-            this.cb_TrangThai.Location = new System.Drawing.Point(192, 37);
-            this.cb_TrangThai.Name = "cb_TrangThai";
-            this.cb_TrangThai.Size = new System.Drawing.Size(230, 27);
-            this.cb_TrangThai.TabIndex = 34;
-            // 
-            // tb_MoTaNgan
-            // 
-            this.tb_MoTaNgan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_MoTaNgan.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_MoTaNgan.Location = new System.Drawing.Point(6, 349);
-            this.tb_MoTaNgan.Multiline = true;
-            this.tb_MoTaNgan.Name = "tb_MoTaNgan";
-            this.tb_MoTaNgan.Size = new System.Drawing.Size(413, 69);
-            this.tb_MoTaNgan.TabIndex = 33;
             // 
             // lbMoTaNgan
             // 
@@ -214,7 +246,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMoTaNgan.AutoSize = true;
             this.lbMoTaNgan.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMoTaNgan.Location = new System.Drawing.Point(6, 326);
+            this.lbMoTaNgan.Location = new System.Drawing.Point(6, 322);
             this.lbMoTaNgan.Name = "lbMoTaNgan";
             this.lbMoTaNgan.Size = new System.Drawing.Size(105, 20);
             this.lbMoTaNgan.TabIndex = 32;
@@ -226,7 +258,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_TrangThai.AutoSize = true;
             this.lb_TrangThai.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TrangThai.Location = new System.Drawing.Point(197, 11);
+            this.lb_TrangThai.Location = new System.Drawing.Point(186, 11);
             this.lb_TrangThai.Name = "lb_TrangThai";
             this.lb_TrangThai.Size = new System.Drawing.Size(101, 23);
             this.lb_TrangThai.TabIndex = 30;
@@ -238,7 +270,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_Facebook.AutoSize = true;
             this.lb_Facebook.Font = new System.Drawing.Font("Inter", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Facebook.Location = new System.Drawing.Point(6, 171);
+            this.lb_Facebook.Location = new System.Drawing.Point(6, 162);
             this.lb_Facebook.Name = "lb_Facebook";
             this.lb_Facebook.Size = new System.Drawing.Size(74, 20);
             this.lb_Facebook.TabIndex = 9;
@@ -272,7 +304,7 @@ namespace Project_DBManager
             // 
             this.tb_TenThuongHieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TenThuongHieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.tb_TenThuongHieu.Location = new System.Drawing.Point(33, 39);
             this.tb_TenThuongHieu.Name = "tb_TenThuongHieu";
@@ -287,6 +319,8 @@ namespace Project_DBManager
             this.btn_Luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_Luu.FlatAppearance.BorderSize = 0;
             this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Luu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Luu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Luu.Location = new System.Drawing.Point(157, 528);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(112, 30);
@@ -329,13 +363,13 @@ namespace Project_DBManager
             this.dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv.EnableHeadersVisualStyles = false;
             this.dtgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.dtgv.Location = new System.Drawing.Point(497, 103);
+            this.dtgv.Location = new System.Drawing.Point(497, 78);
             this.dtgv.Name = "dtgv";
             this.dtgv.ReadOnly = true;
             this.dtgv.RowHeadersVisible = false;
             this.dtgv.RowHeadersWidth = 51;
             this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtgv.Size = new System.Drawing.Size(280, 409);
+            this.dtgv.Size = new System.Drawing.Size(280, 434);
             this.dtgv.TabIndex = 5;
             // 
             // History_Edit
@@ -353,6 +387,7 @@ namespace Project_DBManager
             this.btn_Huy.FlatAppearance.BorderSize = 0;
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Huy.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Huy.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Huy.Location = new System.Drawing.Point(33, 528);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(112, 30);
@@ -360,6 +395,12 @@ namespace Project_DBManager
             this.btn_Huy.Text = "Huỷ";
             this.btn_Huy.UseVisualStyleBackColor = false;
             this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // ucChinhSuaThongTinUuDai
             // 
@@ -376,6 +417,9 @@ namespace Project_DBManager
             this.Size = new System.Drawing.Size(796, 575);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -385,6 +429,7 @@ namespace Project_DBManager
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,5 +460,8 @@ namespace Project_DBManager
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }

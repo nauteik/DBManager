@@ -1,5 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using Project_DBManager.DTO;
+using Project_DBManager.UC;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -81,6 +82,12 @@ namespace Project_DBManager
         private void FormLoginAuth_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            formQuenMatKhau forgetPassword = new formQuenMatKhau();
+            forgetPassword.Show();
         }
     }
 }

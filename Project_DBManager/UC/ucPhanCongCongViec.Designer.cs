@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPhanCongCongViec));
             this.lb_PhanCongCongViec = new System.Windows.Forms.Label();
             this.pn_GiaoViec = new System.Windows.Forms.Panel();
             this.lb_ChiTiet = new System.Windows.Forms.Label();
@@ -60,12 +62,14 @@
             this.TaskID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsCompleted = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btn_Xoa = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pn_GiaoViec.SuspendLayout();
             this.pn_GhiChu.SuspendLayout();
             this.pn_TenCongViec.SuspendLayout();
             this.pn_ChonViTri.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_CongViec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_PhanCongCongViec
@@ -109,11 +113,13 @@
             // 
             // pn_GhiChu
             // 
+            this.pn_GhiChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pn_GhiChu.BackColor = System.Drawing.Color.White;
             this.pn_GhiChu.Controls.Add(this.tb_GhiChu);
             this.pn_GhiChu.Location = new System.Drawing.Point(19, 247);
             this.pn_GhiChu.Name = "pn_GhiChu";
-            this.pn_GhiChu.Size = new System.Drawing.Size(226, 147);
+            this.pn_GhiChu.Size = new System.Drawing.Size(226, 181);
             this.pn_GhiChu.TabIndex = 42;
             // 
             // tb_GhiChu
@@ -127,7 +133,7 @@
             this.tb_GhiChu.Location = new System.Drawing.Point(8, 8);
             this.tb_GhiChu.Multiline = true;
             this.tb_GhiChu.Name = "tb_GhiChu";
-            this.tb_GhiChu.Size = new System.Drawing.Size(210, 133);
+            this.tb_GhiChu.Size = new System.Drawing.Size(210, 167);
             this.tb_GhiChu.TabIndex = 2;
             // 
             // dtpk_Deadline
@@ -140,6 +146,7 @@
             this.dtpk_Deadline.Name = "dtpk_Deadline";
             this.dtpk_Deadline.Size = new System.Drawing.Size(226, 25);
             this.dtpk_Deadline.TabIndex = 40;
+            this.dtpk_Deadline.ValueChanged += new System.EventHandler(this.dtpk_Deadline_ValueChanged);
             // 
             // lb_Deadline
             // 
@@ -178,8 +185,9 @@
             this.tb_TenCongViec.ForeColor = System.Drawing.Color.Black;
             this.tb_TenCongViec.Location = new System.Drawing.Point(5, 8);
             this.tb_TenCongViec.Name = "tb_TenCongViec";
-            this.tb_TenCongViec.Size = new System.Drawing.Size(210, 17);
+            this.tb_TenCongViec.Size = new System.Drawing.Size(200, 17);
             this.tb_TenCongViec.TabIndex = 1;
+            this.tb_TenCongViec.TextChanged += new System.EventHandler(this.tb_TenCongViec_TextChanged);
             // 
             // lb_ChonViTri
             // 
@@ -433,6 +441,12 @@
             this.btn_Xoa.UseVisualStyleBackColor = false;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
             // ucPhanCongCongViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +474,7 @@
             this.pn_TimKiem.ResumeLayout(false);
             this.pn_TimKiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_CongViec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,5 +512,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TaskID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsCompleted;
         private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

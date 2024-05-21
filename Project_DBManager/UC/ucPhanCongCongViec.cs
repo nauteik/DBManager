@@ -1,5 +1,7 @@
-﻿using Project_DBManager.DAO;
+﻿using Microsoft.IdentityModel.Tokens;
+using Project_DBManager.DAO;
 using Project_DBManager.DTO;
+using Project_DBManager.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +47,10 @@ namespace Project_DBManager.UC
         }
         private void btn_TaoCongViec_Click(object sender, EventArgs e)
         {
+            dtpk_Deadline_ValueChanged(sender, e);
+            tb_TenCongViec_TextChanged(sender, e);
+            if (errorProvider1.GetError(dtpk_Deadline).IsNullOrEmpty() == false) return;
+            if (errorProvider1.GetError(tb_TenCongViec).IsNullOrEmpty() == false) return;
             string dept = cb_ViTri.Text;
             string taskName = tb_TenCongViec.Text;
             string deadline = dtpk_Deadline.Value.ToString("MM-dd-yyyy");
@@ -64,6 +70,7 @@ namespace Project_DBManager.UC
             if (isSucceed)
             {
                 MessageBox.Show("Tạo công việc thành công");
+                ActDAO.Instance.createAct(account.UserID, "Tạo công việc \"" + taskName + "\"", DateTime.Now);
                 loadTask(this.account);
             }
             else
@@ -155,8 +162,12 @@ namespace Project_DBManager.UC
                 {
                     isSucceed = TaskDAO.Instance.completeTask(taskID);
                 }
-                if (isSucceed) MessageBox.Show("Xác nhận hoàn thành thành công");
-                    else MessageBox.Show("Xác nhận hoàn thành thất bại");
+                if (isSucceed) 
+                {
+                    MessageBox.Show("Xác nhận hoàn thành thành công");
+                    ActDAO.Instance.createAct(account.UserID, "Xác nhận hoàn thành công việc \"" + dtgv_CongViec.Rows[row].Cells["TaskTitle"].Value.ToString() + "\"", DateTime.Now);
+                } 
+                else MessageBox.Show("Xác nhận hoàn thành thất bại");
             }
             loadTask(this.account);
         }
@@ -181,10 +192,38 @@ namespace Project_DBManager.UC
                 {
                     isSucceed = TaskDAO.Instance.removeTask(taskID);
                 }
-                if (isSucceed) MessageBox.Show("Xóa công việc thành công");
+                if (isSucceed) 
+                {
+                    MessageBox.Show("Xóa công việc thành công");
+                    ActDAO.Instance.createAct(account.UserID, "Xóa công việc \"" + dtgv_CongViec.Rows[row].Cells["TaskTitle"].Value.ToString() + "\"", DateTime.Now);
+                } 
                 else MessageBox.Show("Xóa công việc thất bại");
             }
             loadTask(this.account);
+        }
+
+        private void dtpk_Deadline_ValueChanged(object sender, EventArgs e)
+        {
+            if (Service.Validator.Instance.validFutureDate(dtpk_Deadline.Value) != "")
+            {
+                errorProvider1.SetError(dtpk_Deadline, Service.Validator.Instance.validFutureDate(dtpk_Deadline.Value));
+            }
+            else
+            {
+                errorProvider1.SetError(dtpk_Deadline, null);
+            }
+        }
+
+        private void tb_TenCongViec_TextChanged(object sender, EventArgs e)
+        {
+            if (Validator.Instance.validEmpty(tb_TenCongViec.Text) != "")
+            {
+                errorProvider1.SetError(tb_TenCongViec, Validator.Instance.validEmpty(tb_TenCongViec.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(tb_TenCongViec, null);
+            }
         }
     }
 }

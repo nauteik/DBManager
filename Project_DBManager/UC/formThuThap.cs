@@ -19,20 +19,23 @@ namespace Project_DBManager.UC
 {
     public partial class formThuThap : Form
     {
+        public Account account;
         public string googleURL;
         public string desktopPath;
         List<TempBrand> listBrand;
-        
-        public formThuThap(string googleURL)
+        string nodePath = @"C:\Program Files\nodejs\node.exe"; // Adjust the path accordingly
+        string scriptPath = @AppDomain.CurrentDomain.BaseDirectory + "Scraper\\scrape.js"; // Adjust the path accordingly
+        public formThuThap(string googleURL, Account acc)
         {
             InitializeComponent();
+            this.account = acc;
             this.googleURL = googleURL;
             desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/result.csv";
             desktopPath = desktopPath.Replace("\\", "/");
             cb_PhanLoai.SelectedIndex = 0;
             changeUrlAndPath(googleURL, desktopPath);
             thuThap();
-            
+
         }
        
         public void loadListBrand(List<string[]> list)
@@ -68,8 +71,7 @@ namespace Project_DBManager.UC
         public async void thuThap()
         {
             // Specify the path to Node.js and the Node.js script to run
-            string nodePath = @"C:\Program Files\nodejs\node.exe"; // Adjust the path accordingly
-            string scriptPath = @"C:\Users\Lenovo\Desktop\TDTU\Scraper\scrape.js"; // Adjust the path accordingly
+          
 
             // Arguments to pass to the Node.js script (if any)
             string arguments = "";
@@ -126,8 +128,8 @@ namespace Project_DBManager.UC
         }
         public void changeUrlAndPath(string url, string desktopPath)
         {
-            string filePath = @"C:\Users\Lenovo\Desktop\TDTU\Scraper\scrape.js";
-            string[] lines = File.ReadAllLines(filePath);
+            
+            string[] lines = File.ReadAllLines(scriptPath);
             for (int i = 0; i < lines.Length; i++)
             {
                 if (lines[i].Contains("googleUrl"))
@@ -146,7 +148,7 @@ namespace Project_DBManager.UC
                     break;
                 }
             }
-            File.WriteAllLines(filePath, lines);
+            File.WriteAllLines(scriptPath, lines);
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -158,9 +160,37 @@ namespace Project_DBManager.UC
                 if(temp.IsChecked == false) { continue; }
                 bool isSucceed = BrandDAO.Instance.insertBrand(temp);
                 if (isSucceed == false) { MessageBox.Show("Thêm thất bại thương hiệu: " + temp.BrandName);}
-                    else { count++; }
+                    else {  
+                            count++;
+                            ActDAO.Instance.createAct(account.UserID, "Thêm thương hiệu " + temp.BrandName, DateTime.Now);
+                         }
             }
             MessageBox.Show(string.Format("Đã thêm {0} thương hiệu", count));
+        }
+
+        private void btnChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach(TempBrand temp in listBrand)
+            {
+                temp.IsChecked = true;
+            }
+            dtgv_Staff.DataSource = listBrand;
+        }
+
+        private void btn_BoChonTatCa_Click(object sender, EventArgs e)
+        {
+            foreach (TempBrand temp in listBrand)
+            {
+                temp.IsChecked = false;
+            }
+            dtgv_Staff.DataSource = listBrand;
+        }
+
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+            
+            readFile(desktopPath);
+            loadListBrand(readFile(desktopPath));
         }
     }
 }

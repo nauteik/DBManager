@@ -31,13 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgv_Account = new System.Windows.Forms.DataGridView();
-            this.btn_CapMatKhau = new System.Windows.Forms.Button();
-            this.pn_ToolMenu = new System.Windows.Forms.Panel();
-            this.pn_TimKiem = new System.Windows.Forms.Panel();
-            this.tb_TimKiem = new System.Windows.Forms.TextBox();
-            this.lb_TimKiem = new System.Windows.Forms.Label();
-            this.lb_CapLaiMatKhau = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +38,13 @@
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_CapMatKhau = new System.Windows.Forms.Button();
+            this.pn_ToolMenu = new System.Windows.Forms.Panel();
+            this.pn_TimKiem = new System.Windows.Forms.Panel();
+            this.tb_TimKiem = new System.Windows.Forms.TextBox();
+            this.lb_TimKiem = new System.Windows.Forms.Label();
+            this.lb_CapLaiMatKhau = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Account)).BeginInit();
             this.pn_ToolMenu.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
@@ -97,80 +97,6 @@
             this.dtgv_Account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_Account.Size = new System.Drawing.Size(750, 375);
             this.dtgv_Account.TabIndex = 13;
-            // 
-            // btn_CapMatKhau
-            // 
-            this.btn_CapMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_CapMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.btn_CapMatKhau.FlatAppearance.BorderSize = 0;
-            this.btn_CapMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CapMatKhau.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CapMatKhau.Location = new System.Drawing.Point(27, 523);
-            this.btn_CapMatKhau.Name = "btn_CapMatKhau";
-            this.btn_CapMatKhau.Size = new System.Drawing.Size(150, 30);
-            this.btn_CapMatKhau.TabIndex = 12;
-            this.btn_CapMatKhau.Text = "Cấp mật khẩu";
-            this.btn_CapMatKhau.UseVisualStyleBackColor = false;
-            // 
-            // pn_ToolMenu
-            // 
-            this.pn_ToolMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pn_ToolMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
-            this.pn_ToolMenu.Controls.Add(this.pn_TimKiem);
-            this.pn_ToolMenu.Controls.Add(this.lb_TimKiem);
-            this.pn_ToolMenu.Location = new System.Drawing.Point(27, 60);
-            this.pn_ToolMenu.Name = "pn_ToolMenu";
-            this.pn_ToolMenu.Size = new System.Drawing.Size(750, 50);
-            this.pn_ToolMenu.TabIndex = 11;
-            // 
-            // pn_TimKiem
-            // 
-            this.pn_TimKiem.BackColor = System.Drawing.Color.White;
-            this.pn_TimKiem.Controls.Add(this.tb_TimKiem);
-            this.pn_TimKiem.Location = new System.Drawing.Point(104, 15);
-            this.pn_TimKiem.Name = "pn_TimKiem";
-            this.pn_TimKiem.Size = new System.Drawing.Size(133, 23);
-            this.pn_TimKiem.TabIndex = 11;
-            // 
-            // tb_TimKiem
-            // 
-            this.tb_TimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_TimKiem.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_TimKiem.Location = new System.Drawing.Point(8, 4);
-            this.tb_TimKiem.Name = "tb_TimKiem";
-            this.tb_TimKiem.Size = new System.Drawing.Size(114, 15);
-            this.tb_TimKiem.TabIndex = 6;
-            this.tb_TimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_TimKiem_KeyDown);
-            // 
-            // lb_TimKiem
-            // 
-            this.lb_TimKiem.AutoSize = true;
-            this.lb_TimKiem.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_TimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
-            this.lb_TimKiem.Location = new System.Drawing.Point(20, 17);
-            this.lb_TimKiem.Name = "lb_TimKiem";
-            this.lb_TimKiem.Size = new System.Drawing.Size(78, 19);
-            this.lb_TimKiem.TabIndex = 2;
-            this.lb_TimKiem.Text = "Tìm kiếm";
-            // 
-            // lb_CapLaiMatKhau
-            // 
-            this.lb_CapLaiMatKhau.AutoSize = true;
-            this.lb_CapLaiMatKhau.Font = new System.Drawing.Font("Inter Black", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_CapLaiMatKhau.Location = new System.Drawing.Point(22, 23);
-            this.lb_CapLaiMatKhau.Name = "lb_CapLaiMatKhau";
-            this.lb_CapLaiMatKhau.Size = new System.Drawing.Size(184, 30);
-            this.lb_CapLaiMatKhau.TabIndex = 10;
-            this.lb_CapLaiMatKhau.Text = "Cấp mật khẩu";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 40;
             // 
             // IsChecked
             // 
@@ -231,6 +157,82 @@
             this.UserID.HeaderText = "UserID";
             this.UserID.Name = "UserID";
             this.UserID.Visible = false;
+            // 
+            // btn_CapMatKhau
+            // 
+            this.btn_CapMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_CapMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_CapMatKhau.FlatAppearance.BorderSize = 0;
+            this.btn_CapMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CapMatKhau.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CapMatKhau.Location = new System.Drawing.Point(27, 523);
+            this.btn_CapMatKhau.Name = "btn_CapMatKhau";
+            this.btn_CapMatKhau.Size = new System.Drawing.Size(150, 30);
+            this.btn_CapMatKhau.TabIndex = 12;
+            this.btn_CapMatKhau.Text = "Cấp mật khẩu";
+            this.btn_CapMatKhau.UseVisualStyleBackColor = false;
+            this.btn_CapMatKhau.Click += new System.EventHandler(this.btn_CapMatKhau_Click);
+            // 
+            // pn_ToolMenu
+            // 
+            this.pn_ToolMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pn_ToolMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.pn_ToolMenu.Controls.Add(this.pn_TimKiem);
+            this.pn_ToolMenu.Controls.Add(this.lb_TimKiem);
+            this.pn_ToolMenu.Location = new System.Drawing.Point(27, 60);
+            this.pn_ToolMenu.Name = "pn_ToolMenu";
+            this.pn_ToolMenu.Size = new System.Drawing.Size(750, 50);
+            this.pn_ToolMenu.TabIndex = 11;
+            // 
+            // pn_TimKiem
+            // 
+            this.pn_TimKiem.BackColor = System.Drawing.Color.White;
+            this.pn_TimKiem.Controls.Add(this.tb_TimKiem);
+            this.pn_TimKiem.Location = new System.Drawing.Point(104, 15);
+            this.pn_TimKiem.Name = "pn_TimKiem";
+            this.pn_TimKiem.Size = new System.Drawing.Size(133, 23);
+            this.pn_TimKiem.TabIndex = 11;
+            // 
+            // tb_TimKiem
+            // 
+            this.tb_TimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_TimKiem.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_TimKiem.Location = new System.Drawing.Point(8, 4);
+            this.tb_TimKiem.Name = "tb_TimKiem";
+            this.tb_TimKiem.Size = new System.Drawing.Size(114, 15);
+            this.tb_TimKiem.TabIndex = 6;
+            this.tb_TimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_TimKiem_KeyDown);
+            // 
+            // lb_TimKiem
+            // 
+            this.lb_TimKiem.AutoSize = true;
+            this.lb_TimKiem.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
+            this.lb_TimKiem.Location = new System.Drawing.Point(20, 17);
+            this.lb_TimKiem.Name = "lb_TimKiem";
+            this.lb_TimKiem.Size = new System.Drawing.Size(78, 19);
+            this.lb_TimKiem.TabIndex = 2;
+            this.lb_TimKiem.Text = "Tìm kiếm";
+            // 
+            // lb_CapLaiMatKhau
+            // 
+            this.lb_CapLaiMatKhau.AutoSize = true;
+            this.lb_CapLaiMatKhau.Font = new System.Drawing.Font("Inter Black", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_CapLaiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
+            this.lb_CapLaiMatKhau.Location = new System.Drawing.Point(22, 23);
+            this.lb_CapLaiMatKhau.Name = "lb_CapLaiMatKhau";
+            this.lb_CapLaiMatKhau.Size = new System.Drawing.Size(184, 30);
+            this.lb_CapLaiMatKhau.TabIndex = 10;
+            this.lb_CapLaiMatKhau.Text = "Cấp mật khẩu";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 40;
             // 
             // ucCapLaiMatKhau
             // 

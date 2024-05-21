@@ -61,6 +61,7 @@ namespace Project_DBManager.DAO
                 case "Quản lý": posID = 2; break;
                 case "Tổ trưởng": posID = 1; break;
                 case "Nhân viên": posID = 0; break;
+                case "CEO": posID = 3; break;
             }
             query = string.Format("UPDATE Users SET User_Email = '{0}', Pos_ID = {1}, IsEnable = {2} WHERE User_ID = {3}", email, posID, isEnable, userID);
             bool secondExecution = DataProvider.Instance.ExecuteNonQuery(query) > 0;
@@ -136,6 +137,15 @@ namespace Project_DBManager.DAO
         public bool validateEmail(string email)
         {
             string query = string.Format("SELECT * FROM Users WHERE User_Email = '{0}'", email);
+            if (DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool validateEmailExcept(string email, int userID)
+        {
+            string query = string.Format("SELECT * FROM Users WHERE User_Email = '{0}' AND User_ID <> {1}", email, userID);
             if (DataProvider.Instance.ExecuteQuery(query).Rows.Count != 0)
             {
                 return false;

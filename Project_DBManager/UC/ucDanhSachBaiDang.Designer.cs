@@ -128,8 +128,6 @@
             this.cb_SapXep.Font = new System.Drawing.Font("Inter Italic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_SapXep.FormattingEnabled = true;
             this.cb_SapXep.Items.AddRange(new object[] {
-            "ID tăng dần",
-            "ID giảm dần",
             "Tên thương hiệu tăng dần",
             "Tên thương hiệu giảm dần",
             "Ngày tạo tăng dần",
@@ -253,7 +251,7 @@
             this.dtgv_DanhSachBaiDang.Size = new System.Drawing.Size(750, 375);
             this.dtgv_DanhSachBaiDang.TabIndex = 8;
             this.dtgv_DanhSachBaiDang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DanhSachBaiDang_CellContentClick);
-            this.dtgv_DanhSachBaiDang.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DanhSachBaiDang_CellMouseEnter);
+            this.dtgv_DanhSachBaiDang.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DanhSachBaiDang_CellContentDoubleClick);
             this.dtgv_DanhSachBaiDang.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_DanhSachBaiDang_CellMouseLeave);
             this.dtgv_DanhSachBaiDang.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgv_DanhSachBaiDang_CellMouseMove);
             // 
@@ -270,6 +268,7 @@
             this.Post_ID.HeaderText = "ID";
             this.Post_ID.Name = "Post_ID";
             this.Post_ID.ReadOnly = true;
+            this.Post_ID.Visible = false;
             this.Post_ID.Width = 50;
             // 
             // Brand_Name
@@ -288,7 +287,7 @@
             this.Upload_Date.HeaderText = "Ngày tạo";
             this.Upload_Date.Name = "Upload_Date";
             this.Upload_Date.ReadOnly = true;
-            this.Upload_Date.Width = 113;
+            this.Upload_Date.Width = 105;
             // 
             // _Type
             // 
@@ -297,7 +296,7 @@
             this._Type.HeaderText = "Chủ đề";
             this._Type.Name = "_Type";
             this._Type.ReadOnly = true;
-            this._Type.Width = 102;
+            this._Type.Width = 96;
             // 
             // _Name
             // 
@@ -306,7 +305,7 @@
             this._Name.HeaderText = "Người tạo";
             this._Name.Name = "_Name";
             this._Name.ReadOnly = true;
-            this._Name.Width = 119;
+            this._Name.Width = 111;
             // 
             // Content
             // 
@@ -334,6 +333,9 @@
             // 
             // ucChinhSuaBaiDang1
             // 
+            this.ucChinhSuaBaiDang1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucChinhSuaBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucChinhSuaBaiDang1.Location = new System.Drawing.Point(0, 0);
             this.ucChinhSuaBaiDang1.Name = "ucChinhSuaBaiDang1";
@@ -379,6 +381,8 @@
         private System.Windows.Forms.Button btn_XoaDuLieu;
         private System.Windows.Forms.Button btn_XuatDuLieu;
         private System.Windows.Forms.DataGridView dtgv_DanhSachBaiDang;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private ucChinhSuaBaiDang ucChinhSuaBaiDang1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn Post_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Brand_Name;
@@ -387,7 +391,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Content;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private ucChinhSuaBaiDang ucChinhSuaBaiDang1;
     }
 }

@@ -318,6 +318,7 @@
             // 
             this.lb_DanhSachNhanVien.AutoSize = true;
             this.lb_DanhSachNhanVien.Font = new System.Drawing.Font("Inter Black", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_DanhSachNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.lb_DanhSachNhanVien.Location = new System.Drawing.Point(22, 23);
             this.lb_DanhSachNhanVien.Name = "lb_DanhSachNhanVien";
             this.lb_DanhSachNhanVien.Size = new System.Drawing.Size(411, 30);

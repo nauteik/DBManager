@@ -22,11 +22,13 @@ namespace Project_DBManager
             switch (account.Level)
             {
                 case 0: break;
-                case 1: lbPostion.Text = "Tổ trưởng"; break;
-                case 2: lbPostion.Text = "Quản lý"; break;
-                case 3: lbPostion.Text = "CEO"; break;
+                case 1: lbPosition.Text = "Tổ trưởng"; break;
+                case 2: lbPosition.Text = "Quản lý"; break;
+                case 3: lbPosition.Text = "CEO"; break;
             }
             authorize();
+            ucTrangChu1.loadAct(this.account);
+            ucTrangChu1.Show();
         }
         public void authorize()
         {
@@ -56,6 +58,7 @@ namespace Project_DBManager
             ucPhanCongCongViec1.Hide();
             ucThuThapThongTin1.Hide();
             ucXemCongViec1.Hide();
+            ucTrangChu1.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -235,6 +238,7 @@ namespace Project_DBManager
         private void btnTaiKhoanPhanQuyen_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucTaoTaiKhoan1.account = this.account;
             ucTaoTaiKhoan1.Show();
         }
 
@@ -268,6 +272,7 @@ namespace Project_DBManager
         private async void btnThuThapThongTin_Click(object sender, EventArgs e)
         {
             collapseUserControl();
+            ucThuThapThongTin1.acc = this.account;
             ucThuThapThongTin1.Show();
             
         }
@@ -277,6 +282,22 @@ namespace Project_DBManager
             collapseUserControl();
             ucXemCongViec1.loadTask(account);
             ucXemCongViec1.Show();
+        }
+
+        private void lbPostion_MouseEnter(object sender, EventArgs e)
+        {
+            lbPosition.BackColor = ColorTranslator.FromHtml("#0E0E2D");
+        }
+        private void lbPosition_MouseLeave(object sender, EventArgs e)
+        {
+            lbPosition.BackColor = Color.FromArgb(25, 25, 78);
+        }
+
+        private void lbPosition_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucTrangChu1.loadAct(this.account);
+            ucTrangChu1.Show();
         }
     }
 }

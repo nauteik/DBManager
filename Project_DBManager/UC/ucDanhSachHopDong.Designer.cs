@@ -71,11 +71,12 @@
             this.tb_ThongTinHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.tb_ThongTinHopDong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_ThongTinHopDong.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_ThongTinHopDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.tb_ThongTinHopDong.Location = new System.Drawing.Point(25, 10);
             this.tb_ThongTinHopDong.Name = "tb_ThongTinHopDong";
             this.tb_ThongTinHopDong.Size = new System.Drawing.Size(219, 26);
             this.tb_ThongTinHopDong.TabIndex = 0;
-            this.tb_ThongTinHopDong.Text = "Danh Sách Hợp Đồng";
+            this.tb_ThongTinHopDong.Text = "Danh sách hợp đồng";
             this.tb_ThongTinHopDong.TextChanged += new System.EventHandler(this.tb_ThongTinHopDong_TextChanged);
             // 
             // panel2
@@ -238,6 +239,7 @@
             this.dtgv.Size = new System.Drawing.Size(750, 375);
             this.dtgv.TabIndex = 4;
             this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dtgv.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentDoubleClick);
             this.dtgv.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellMouseEnter);
             this.dtgv.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellMouseLeave);
             // 
@@ -332,6 +334,9 @@
             // 
             // ucChinhSuaHopDong1
             // 
+            this.ucChinhSuaHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucChinhSuaHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucChinhSuaHopDong1.ContractInfo = null;
             this.ucChinhSuaHopDong1.Location = new System.Drawing.Point(0, 0);

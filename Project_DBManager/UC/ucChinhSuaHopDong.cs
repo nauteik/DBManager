@@ -1,3 +1,4 @@
+using Microsoft.IdentityModel.Tokens;
 using Project_DBManager.DAO;
 using Project_DBManager.DTO;
 using System;
@@ -14,10 +15,13 @@ namespace Project_DBManager.UC
         public ucChinhSuaHopDong()
         {
             InitializeComponent();
+
         }
 
         private void btn_Huy_Click_1(object sender, EventArgs e)
         {
+            ucDanhSachHopDong parent = this.Parent as ucDanhSachHopDong;
+            parent.loadData();
             this.Visible = false;
         }
 
@@ -37,6 +41,8 @@ namespace Project_DBManager.UC
 
         private void btn_ChinhSuaHopDong_Click(object sender, EventArgs e)
         {
+            dtpk_NgayKetThuc_ValueChanged(sender, e);
+            if (errorProvider1.GetError(dtpk_NgayKetThuc).IsNullOrEmpty() == false) return;
             if (tb_NoiDungHopDong.Text == "" || tb_TenThuongHieu.Text == "" || cb_LoaiHinh.Text == "")
             {
                 MessageBox.Show("Thông tin hợp đồng không được để trống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -46,6 +52,18 @@ namespace Project_DBManager.UC
                 ContractDAO.Instance.updateContract(dtpk_NgayKetThuc.Value.ToString("yyyy-MM-dd"), tb_NoiDungHopDong.Text, contractInfo.ContractID);
                 BrandDAO.Instance.updateTypeAndBrandRepresentAndBrandName(tb_TenThuongHieu.Text, cb_LoaiHinh.Text, tb_SoDienThoaiDaiDien.Text, BrandDAO.Instance.getBrandIdByContractId(contractInfo.ContractID));
                 MessageBox.Show("Thông tin hợp đồng đã được chỉnh sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dtpk_NgayKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            if (Service.Validator.Instance.validFutureDate(dtpk_NgayKetThuc.Value) != "")
+            {
+                errorProvider1.SetError(dtpk_NgayKetThuc, Service.Validator.Instance.validFutureDate(dtpk_NgayKetThuc.Value));
+            }
+            else
+            {
+                errorProvider1.SetError(dtpk_NgayKetThuc, null);
             }
         }
     }

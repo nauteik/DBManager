@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucChinhSuaHopDong));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_ChinhSuaHopDong = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,8 +47,10 @@
             this.tb_NoiDungHopDong = new System.Windows.Forms.TextBox();
             this.btn_ChinhSuaHopDong = new System.Windows.Forms.Button();
             this.btn_Huy = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,7 +64,6 @@
             // 
             // tb_ChinhSuaHopDong
             // 
-            this.tb_ChinhSuaHopDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tb_ChinhSuaHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.tb_ChinhSuaHopDong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_ChinhSuaHopDong.Font = new System.Drawing.Font("Inter", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,11 +73,13 @@
             this.tb_ChinhSuaHopDong.ReadOnly = true;
             this.tb_ChinhSuaHopDong.Size = new System.Drawing.Size(280, 33);
             this.tb_ChinhSuaHopDong.TabIndex = 0;
-            this.tb_ChinhSuaHopDong.Text = "Chỉnh Sửa Hợp Đồng";
+            this.tb_ChinhSuaHopDong.Text = "Chỉnh sửa hợp đồng";
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.panel2.Controls.Add(this.dtpk_NgayKetThuc);
             this.panel2.Controls.Add(this.dtpk_NgayKy);
@@ -103,6 +108,7 @@
             this.dtpk_NgayKetThuc.Name = "dtpk_NgayKetThuc";
             this.dtpk_NgayKetThuc.Size = new System.Drawing.Size(335, 27);
             this.dtpk_NgayKetThuc.TabIndex = 36;
+            this.dtpk_NgayKetThuc.ValueChanged += new System.EventHandler(this.dtpk_NgayKetThuc_ValueChanged);
             // 
             // dtpk_NgayKy
             // 
@@ -117,7 +123,6 @@
             // 
             // lb_NgayKy
             // 
-            this.lb_NgayKy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_NgayKy.AutoSize = true;
             this.lb_NgayKy.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NgayKy.Location = new System.Drawing.Point(20, 278);
@@ -143,7 +148,6 @@
             // 
             // tb_TenThuongHieu
             // 
-            this.tb_TenThuongHieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_TenThuongHieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_TenThuongHieu.Location = new System.Drawing.Point(24, 54);
@@ -153,7 +157,6 @@
             // 
             // lb_NoiDungHopDong
             // 
-            this.lb_NoiDungHopDong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_NoiDungHopDong.AutoSize = true;
             this.lb_NoiDungHopDong.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NoiDungHopDong.Location = new System.Drawing.Point(386, 19);
@@ -164,7 +167,6 @@
             // 
             // lb_NgayKetThuc
             // 
-            this.lb_NgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_NgayKetThuc.AutoSize = true;
             this.lb_NgayKetThuc.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_NgayKetThuc.Location = new System.Drawing.Point(20, 364);
@@ -175,7 +177,6 @@
             // 
             // lb_LoaiHinh
             // 
-            this.lb_LoaiHinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_LoaiHinh.AutoSize = true;
             this.lb_LoaiHinh.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_LoaiHinh.Location = new System.Drawing.Point(20, 112);
@@ -186,7 +187,6 @@
             // 
             // lb_SoDienThoaiDaiDien
             // 
-            this.lb_SoDienThoaiDaiDien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_SoDienThoaiDaiDien.AutoSize = true;
             this.lb_SoDienThoaiDaiDien.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_SoDienThoaiDaiDien.Location = new System.Drawing.Point(20, 197);
@@ -197,7 +197,6 @@
             // 
             // lb_TenThuongHieu
             // 
-            this.lb_TenThuongHieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lb_TenThuongHieu.AutoSize = true;
             this.lb_TenThuongHieu.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TenThuongHieu.Location = new System.Drawing.Point(20, 25);
@@ -208,7 +207,6 @@
             // 
             // tb_SoDienThoaiDaiDien
             // 
-            this.tb_SoDienThoaiDaiDien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tb_SoDienThoaiDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_SoDienThoaiDaiDien.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SoDienThoaiDaiDien.Location = new System.Drawing.Point(24, 223);
@@ -218,7 +216,9 @@
             // 
             // tb_NoiDungHopDong
             // 
-            this.tb_NoiDungHopDong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb_NoiDungHopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_NoiDungHopDong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_NoiDungHopDong.Font = new System.Drawing.Font("Inter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NoiDungHopDong.Location = new System.Drawing.Point(390, 54);
@@ -229,10 +229,11 @@
             // 
             // btn_ChinhSuaHopDong
             // 
-            this.btn_ChinhSuaHopDong.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_ChinhSuaHopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_ChinhSuaHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_ChinhSuaHopDong.FlatAppearance.BorderSize = 0;
             this.btn_ChinhSuaHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ChinhSuaHopDong.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ChinhSuaHopDong.Location = new System.Drawing.Point(25, 525);
             this.btn_ChinhSuaHopDong.Name = "btn_ChinhSuaHopDong";
             this.btn_ChinhSuaHopDong.Size = new System.Drawing.Size(150, 30);
@@ -243,10 +244,11 @@
             // 
             // btn_Huy
             // 
-            this.btn_Huy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_Huy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_Huy.FlatAppearance.BorderSize = 0;
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Huy.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Huy.Location = new System.Drawing.Point(200, 525);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.Size = new System.Drawing.Size(150, 30);
@@ -255,6 +257,12 @@
             this.btn_Huy.UseVisualStyleBackColor = false;
             this.btn_Huy.VisibleChanged += new System.EventHandler(this.btn_Huy_VisibleChanged);
             this.btn_Huy.Click += new System.EventHandler(this.btn_Huy_Click_1);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // ucChinhSuaHopDong
             // 
@@ -271,6 +279,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +303,6 @@
         private System.Windows.Forms.Button btn_Huy;
         private System.Windows.Forms.Label lb_SoDienThoaiDaiDien;
         private System.Windows.Forms.TextBox tb_SoDienThoaiDaiDien;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

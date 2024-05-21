@@ -1,5 +1,6 @@
 ﻿using Project_DBManager.DAO;
 using Project_DBManager.DTO;
+using Project_DBManager.UC;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -23,6 +24,8 @@ namespace Project_DBManager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ucDanhSachBaiDang parent = this.Parent as ucDanhSachBaiDang;
+            parent.loadBaiDang();
             this.Visible = false;
         }
 
@@ -56,6 +59,11 @@ namespace Project_DBManager
                 tb_TrangThai.Text = dr["Status"].ToString();
                 tb_NoiDung.Text = postInfoToShow.Content;
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

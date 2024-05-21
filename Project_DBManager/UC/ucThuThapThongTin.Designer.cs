@@ -197,7 +197,6 @@
             // 
             // btn_ThuThap
             // 
-            this.btn_ThuThap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_ThuThap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_ThuThap.FlatAppearance.BorderSize = 0;
             this.btn_ThuThap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

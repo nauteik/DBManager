@@ -16,6 +16,16 @@
                 return 3;
             return 0;
         }
+        public string getPositionByLevel(int level)
+        {
+            switch (level)
+            {
+                case 1: return "Tổ trưởng";
+                case 2: return "Quản lý";
+                case 3: return "CEO";
+            }
+            return "Nhân viên";
+        }
         public int getDepartmentIDByName(string name)
         {
             switch (name)

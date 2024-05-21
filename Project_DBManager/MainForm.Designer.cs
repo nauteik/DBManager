@@ -30,6 +30,7 @@ namespace Project_DBManager
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnSidemenu = new System.Windows.Forms.Panel();
             this.pnQuanLyTaiKhoan = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
@@ -57,11 +58,12 @@ namespace Project_DBManager
             this.btnThuThapThongTin = new System.Windows.Forms.Button();
             this.btnTruyCapTaiNguyen = new System.Windows.Forms.Button();
             this.btnQuanLyThongTin = new System.Windows.Forms.Button();
-            this.lbPostion = new System.Windows.Forms.Label();
+            this.lbPosition = new System.Windows.Forms.Label();
             this.pnHeader = new System.Windows.Forms.Panel();
             this.pbTextDBManager = new System.Windows.Forms.PictureBox();
             this.pbHanCity = new System.Windows.Forms.PictureBox();
             this.pnBody = new System.Windows.Forms.Panel();
+            this.ucTrangChu1 = new Project_DBManager.UC.ucTrangChu();
             this.ucXemCongViec1 = new Project_DBManager.UC.ucXemCongViec();
             this.ucThuThapThongTin1 = new Project_DBManager.UC.ucThuThapThongTin();
             this.ucPhanCongCongViec1 = new Project_DBManager.UC.ucPhanCongCongViec();
@@ -101,7 +103,7 @@ namespace Project_DBManager
             this.pnSidemenu.Controls.Add(this.pnQuanLyNhanVien);
             this.pnSidemenu.Controls.Add(this.pnTaoBaiDang);
             this.pnSidemenu.Controls.Add(this.pnQuanLyThongTin);
-            this.pnSidemenu.Controls.Add(this.lbPostion);
+            this.pnSidemenu.Controls.Add(this.lbPosition);
             this.pnSidemenu.Location = new System.Drawing.Point(0, 58);
             this.pnSidemenu.Name = "pnSidemenu";
             this.pnSidemenu.Size = new System.Drawing.Size(147, 577);
@@ -508,18 +510,22 @@ namespace Project_DBManager
             this.btnQuanLyThongTin.UseVisualStyleBackColor = false;
             this.btnQuanLyThongTin.Click += new System.EventHandler(this.btnQuanLyThongTin_Click);
             // 
-            // lbPostion
+            // lbPosition
             // 
-            this.lbPostion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
-            this.lbPostion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbPostion.Font = new System.Drawing.Font("Inter Black Italic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPostion.ForeColor = System.Drawing.Color.White;
-            this.lbPostion.Location = new System.Drawing.Point(0, 0);
-            this.lbPostion.Name = "lbPostion";
-            this.lbPostion.Size = new System.Drawing.Size(147, 43);
-            this.lbPostion.TabIndex = 1;
-            this.lbPostion.Text = "Nhân viên";
-            this.lbPostion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
+            this.lbPosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbPosition.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbPosition.Font = new System.Drawing.Font("Inter Black Italic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.ForeColor = System.Drawing.Color.White;
+            this.lbPosition.Location = new System.Drawing.Point(0, 0);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(147, 43);
+            this.lbPosition.TabIndex = 1;
+            this.lbPosition.Text = "Nhân viên";
+            this.lbPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbPosition.Click += new System.EventHandler(this.lbPosition_Click);
+            this.lbPosition.MouseEnter += new System.EventHandler(this.lbPostion_MouseEnter);
+            this.lbPosition.MouseLeave += new System.EventHandler(this.lbPosition_MouseLeave);
             // 
             // pnHeader
             // 
@@ -558,6 +564,7 @@ namespace Project_DBManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.pnBody.Controls.Add(this.ucTrangChu1);
             this.pnBody.Controls.Add(this.ucXemCongViec1);
             this.pnBody.Controls.Add(this.ucThuThapThongTin1);
             this.pnBody.Controls.Add(this.ucPhanCongCongViec1);
@@ -577,6 +584,17 @@ namespace Project_DBManager
             this.pnBody.Name = "pnBody";
             this.pnBody.Size = new System.Drawing.Size(799, 576);
             this.pnBody.TabIndex = 3;
+            // 
+            // ucTrangChu1
+            // 
+            this.ucTrangChu1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucTrangChu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucTrangChu1.Location = new System.Drawing.Point(0, 0);
+            this.ucTrangChu1.Name = "ucTrangChu1";
+            this.ucTrangChu1.Size = new System.Drawing.Size(798, 577);
+            this.ucTrangChu1.TabIndex = 10;
             // 
             // ucXemCongViec1
             // 
@@ -622,6 +640,9 @@ namespace Project_DBManager
             // 
             // ucTaoTaiKhoan1
             // 
+            this.ucTaoTaiKhoan1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucTaoTaiKhoan1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucTaoTaiKhoan1.Location = new System.Drawing.Point(0, 0);
             this.ucTaoTaiKhoan1.Name = "ucTaoTaiKhoan1";
@@ -631,6 +652,9 @@ namespace Project_DBManager
             // ucTaoHopDong1
             // 
             this.ucTaoHopDong1.Account = null;
+            this.ucTaoHopDong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucTaoHopDong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucTaoHopDong1.Location = new System.Drawing.Point(0, 0);
             this.ucTaoHopDong1.Name = "ucTaoHopDong1";
@@ -712,6 +736,9 @@ namespace Project_DBManager
             // ucTaoBaiDang1
             // 
             this.ucTaoBaiDang1.Account = null;
+            this.ucTaoBaiDang1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ucTaoBaiDang1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.ucTaoBaiDang1.Location = new System.Drawing.Point(0, 0);
             this.ucTaoBaiDang1.Margin = new System.Windows.Forms.Padding(4);
@@ -751,6 +778,7 @@ namespace Project_DBManager
             this.Controls.Add(this.pnBody);
             this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.pnSidemenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBManager";
@@ -777,7 +805,7 @@ namespace Project_DBManager
         private System.Windows.Forms.PictureBox pbHanCity;
         private System.Windows.Forms.PictureBox pbTextDBManager;
         private System.Windows.Forms.Button btnQuanLyThongTin;
-        private System.Windows.Forms.Label lbPostion;
+        private System.Windows.Forms.Label lbPosition;
         private System.Windows.Forms.Panel pnQuanLyThongTin;
         private System.Windows.Forms.Button btnThuThapThongTin;
         private System.Windows.Forms.Button btnTruyCapTaiNguyen;
@@ -818,5 +846,6 @@ namespace Project_DBManager
         private UC.ucDanhSachBaiDang ucDanhSachBaiDang1;
         private UC.ucThuThapThongTin ucThuThapThongTin1;
         private UC.ucXemCongViec ucXemCongViec1;
+        private UC.ucTrangChu ucTrangChu1;
     }
 }

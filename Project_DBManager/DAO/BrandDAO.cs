@@ -17,6 +17,12 @@ namespace Project_DBManager.DAO
             set { BrandDAO.instance = value; }
         }
 
+        public string getBrandNameByID(int brandID)
+        {
+            string query = "SELECT Brand_Name From Brand where Brand_ID = " + brandID;
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            return table.Rows[0]["Brand_Name"].ToString();
+        }
         public List<string> getBrandNameList()
         {
             List<string> brandNameList = new List<string>();
@@ -78,6 +84,7 @@ namespace Project_DBManager.DAO
 
         public int getBrandIdByBrandName(string brandName)
         {
+            brandName = brandName.Replace("''", "'");
             string query = "SELECT * FROM Brand WHERE Brand_Name = @Brand_Name";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandName });
             return Convert.ToInt32(dt.Rows[0][0].ToString());
@@ -91,14 +98,14 @@ namespace Project_DBManager.DAO
 
         public List<string> getTypeList()
         {
-            List<string> typeList = new List<string>();
-            string query = "SELECT Type FROM Brand";
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow row in dt.Rows)
-            {
-                typeList.Add(row["Type"].ToString());
-            }
-            return typeList;
+            List<string> temp = new List<string>();
+            temp.Add("Ăn uống");
+            temp.Add("Du lịch");
+            temp.Add("Mua sắm");
+            temp.Add("Làm đẹp");
+            temp.Add("Quà tặng");
+            temp.Add("Giải trí");
+            return temp;
         }
 
         public int getBrandIdDoNotHaveContract()

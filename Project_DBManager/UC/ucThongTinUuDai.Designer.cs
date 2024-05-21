@@ -70,11 +70,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDanhSachThongTinUuDai.AutoSize = true;
             this.labelDanhSachThongTinUuDai.Font = new System.Drawing.Font("Inter", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDanhSachThongTinUuDai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.labelDanhSachThongTinUuDai.Location = new System.Drawing.Point(14, 13);
             this.labelDanhSachThongTinUuDai.Name = "labelDanhSachThongTinUuDai";
-            this.labelDanhSachThongTinUuDai.Size = new System.Drawing.Size(285, 25);
+            this.labelDanhSachThongTinUuDai.Size = new System.Drawing.Size(346, 25);
             this.labelDanhSachThongTinUuDai.TabIndex = 0;
-            this.labelDanhSachThongTinUuDai.Text = "Danh sách thông tin ưu đãi";
+            this.labelDanhSachThongTinUuDai.Text = "Danh sách thông tin thương hiệu";
             // 
             // panel1
             // 
@@ -371,9 +372,11 @@
             // 
             // Phone
             // 
+            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Phone.DataPropertyName = "phoneNumber";
             this.Phone.HeaderText = "SDT";
             this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
             this.Phone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Edit

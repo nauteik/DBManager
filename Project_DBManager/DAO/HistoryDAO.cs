@@ -1,4 +1,5 @@
 ﻿using Project_DBManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -26,8 +27,9 @@ namespace Project_DBManager.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { brandID });
             foreach (DataRow row in dt.Rows)
             {
-                lst.Add(row["History_Time"].ToString() + " - " + row["Name"].ToString() + " - " + row["Contents_Changed"].ToString());
+                lst.Add(((DateTime)row["History_Time"]).ToString("dd-MM-yyyy HH:mm:ss") + " - " + row["Name"].ToString() + " - " + row["Contents_Changed"].ToString());
             }
+            lst.Reverse();
             return lst;
         }
     }

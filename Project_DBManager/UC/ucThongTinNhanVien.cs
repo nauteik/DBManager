@@ -1,6 +1,9 @@
-﻿using Project_DBManager.DAO;
+﻿using Microsoft.IdentityModel.Tokens;
+using Project_DBManager.DAO;
 using Project_DBManager.DTO;
+using Project_DBManager.UC;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Windows.Forms;
 
@@ -70,10 +73,24 @@ namespace Project_DBManager
             string sdt = tb_SDT.Text;
             int userID = this.userID;
             int isEnable = cb_TrangThai.SelectedIndex == 1 ? 0 : 1;
+            tb_SDT_KeyUp(sender, e as KeyEventArgs);
+            tbIDC_KeyUp(sender, e as KeyEventArgs);
+            tbEmail_TextChanged(sender, e as KeyEventArgs);
+            dtpk_Birth_ValueChanged(sender, e);
+            if (AccountDAO.Instance.validateEmailExcept(email, userID) == false) { errorProvider1.SetError(tbEmail, "Địa chỉ email đã tồn tại"); }
+            if (errorProvider1.GetError(tb_SDT).IsNullOrEmpty() == false) return;
+            if (errorProvider1.GetError(tbIDC).IsNullOrEmpty() == false) return;
+            if (errorProvider1.GetError(tbEmail).IsNullOrEmpty() == false) return;
+            if (errorProvider1.GetError(dtpk_Birth).IsNullOrEmpty() == false) return;
             bool isSucceed = AccountDAO.Instance.updateAccountInfoByUserID(hoTen, cccd, email, position, address, dept, birth, gender, userID, sdt, isEnable);
             if (isSucceed)
             {
                 MessageBox.Show("Cập nhật thành công");
+                if(this.Parent as ucDanhSachNhanVien != null)
+                    (this.Parent as ucDanhSachNhanVien).loadStaff(this.account);
+                if (this.Parent as ucVoHieuHoaKhoiPhuc != null)
+                    (this.Parent as ucVoHieuHoaKhoiPhuc).loadStaff(this.account);
+                ActDAO.Instance.createAct(account.UserID, "Cập nhật tài khoản nhân viên " + hoTen, DateTime.Now);
             }
             else
             {
@@ -81,6 +98,69 @@ namespace Project_DBManager
             }
 
 
+        }
+
+
+        private void tbHoTen_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(tbHoTen.Text == "")
+            {
+                errorProvider1.SetError(tbHoTen, "Không được để trống");
+            }
+            else
+            {
+                errorProvider1.SetError(tbHoTen, null);
+            }
+        }
+
+        private void tbIDC_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Service.Validator.Instance.validPhone(tbIDC.Text) != "")
+            {
+                errorProvider1.SetError(tbIDC, Service.Validator.Instance.validPhone(tbIDC.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(tbIDC, null);
+            }
+        }
+
+        
+
+        private void tb_SDT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Service.Validator.Instance.validPhone(tb_SDT.Text) != "")
+            {
+                errorProvider1.SetError(tb_SDT, Service.Validator.Instance.validPhone(tb_SDT.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(tb_SDT, null);
+            }
+        }
+
+        private void dtpk_Birth_ValueChanged(object sender, EventArgs e)
+        {
+            if (Service.Validator.Instance.validPastDate(dtpk_Birth.Value) != "")
+            {
+                errorProvider1.SetError(dtpk_Birth, Service.Validator.Instance.validPastDate(dtpk_Birth.Value));
+            }
+            else
+            {
+                errorProvider1.SetError(dtpk_Birth, null);
+            }
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (Service.Validator.Instance.validEmail(tbEmail.Text) != "")
+            {
+                errorProvider1.SetError(tbEmail, Service.Validator.Instance.validEmail(tbEmail.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(tbEmail, null);
+            }
         }
     }
 }

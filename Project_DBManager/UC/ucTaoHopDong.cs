@@ -1,5 +1,7 @@
-﻿using Project_DBManager.DAO;
+﻿using Microsoft.IdentityModel.Tokens;
+using Project_DBManager.DAO;
 using Project_DBManager.DTO;
+using Project_DBManager.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,32 +48,52 @@ namespace Project_DBManager.UC
         private void btn_TaoHopDong_Click(object sender, EventArgs e)
         {
             // Kiểm tra input để tạo hợp đồng
-            if (tb_NoiDungHopDong.Text == "" || cb_TenThuongHieu.Text == "")
+            dtpk_NgayKetThuc_ValueChanged(sender, e);
+            tb_NoiDungHopDong_TextChanged(sender, e);
+            if (errorProvider1.GetError(dtpk_NgayKetThuc).IsNullOrEmpty() == false) return;
+            if (errorProvider1.GetError(lb_NoiDungHopDong).IsNullOrEmpty() == false) return;
+            int brandID = BrandDAO.Instance.getBrandIdByBrandName(cb_TenThuongHieu.Text);
+            bool succeed = ContractDAO.Instance.createNewContract(dtpk_NgayKy.Value.ToString("yyyy-MM-dd"), dtpk_NgayKetThuc.Value.ToString("yyyy-MM-dd"), tb_NoiDungHopDong.Text, account.UserID.ToString(), brandID);
+            if (succeed)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin của hợp đồng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tạo hợp đồng mới thành công!");
+                ActDAO.Instance.createAct(account.UserID, "Tạo hợp đồng thương hiệu " + BrandDAO.Instance.getBrandNameByID(brandID), DateTime.Now);
             }
             else
             {
-                int brandID = BrandDAO.Instance.getBrandIdByBrandName(cb_TenThuongHieu.Text);
-                bool succeed = ContractDAO.Instance.createNewContract(dtpk_NgayKy.Value.ToString("yyyy-MM-dd"), dtpk_NgayKetThuc.Value.ToString("yyyy-MM-dd"), tb_NoiDungHopDong.Text, account.UserID.ToString(), brandID);
-                if (succeed)
-                {
-                    MessageBox.Show("Tạo hợp đồng mới thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Tạo không thành công");
-                }
-                
+                MessageBox.Show("Tạo không thành công");
             }
         }
 
         private void btn_DatLai_Click(object sender, EventArgs e)
         {
             tb_NoiDungHopDong.Text = "";
-            tb_SoDienThoaiDaiDien.Text = "";
             dtpk_NgayKy.Value = DateTime.Now;
-            dtpk_NgayKetThuc.Value = DateTime.Now;
+            dtpk_NgayKetThuc.Value = DateTime.Now.AddDays(1);
+        }
+
+        private void dtpk_NgayKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            if (Service.Validator.Instance.validFutureDate(dtpk_NgayKetThuc.Value) != "")
+            {
+                errorProvider1.SetError(dtpk_NgayKetThuc, Service.Validator.Instance.validFutureDate(dtpk_NgayKetThuc.Value));
+            }
+            else
+            {
+                errorProvider1.SetError(dtpk_NgayKetThuc, null);
+            }
+        }
+
+        private void tb_NoiDungHopDong_TextChanged(object sender, EventArgs e)
+        {
+            if(Validator.Instance.validEmpty(tb_NoiDungHopDong.Text) != "")
+            {
+                errorProvider1.SetError(lb_NoiDungHopDong, Validator.Instance.validEmpty(tb_NoiDungHopDong.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(lb_NoiDungHopDong, null);
+            }
         }
     }
 }

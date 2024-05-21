@@ -1,4 +1,5 @@
-﻿using Project_DBManager.DAO;
+﻿using Microsoft.IdentityModel.Tokens;
+using Project_DBManager.DAO;
 using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
@@ -48,11 +49,8 @@ namespace Project_DBManager.UC
                 DialogResult result1 = MessageBox.Show("Thương hiệu này đã đóng. Không thể tạo bài đăng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if (tb_NoiDung.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ nội dung của bài đăng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            textBox4_TextChanged(sender, e);
+            if (errorProvider1.GetError(lb_NoiDung).IsNullOrEmpty() == false) return;
             else if (tb_TrangThai.Text == "Đã tạo bài đăng")
             {
                 DialogResult result1 = MessageBox.Show("Thương hiệu này đã tạo bài đăng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,6 +65,7 @@ namespace Project_DBManager.UC
                     tb_TrangThai.Text = "Đã tạo bài đăng";
                 }
                 PostDAO.Instance.insertValueIntoPost(account.UserID, cb_TenThuongHieu.SelectedItem.ToString(), tb_NoiDung.Text);
+                ActDAO.Instance.createAct(account.UserID, "Tạo bài đăng thương hiệu " + cb_TenThuongHieu.SelectedItem.ToString(), DateTime.Now);
                 MessageBox.Show("Tạo bài đăng thành công!");
                 tb_NoiDung.Text = "";
             }
@@ -99,7 +98,15 @@ namespace Project_DBManager.UC
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            errorProvider1.SetError(lb_NoiDung, null);
+            if (Service.Validator.Instance.validEmpty(tb_NoiDung.Text) != "")
+            {
+                errorProvider1.SetError(lb_NoiDung, Service.Validator.Instance.validEmpty(tb_NoiDung.Text));
+            }
+            else
+            {
+                errorProvider1.SetError(lb_NoiDung, null);
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

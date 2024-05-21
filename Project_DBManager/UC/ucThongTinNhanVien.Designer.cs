@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucThongTinNhanVien));
             this.lb_ThongTinNhanVien = new System.Windows.Forms.Label();
             this.lbTitlePosition = new System.Windows.Forms.Label();
             this.lbTitleName = new System.Windows.Forms.Label();
             this.pnContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lb_TrangThai = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tb_SDT = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cb_TrangThai = new System.Windows.Forms.ComboBox();
             this.dtpk_Birth = new System.Windows.Forms.DateTimePicker();
@@ -61,11 +65,9 @@
             this.tbHoTen = new System.Windows.Forms.TextBox();
             this.btn_Huy = new System.Windows.Forms.Button();
             this.btn_Luu = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.tb_SDT = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnContent.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnGioiTinh.SuspendLayout();
             this.pnDepartment.SuspendLayout();
@@ -74,7 +76,7 @@
             this.pnEmail.SuspendLayout();
             this.pnIDC.SuspendLayout();
             this.pnHoTen.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_ThongTinNhanVien
@@ -112,6 +114,8 @@
             // 
             // pnContent
             // 
+            this.pnContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.pnContent.Controls.Add(this.label1);
             this.pnContent.Controls.Add(this.lb_TrangThai);
@@ -133,10 +137,20 @@
             this.pnContent.Controls.Add(this.pnIDC);
             this.pnContent.Controls.Add(this.lbHoTen);
             this.pnContent.Controls.Add(this.pnHoTen);
-            this.pnContent.Location = new System.Drawing.Point(23, 154);
+            this.pnContent.Location = new System.Drawing.Point(19, 154);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(752, 366);
+            this.pnContent.Size = new System.Drawing.Size(761, 366);
             this.pnContent.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 259);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 19);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Số điện thoại";
             // 
             // lb_TrangThai
             // 
@@ -147,6 +161,27 @@
             this.lb_TrangThai.Size = new System.Drawing.Size(85, 19);
             this.lb_TrangThai.TabIndex = 29;
             this.lb_TrangThai.Text = "Trạng thái";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tb_SDT);
+            this.panel2.Location = new System.Drawing.Point(28, 281);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(195, 30);
+            this.panel2.TabIndex = 13;
+            // 
+            // tb_SDT
+            // 
+            this.tb_SDT.BackColor = System.Drawing.Color.White;
+            this.tb_SDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_SDT.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SDT.ForeColor = System.Drawing.Color.Black;
+            this.tb_SDT.Location = new System.Drawing.Point(5, 8);
+            this.tb_SDT.Name = "tb_SDT";
+            this.tb_SDT.Size = new System.Drawing.Size(170, 17);
+            this.tb_SDT.TabIndex = 0;
+            this.tb_SDT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_SDT_KeyUp);
             // 
             // panel1
             // 
@@ -179,8 +214,9 @@
             this.dtpk_Birth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpk_Birth.Location = new System.Drawing.Point(614, 50);
             this.dtpk_Birth.Name = "dtpk_Birth";
-            this.dtpk_Birth.Size = new System.Drawing.Size(132, 22);
+            this.dtpk_Birth.Size = new System.Drawing.Size(117, 22);
             this.dtpk_Birth.TabIndex = 1;
+            this.dtpk_Birth.ValueChanged += new System.EventHandler(this.dtpk_Birth_ValueChanged);
             // 
             // label4
             // 
@@ -353,8 +389,9 @@
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.Location = new System.Drawing.Point(5, 8);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(318, 17);
+            this.tbEmail.Size = new System.Drawing.Size(300, 17);
             this.tbEmail.TabIndex = 0;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
             // lbIDC
             // 
@@ -383,8 +420,9 @@
             this.tbIDC.ForeColor = System.Drawing.Color.Black;
             this.tbIDC.Location = new System.Drawing.Point(5, 8);
             this.tbIDC.Name = "tbIDC";
-            this.tbIDC.Size = new System.Drawing.Size(180, 17);
+            this.tbIDC.Size = new System.Drawing.Size(160, 17);
             this.tbIDC.TabIndex = 0;
+            this.tbIDC.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbIDC_KeyUp);
             // 
             // lbHoTen
             // 
@@ -413,12 +451,12 @@
             this.tbHoTen.ForeColor = System.Drawing.Color.Black;
             this.tbHoTen.Location = new System.Drawing.Point(5, 8);
             this.tbHoTen.Name = "tbHoTen";
-            this.tbHoTen.Size = new System.Drawing.Size(318, 17);
+            this.tbHoTen.Size = new System.Drawing.Size(300, 17);
             this.tbHoTen.TabIndex = 0;
+            this.tbHoTen.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbHoTen_KeyUp);
             // 
             // btn_Huy
             // 
-            this.btn_Huy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Huy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_Huy.FlatAppearance.BorderSize = 0;
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -433,7 +471,6 @@
             // 
             // btn_Luu
             // 
-            this.btn_Luu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Luu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_Luu.FlatAppearance.BorderSize = 0;
             this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -446,40 +483,11 @@
             this.btn_Luu.UseVisualStyleBackColor = false;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
-            // contextMenuStrip1
+            // errorProvider1
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 19);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Số điện thoại";
-            // 
-            // tb_SDT
-            // 
-            this.tb_SDT.BackColor = System.Drawing.Color.White;
-            this.tb_SDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_SDT.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SDT.ForeColor = System.Drawing.Color.Black;
-            this.tb_SDT.Location = new System.Drawing.Point(5, 8);
-            this.tb_SDT.Name = "tb_SDT";
-            this.tb_SDT.Size = new System.Drawing.Size(188, 17);
-            this.tb_SDT.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.tb_SDT);
-            this.panel2.Location = new System.Drawing.Point(28, 281);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(195, 30);
-            this.panel2.TabIndex = 13;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // ucThongTinNhanVien
             // 
@@ -496,6 +504,8 @@
             this.Size = new System.Drawing.Size(798, 577);
             this.pnContent.ResumeLayout(false);
             this.pnContent.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.pnGioiTinh.ResumeLayout(false);
             this.pnDepartment.ResumeLayout(false);
@@ -508,8 +518,7 @@
             this.pnIDC.PerformLayout();
             this.pnHoTen.ResumeLayout(false);
             this.pnHoTen.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,9 +558,9 @@
         private System.Windows.Forms.Label lb_TrangThai;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cb_TrangThai;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tb_SDT;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

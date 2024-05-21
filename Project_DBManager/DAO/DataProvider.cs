@@ -4,7 +4,7 @@ namespace Project_DBManager.DAO
 {
     internal class DataProvider
     {
-        private readonly string connectString = "Server=dbmanager.cl842wcy40x2.ap-southeast-2.rds.amazonaws.com,1433;Database=DBManager;User Id=admin;Password=admin123;";
+        private readonly string connectString = "Data Source=DESKTOP-RMRN01T\\SQLEXPRESS;Initial Catalog=DBManager;Integrated Security=True;";
         private static DataProvider instance;
 
         public static DataProvider Instance

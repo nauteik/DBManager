@@ -45,6 +45,9 @@
             this.btn_Luu = new System.Windows.Forms.Button();
             this.cb_PhanLoai = new System.Windows.Forms.ComboBox();
             this.lbDepartment = new System.Windows.Forms.Label();
+            this.btnChonTatCa = new System.Windows.Forms.Button();
+            this.btn_BoChonTatCa = new System.Windows.Forms.Button();
+            this.btn_Load = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Staff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,9 +181,9 @@
             // lb_Progress
             // 
             this.lb_Progress.Font = new System.Drawing.Font("Inter", 11F);
-            this.lb_Progress.Location = new System.Drawing.Point(230, 62);
+            this.lb_Progress.Location = new System.Drawing.Point(469, 67);
             this.lb_Progress.Name = "lb_Progress";
-            this.lb_Progress.Size = new System.Drawing.Size(500, 19);
+            this.lb_Progress.Size = new System.Drawing.Size(453, 19);
             this.lb_Progress.TabIndex = 12;
             this.lb_Progress.Text = "Quá trình thu thập:";
             // 
@@ -191,7 +194,7 @@
             this.btn_Luu.FlatAppearance.BorderSize = 0;
             this.btn_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Luu.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu.Location = new System.Drawing.Point(28, 464);
+            this.btn_Luu.Location = new System.Drawing.Point(35, 456);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(112, 30);
             this.btn_Luu.TabIndex = 13;
@@ -212,7 +215,7 @@
             "Du lịch",
             "Giải trí",
             "Quà tặng"});
-            this.cb_PhanLoai.Location = new System.Drawing.Point(108, 61);
+            this.cb_PhanLoai.Location = new System.Drawing.Point(346, 65);
             this.cb_PhanLoai.Name = "cb_PhanLoai";
             this.cb_PhanLoai.Size = new System.Drawing.Size(113, 24);
             this.cb_PhanLoai.TabIndex = 21;
@@ -221,11 +224,54 @@
             // 
             this.lbDepartment.AutoSize = true;
             this.lbDepartment.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDepartment.Location = new System.Drawing.Point(24, 61);
+            this.lbDepartment.Location = new System.Drawing.Point(263, 67);
             this.lbDepartment.Name = "lbDepartment";
             this.lbDepartment.Size = new System.Drawing.Size(78, 19);
             this.lbDepartment.TabIndex = 22;
             this.lbDepartment.Text = "Phân loại";
+            // 
+            // btnChonTatCa
+            // 
+            this.btnChonTatCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btnChonTatCa.FlatAppearance.BorderSize = 0;
+            this.btnChonTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChonTatCa.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonTatCa.Location = new System.Drawing.Point(35, 62);
+            this.btnChonTatCa.Name = "btnChonTatCa";
+            this.btnChonTatCa.Size = new System.Drawing.Size(90, 30);
+            this.btnChonTatCa.TabIndex = 13;
+            this.btnChonTatCa.Text = "Chọn tất cả";
+            this.btnChonTatCa.UseVisualStyleBackColor = false;
+            this.btnChonTatCa.Click += new System.EventHandler(this.btnChonTatCa_Click);
+            // 
+            // btn_BoChonTatCa
+            // 
+            this.btn_BoChonTatCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_BoChonTatCa.FlatAppearance.BorderSize = 0;
+            this.btn_BoChonTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_BoChonTatCa.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BoChonTatCa.Location = new System.Drawing.Point(135, 62);
+            this.btn_BoChonTatCa.Name = "btn_BoChonTatCa";
+            this.btn_BoChonTatCa.Size = new System.Drawing.Size(111, 30);
+            this.btn_BoChonTatCa.TabIndex = 13;
+            this.btn_BoChonTatCa.Text = "Hủy chọn tất cả";
+            this.btn_BoChonTatCa.UseVisualStyleBackColor = false;
+            this.btn_BoChonTatCa.Click += new System.EventHandler(this.btn_BoChonTatCa_Click);
+            // 
+            // btn_Load
+            // 
+            this.btn_Load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Load.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.btn_Load.FlatAppearance.BorderSize = 0;
+            this.btn_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Load.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Load.Location = new System.Drawing.Point(173, 456);
+            this.btn_Load.Name = "btn_Load";
+            this.btn_Load.Size = new System.Drawing.Size(148, 30);
+            this.btn_Load.TabIndex = 13;
+            this.btn_Load.Text = "Load dữ liệu có sẵn";
+            this.btn_Load.UseVisualStyleBackColor = false;
+            this.btn_Load.Click += new System.EventHandler(this.btn_Load_Click);
             // 
             // formThuThap
             // 
@@ -235,6 +281,9 @@
             this.ClientSize = new System.Drawing.Size(944, 506);
             this.Controls.Add(this.cb_PhanLoai);
             this.Controls.Add(this.lbDepartment);
+            this.Controls.Add(this.btn_BoChonTatCa);
+            this.Controls.Add(this.btnChonTatCa);
+            this.Controls.Add(this.btn_Load);
             this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.lb_Progress);
             this.Controls.Add(this.lb_Title);
@@ -264,5 +313,8 @@
         private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.ComboBox cb_PhanLoai;
         private System.Windows.Forms.Label lbDepartment;
+        private System.Windows.Forms.Button btnChonTatCa;
+        private System.Windows.Forms.Button btn_BoChonTatCa;
+        private System.Windows.Forms.Button btn_Load;
     }
 }

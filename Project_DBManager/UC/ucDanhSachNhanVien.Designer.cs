@@ -43,6 +43,8 @@
             this.lb_SapXep = new System.Windows.Forms.Label();
             this.btn_XuatDuLieu = new System.Windows.Forms.Button();
             this.dtgv_Staff = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ucThongTinNhanVien1 = new Project_DBManager.ucThongTinNhanVien();
             this.IsChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.staffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +53,6 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ucThongTinNhanVien1 = new Project_DBManager.ucThongTinNhanVien();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pn_ToolMenu.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_TaiXuong)).BeginInit();
@@ -63,6 +63,7 @@
             // 
             this.lb_DanhSachNhanVien.AutoSize = true;
             this.lb_DanhSachNhanVien.Font = new System.Drawing.Font("Inter Black", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_DanhSachNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
             this.lb_DanhSachNhanVien.Location = new System.Drawing.Point(20, 23);
             this.lb_DanhSachNhanVien.Name = "lb_DanhSachNhanVien";
             this.lb_DanhSachNhanVien.Size = new System.Drawing.Size(270, 30);
@@ -265,6 +266,7 @@
             this.dtgv_Staff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
             this.dtgv_Staff.Location = new System.Drawing.Point(25, 142);
             this.dtgv_Staff.Name = "dtgv_Staff";
+            this.dtgv_Staff.ReadOnly = true;
             this.dtgv_Staff.RowHeadersVisible = false;
             this.dtgv_Staff.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dtgv_Staff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -275,11 +277,34 @@
             this.dtgv_Staff.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseEnter);
             this.dtgv_Staff.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Staff_CellMouseLeave);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 40;
+            // 
+            // ucThongTinNhanVien1
+            // 
+            this.ucThongTinNhanVien1.Account = null;
+            this.ucThongTinNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucThongTinNhanVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucThongTinNhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.ucThongTinNhanVien1.Name = "ucThongTinNhanVien1";
+            this.ucThongTinNhanVien1.Size = new System.Drawing.Size(798, 577);
+            this.ucThongTinNhanVien1.TabIndex = 10;
+            this.ucThongTinNhanVien1.UserID = 0;
+            this.ucThongTinNhanVien1.Visible = false;
+            // 
             // IsChecked
             // 
             this.IsChecked.DataPropertyName = "isChecked";
             this.IsChecked.HeaderText = "";
             this.IsChecked.Name = "IsChecked";
+            this.IsChecked.ReadOnly = true;
             this.IsChecked.Width = 30;
             // 
             // staffName
@@ -333,6 +358,7 @@
             this.Edit.HeaderText = "";
             this.Edit.Image = global::Project_DBManager.Properties.Resources.arrow;
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Edit.Width = 40;
             // 
@@ -341,29 +367,8 @@
             this.UserID.DataPropertyName = "userID";
             this.UserID.HeaderText = "UserID";
             this.UserID.Name = "UserID";
+            this.UserID.ReadOnly = true;
             this.UserID.Visible = false;
-            // 
-            // ucThongTinNhanVien1
-            // 
-            this.ucThongTinNhanVien1.Account = null;
-            this.ucThongTinNhanVien1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucThongTinNhanVien1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
-            this.ucThongTinNhanVien1.Location = new System.Drawing.Point(0, 0);
-            this.ucThongTinNhanVien1.Name = "ucThongTinNhanVien1";
-            this.ucThongTinNhanVien1.Size = new System.Drawing.Size(798, 577);
-            this.ucThongTinNhanVien1.TabIndex = 10;
-            this.ucThongTinNhanVien1.UserID = 0;
-            this.ucThongTinNhanVien1.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Project_DBManager.Properties.Resources.arrow;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 40;
             // 
             // ucDanhSachNhanVien
             // 
@@ -403,6 +408,8 @@
         private System.Windows.Forms.PictureBox pb_TaiXuong;
         private System.Windows.Forms.DataGridView dtgv_Staff;
         private System.Windows.Forms.Panel pn_TimKiem;
+        private ucThongTinNhanVien ucThongTinNhanVien1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn staffName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Position;
@@ -411,7 +418,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserID;
-        private ucThongTinNhanVien ucThongTinNhanVien1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

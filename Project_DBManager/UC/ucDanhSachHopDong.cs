@@ -195,7 +195,7 @@ namespace Project_DBManager.UC
                     string tempContractId = dtgv.Rows[e.RowIndex].Cells[2].Value.ToString();
                     ContractInfo contractInfo = contractInfoList.Find(ci => ci.ContractID == tempContractId);
                     ucChinhSuaHopDong1.ContractInfo = contractInfo;
-                    ucChinhSuaHopDong1.Show();
+                    ucChinhSuaHopDong1.Visible = true;
                 }
                 else
                 {
@@ -273,6 +273,24 @@ namespace Project_DBManager.UC
         private void ucChinhSuaHopDong1_Load_1(object sender, EventArgs e)
         {
             ucChinhSuaHopDong1.Hide();
+        }
+
+        private void dtgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (account.Level >= AccountDAO.Instance.getLevelByContractId(Convert.ToInt32(dtgv.Rows[e.RowIndex].Cells[2].Value.ToString())))
+                {
+                    string tempContractId = dtgv.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    ContractInfo contractInfo = contractInfoList.Find(ci => ci.ContractID == tempContractId);
+                    ucChinhSuaHopDong1.ContractInfo = contractInfo;
+                    ucChinhSuaHopDong1.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần quyền truy cập để chỉnh sửa hợp đồng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

@@ -207,6 +207,7 @@ namespace Project_DBManager.UC
                         if (BrandDAO.Instance.deleteBrand(temp.Brand_ID))
                         {
                             MessageBox.Show("Xóa thương hiệu " + temp.BrandName + " thành công");
+                            ActDAO.Instance.createAct(acc.UserID, "Xóa thương hiệu " + temp.BrandName, DateTime.Now);
                         }
                     }
                 }

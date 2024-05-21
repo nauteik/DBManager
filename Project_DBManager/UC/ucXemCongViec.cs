@@ -90,7 +90,11 @@ namespace Project_DBManager.UC
                 bool isSucceed = false;
                 if (account.Level == 1) isSucceed = TaskDAO.Instance.completeTask(taskID);
                 if (account.Level == 0) isSucceed = TaskDAO.Instance.completeTaskDetail(taskID);
-                if (isSucceed) MessageBox.Show("Xác nhận hoàn thành thành công");
+                if (isSucceed) 
+                {
+                    MessageBox.Show("Xác nhận hoàn thành thành công");
+                    ActDAO.Instance.createAct(account.UserID, "Xác nhận hoàn thành công việc \"" + dtgv_CongViec.Rows[row].Cells["TaskTitle"].Value.ToString() + "\"", DateTime.Now);
+                } 
                 else MessageBox.Show("Xác nhận hoàn thành thất bại");
             }
             loadTask(this.account);

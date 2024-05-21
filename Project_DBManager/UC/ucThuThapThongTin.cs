@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text.RegularExpressions;
 using System.Security.Policy;
+using Project_DBManager.DTO;
 
 namespace Project_DBManager.UC
 {
@@ -20,6 +21,7 @@ namespace Project_DBManager.UC
     public partial class ucThuThapThongTin : UserControl
     {
         GMap.NET.WindowsForms.GMapControl gmap;
+        public Account acc;
         public ucThuThapThongTin()
         {
             InitializeComponent();
@@ -74,7 +76,7 @@ namespace Project_DBManager.UC
             double trucDoc = Convert.ToDouble(tb_TrucDoc.Text);
             int zoomLevel = Convert.ToInt32(tb_ZoomLevel.Text);
             string googleURL = string.Format("https://www.google.com/maps/search/{0}/@{1},{2},{3}z?entry=ttu", searchText, trucNgang, trucDoc, zoomLevel);
-            formThuThap form = new formThuThap(googleURL);
+            formThuThap form = new formThuThap(googleURL, this.acc);
             form.Show();
         }
     }

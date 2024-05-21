@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucTaoTaiKhoan));
             this.lb_TaoTaiKhoan = new System.Windows.Forms.Label();
             this.pnContent = new System.Windows.Forms.Panel();
             this.dtpk_Birth = new System.Windows.Forms.DateTimePicker();
             this.lb_SDT = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnSDT = new System.Windows.Forms.Panel();
             this.tb_SDT = new System.Windows.Forms.TextBox();
             this.lb_ViTri = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,8 +65,9 @@
             this.pnTaiKhoan = new System.Windows.Forms.Panel();
             this.tbTaiKhoan = new System.Windows.Forms.TextBox();
             this.btn_TaoTaiKhoan = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnContent.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnSDT.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pn_CCCD.SuspendLayout();
             this.pn_ChucVu.SuspendLayout();
@@ -74,6 +77,7 @@
             this.pnAddress.SuspendLayout();
             this.pnEmail.SuspendLayout();
             this.pnTaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_TaoTaiKhoan
@@ -89,10 +93,12 @@
             // 
             // pnContent
             // 
+            this.pnContent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.pnContent.Controls.Add(this.dtpk_Birth);
             this.pnContent.Controls.Add(this.lb_SDT);
-            this.pnContent.Controls.Add(this.panel2);
+            this.pnContent.Controls.Add(this.pnSDT);
             this.pnContent.Controls.Add(this.lb_ViTri);
             this.pnContent.Controls.Add(this.panel1);
             this.pnContent.Controls.Add(this.lb_CCCD);
@@ -127,6 +133,7 @@
             this.dtpk_Birth.Name = "dtpk_Birth";
             this.dtpk_Birth.Size = new System.Drawing.Size(149, 22);
             this.dtpk_Birth.TabIndex = 6;
+            this.dtpk_Birth.ValueChanged += new System.EventHandler(this.dtpk_Birth_ValueChanged);
             // 
             // lb_SDT
             // 
@@ -138,14 +145,14 @@
             this.lb_SDT.TabIndex = 39;
             this.lb_SDT.Text = "Số điện thoại";
             // 
-            // panel2
+            // pnSDT
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.tb_SDT);
-            this.panel2.Location = new System.Drawing.Point(214, 412);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(187, 30);
-            this.panel2.TabIndex = 7;
+            this.pnSDT.BackColor = System.Drawing.Color.White;
+            this.pnSDT.Controls.Add(this.tb_SDT);
+            this.pnSDT.Location = new System.Drawing.Point(214, 412);
+            this.pnSDT.Name = "pnSDT";
+            this.pnSDT.Size = new System.Drawing.Size(187, 30);
+            this.pnSDT.TabIndex = 7;
             // 
             // tb_SDT
             // 
@@ -155,8 +162,9 @@
             this.tb_SDT.ForeColor = System.Drawing.Color.Black;
             this.tb_SDT.Location = new System.Drawing.Point(5, 8);
             this.tb_SDT.Name = "tb_SDT";
-            this.tb_SDT.Size = new System.Drawing.Size(170, 17);
+            this.tb_SDT.Size = new System.Drawing.Size(160, 17);
             this.tb_SDT.TabIndex = 7;
+            this.tb_SDT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_SDT_KeyUp);
             // 
             // lb_ViTri
             // 
@@ -224,6 +232,7 @@
             this.tb_CCCD.Name = "tb_CCCD";
             this.tb_CCCD.Size = new System.Drawing.Size(200, 17);
             this.tb_CCCD.TabIndex = 10;
+            this.tb_CCCD.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tb_CCCD_KeyUp);
             // 
             // lb_ChucVu
             // 
@@ -358,8 +367,9 @@
             this.tbMatKhau.ForeColor = System.Drawing.Color.Black;
             this.tbMatKhau.Location = new System.Drawing.Point(5, 8);
             this.tbMatKhau.Name = "tbMatKhau";
-            this.tbMatKhau.Size = new System.Drawing.Size(350, 17);
+            this.tbMatKhau.Size = new System.Drawing.Size(340, 17);
             this.tbMatKhau.TabIndex = 2;
+            this.tbMatKhau.TextChanged += new System.EventHandler(this.tbMatKhau_TextChanged);
             // 
             // lbAddress
             // 
@@ -418,8 +428,9 @@
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.Location = new System.Drawing.Point(6, 7);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(350, 17);
+            this.tbEmail.Size = new System.Drawing.Size(345, 17);
             this.tbEmail.TabIndex = 4;
+            this.tbEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbEmail_KeyUp);
             // 
             // lbTaiKhoan
             // 
@@ -448,12 +459,12 @@
             this.tbTaiKhoan.ForeColor = System.Drawing.Color.Black;
             this.tbTaiKhoan.Location = new System.Drawing.Point(5, 8);
             this.tbTaiKhoan.Name = "tbTaiKhoan";
-            this.tbTaiKhoan.Size = new System.Drawing.Size(350, 17);
+            this.tbTaiKhoan.Size = new System.Drawing.Size(340, 17);
             this.tbTaiKhoan.TabIndex = 1;
+            this.tbTaiKhoan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbTaiKhoan_KeyUp);
             // 
             // btn_TaoTaiKhoan
             // 
-            this.btn_TaoTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_TaoTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
             this.btn_TaoTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btn_TaoTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -465,6 +476,12 @@
             this.btn_TaoTaiKhoan.Text = "Tạo tài khoản";
             this.btn_TaoTaiKhoan.UseVisualStyleBackColor = false;
             this.btn_TaoTaiKhoan.Click += new System.EventHandler(this.btn_TaoTaiKhoan_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // ucTaoTaiKhoan
             // 
@@ -478,8 +495,8 @@
             this.Size = new System.Drawing.Size(799, 576);
             this.pnContent.ResumeLayout(false);
             this.pnContent.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnSDT.ResumeLayout(false);
+            this.pnSDT.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.pn_CCCD.ResumeLayout(false);
             this.pn_CCCD.PerformLayout();
@@ -495,6 +512,7 @@
             this.pnEmail.PerformLayout();
             this.pnTaiKhoan.ResumeLayout(false);
             this.pnTaiKhoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,8 +552,9 @@
         private System.Windows.Forms.ComboBox cb_ViTri;
         private System.Windows.Forms.Button btn_TaoTaiKhoan;
         private System.Windows.Forms.Label lb_SDT;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnSDT;
         private System.Windows.Forms.TextBox tb_SDT;
         private System.Windows.Forms.DateTimePicker dtpk_Birth;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

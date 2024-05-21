@@ -114,7 +114,12 @@ namespace Project_DBManager.UC
                 }
                 int userID = Convert.ToInt32(dtgv_Staff.Rows[row].Cells[7].Value.ToString());
                 bool isSucceed = AccountDAO.Instance.enableAccount(userID);
-                if (isSucceed) { MessageBox.Show("Mở khoá thành công"); }
+                if (isSucceed) 
+                {
+                    MessageBox.Show("Mở khoá thành công");
+                    ActDAO.Instance.createAct(account.UserID, "Khôi phục tài khoản nhân viên " + dgv.Rows[row].Cells["staffName"].Value.ToString(), DateTime.Now);
+                    this.loadStaff(this.account); 
+                }
             }
         }
         private void dtgv_Staff_CellClick(object sender, DataGridViewCellEventArgs e)

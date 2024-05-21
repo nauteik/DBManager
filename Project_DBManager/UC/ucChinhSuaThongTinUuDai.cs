@@ -1,7 +1,10 @@
-﻿using Project_DBManager.DTO;
+﻿using Microsoft.IdentityModel.Tokens;
+using Project_DBManager.DAO;
+using Project_DBManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Project_DBManager
@@ -36,6 +39,7 @@ namespace Project_DBManager
 
         private void Load_LichSuChinhSua(int brandID, List<string> lst)
         {
+            dtgv.Rows.Clear();
             foreach (string ele in lst)
             {
                 if (found(ele)) { continue; }
@@ -61,6 +65,10 @@ namespace Project_DBManager
             tb_DiaChi.Text = brandInfo.Address;
             tb_Google.Text = brandInfo.Google;
             cb_TrangThai.Text = brandInfo.Status;
+            if(brandInfo.Status == "Chưa tạo bài đăng")
+            {
+                cb_TrangThai.Items.Remove("Đã tạo bài đăng");
+            }
             if(brandInfo.Status == "Đã tạo bài đăng" || brandInfo.Status == "Đã đóng")
             {
                 cb_TrangThai.Items.Remove("Chưa tạo bài đăng");
@@ -73,6 +81,7 @@ namespace Project_DBManager
         }
         private void btn_Luu_Click(object sender, EventArgs e)
         {
+            if (errorProvider1.GetError(tb_SoDienThoai1).IsNullOrEmpty() == false) { return; }
             string contentsChanged = "Thay đổi";
             bool check = false;
             if (tb_SoDienThoai1.Text != brandInfo.PhoneNumber) { contentsChanged += " số điện thoại,"; check = true; }
@@ -94,9 +103,14 @@ namespace Project_DBManager
             {
                 DAO.BrandDAO.Instance.updateBrandDetails(brandInfo.Brand_ID, tb_SoDienThoai1.Text.ToString(),
                     tb_Facebook.Text.ToString(), tb_MoTaNgan.Text.ToString(), tb_DiaChi.Text.ToString(), cb_TrangThai.Text.ToString());
+                brandInfo.PhoneNumber = tb_SoDienThoai1.Text;
+                brandInfo.Facebook = tb_Facebook.Text;
+                brandInfo.Introduction = tb_MoTaNgan.Text;
+                brandInfo.Address = tb_DiaChi.Text;
                 if (check)
                 {
                     DAO.HistoryDAO.Instance.insertIntoHistory(his);
+                    ActDAO.Instance.createAct(Convert.ToInt32(userID), "Chỉnh sửa thông tin thương hiệu " + brandInfo.BrandName, DateTime.Now);
                 }
                 MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -109,6 +123,25 @@ namespace Project_DBManager
         private void btn_Huy_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void tb_SoDienThoai1_TextChanged(object sender, EventArgs e)
+        {
+            if (validPhone(tb_SoDienThoai1.Text) == false)
+            {
+                errorProvider1.SetError(tb_SoDienThoai1, "Số điện thoại không hợp lệ");
+            }
+            else
+            {
+                errorProvider1.SetError(tb_SoDienThoai1, null);
+            }
+        }
+        private bool validPhone(string phone)
+        {
+            string pattern = @"^\d+$";
+            if (phone.All(c => char.IsDigit(c) || c == ' '))
+                return true;
+            return false;
         }
     }
 }

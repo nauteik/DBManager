@@ -56,13 +56,13 @@ namespace Project_DBManager.UC
                     }
                     Microsoft.Office.Interop.Excel.Application MExcel = new Microsoft.Office.Interop.Excel.Application();
                     MExcel.Application.Workbooks.Add(Type.Missing);
-                    for (int i = 2; i < dtgv_DanhSachBaiDang.Columns.Count; i++)
+                    for (int i = 3; i < dtgv_DanhSachBaiDang.Columns.Count; i++)
                     {
-                        MExcel.Cells[1, i - 1] = dtgv_DanhSachBaiDang.Columns[i].HeaderText;
+                        MExcel.Cells[1, i - 2] = dtgv_DanhSachBaiDang.Columns[i].HeaderText;
                     }
                     for (int i = 0; i < dtgv_DanhSachBaiDang.Rows.Count; i++)
                     {
-                        for (int j = 2; j < dtgv_DanhSachBaiDang.Columns.Count; j++)
+                        for (int j = 3; j < dtgv_DanhSachBaiDang.Columns.Count; j++)
                         {
                             //if (j == 4)
                             //{
@@ -71,7 +71,7 @@ namespace Project_DBManager.UC
                             //}
                             //else
                             //{
-                            MExcel.Cells[i + 2, j - 1] = dtgv_DanhSachBaiDang.Rows[i].Cells[j].Value.ToString();
+                            MExcel.Cells[i + 2, j - 2] = dtgv_DanhSachBaiDang.Rows[i].Cells[j].Value.ToString();
                             //}
                         }
                     }
@@ -86,11 +86,6 @@ namespace Project_DBManager.UC
                     MessageBox.Show("No records found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btn_TaiXuong_Click(object sender, EventArgs e)
@@ -151,6 +146,7 @@ namespace Project_DBManager.UC
                     string brandID = BrandDAO.Instance.getBrandIdByPostId(id);
                     BrandDAO.Instance.setChuaTaoBaiDang(brandID);
                     PostDAO.Instance.deletePostById(Convert.ToInt32(id));
+                    ActDAO.Instance.createAct(account.UserID, "Xóa bài đăng thương hiệu " + BrandDAO.Instance.getBrandNameByID(Convert.ToInt32(brandID)), DateTime.Now);
                 }
                 dtgv_DanhSachBaiDang.DataSource = postInfoToShowList;
                 MessageBox.Show("Dữ liệu đã được xóa.");
@@ -213,14 +209,6 @@ namespace Project_DBManager.UC
 
         }
 
-        private void dtgv_DanhSachBaiDang_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtgv_DanhSachBaiDang.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
-            {
-                dtgv_DanhSachBaiDang.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.LightGray;
-            }
-        }
-
         private void dtgv_DanhSachBaiDang_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgv_DanhSachBaiDang.Columns[e.ColumnIndex] is DataGridViewImageColumn && e.RowIndex >= 0)
@@ -251,6 +239,24 @@ namespace Project_DBManager.UC
                     dtgv_DanhSachBaiDang.DataSource = searchList;
                 }
                 tb_TimKiem.Text = "";
+            }
+        }
+
+        private void dtgv_DanhSachBaiDang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (account.Level >= AccountDAO.Instance.getLevelByName(dtgv_DanhSachBaiDang.Rows[e.RowIndex].Cells[6].Value.ToString()))
+                {
+                    string tempPostId = dtgv_DanhSachBaiDang.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    PostInfoToShow postInfoToShow = postInfoToShowList.Find(pits => pits.PostId == tempPostId);
+                    ucChinhSuaBaiDang1.PostInfoToShow = postInfoToShow;
+                    ucChinhSuaBaiDang1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Bạn cần quyền truy cập để chỉnh sửa bài đăng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
