@@ -94,7 +94,9 @@
             // 
             // cb_Chon
             // 
+            this.cb_Chon.BackColor = System.Drawing.Color.White;
             this.cb_Chon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Chon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_Chon.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Chon.FormattingEnabled = true;
             this.cb_Chon.Location = new System.Drawing.Point(50, 350);
@@ -104,12 +106,13 @@
             // 
             // cb_ThongKeTheo
             // 
+            this.cb_ThongKeTheo.BackColor = System.Drawing.Color.White;
             this.cb_ThongKeTheo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_ThongKeTheo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ThongKeTheo.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ThongKeTheo.FormattingEnabled = true;
             this.cb_ThongKeTheo.Items.AddRange(new object[] {
             "Thương hiệu",
-            "Người tạo",
             "Chủ đề"});
             this.cb_ThongKeTheo.Location = new System.Drawing.Point(50, 250);
             this.cb_ThongKeTheo.Name = "cb_ThongKeTheo";

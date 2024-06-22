@@ -31,7 +31,8 @@ namespace Project_DBManager.UC
                 return;
             }
             // Reset date trong chart
-            c_BaiDang.ResetAutoValues();
+            c_BaiDang.Series["Số lượng bài đăng"].Points.Clear();
+            c_BaiDang.Titles.Clear();
             // Thực hiện thống kê
             c_BaiDang.Visible = true;
             c_BaiDang.Titles.Add("");

@@ -54,6 +54,8 @@ namespace Project_DBManager.UC
             }
             // Reset date trong chart
             c_HopDong.ResetAutoValues();
+            c_HopDong.Series["Số lượng hợp đồng"].Points.Clear();
+            c_HopDong.Titles.Clear();
             // Thực hiện thống kê
             c_HopDong.Visible = true;
             c_HopDong.Titles.Add("");

@@ -115,6 +115,7 @@
             this.BrandName.FillWeight = 120F;
             this.BrandName.HeaderText = "Tên thương hiệu";
             this.BrandName.Name = "BrandName";
+            this.BrandName.ReadOnly = true;
             // 
             // Rate
             // 
@@ -123,6 +124,7 @@
             this.Rate.FillWeight = 70F;
             this.Rate.HeaderText = "Số sao";
             this.Rate.Name = "Rate";
+            this.Rate.ReadOnly = true;
             // 
             // Review
             // 
@@ -131,6 +133,7 @@
             this.Review.FillWeight = 70F;
             this.Review.HeaderText = "Đánh giá";
             this.Review.Name = "Review";
+            this.Review.ReadOnly = true;
             // 
             // Category
             // 
@@ -138,6 +141,7 @@
             this.Category.DataPropertyName = "category";
             this.Category.HeaderText = "Chủ đề";
             this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
             // 
             // Address
             // 
@@ -145,6 +149,7 @@
             this.Address.DataPropertyName = "address";
             this.Address.HeaderText = "Địa chỉ";
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // Website
             // 
@@ -152,6 +157,7 @@
             this.Website.DataPropertyName = "website";
             this.Website.HeaderText = "Website";
             this.Website.Name = "Website";
+            this.Website.ReadOnly = true;
             // 
             // Phone
             // 
@@ -159,6 +165,7 @@
             this.Phone.DataPropertyName = "phone";
             this.Phone.HeaderText = "SDT";
             this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
             // 
             // LinkGoogle
             // 
@@ -166,6 +173,7 @@
             this.LinkGoogle.DataPropertyName = "googleURL";
             this.LinkGoogle.HeaderText = "Google";
             this.LinkGoogle.Name = "LinkGoogle";
+            this.LinkGoogle.ReadOnly = true;
             // 
             // lb_Title
             // 
@@ -176,7 +184,7 @@
             this.lb_Title.Name = "lb_Title";
             this.lb_Title.Size = new System.Drawing.Size(727, 33);
             this.lb_Title.TabIndex = 11;
-            this.lb_Title.Text = "Đang thu thập thông tin, vui long không tắt ứng dụng!";
+            this.lb_Title.Text = "Đang thu thập thông tin, vui lòng không tắt ứng dụng!";
             // 
             // lb_Progress
             // 
@@ -301,6 +309,12 @@
         private System.Windows.Forms.DataGridView dtgv_Staff;
         private System.Windows.Forms.Label lb_Title;
         private System.Windows.Forms.Label lb_Progress;
+        private System.Windows.Forms.Button btn_Luu;
+        private System.Windows.Forms.ComboBox cb_PhanLoai;
+        private System.Windows.Forms.Label lbDepartment;
+        private System.Windows.Forms.Button btnChonTatCa;
+        private System.Windows.Forms.Button btn_BoChonTatCa;
+        private System.Windows.Forms.Button btn_Load;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsChecked;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrandName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
@@ -310,11 +324,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Website;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn LinkGoogle;
-        private System.Windows.Forms.Button btn_Luu;
-        private System.Windows.Forms.ComboBox cb_PhanLoai;
-        private System.Windows.Forms.Label lbDepartment;
-        private System.Windows.Forms.Button btnChonTatCa;
-        private System.Windows.Forms.Button btn_BoChonTatCa;
-        private System.Windows.Forms.Button btn_Load;
     }
 }

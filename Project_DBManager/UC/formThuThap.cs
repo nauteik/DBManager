@@ -24,7 +24,7 @@ namespace Project_DBManager.UC
         public string desktopPath;
         List<TempBrand> listBrand;
         string nodePath = @"C:\Program Files\nodejs\node.exe"; // Adjust the path accordingly
-        string scriptPath = @AppDomain.CurrentDomain.BaseDirectory + "Scraper\\scrape.js"; // Adjust the path accordingly
+        string scriptPath = @AppDomain.CurrentDomain.BaseDirectory + "Scraper\\scrape2.js"; // Adjust the path accordingly
         public formThuThap(string googleURL, Account acc)
         {
             InitializeComponent();

@@ -137,6 +137,7 @@
             this.dtpk_NgayKy.Name = "dtpk_NgayKy";
             this.dtpk_NgayKy.Size = new System.Drawing.Size(335, 27);
             this.dtpk_NgayKy.TabIndex = 35;
+            this.dtpk_NgayKy.ValueChanged += new System.EventHandler(this.dtpk_NgayKy_ValueChanged);
             // 
             // lb_NgayKy
             // 
